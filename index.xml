@@ -288,15 +288,6 @@ reference: https://itsfoss.com/optimize-ubuntu-stacer/</description>
     </item>
     
     <item>
-      <title>About Me</title>
-      <link>https://bestsamina.github.io/about/</link>
-      <pubDate>Wed, 01 Feb 2017 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/about/</guid>
-      <description>Samina Fu is currently a master student in computer science at National Chiao Tung University (NCTU), Hsinchu, Taiwan. She has been a Network &amp;amp; Systems Engineer in NCTU Information Technology Service Center, where she developed the network operation platform, IT security platform development using Python and Django since 2014. She is interested in the various open source and is a member of CDNJS, a free and open source project on GitHub to organize all the famous web front-end development resources and provide them to the developers with faster CDN infrastructure.</description>
-    </item>
-    
-    <item>
       <title>終端機的超狂工具-TMUX 與指令整理</title>
       <link>https://bestsamina.github.io/posts/2017-02-01-tmux/</link>
       <pubDate>Wed, 01 Feb 2017 14:51:05 +0800</pubDate>
@@ -315,6 +306,15 @@ reference: https://itsfoss.com/optimize-ubuntu-stacer/</description>
       
       <guid>https://bestsamina.github.io/page/awesome-blogs/</guid>
       <description> Awesome Blogs  Hwchiu Learning Note KaiRen&amp;rsquo;s Blog kkdai.github.io Peter Dave Hello&amp;rsquo;s Blog vgod&amp;rsquo;s blog 小惡魔 – 電腦技術 – 工作筆記 – AppleBOY 台灣工程師的矽谷故事 凍仁的筆記  </description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>https://bestsamina.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bestsamina.github.io/about/</guid>
+      <description>Samina Fu is currently a master student in computer science at National Chiao Tung University (NCTU), Hsinchu, Taiwan. She has been a Network &amp;amp; Systems Engineer in NCTU Information Technology Service Center, where she developed the network operation platform, IT security platform development using Python and Django since 2014. She is interested in the various open source and is a member of CDNJS, a free and open source project on GitHub to organize all the famous web front-end development resources and provide them to the developers with faster CDN infrastructure.</description>
     </item>
     
   </channel>
