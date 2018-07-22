@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Samina&#39;s 技術筆記 X 點滴紀錄</title>
+    <link>https://bestsamina.github.io/posts/</link>
+    <description>Recent content in Posts on Samina&#39;s 技術筆記 X 點滴紀錄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samina Fu</copyright>
+    <lastBuildDate>Thu, 08 Feb 2018 14:51:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://bestsamina.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[CORD] 初步認識 CORD 是什麼之筆記</title>
+      <link>https://bestsamina.github.io/posts/2018-02-08-cord-init/</link>
+      <pubDate>Thu, 08 Feb 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2018-02-08-cord-init/</guid>
+      <description>本篇為參考 CORD 之「Central Office Re-architected as a Datacenter, IEEE Communications, October 2016」與 https://wiki.opencord.org/pages/viewpage.action?pageId=1278047 所做的整理筆記。
+ 簡介 CORD 全名為 『Central Office Re-architected as a Datacenter』，是由 ONLAB(ONF) 所提出的一個新的電信網路機房的概念設計。這設計將會帶來經濟效益與敏捷性。透過開放架構、商業化硬體、open source 軟體，拆解原本傳統且封閉的的電信服務商的網路架構，讓新的技術在這框架中實現新的電信資料中心，並且價低採購與維護成本。
+動機 為了達到 bandwidth 的需求增加以及不斷增加的服務期望，需要引進新的 Data Center 架構。然而每一家的 Telco Central Office (CO) 架構都不一樣，而這反倒也造成 CAPEX 和 OPEX 的負擔。
+因此提出 CORD 架構為新一代的 Telco Central Office ，結合三大技術：SDN(Software-Defined Networking), NFV(Network Functions Virtualization), elastic cloud services。
+並且都運行在白牌的硬體上。打造好的成本效益與敏捷性的網路。
+註：CAPEX: Capital Expenditure(資本性支出), OPEX: Operating Expenditure(運營性支出)。
+介紹 CORD 包含三大趨勢技術：</description>
+    </item>
+    
+    <item>
+      <title>[TGmeetup] 之詳細安裝操作步驟</title>
+      <link>https://bestsamina.github.io/posts/2018-01-28-install-w-meetup-api/</link>
+      <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2018-01-28-install-w-meetup-api/</guid>
+      <description>此篇文章內容同步於 https://hackmd.io/s/ByrxYmi4G 。
+安裝流程  Step 1. 申請 meetup_api 的 auth Key  申請 OAuth2 認證 取得 Key 和 secret 在本機端啟動 SimpleHTTPServer 取得 access token 同意該 OAuth 使用者可以使用你的帳號。 轉導向到自己本機的 8000 port 並取得一次性的 access token 準備取得 refresh token 取得 refresh token 與 access token  Step 2. 下載專案並編輯 API.cfg 檔 Step 3. 進行安裝  安裝說明 請依據以下安裝說明進行，謝謝。
+Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的說明文件來進行，並提供簡單的取得方法。
+1. 申請 OAuth2 認證  到 https://secure.</description>
+    </item>
+    
+    <item>
+      <title>[TGmeetup] 從孵化到出生之全記錄</title>
+      <link>https://bestsamina.github.io/posts/2018-01-28-tgmeetups-birthday/</link>
+      <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2018-01-28-tgmeetups-birthday/</guid>
+      <description>Repository: https://github.com/TGmeetup/TGmeetup
+前言 趁著今天公開專案日(2018/01/28)，就來紀錄一下從啟動到執行這專案的整個過程吧！算是一篇 TGmeetup 專案的雜感吧！
+ 可能會講比較多的廢話。還請包涵。
+ 目錄  發想 規劃與設計 動工前的失憶症 開工寫程式 寫文檔 其他修修補補 推廣 在這過程中自我的檢視 結論 感謝  發想 最一開始，是在 DigitalOcean Hsinchu 的某次檢討會最後討論下次的聚會日期時，當時大家想要避開大型 conference 和其他知名社群活動，所以開始蒐集各社團資訊(畢竟草創初期，有點辛苦)。不過，我那時非常納悶，因為我參與社群也是近一年的事，但台灣的技術社群其實有些成立了很久。但不曉得為何沒有整合社群活動資訊的平台或工具，所以開啟了我想要整合的想法。(不過有很棒的整合社群資訊平台： https://www.mindmeister.com/zh-hk/303031964?t=WS4msLPJIs )
+當然，如果整合的好，我相信這會是一個很不錯的工具。畢竟在技術圈，在有空的時間多參與技術社群的活動，都可以幫助自己的成長。所以在心中下定決心，我一定要把它做出來。
+規劃與設計 有了想法，就要來實踐。 (下面是我比較跳耀性的思路，如果看不懂，還請忽略了。)
+ 構思第一版：想像著有一個 Web 版，呈現這些資訊。然後想到麻煩的資料庫。不過這樣就要處理權限問題，登入問題。這樣要 open source 出來，可能會遇到障礙。 還有什麼方法呢？ 構思第二版：啊！就仿照 CDNJS 把社群資訊用 package.json 來儲存吧。然後透過活動 API 抓到的活動資訊就儲存到另外的 events.json 檔。然後 Web 也是讀這些 Json 檔，剛剛好。 構思第三版：package.json 的格式初步訂定。 events.json 格式初步訂定。這樣我是不是要用 API server 呀？這樣在 terminal 使用的時候使用找就不用自己設定自己的 config 檔了。可是這樣架構上好像會有點複雜。維護的成本也會比較高？來賭一下好了，反正會用 terminal 的人基本上對於設定這件事情並不會排斥，反正拿一次驗證，終身免役。不管了，專案最怕的是沒有人維護，最起碼要讓這專案沒人維護時，也可以自己活得好好的。就讓大家自己在安裝前到 Meetup 上拿 OAuth 的 API 吧！(只要文檔寫得好就好。) 構思第四版：構思整個程式的架構。再加上 package.</description>
+    </item>
+    
+    <item>
+      <title>[Build container] Container with Linux Namespace</title>
+      <link>https://bestsamina.github.io/posts/2018-01-14-container-linux-namespace/</link>
+      <pubDate>Sun, 14 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2018-01-14-container-linux-namespace/</guid>
+      <description>目錄：
+* 前言
+* Linux Namespace 類別
+* The system calls of namespaces API
+* UTS namespaces (CLONE_NEWUTS)
+* IPC namespaces (CLONE_NEWIPC)
+* PID namespaces (CLONE_NEWPID)
+* Mount namespaces (CLONE_NEWNS)
+* User namespaces (CLONE_NEWUSER)
+* Network namespaces (CLONE_NEWNET)
+前言 Linux Namespace 是 Linux Kernel 的其中一個功能，可以隔離對應的系統資源。 關於深入了解 Linux Namespace ，會再另闢一篇來探討。 而這邊就先照著進行，不過為了想法上能夠知道在做什麼，我是套用 C++ 的 Namespace 概念來幫助我先進行實作，讓我透過實際的程式與操作後，而對應到原來這就是 Linux Namespace 以及要怎麼實現。 PS. 建議有一點 OS 概念跟著做會比較好，要不然，最起碼知道 PID 是什麼。
+實作環境摘要  Ubuntu 16.04 Kernel version: 4.</description>
+    </item>
+    
+    <item>
+      <title>[Build container] Docker 簡介與 Go 環境安裝</title>
+      <link>https://bestsamina.github.io/posts/2018-01-03-my-container-setup-env/</link>
+      <pubDate>Wed, 03 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2018-01-03-my-container-setup-env/</guid>
+      <description>Docker 簡介 就軟體的 Docker 來說，Docker 是一個開放原始碼軟體專案。可以讓應用程式佈署在軟體容器下並執行。在 Linix 中， Docker 利用 Linux Kernel 中的資源分離機制，如cgroups, Namespace ，來建立獨立的軟體容器（containers）。 它最早釋出於2013/03/13，原作者為 Solomon Hykes 。 他於 2013 PyCon 的 5 分鐘 lightning talk 中提出 The Future of Linux Containers。 並在 lightning talk 中簡單展示 Docker 的使用方法。
+ 小小疑惑: 為什麼 go 語言的專案會跑到 PyCon 中發表呢？我覺得比較有關的會是 open source 或是 Linux 相關的 Conference 呢！？
+ Docker 擁有的特點有：  輕量化：共享同一台系統的 Kernel 資源，所以可以迅速啟動而且用的 memory 較少。而且 image 是 Filesystem 建制的，所以可以共享相同文件。 open source 標準：可以運行於 Linux distributions 和 Windows OS.</description>
+    </item>
+    
+    <item>
+      <title>了解 npm 的二三事</title>
+      <link>https://bestsamina.github.io/posts/2017-11-27-npm/</link>
+      <pubDate>Mon, 27 Nov 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-11-27-npm/</guid>
+      <description>了解 npm 的二三事 什麼是 NPM 如果你有寫過 python ，你應該會很熟悉 pip ，pip 是一個 python 的套件管理系統。(pip is package management system used to install and manage software packages written in Python. &amp;ndash;from Wikipedia) 那什麼是 npm 呢？ 就是 Node.js 的 套件管理系統啦！ (A default package manager for the JavaScript runtime environment Node.js &amp;ndash; from Wikipedia) NPM 全名 Node Package Manager。
+ 什麼是&amp;rdquo;套件管理系統&amp;rdquo;？  A package manager is a set of tools that automates and manages computer software.</description>
+    </item>
+    
+    <item>
+      <title>Scrum framework</title>
+      <link>https://bestsamina.github.io/posts/2017-07-02-scrum-framework/</link>
+      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-07-02-scrum-framework/</guid>
+      <description>一個 Sprint 為期 1~4 周。
+1. 角色 可一人分飾多角，每個腳色都該做好自己的職責。
+* Product Owner (PO):  決定整個產品，設定產品待辦項目的優先順序。  * Scrum Master: 教練的角色，可及時地為團隊成員提供幫助。
+* Team:  Team = PO + Scrum Master + Development Team 人數：7 +- 2 Development Team = 負責開發產品  2. Items * Product Backlog (產品待辦清單): 裡面是每個 Item ， 放的東西有 User Story, Bug, Tech Debt (技術債)，優先權高的、明確的工作項目排上面，越先做。 不明確的，排後面，之後開遠光燈會議在調整。
+* Sprint Backlog (衝刺待辦清單): 從 Product Backlog 中優先權最高的幾個拉到這個清單裡，轉換成 task 就開始做。
+* Potentially Shippable Product (潛在可交付產品增量) 開發團隊的產出，如果 PO 說先不要上線，就是之後 PO 可以和客戶談判的籌碼。</description>
+    </item>
+    
+    <item>
+      <title>Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 2</title>
+      <link>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part2/</link>
+      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part2/</guid>
+      <description>講師: David Ko
+Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 2 - Scrum 基礎觀念介紹 1. 甚麼是 Scrum 🏉 A. Scrum 是一個開發複雜系統的框架(Scrum framework) B. Scrum 是&amp;hellip;  沒有 engineering practices
+ 像是 TDD, Unit testing, 搭檔編程  輕量級的用法  C. Scrum 方法的特性  頻繁交付高價值
+ 小而美
+ 小團隊 小迭代 小需求  團隊特性
+ 自主決定 責任感 透明度    Scrum 專案開始進行時，要趕快處理的兩個問題：
+1. 經常檢查你的方向是否正確，你做的東西是否是客戶要的。
+2. 是否有任何方法，可以改善目前做法，讓你更快更好。 - Jeff Sutherland</description>
+    </item>
+    
+    <item>
+      <title>Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 3</title>
+      <link>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part3/</link>
+      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part3/</guid>
+      <description>講師: David Ko
+Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 3 - 如何組織需求(Scrum 需求清單) 1. 產品需求清單 (Product Backlog) 1-1. 甚麼是產品需求清單?  所要要做的事情的清單 做甚麼事的清單 根據商業價值來排序  1-2. 產品需求清單項目的種類 2. 使用者故事 (User Story) 2-1. 甚麼是使用者故事  軟體的需求 用商業語言來描述 每個故事不會太大
+ 寫在便利貼上 通常是由使用者寫   2-2. 使用者故事樣板 As a [role], I want to [fuction] because of [business value].
+eg. As a bookstore customer, I can search for a book by the title, so that I can easily find all books with that title.</description>
+    </item>
+    
+    <item>
+      <title>Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 4</title>
+      <link>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part4/</link>
+      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part4/</guid>
+      <description>講師: David Ko
+Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 4. Scrum 會議 1. 敏捷評估  小小迷之聲1:
+就是評估這個專案可以多久完成啦！以人/天為單位。 是說，比起經驗法則，這個有個依據，雖然很多還是自己定義的 XDD。但忘了問問題的部分是，那個人/天的人的能力標準是以哪個為單位基準? junior 感覺不是，但非常 senior 的工程師感覺會做很快，中間感覺合適。但又感覺應該要依據即將參與這專案的工程師能力素質的比例，來做衡量。比方 junior 與 senior 比例約 3:2 ，如果原先是以介在 senior 和 junior 中間的能力來做估算就還要程以相對的比例，會比較好吧? 不過只是估算啦！ 拍腦袋 與 敏捷評估 之間是個誤差值多和少的概念。
+小小迷之聲2:
+評估這件事真的不能一個人決定呀！經過這活動下來，整個就覺得傳統方式，如果是非工程師估算時間，會因為對方不了解我，然後就壓時程，根本就是惡性循環。然後做得半死的是勞累的員工。整個超不 OK 的！而經過討論評估的時間真的比較 OK，但如果討論時，遇到那種 甚麼，你這竟然覺得要花5天！ 的那種人，感覺討論氣氛就不會太好~ 下面回到正題~
+ 1-0. 評估原則  小筆大容易 相對比絕對容易 找基準(中間值)，排相對大小，算時間  1-1. 發布會議解析  Why: 想對發佈的時程和內容有個概略的估算 Who: PO, Scrum Master, Team When: 產品開發初期 I/O: input - 目標、產品需求清單；output - 發布時間、發布內容 Step 1.</description>
+    </item>
+    
+    <item>
+      <title>Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 5</title>
+      <link>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part5/</link>
+      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part5/</guid>
+      <description> 講師: David Ko
+Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 5. Scrum 開發方法總結  敏捷是一種文化，並不是流程 Scrum 是管理的框架 思維：
+ 是照妖鏡 - 可及早看到問題點 像下棋 - 有規則、需教練指導    小小迷之聲: 也像各種運動比賽
+    適合的情況 不適合的狀況     小團隊，沒有正式的軟體開發方法 PO 主導性強 承認遇到危機，希望可以改善 太小或太短的專案 維護的團隊 不想變革的組織    </description>
+    </item>
+    
+    <item>
+      <title>Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 1</title>
+      <link>https://bestsamina.github.io/posts/2017-07-01-scrum-hsinchu-part1/</link>
+      <pubDate>Sat, 01 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-07-01-scrum-hsinchu-part1/</guid>
+      <description>講師: David Ko
+Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 1 - 敏捷觀念簡介 0. Why post it 為什麼用便利貼
+- 所有東西都可以看的到
+- 資訊視覺化
+- 彈性
+- 說出更多東西
+- grouping 大家來
+- 共識
+- voting
+1. 敏捷歷史 年份
+方法
+1950
+PDCA(Plan-Do-Check-Act): 針對品質工作按規劃、執行、查核與行動來進行活動，
+以確保可靠度目標之達成，並進而促使品質持續改善
+1970
+瀑布式開發
+1986
+Spiral model(螺旋模型)
+1995
+Scrum 用管理角度看
+1997
+FDD(Feature Driven Development)
+1999
+Extreme Programming
+2001
+敏捷宣言
+2003
+Lean Software Development
+2. 敏捷宣言  個人與互動 重於 流程與工具 可用的軟體 重於 詳盡的文件 與客戶合作 重於 合約協商 回應變化 重於 遵循計畫   兩邊都很重要，但左邊非常重要，敏捷是重計畫的方法</description>
+    </item>
+    
+    <item>
+      <title>[機器學習] Supervised and Unsupervised Learning (監督學習與非監督學習) -Week 1-1</title>
+      <link>https://bestsamina.github.io/posts/2017-06-22-ml-supervised-and-unsupervised-learning/</link>
+      <pubDate>Thu, 22 Jun 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-06-22-ml-supervised-and-unsupervised-learning/</guid>
+      <description>第一週 - From Stanford&amp;rsquo;s coursera
+ Machine Learning  Supervised Learning  Regression Classification  Unsupervised Learning  Clustering Cocktail Party Algorithm    Machine Learning (機器學習)  定義：
+ Arthur Samuel: the field of study that gives computers the ability to learn without being explicitly programmed. Tom Mitchell: A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.</description>
+    </item>
+    
+    <item>
+      <title>apt指令之套件管理整理</title>
+      <link>https://bestsamina.github.io/posts/2017-03-15-apt/</link>
+      <pubDate>Wed, 15 Mar 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-03-15-apt/</guid>
+      <description>Ubuntu(Debian) 系列 apt-get  apt-get update
+更新套件資訊(基本上沒事就跑一下，習慣登入就下一下指令) apt-get check
+檢查系統上的套件相依性情形 apt-get upgrade
+更新所有有新版本的套件(基本上就是 Ｗindows 常出現要更新的那個東西，系統更新是基本，所以沒事就 apt-get upgrade 一下吧！)
+PS1. 將現有的套件升級, 若遇到相依的問題(需要安裝其它新的相依套件或影響到其它套件的相依性)，該套件不會進行升級而保留原套件。
+PS2. 系統內心話：蛤～升級這套件還要安裝或移除相依套件唷！好麻煩唷！我還是留著這原套件好了！ㄎㄎ  -u 顯示完整的可更新套裝軟體列表  apt-get -s upgrade
+可以看那些套件會被更新 apt-get dist-upgrade
+強制更新所有有新版本的套件
+PS1. 如果遇到相依性問題, 需要安裝或移除相關套件, 就會試著去安裝或移除相依套件，而進行該套件升級。
+PS2. 系統內心話：哈哈～就讓我來大刀闊斧幫你升級所有套件吧！如果其他服務因為套件升級而掛掉，你家的事！ㄎㄎ apt-get install 套件名稱
+安裝套件(相依套件也會幫忙裝)
+eg. apt-get install vim  -y 若有問問題都回答Yes apt-get &amp;ndash;reinstall install 套件名稱
+裝壞掉重裝法  apt-get remove 套件名稱
+移除套件 apt-get &amp;ndash;purge remove 套件名稱
+連設定檔一起全部移除 apt-get clean
+清除/var/cache/apt/archives/下的所有 DEB 套件檔 (白話文：清除已經下載的套件) apt-get autoclean</description>
+    </item>
+    
+    <item>
+      <title>Stacer - 系統優化器</title>
+      <link>https://bestsamina.github.io/posts/2017-02-17-stacer/</link>
+      <pubDate>Fri, 17 Feb 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-02-17-stacer/</guid>
+      <description>Stacer - 系統優化器 這套工具類似 Windows 上面安裝 CCleaner 加上系統資源監控！
+來源 https://github.com/oguzhaninan/Stacer
+安裝環境 Ubuntu base 桌面版本
+介紹 在GitHub上面的介紹就是&amp;rdquo;Ubuntu System Optimizer&amp;rdquo;！
+安裝  到GitHub頁面上點選releases
+ 依據作業系統的位元數，選擇要下載的deb包
+ 安裝
+  畫面 整個就是超級漂亮的！而且是用JavaScript寫的，超猛！
+雖然Linux Mint就有系統資源監控了
+不過既然安裝這麼漂亮的東西，當然是要來支持一下了！
+Stacer另外還包含的功能：  System Cleaner：可以清除Apt cache, Crash Reports, System Logs, App Cache，不過如果有些服務紀錄是需要留的，還是要注意一下，別全選了~ Startup Apps：這個我的電腦裡沒有出現~ Services：不用在sudo service XXX stop，直接滑鼠點一下就好哩！ Uninstaller：可移除安裝的套件 介紹完畢~  之後要很潮的打開它:)
+reference: https://itsfoss.com/optimize-ubuntu-stacer/</description>
+    </item>
+    
+    <item>
+      <title>終端機的超狂工具-TMUX 與指令整理</title>
+      <link>https://bestsamina.github.io/posts/2017-02-01-tmux/</link>
+      <pubDate>Wed, 01 Feb 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-02-01-tmux/</guid>
+      <description> Tmux是個終端機工具(Terminal multiplexer)，可以管理多個session，window和panel。
+如何安裝 Debian / Ubuntu：apt-get install tmux
+關於session的指令  tmux：開啟一個新的client(包含一個session，window，panel) tmux ls：列出有那些sessions tmux a：重回上次最新的client tmux a -t [number]：重回該number的session  關於window的指令 預設的操作要加上 Ctrl-b 功能鍵
+ Ctrl-b + c：建立新的window (create) Ctrl-b + number：改變window Ctrl-b + d：關閉目前的 client (detach) Ctrl-b + l：與先前選擇的window間切換 Ctrl-b + n：移到下個window (next) Ctrl-b + p：移到上個window (previous) Ctrl-b + &amp;amp;：刪除目前的window Ctrl-b + ,：重新命名目前的window，修改後按&amp;rdquo;enter“ Ctrl-b + ?：列出所有快捷鍵說明 Ctrl-b + w：列出目前 clinet 的window，用數字鍵切換 (window)  關於當前panel的指令  Ctrl-b + %：垂直分割window (分左圈圈和右圈圈) Ctrl-b + &amp;ldquo;：水平分割window Ctrl-b + ↑↓←→：使用上下左右鍵改變panel所在的當前panel Ctrl-b + o：移往下一個區塊； Ctrl-b + q：顯示區塊的數字代號 Ctrl-b + q + number：當數字顯示時使用數字鍵移往該panel Ctrl-b + [：讀歷史訊息，按 q 離開 Ctrl-b + {：將目前的區塊移往左邊 Ctrl-b + }：將目前的區塊移往右邊  </description>
+    </item>
+    
+  </channel>
+</rss>

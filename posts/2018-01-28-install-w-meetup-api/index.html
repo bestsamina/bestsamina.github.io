@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.44" />
+    
+    
+    <title>[TGmeetup] 之詳細安裝操作步驟 • Samina&#39;s 技術筆記 X 點滴紀錄</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[TGmeetup] 之詳細安裝操作步驟"/>
+<meta name="twitter:description" content="此篇文章內容同步於 https://hackmd.io/s/ByrxYmi4G 。
+安裝流程  Step 1. 申請 meetup_api 的 auth Key  申請 OAuth2 認證 取得 Key 和 secret 在本機端啟動 SimpleHTTPServer 取得 access token 同意該 OAuth 使用者可以使用你的帳號。 轉導向到自己本機的 8000 port 並取得一次性的 access token 準備取得 refresh token 取得 refresh token 與 access token  Step 2. 下載專案並編輯 API.cfg 檔 Step 3. 進行安裝  安裝說明 請依據以下安裝說明進行，謝謝。
+Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的說明文件來進行，並提供簡單的取得方法。
+1. 申請 OAuth2 認證  到 https://secure."/>
+
+<meta property="og:title" content="[TGmeetup] 之詳細安裝操作步驟" />
+<meta property="og:description" content="此篇文章內容同步於 https://hackmd.io/s/ByrxYmi4G 。
+安裝流程  Step 1. 申請 meetup_api 的 auth Key  申請 OAuth2 認證 取得 Key 和 secret 在本機端啟動 SimpleHTTPServer 取得 access token 同意該 OAuth 使用者可以使用你的帳號。 轉導向到自己本機的 8000 port 並取得一次性的 access token 準備取得 refresh token 取得 refresh token 與 access token  Step 2. 下載專案並編輯 API.cfg 檔 Step 3. 進行安裝  安裝說明 請依據以下安裝說明進行，謝謝。
+Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的說明文件來進行，並提供簡單的取得方法。
+1. 申請 OAuth2 認證  到 https://secure." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bestsamina.github.io/posts/2018-01-28-install-w-meetup-api/" />
+
+
+
+<meta property="article:published_time" content="2018-01-28T14:51:05&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-01-28T14:51:05&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+    <!-- highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://bestsamina.github.io/css/print.min.css" media="print">
+    <link rel="stylesheet" href="https://bestsamina.github.io/css/hyde-hyde.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png"></head>
+
+    <body>
+        
+<div class="sidebar text-center">
+  <div class="container ">
+    <div class="sidebar-about">
+      <div class="site__title">
+        <a href="https://bestsamina.github.io">Samina&#39;s 技術筆記 X 點滴紀錄</a>
+      </div>
+      
+      
+      
+      <p>
+        <img src="https://bestsamina.github.ioimg/sufuf3_1519028337_878.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
+      <p class="site__description">
+         記錄一些技術筆記與生活紀錄 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+				<li>
+					<a href="/serie/">
+						<span>Series</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tags/">
+						<span>Tags</span>
+					</a>
+				</li>
+				<li>
+					<a href="/page/awesome-blogs">
+						<span>Awesome-Blogs</span>
+					</a>
+				</li>
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social text-center">
+	<a href="https://twitter.com/sufuf3149"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://github.com/sufuf3"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 Samina Fu.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+<div class="content container">
+            <article>
+  <header>
+    <h1>[TGmeetup] 之詳細安裝操作步驟</h1>
+     
+    
+<div class="post__meta">
+    
+    <i class="fas fa-calendar-alt"></i> Jan 28, 2018
+    in
+              <a class="post__category" href="/categories/tgmeetup">TGMEETUP</a>
+              
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="post__tag" href="/tags/open-source">#open-source</a>
+           
+      
+          <a class="post__tag" href="/tags/tgmeetup">#tgmeetup</a>
+           
+      
+          <a class="post__tag" href="/tags/meetup">#meetup</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+  </header>
+  <div class="post">
+    
+
+<p>此篇文章內容同步於 <a href="https://hackmd.io/s/ByrxYmi4G">https://hackmd.io/s/ByrxYmi4G</a> 。</p>
+
+<h1 id="安裝流程">安裝流程</h1>
+
+<ul>
+<li>Step 1. 申請 meetup_api 的 auth Key
+
+<ol>
+<li>申請 OAuth2 認證</li>
+<li>取得 Key 和 secret</li>
+<li>在本機端啟動 SimpleHTTPServer</li>
+<li>取得 access token</li>
+<li>同意該 OAuth 使用者可以使用你的帳號。</li>
+<li>轉導向到自己本機的 8000 port 並取得一次性的 access token</li>
+<li>準備取得 refresh token</li>
+<li>取得 refresh token 與 access token</li>
+</ol></li>
+<li>Step 2. 下載專案並編輯 API.cfg 檔</li>
+<li>Step 3. 進行安裝</li>
+</ul>
+
+<h1 id="安裝說明">安裝說明</h1>
+
+<p>請依據以下安裝說明進行，謝謝。</p>
+
+<h1 id="step-1-申請-meetup-api-的-auth-key">Step 1. 申請 meetup_api 的 auth Key</h1>
+
+<p>以下操作步驟皆是參考<a href="https://www.meetup.com/meetup_api/auth/#oauth2">官方的說明文件</a>來進行，並提供簡單的取得方法。</p>
+
+<h3 id="1-申請-oauth2-認證">1. 申請 OAuth2 認證</h3>
+
+<ul>
+<li>到 <a href="https://secure.meetup.com/meetup_api/oauth_consumers/create/">https://secure.meetup.com/meetup_api/oauth_consumers/create/</a> 註冊成為 OAuth 使用者。</li>
+<li>必填欄位 &ldquo;Consumer name&rdquo; 與 &ldquo;Redirect URI&rdquo;。
+
+<ul>
+<li><strong>Consumer name</strong>：為使用者名字的字串 (這邊可以隨意的字串，方便您管理即可。)</li>
+<li><strong>Redirect URI</strong>：請填入 <code>http://localhost:8000/</code> (這欄位是為了拿一次性的 access token，後面會提供如何設定的範例，請在本機上進行。)</li>
+</ul></li>
+<li>範例圖
+<img src="https://i.imgur.com/vV6xszF.png" alt="" /><br /></li>
+</ul>
+
+<h3 id="2-取得-key-和-secret">2. 取得 Key 和 secret</h3>
+
+<p>完成步驟一後，會獲得 key 和 secret 的值。<br />
+<img src="https://i.imgur.com/6ML2bJ1.png" alt="" /></p>
+
+<h3 id="3-在本機端啟動-simplehttpserver">3. 在本機端啟動 SimpleHTTPServer</h3>
+
+<ul>
+<li>在拿 access token 之前，我們先來在本機端開個 8000 port。
+
+<ol>
+<li>安裝 python2 環境在本機上。</li>
+<li>在你的任意目錄底下輸入 <code>python -m SimpleHTTPServer 8000</code></li>
+</ol></li>
+</ul>
+
+<h3 id="4-取得-access-token">4. 取得 access token</h3>
+
+<ul>
+<li>於瀏覽器的網址列中輸入以下連結，並將 YOUR_CONSUMER_KEY 的字串取代成你在 Meetup OAuth 所獲的的 key 值</li>
+</ul>
+
+<pre><code>https://secure.meetup.com/oauth2/authorize
+    ?client_id=YOUR_CONSUMER_KEY
+    &amp;response_type=code
+    &amp;redirect_uri=http://localhost:8000/
+</code></pre>
+
+<ul>
+<li>如本文範例需要在網址列輸入</li>
+</ul>
+
+<pre><code>https://secure.meetup.com/oauth2/authorize
+    ?client_id=7rt32r...........
+    &amp;response_type=code
+    &amp;redirect_uri=http://localhost:8000/
+</code></pre>
+
+<h3 id="5-同意該-oauth-使用者可以使用你的帳號">5. 同意該 OAuth 使用者可以使用你的帳號。</h3>
+
+<p>接著會跳出網頁請你點選確認選項，請點選 &ldquo;Allow&rdquo;。<br />
+<img src="https://i.imgur.com/9w0OyKE.png" alt="" /></p>
+
+<h3 id="6-轉導向到自己本機的-8000-port-並取得一次性的-access-token">6. 轉導向到自己本機的 8000 port 並取得一次性的 access  token</h3>
+
+<p><img src="https://i.imgur.com/jr2gc6J.png" alt="" /></p>
+
+<h3 id="7-準備取得-refresh-token">7. 準備取得 refresh token</h3>
+
+<p>以下提供兩種方法來取得 refresh token。<br />
+方法1: 使用 terminal 或是程式撰寫來取得<br />
+方法2: 使用 Postman 來取得</p>
+
+<h4 id="方法-1-terminal-或是程式撰寫">方法 1: terminal 或是程式撰寫</h4>
+
+<p>此方法僅用描述的方式，以下為一些注意項目</p>
+
+<ol>
+<li>使用 POST 的方法取得</li>
+<li>Header encoded 方法使用 <code>application/x-www-form-urlencoded</code></li>
+<li>URL 為 <code>https://secure.meetup.com/oauth2/access</code></li>
+<li>body 中的 request key 與 value 如下</li>
+</ol>
+
+<pre><code>client_id=YOUR_CONSUMER_KEY
+&amp;client_secret=YOUR_CONSUMER_SECRET
+&amp;grant_type=authorization_code
+&amp;redirect_uri=SAME_REDIRECT_URI_USED_FOR_PREVIOUS_STEP
+&amp;code=CODE_YOU_RECEIVED_FROM_THE_AUTHORIZATION_RESPONSE
+</code></pre>
+
+<ul>
+<li>YOUR_CONSUMER_KEY: 為您在 Meetup OAuth 中拿到的 key 值</li>
+<li>YOUR_CONSUMER_SECRET: 為您在 Meetup OAuth 中拿到的 secret 值</li>
+<li>SAME_REDIRECT_URI_USED_FOR_PREVIOUS_STEP: 為 <code>http://localhost:8000/</code></li>
+<li>CODE_YOU_RECEIVED_FROM_THE_AUTHORIZATION_RESPONSE: 為您在上一步驟獲得的 code 值</li>
+</ul>
+
+<h4 id="方法-2-使用-postman">方法 2: 使用 Postman</h4>
+
+<p>Postman 是一個 API 的測試工具，您也可以使用其他類似的工具進行，以下為 Postman 的示範<br />
+- 以下步驟請搭配本張圖示進行<br />
+<img src="https://i.imgur.com/fY0TWXj.png" alt="" /></p>
+
+<ol>
+<li>開起 Postman</li>
+<li>在右上選擇 POST 方法</li>
+<li>在 Enter request URL 輸入 <code>https://secure.meetup.com/oauth2/access</code></li>
+<li>點選 Body</li>
+<li>點選 <code>application/x-www-form-urlencoded</code></li>
+<li>輸入 key 和 value</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>client_id</td>
+<td>您在 Meetup OAuth 中拿到的 key 值</td>
+</tr>
+
+<tr>
+<td>client_secret</td>
+<td>您在 Meetup OAuth 中拿到的 secret 值</td>
+</tr>
+
+<tr>
+<td>grant_type</td>
+<td>authorization_code</td>
+</tr>
+
+<tr>
+<td>redirect_uri</td>
+<td><code>http://localhost:8000/</code></td>
+</tr>
+
+<tr>
+<td>code</td>
+<td>為您在上一步驟獲得的 code 值</td>
+</tr>
+</tbody>
+</table>
+
+<ol>
+<li>點選 <strong>Send</strong></li>
+</ol>
+
+<h3 id="8-取得-refresh-token-與-access-token">8. 取得 refresh token 與 access token</h3>
+
+<p>refresh token: 因為 access token 有時限性，所以當超過時限時，皆需要使用 refresh token 重新拿 access token。</p>
+
+<pre><code>{
+    &quot;access_token&quot;: &quot;5b99e.........................a1c56&quot;,
+    &quot;refresh_token&quot;: &quot;461cb.....................0b1e0&quot;,
+    &quot;token_type&quot;: &quot;bearer&quot;,
+    &quot;expires_in&quot;: 3600
+}
+</code></pre>
+
+<p>以上第一階段取得 Meetup OAuth 的 key 就完成囉！</p>
+
+<h1 id="step-2-下載專案並編輯-api-cfg-檔">Step 2. 下載專案並編輯 API.cfg 檔</h1>
+
+<ol>
+<li>git clone 整個專案</li>
+</ol>
+
+<pre><code>$ git clone https://github.com/TGmeetup/TGmeetup.git
+</code></pre>
+
+<ol>
+<li>切換到 TGmeetup 的資料夾</li>
+</ol>
+
+<pre><code>$ cd TGmeetup
+</code></pre>
+
+<ol>
+<li>複製 API.cfg.sample 檔案到 API.cfg</li>
+</ol>
+
+<pre><code>$ cp API.cfg.sample API.cfg
+</code></pre>
+
+<ol>
+<li>編輯 API.cfg</li>
+</ol>
+
+<pre><code>[MEETUP_API]
+API_URL = https://api.meetup.com/
+API_KEY = 7rt32........
+client_secret = apafji................68hso
+refresh_token = edb54a1f5d...............eb92
+</code></pre>
+
+<ul>
+<li>API_KEY: 為您在 Meetup OAuth 中拿到的 key 值</li>
+<li>client_secret: 為您在 Meetup OAuth 中拿到的 secret 值</li>
+<li>refresh_token: 為您在 <a href="#8-%E5%8F%96%E5%BE%97-refresh-token-%E8%88%87-access-token">Step1 中的第八步驟</a>取得的 refresh_token 值</li>
+</ul>
+
+<h1 id="step-3-進行安裝">Step 3. 進行安裝</h1>
+
+<pre><code>$ sh install.sh
+</code></pre>
+
+<hr />
+
+<p>完成以上就可以開始來使用 <code>tgmeetup</code> 的指令囉！ 想知道更多，請到 <a href="https://github.com/TGmeetup/TGmeetup">https://github.com/TGmeetup/TGmeetup</a> 。:)</p>
+
+<h3 id="相關系列文">相關系列文：</h3>
+
+<p><a href="/series/tgmeetup/">[TGmeetup] 就讓這專案蒐集世界各地的技術社群資訊吧！</a></p>
+
+  </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            <a href="/posts/2018-02-08-cord-init/">                
+                <span class="next__heading">NEXT</span>
+                <span>[CORD] 初步認識 CORD 是什麼之筆記</span>
+            </a>
+            <i class="fas fa-chevron-right"></i>
+        </li>
+        <li class="post__nav--previous">
+            <i class="fas fa-chevron-left"></i>
+            <a href="/posts/2018-01-28-tgmeetups-birthday/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <span class="previous__title">[TGmeetup] 從孵化到出生之全記錄</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+  <div class="post__related">
+    
+    
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/2018-01-28-tgmeetups-birthday/">[TGmeetup] 從孵化到出生之全記錄</a>
+      
+      <time class="pull-right hidden-tablet">Jan 28 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/series/tgmeetup/">[TGmeetup] 就讓這專案蒐集世界各地的技術社群資訊吧！</a>
+      
+      <time class="pull-right hidden-tablet">Jan 28 &#39;18</time>
+      
+  </span>
+</li>
+
+    </ul>
+    
+</div>
+</article>
+        </div>
+        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+      (function () {
+            
+            
+            
+            if (location.hostname === "localhost" || 
+            	location.hostname === "127.0.0.1" || 
+            	location.hostname === "") {
+                return;
+			}
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'bestsamina';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                  dsq);
+      })();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+    
+    </body>
+</html>

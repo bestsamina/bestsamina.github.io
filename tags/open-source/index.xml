@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Source on Samina&#39;s 技術筆記 X 點滴紀錄</title>
+    <link>https://bestsamina.github.io/tags/open-source/</link>
+    <description>Recent content in Open Source on Samina&#39;s 技術筆記 X 點滴紀錄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samina Fu</copyright>
+    <lastBuildDate>Sun, 28 Jan 2018 14:51:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://bestsamina.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[TGmeetup] 之詳細安裝操作步驟</title>
+      <link>https://bestsamina.github.io/posts/2018-01-28-install-w-meetup-api/</link>
+      <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2018-01-28-install-w-meetup-api/</guid>
+      <description>此篇文章內容同步於 https://hackmd.io/s/ByrxYmi4G 。
+安裝流程  Step 1. 申請 meetup_api 的 auth Key  申請 OAuth2 認證 取得 Key 和 secret 在本機端啟動 SimpleHTTPServer 取得 access token 同意該 OAuth 使用者可以使用你的帳號。 轉導向到自己本機的 8000 port 並取得一次性的 access token 準備取得 refresh token 取得 refresh token 與 access token  Step 2. 下載專案並編輯 API.cfg 檔 Step 3. 進行安裝  安裝說明 請依據以下安裝說明進行，謝謝。
+Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的說明文件來進行，並提供簡單的取得方法。
+1. 申請 OAuth2 認證  到 https://secure.</description>
+    </item>
+    
+    <item>
+      <title>[TGmeetup] 就讓這專案蒐集世界各地的技術社群資訊吧！</title>
+      <link>https://bestsamina.github.io/series/tgmeetup/</link>
+      <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/series/tgmeetup/</guid>
+      <description> [TGmeetup] 就讓這專案蒐集世界各地的技術社群資訊吧！ TGmeetup 簡介 TGmeetup 是一個專門透過 API 蒐集各社群活動資訊的專案。藉此蒐集諸多社群資訊以及活動資訊。
+ 恩。標題有點聳動，野心很大XD 不過孵化專案的時候，有想到這一點，想說一個 repo 蒐集就好，沒必要分散，就出現了 country code 的資料夾了。
+ Repository: https://github.com/TGmeetup/TGmeetup
+目錄 - [TGmeetup] 之詳細安裝操作步驟 - [TGmeetup] 從孵化到出生之全記錄 </description>
+    </item>
+    
+    <item>
+      <title>[TGmeetup] 從孵化到出生之全記錄</title>
+      <link>https://bestsamina.github.io/posts/2018-01-28-tgmeetups-birthday/</link>
+      <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2018-01-28-tgmeetups-birthday/</guid>
+      <description>Repository: https://github.com/TGmeetup/TGmeetup
+前言 趁著今天公開專案日(2018/01/28)，就來紀錄一下從啟動到執行這專案的整個過程吧！算是一篇 TGmeetup 專案的雜感吧！
+ 可能會講比較多的廢話。還請包涵。
+ 目錄  發想 規劃與設計 動工前的失憶症 開工寫程式 寫文檔 其他修修補補 推廣 在這過程中自我的檢視 結論 感謝  發想 最一開始，是在 DigitalOcean Hsinchu 的某次檢討會最後討論下次的聚會日期時，當時大家想要避開大型 conference 和其他知名社群活動，所以開始蒐集各社團資訊(畢竟草創初期，有點辛苦)。不過，我那時非常納悶，因為我參與社群也是近一年的事，但台灣的技術社群其實有些成立了很久。但不曉得為何沒有整合社群活動資訊的平台或工具，所以開啟了我想要整合的想法。(不過有很棒的整合社群資訊平台： https://www.mindmeister.com/zh-hk/303031964?t=WS4msLPJIs )
+當然，如果整合的好，我相信這會是一個很不錯的工具。畢竟在技術圈，在有空的時間多參與技術社群的活動，都可以幫助自己的成長。所以在心中下定決心，我一定要把它做出來。
+規劃與設計 有了想法，就要來實踐。 (下面是我比較跳耀性的思路，如果看不懂，還請忽略了。)
+ 構思第一版：想像著有一個 Web 版，呈現這些資訊。然後想到麻煩的資料庫。不過這樣就要處理權限問題，登入問題。這樣要 open source 出來，可能會遇到障礙。 還有什麼方法呢？ 構思第二版：啊！就仿照 CDNJS 把社群資訊用 package.json 來儲存吧。然後透過活動 API 抓到的活動資訊就儲存到另外的 events.json 檔。然後 Web 也是讀這些 Json 檔，剛剛好。 構思第三版：package.json 的格式初步訂定。 events.json 格式初步訂定。這樣我是不是要用 API server 呀？這樣在 terminal 使用的時候使用找就不用自己設定自己的 config 檔了。可是這樣架構上好像會有點複雜。維護的成本也會比較高？來賭一下好了，反正會用 terminal 的人基本上對於設定這件事情並不會排斥，反正拿一次驗證，終身免役。不管了，專案最怕的是沒有人維護，最起碼要讓這專案沒人維護時，也可以自己活得好好的。就讓大家自己在安裝前到 Meetup 上拿 OAuth 的 API 吧！(只要文檔寫得好就好。) 構思第四版：構思整個程式的架構。再加上 package.</description>
+    </item>
+    
+  </channel>
+</rss>

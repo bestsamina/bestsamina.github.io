@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.44" />
+    
+    
+    <title>apt指令之套件管理整理 • Samina&#39;s 技術筆記 X 點滴紀錄</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="apt指令之套件管理整理"/>
+<meta name="twitter:description" content="Ubuntu(Debian) 系列 apt-get  apt-get update
+更新套件資訊(基本上沒事就跑一下，習慣登入就下一下指令) apt-get check
+檢查系統上的套件相依性情形 apt-get upgrade
+更新所有有新版本的套件(基本上就是 Ｗindows 常出現要更新的那個東西，系統更新是基本，所以沒事就 apt-get upgrade 一下吧！)
+PS1. 將現有的套件升級, 若遇到相依的問題(需要安裝其它新的相依套件或影響到其它套件的相依性)，該套件不會進行升級而保留原套件。
+PS2. 系統內心話：蛤～升級這套件還要安裝或移除相依套件唷！好麻煩唷！我還是留著這原套件好了！ㄎㄎ  -u 顯示完整的可更新套裝軟體列表  apt-get -s upgrade
+可以看那些套件會被更新 apt-get dist-upgrade
+強制更新所有有新版本的套件
+PS1. 如果遇到相依性問題, 需要安裝或移除相關套件, 就會試著去安裝或移除相依套件，而進行該套件升級。
+PS2. 系統內心話：哈哈～就讓我來大刀闊斧幫你升級所有套件吧！如果其他服務因為套件升級而掛掉，你家的事！ㄎㄎ apt-get install 套件名稱
+安裝套件(相依套件也會幫忙裝)
+eg. apt-get install vim  -y 若有問問題都回答Yes apt-get &ndash;reinstall install 套件名稱
+裝壞掉重裝法  apt-get remove 套件名稱
+移除套件 apt-get &ndash;purge remove 套件名稱
+連設定檔一起全部移除 apt-get clean
+清除/var/cache/apt/archives/下的所有 DEB 套件檔 (白話文：清除已經下載的套件) apt-get autoclean"/>
+
+<meta property="og:title" content="apt指令之套件管理整理" />
+<meta property="og:description" content="Ubuntu(Debian) 系列 apt-get  apt-get update
+更新套件資訊(基本上沒事就跑一下，習慣登入就下一下指令) apt-get check
+檢查系統上的套件相依性情形 apt-get upgrade
+更新所有有新版本的套件(基本上就是 Ｗindows 常出現要更新的那個東西，系統更新是基本，所以沒事就 apt-get upgrade 一下吧！)
+PS1. 將現有的套件升級, 若遇到相依的問題(需要安裝其它新的相依套件或影響到其它套件的相依性)，該套件不會進行升級而保留原套件。
+PS2. 系統內心話：蛤～升級這套件還要安裝或移除相依套件唷！好麻煩唷！我還是留著這原套件好了！ㄎㄎ  -u 顯示完整的可更新套裝軟體列表  apt-get -s upgrade
+可以看那些套件會被更新 apt-get dist-upgrade
+強制更新所有有新版本的套件
+PS1. 如果遇到相依性問題, 需要安裝或移除相關套件, 就會試著去安裝或移除相依套件，而進行該套件升級。
+PS2. 系統內心話：哈哈～就讓我來大刀闊斧幫你升級所有套件吧！如果其他服務因為套件升級而掛掉，你家的事！ㄎㄎ apt-get install 套件名稱
+安裝套件(相依套件也會幫忙裝)
+eg. apt-get install vim  -y 若有問問題都回答Yes apt-get &ndash;reinstall install 套件名稱
+裝壞掉重裝法  apt-get remove 套件名稱
+移除套件 apt-get &ndash;purge remove 套件名稱
+連設定檔一起全部移除 apt-get clean
+清除/var/cache/apt/archives/下的所有 DEB 套件檔 (白話文：清除已經下載的套件) apt-get autoclean" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bestsamina.github.io/posts/2017-03-15-apt/" />
+
+
+
+<meta property="article:published_time" content="2017-03-15T14:51:05&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-03-15T14:51:05&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+    <!-- highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://bestsamina.github.io/css/print.min.css" media="print">
+    <link rel="stylesheet" href="https://bestsamina.github.io/css/hyde-hyde.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png"></head>
+
+    <body>
+        
+<div class="sidebar text-center">
+  <div class="container ">
+    <div class="sidebar-about">
+      <div class="site__title">
+        <a href="https://bestsamina.github.io">Samina&#39;s 技術筆記 X 點滴紀錄</a>
+      </div>
+      
+      
+      
+      <p>
+        <img src="https://bestsamina.github.ioimg/sufuf3_1519028337_878.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
+      <p class="site__description">
+         記錄一些技術筆記與生活紀錄 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+				<li>
+					<a href="/serie/">
+						<span>Series</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tags/">
+						<span>Tags</span>
+					</a>
+				</li>
+				<li>
+					<a href="/page/awesome-blogs">
+						<span>Awesome-Blogs</span>
+					</a>
+				</li>
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social text-center">
+	<a href="https://twitter.com/sufuf3149"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://github.com/sufuf3"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 Samina Fu.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+<div class="content container">
+            <article>
+  <header>
+    <h1>apt指令之套件管理整理</h1>
+     
+    
+<div class="post__meta">
+    
+    <i class="fas fa-calendar-alt"></i> Mar 15, 2017
+    in
+              <a class="post__category" href="/categories/linux">LINUX</a>
+              
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="post__tag" href="/tags/linux">#linux</a>
+           
+      
+          <a class="post__tag" href="/tags/apt">#apt</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+  </header>
+  <div class="post">
+    
+
+<h2 id="ubuntu-debian-系列">Ubuntu(Debian) 系列</h2>
+
+<h3 id="apt-get">apt-get</h3>
+
+<ul>
+<li><strong>apt-get update</strong><br />
+更新套件資訊(基本上沒事就跑一下，習慣登入就下一下指令)</li>
+<li><strong>apt-get check</strong><br />
+檢查系統上的套件相依性情形</li>
+<li><strong>apt-get upgrade</strong><br />
+更新所有有新版本的套件(基本上就是 Ｗindows 常出現要更新的那個東西，系統更新是基本，所以沒事就 apt-get upgrade 一下吧！)<br />
+PS1. 將現有的套件升級, 若遇到相依的問題(需要安裝其它新的相依套件或影響到其它套件的相依性)，該套件不會進行升級而保留原套件。<br />
+PS2. 系統內心話：蛤～升級這套件還要安裝或移除相依套件唷！好麻煩唷！我還是留著這原套件好了！ㄎㄎ
+
+<ul>
+<li>-u 顯示完整的可更新套裝軟體列表</li>
+</ul></li>
+<li><strong>apt-get -s upgrade</strong><br />
+可以看那些套件會被更新</li>
+<li><strong>apt-get dist-upgrade</strong><br />
+強制更新所有有新版本的套件<br />
+PS1. 如果遇到相依性問題, 需要安裝或移除相關套件, 就會試著去安裝或移除相依套件，而進行該套件升級。<br />
+PS2. 系統內心話：哈哈～就讓我來大刀闊斧幫你升級所有套件吧！如果其他服務因為套件升級而掛掉，你家的事！ㄎㄎ</li>
+<li><strong>apt-get install 套件名稱</strong><br />
+安裝套件(相依套件也會幫忙裝)<br />
+eg. apt-get install vim
+
+<ul>
+<li>-y 若有問問題都回答Yes</li>
+<li>apt-get &ndash;reinstall install 套件名稱<br />
+裝壞掉重裝法</li>
+</ul></li>
+<li><strong>apt-get remove 套件名稱</strong><br />
+移除套件</li>
+<li><strong>apt-get &ndash;purge remove 套件名稱</strong><br />
+連設定檔一起全部移除</li>
+<li><strong>apt-get clean</strong><br />
+清除/var/cache/apt/archives/下的所有 DEB 套件檔 (白話文：清除已經下載的套件)</li>
+<li><strong>apt-get autoclean</strong><br />
+清除/var/cache/apt/archives/下已經過期的 DEB 套件檔</li>
+<li><strong>apt-get source 套件名稱</strong><br />
+下載來源碼包(參考：<a href="https://www.debian.org/doc/manuals/apt-howto/ch-sourcehandling.zh-tw.html">來源碼包操作</a>)<br />
+PS. 目前尚不需要看有興趣的來源碼或為程序除錯，先跳過。</li>
+</ul>
+
+<h3 id="apt-cache">apt-cache</h3>
+
+<p>可顯示 APT 內部資料庫裡的多種資訊(資訊由 sources.list 中不同的來源快取)</p>
+
+<ul>
+<li><strong>apt-cache search 套件名稱</strong><br />
+尋找相關的套件名稱</li>
+<li><strong>apt-cache show 套件名稱</strong><br />
+顯示套件的詳細資訊及其用途的完整描述(可用套裝軟體-&gt;列出已安裝套裝軟體)</li>
+<li><strong>apt-cache showpkg 套件名稱</strong><br />
+顯示套件的一般資訊</li>
+<li><strong>apt-cache depends 套件名稱</strong><br />
+顯示相依套件</li>
+<li><strong>apt-cache stats</strong><br />
+顯示統計資訊</li>
+<li><strong>apt-cache dump</strong><br />
+顯示 cache 中每個套件的簡短資訊</li>
+<li><strong>apt-cache pkgnames 套件的prefix</strong><br />
+Prints the name of each package in the system.</li>
+</ul>
+
+<p>&hellip;(還有其他的指令，要用再翻man)</p>
+
+<h3 id="apt-config">apt-config</h3>
+
+<ul>
+<li><strong>apt-config dump</strong><br />
+Show the configuration</li>
+</ul>
+
+<h4 id="不是套件管理-但是是好玩的東西">不是套件管理，但是是好玩的東西</h4>
+
+<ul>
+<li><p>apt-get moo<br />
+<img src="https://i.imgur.com/iR60ir7.png" alt="" /></p></li>
+
+<li><p>aptitude -vvvvv moo<br />
+<img src="https://i.imgur.com/UVp33sD.png" alt="" /></p></li>
+
+<li><p>aptitude -vvvvvv moo<br />
+<code>What is it? It's an elephant being eaten by a snake, of course.</code></p></li>
+</ul>
+
+<p>PS. 有看到 <a href="https://debian-handbook.info/browse/zh-TW/stable/sect.apt-cache.html">axi-cache</a> 好像會比較快。有時間再來研究。</p>
+
+<hr />
+
+<p>小小謎之聲：<br />
+身為Ubuntu的使用者，其實一直非常汗顏都沒有好好學它。<br />
+因為工作才真的開始真正接觸Linux(大學有學，但當時比較喜歡圖形化介面，就&hellip;)，因為自己逼迫自己的關係，我總是期望自己能以最快的速度達到應該具備的水準。<br />
+至於之後如果有遇到任何問題，再去查找資料。<br />
+導致其實基本知識東一塊西一塊。真的慘呀！(學習曲線，其實應該是前面要好好花時間投資，後面才能發揮效益。)<br />
+不過一切都還來得及，只要及早治療(是說，也不早了QQ)<br />
+反正，自己的筆記自己做，自己看</p>
+
+<hr />
+
+<p>Ref:<br />
+1. <a href="https://linux.die.net/man/8/apt-get">https://linux.die.net/man/8/apt-get</a><br />
+2. <a href="https://blog.longwin.com.tw/2005/05/use_apt/">https://blog.longwin.com.tw/2005/05/use_apt/</a><br />
+3. <a href="https://blog.longwin.com.tw/2008/03/debian_ubuntu_apt_dist_upgrade_difference_2008/">https://blog.longwin.com.tw/2008/03/debian_ubuntu_apt_dist_upgrade_difference_2008/</a><br />
+4. <a href="https://blog.longwin.com.tw/2012/05/apt-clean-autoclean-diff-2012/">https://blog.longwin.com.tw/2012/05/apt-clean-autoclean-diff-2012/</a><br />
+5. <a href="https://www.debian.org/doc/manuals/apt-howto/">https://www.debian.org/doc/manuals/apt-howto/</a> 6. <a href="https://linux.die.net/man/8/apt-cache">https://linux.die.net/man/8/apt-cache</a></p>
+
+  </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            <a href="/posts/2017-06-22-ml-supervised-and-unsupervised-learning/">                
+                <span class="next__heading">NEXT</span>
+                <span>[機器學習] Supervised and Unsupervised Learning (監督學習與非監督學習) -Week 1-1</span>
+            </a>
+            <i class="fas fa-chevron-right"></i>
+        </li>
+        <li class="post__nav--previous">
+            <i class="fas fa-chevron-left"></i>
+            <a href="/posts/2017-02-17-stacer/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <span class="previous__title">Stacer - 系統優化器</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+  <div class="post__related">
+    
+    
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/2017-02-17-stacer/">Stacer - 系統優化器</a>
+      
+      <time class="pull-right hidden-tablet">Feb 17 &#39;17</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/2017-02-01-tmux/">終端機的超狂工具-TMUX 與指令整理</a>
+      
+      <time class="pull-right hidden-tablet">Feb 01 &#39;17</time>
+      
+  </span>
+</li>
+
+    </ul>
+    
+</div>
+</article>
+        </div>
+        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+      (function () {
+            
+            
+            
+            if (location.hostname === "localhost" || 
+            	location.hostname === "127.0.0.1" || 
+            	location.hostname === "") {
+                return;
+			}
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'bestsamina';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                  dsq);
+      })();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+    
+    </body>
+</html>

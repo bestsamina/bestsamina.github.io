@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Samina&#39;s 技術筆記 X 點滴紀錄</title>
+    <link>https://bestsamina.github.io/tags/machine-learning/</link>
+    <description>Recent content in Machine Learning on Samina&#39;s 技術筆記 X 點滴紀錄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samina Fu</copyright>
+    <lastBuildDate>Thu, 22 Jun 2017 14:51:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://bestsamina.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[機器學習] Supervised and Unsupervised Learning (監督學習與非監督學習) -Week 1-1</title>
+      <link>https://bestsamina.github.io/posts/2017-06-22-ml-supervised-and-unsupervised-learning/</link>
+      <pubDate>Thu, 22 Jun 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-06-22-ml-supervised-and-unsupervised-learning/</guid>
+      <description>第一週 - From Stanford&amp;rsquo;s coursera
+ Machine Learning  Supervised Learning  Regression Classification  Unsupervised Learning  Clustering Cocktail Party Algorithm    Machine Learning (機器學習)  定義：
+ Arthur Samuel: the field of study that gives computers the ability to learn without being explicitly programmed. Tom Mitchell: A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2018-02-08-cord-init/</loc>
+    <lastmod>2018-02-08T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/series/cord/</loc>
+    <lastmod>2018-02-08T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2018-01-28-install-w-meetup-api/</loc>
+    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/series/tgmeetup/</loc>
+    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2018-01-28-tgmeetups-birthday/</loc>
+    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2018-01-14-container-linux-namespace/</loc>
+    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2018-01-03-my-container-setup-env/</loc>
+    <lastmod>2018-01-03T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/series/my-own-container/</loc>
+    <lastmod>2018-01-03T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2017-11-27-npm/</loc>
+    <lastmod>2017-11-27T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2017-07-02-scrum-framework/</loc>
+    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part2/</loc>
+    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part3/</loc>
+    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part4/</loc>
+    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part5/</loc>
+    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2017-07-01-scrum-hsinchu-part1/</loc>
+    <lastmod>2017-07-01T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2017-06-22-ml-supervised-and-unsupervised-learning/</loc>
+    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2017-03-15-apt/</loc>
+    <lastmod>2017-03-15T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2017-02-17-stacer/</loc>
+    <lastmod>2017-02-17T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2017-02-01-tmux/</loc>
+    <lastmod>2017-02-01T14:51:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/page/awesome-blogs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/agile/</loc>
+    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/apt/</loc>
+    <lastmod>2017-03-15T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/container/</loc>
+    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/cord/</loc>
+    <lastmod>2018-02-08T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/coursera/</loc>
+    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/docker/</loc>
+    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/github/</loc>
+    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/go/</loc>
+    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/javascript/</loc>
+    <lastmod>2017-11-27T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/linux/</loc>
+    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/machine-learning/</loc>
+    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/meetup/</loc>
+    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/nodejs/</loc>
+    <lastmod>2017-11-27T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/npm/</loc>
+    <lastmod>2017-11-27T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/open-source/</loc>
+    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/opencord/</loc>
+    <lastmod>2018-02-08T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/page/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/</loc>
+    <lastmod>2018-02-08T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/</loc>
+    <lastmod>2018-02-08T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/scrum/</loc>
+    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/series/</loc>
+    <lastmod>2018-02-08T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/series/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/series-desc/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/sracer/</loc>
+    <lastmod>2017-02-17T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/supervised/</loc>
+    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/</loc>
+    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/tgmeetup/</loc>
+    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/tmux/</loc>
+    <lastmod>2017-02-01T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/unsupervised/</loc>
+    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

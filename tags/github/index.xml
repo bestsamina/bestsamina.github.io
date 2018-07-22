@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on Samina&#39;s 技術筆記 X 點滴紀錄</title>
+    <link>https://bestsamina.github.io/tags/github/</link>
+    <description>Recent content in Github on Samina&#39;s 技術筆記 X 點滴紀錄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samina Fu</copyright>
+    <lastBuildDate>Sun, 28 Jan 2018 14:51:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://bestsamina.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[TGmeetup] 就讓這專案蒐集世界各地的技術社群資訊吧！</title>
+      <link>https://bestsamina.github.io/series/tgmeetup/</link>
+      <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/series/tgmeetup/</guid>
+      <description> [TGmeetup] 就讓這專案蒐集世界各地的技術社群資訊吧！ TGmeetup 簡介 TGmeetup 是一個專門透過 API 蒐集各社群活動資訊的專案。藉此蒐集諸多社群資訊以及活動資訊。
+ 恩。標題有點聳動，野心很大XD 不過孵化專案的時候，有想到這一點，想說一個 repo 蒐集就好，沒必要分散，就出現了 country code 的資料夾了。
+ Repository: https://github.com/TGmeetup/TGmeetup
+目錄 - [TGmeetup] 之詳細安裝操作步驟 - [TGmeetup] 從孵化到出生之全記錄 </description>
+    </item>
+    
+  </channel>
+</rss>
