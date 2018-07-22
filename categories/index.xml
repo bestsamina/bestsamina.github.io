@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Samina&#39;s 技術筆記 X 點滴紀錄</title>
+    <link>https://bestsamina.github.io/categories/</link>
+    <description>Recent content in Categories on Samina&#39;s 技術筆記 X 點滴紀錄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samina Fu</copyright>
+    <lastBuildDate>Sun, 02 Jul 2017 14:51:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://bestsamina.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Agile</title>
+      <link>https://bestsamina.github.io/categories/agile/</link>
+      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/agile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Container</title>
+      <link>https://bestsamina.github.io/categories/container/</link>
+      <pubDate>Sun, 14 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cord</title>
+      <link>https://bestsamina.github.io/categories/cord/</link>
+      <pubDate>Thu, 08 Feb 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/cord/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://bestsamina.github.io/categories/javascript/</link>
+      <pubDate>Mon, 27 Nov 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://bestsamina.github.io/categories/linux/</link>
+      <pubDate>Wed, 15 Mar 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://bestsamina.github.io/categories/machine-learning/</link>
+      <pubDate>Thu, 22 Jun 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tgmeetup</title>
+      <link>https://bestsamina.github.io/categories/tgmeetup/</link>
+      <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/tgmeetup/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

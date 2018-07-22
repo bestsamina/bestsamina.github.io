@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Samina&#39;s 技術筆記 X 點滴紀錄</title>
+    <link>https://bestsamina.github.io/categories/linux/</link>
+    <description>Recent content in Linux on Samina&#39;s 技術筆記 X 點滴紀錄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samina Fu</copyright>
+    <lastBuildDate>Wed, 15 Mar 2017 14:51:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://bestsamina.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>apt指令之套件管理整理</title>
+      <link>https://bestsamina.github.io/posts/2017-03-15-apt/</link>
+      <pubDate>Wed, 15 Mar 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-03-15-apt/</guid>
+      <description>Ubuntu(Debian) 系列 apt-get  apt-get update
+更新套件資訊(基本上沒事就跑一下，習慣登入就下一下指令) apt-get check
+檢查系統上的套件相依性情形 apt-get upgrade
+更新所有有新版本的套件(基本上就是 Ｗindows 常出現要更新的那個東西，系統更新是基本，所以沒事就 apt-get upgrade 一下吧！)
+PS1. 將現有的套件升級, 若遇到相依的問題(需要安裝其它新的相依套件或影響到其它套件的相依性)，該套件不會進行升級而保留原套件。
+PS2. 系統內心話：蛤～升級這套件還要安裝或移除相依套件唷！好麻煩唷！我還是留著這原套件好了！ㄎㄎ  -u 顯示完整的可更新套裝軟體列表  apt-get -s upgrade
+可以看那些套件會被更新 apt-get dist-upgrade
+強制更新所有有新版本的套件
+PS1. 如果遇到相依性問題, 需要安裝或移除相關套件, 就會試著去安裝或移除相依套件，而進行該套件升級。
+PS2. 系統內心話：哈哈～就讓我來大刀闊斧幫你升級所有套件吧！如果其他服務因為套件升級而掛掉，你家的事！ㄎㄎ apt-get install 套件名稱
+安裝套件(相依套件也會幫忙裝)
+eg. apt-get install vim  -y 若有問問題都回答Yes apt-get &amp;ndash;reinstall install 套件名稱
+裝壞掉重裝法  apt-get remove 套件名稱
+移除套件 apt-get &amp;ndash;purge remove 套件名稱
+連設定檔一起全部移除 apt-get clean
+清除/var/cache/apt/archives/下的所有 DEB 套件檔 (白話文：清除已經下載的套件) apt-get autoclean</description>
+    </item>
+    
+    <item>
+      <title>Stacer - 系統優化器</title>
+      <link>https://bestsamina.github.io/posts/2017-02-17-stacer/</link>
+      <pubDate>Fri, 17 Feb 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-02-17-stacer/</guid>
+      <description>Stacer - 系統優化器 這套工具類似 Windows 上面安裝 CCleaner 加上系統資源監控！
+來源 https://github.com/oguzhaninan/Stacer
+安裝環境 Ubuntu base 桌面版本
+介紹 在GitHub上面的介紹就是&amp;rdquo;Ubuntu System Optimizer&amp;rdquo;！
+安裝  到GitHub頁面上點選releases
+ 依據作業系統的位元數，選擇要下載的deb包
+ 安裝
+  畫面 整個就是超級漂亮的！而且是用JavaScript寫的，超猛！
+雖然Linux Mint就有系統資源監控了
+不過既然安裝這麼漂亮的東西，當然是要來支持一下了！
+Stacer另外還包含的功能：  System Cleaner：可以清除Apt cache, Crash Reports, System Logs, App Cache，不過如果有些服務紀錄是需要留的，還是要注意一下，別全選了~ Startup Apps：這個我的電腦裡沒有出現~ Services：不用在sudo service XXX stop，直接滑鼠點一下就好哩！ Uninstaller：可移除安裝的套件 介紹完畢~  之後要很潮的打開它:)
+reference: https://itsfoss.com/optimize-ubuntu-stacer/</description>
+    </item>
+    
+    <item>
+      <title>終端機的超狂工具-TMUX 與指令整理</title>
+      <link>https://bestsamina.github.io/posts/2017-02-01-tmux/</link>
+      <pubDate>Wed, 01 Feb 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-02-01-tmux/</guid>
+      <description> Tmux是個終端機工具(Terminal multiplexer)，可以管理多個session，window和panel。
+如何安裝 Debian / Ubuntu：apt-get install tmux
+關於session的指令  tmux：開啟一個新的client(包含一個session，window，panel) tmux ls：列出有那些sessions tmux a：重回上次最新的client tmux a -t [number]：重回該number的session  關於window的指令 預設的操作要加上 Ctrl-b 功能鍵
+ Ctrl-b + c：建立新的window (create) Ctrl-b + number：改變window Ctrl-b + d：關閉目前的 client (detach) Ctrl-b + l：與先前選擇的window間切換 Ctrl-b + n：移到下個window (next) Ctrl-b + p：移到上個window (previous) Ctrl-b + &amp;amp;：刪除目前的window Ctrl-b + ,：重新命名目前的window，修改後按&amp;rdquo;enter“ Ctrl-b + ?：列出所有快捷鍵說明 Ctrl-b + w：列出目前 clinet 的window，用數字鍵切換 (window)  關於當前panel的指令  Ctrl-b + %：垂直分割window (分左圈圈和右圈圈) Ctrl-b + &amp;ldquo;：水平分割window Ctrl-b + ↑↓←→：使用上下左右鍵改變panel所在的當前panel Ctrl-b + o：移往下一個區塊； Ctrl-b + q：顯示區塊的數字代號 Ctrl-b + q + number：當數字顯示時使用數字鍵移往該panel Ctrl-b + [：讀歷史訊息，按 q 離開 Ctrl-b + {：將目前的區塊移往左邊 Ctrl-b + }：將目前的區塊移往右邊  </description>
+    </item>
+    
+  </channel>
+</rss>

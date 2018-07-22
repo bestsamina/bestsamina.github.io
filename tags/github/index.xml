@@ -14,10 +14,10 @@
     
     <item>
       <title>[TGmeetup] 就讓這專案蒐集世界各地的技術社群資訊吧！</title>
-      <link>https://bestsamina.github.io/series/tgmeetup/</link>
+      <link>https://bestsamina.github.io/2018/01/28/tgmeetup-%E5%B0%B1%E8%AE%93%E9%80%99%E5%B0%88%E6%A1%88%E8%92%90%E9%9B%86%E4%B8%96%E7%95%8C%E5%90%84%E5%9C%B0%E7%9A%84%E6%8A%80%E8%A1%93%E7%A4%BE%E7%BE%A4%E8%B3%87%E8%A8%8A%E5%90%A7/</link>
       <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/series/tgmeetup/</guid>
+      <guid>https://bestsamina.github.io/2018/01/28/tgmeetup-%E5%B0%B1%E8%AE%93%E9%80%99%E5%B0%88%E6%A1%88%E8%92%90%E9%9B%86%E4%B8%96%E7%95%8C%E5%90%84%E5%9C%B0%E7%9A%84%E6%8A%80%E8%A1%93%E7%A4%BE%E7%BE%A4%E8%B3%87%E8%A8%8A%E5%90%A7/</guid>
       <description> [TGmeetup] 就讓這專案蒐集世界各地的技術社群資訊吧！ TGmeetup 簡介 TGmeetup 是一個專門透過 API 蒐集各社群活動資訊的專案。藉此蒐集諸多社群資訊以及活動資訊。
  恩。標題有點聳動，野心很大XD 不過孵化專案的時候，有想到這一點，想說一個 repo 蒐集就好，沒必要分散，就出現了 country code 的資料夾了。
  Repository: https://github.com/TGmeetup/TGmeetup

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agile on Samina&#39;s 技術筆記 X 點滴紀錄</title>
+    <link>https://bestsamina.github.io/categories/agile/</link>
+    <description>Recent content in Agile on Samina&#39;s 技術筆記 X 點滴紀錄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samina Fu</copyright>
+    <lastBuildDate>Sun, 02 Jul 2017 14:51:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://bestsamina.github.io/categories/agile/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scrum framework</title>
+      <link>https://bestsamina.github.io/posts/2017-07-02-scrum-framework/</link>
+      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-07-02-scrum-framework/</guid>
+      <description>一個 Sprint 為期 1~4 周。
+1. 角色 可一人分飾多角，每個腳色都該做好自己的職責。
+* Product Owner (PO):  決定整個產品，設定產品待辦項目的優先順序。  * Scrum Master: 教練的角色，可及時地為團隊成員提供幫助。
+* Team:  Team = PO + Scrum Master + Development Team 人數：7 +- 2 Development Team = 負責開發產品  2. Items * Product Backlog (產品待辦清單): 裡面是每個 Item ， 放的東西有 User Story, Bug, Tech Debt (技術債)，優先權高的、明確的工作項目排上面，越先做。 不明確的，排後面，之後開遠光燈會議在調整。
+* Sprint Backlog (衝刺待辦清單): 從 Product Backlog 中優先權最高的幾個拉到這個清單裡，轉換成 task 就開始做。
+* Potentially Shippable Product (潛在可交付產品增量) 開發團隊的產出，如果 PO 說先不要上線，就是之後 PO 可以和客戶談判的籌碼。</description>
+    </item>
+    
+    <item>
+      <title>Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 2</title>
+      <link>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part2/</link>
+      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part2/</guid>
+      <description>講師: David Ko
+Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 2 - Scrum 基礎觀念介紹 1. 甚麼是 Scrum 🏉 A. Scrum 是一個開發複雜系統的框架(Scrum framework) B. Scrum 是&amp;hellip;  沒有 engineering practices
+ 像是 TDD, Unit testing, 搭檔編程  輕量級的用法  C. Scrum 方法的特性  頻繁交付高價值
+ 小而美
+ 小團隊 小迭代 小需求  團隊特性
+ 自主決定 責任感 透明度    Scrum 專案開始進行時，要趕快處理的兩個問題：
+1. 經常檢查你的方向是否正確，你做的東西是否是客戶要的。
+2. 是否有任何方法，可以改善目前做法，讓你更快更好。 - Jeff Sutherland</description>
+    </item>
+    
+    <item>
+      <title>Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 3</title>
+      <link>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part3/</link>
+      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part3/</guid>
+      <description>講師: David Ko
+Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 3 - 如何組織需求(Scrum 需求清單) 1. 產品需求清單 (Product Backlog) 1-1. 甚麼是產品需求清單?  所要要做的事情的清單 做甚麼事的清單 根據商業價值來排序  1-2. 產品需求清單項目的種類 2. 使用者故事 (User Story) 2-1. 甚麼是使用者故事  軟體的需求 用商業語言來描述 每個故事不會太大
+ 寫在便利貼上 通常是由使用者寫   2-2. 使用者故事樣板 As a [role], I want to [fuction] because of [business value].
+eg. As a bookstore customer, I can search for a book by the title, so that I can easily find all books with that title.</description>
+    </item>
+    
+    <item>
+      <title>Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 4</title>
+      <link>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part4/</link>
+      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part4/</guid>
+      <description>講師: David Ko
+Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 4. Scrum 會議 1. 敏捷評估  小小迷之聲1:
+就是評估這個專案可以多久完成啦！以人/天為單位。 是說，比起經驗法則，這個有個依據，雖然很多還是自己定義的 XDD。但忘了問問題的部分是，那個人/天的人的能力標準是以哪個為單位基準? junior 感覺不是，但非常 senior 的工程師感覺會做很快，中間感覺合適。但又感覺應該要依據即將參與這專案的工程師能力素質的比例，來做衡量。比方 junior 與 senior 比例約 3:2 ，如果原先是以介在 senior 和 junior 中間的能力來做估算就還要程以相對的比例，會比較好吧? 不過只是估算啦！ 拍腦袋 與 敏捷評估 之間是個誤差值多和少的概念。
+小小迷之聲2:
+評估這件事真的不能一個人決定呀！經過這活動下來，整個就覺得傳統方式，如果是非工程師估算時間，會因為對方不了解我，然後就壓時程，根本就是惡性循環。然後做得半死的是勞累的員工。整個超不 OK 的！而經過討論評估的時間真的比較 OK，但如果討論時，遇到那種 甚麼，你這竟然覺得要花5天！ 的那種人，感覺討論氣氛就不會太好~ 下面回到正題~
+ 1-0. 評估原則  小筆大容易 相對比絕對容易 找基準(中間值)，排相對大小，算時間  1-1. 發布會議解析  Why: 想對發佈的時程和內容有個概略的估算 Who: PO, Scrum Master, Team When: 產品開發初期 I/O: input - 目標、產品需求清單；output - 發布時間、發布內容 Step 1.</description>
+    </item>
+    
+    <item>
+      <title>Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 5</title>
+      <link>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part5/</link>
+      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-07-02-scrum-hsinchu-part5/</guid>
+      <description> 講師: David Ko
+Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 5. Scrum 開發方法總結  敏捷是一種文化，並不是流程 Scrum 是管理的框架 思維：
+ 是照妖鏡 - 可及早看到問題點 像下棋 - 有規則、需教練指導    小小迷之聲: 也像各種運動比賽
+    適合的情況 不適合的狀況     小團隊，沒有正式的軟體開發方法 PO 主導性強 承認遇到危機，希望可以改善 太小或太短的專案 維護的團隊 不想變革的組織    </description>
+    </item>
+    
+    <item>
+      <title>Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 1</title>
+      <link>https://bestsamina.github.io/posts/2017-07-01-scrum-hsinchu-part1/</link>
+      <pubDate>Sat, 01 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-07-01-scrum-hsinchu-part1/</guid>
+      <description>講師: David Ko
+Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 1 - 敏捷觀念簡介 0. Why post it 為什麼用便利貼
+- 所有東西都可以看的到
+- 資訊視覺化
+- 彈性
+- 說出更多東西
+- grouping 大家來
+- 共識
+- voting
+1. 敏捷歷史 年份
+方法
+1950
+PDCA(Plan-Do-Check-Act): 針對品質工作按規劃、執行、查核與行動來進行活動，
+以確保可靠度目標之達成，並進而促使品質持續改善
+1970
+瀑布式開發
+1986
+Spiral model(螺旋模型)
+1995
+Scrum 用管理角度看
+1997
+FDD(Feature Driven Development)
+1999
+Extreme Programming
+2001
+敏捷宣言
+2003
+Lean Software Development
+2. 敏捷宣言  個人與互動 重於 流程與工具 可用的軟體 重於 詳盡的文件 與客戶合作 重於 合約協商 回應變化 重於 遵循計畫   兩邊都很重要，但左邊非常重要，敏捷是重計畫的方法</description>
+    </item>
+    
+  </channel>
+</rss>

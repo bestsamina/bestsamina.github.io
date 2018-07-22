@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cord on Samina&#39;s 技術筆記 X 點滴紀錄</title>
+    <link>https://bestsamina.github.io/categories/cord/</link>
+    <description>Recent content in Cord on Samina&#39;s 技術筆記 X 點滴紀錄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samina Fu</copyright>
+    <lastBuildDate>Thu, 08 Feb 2018 14:51:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://bestsamina.github.io/categories/cord/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[CORD] 初步認識 CORD 是什麼之筆記</title>
+      <link>https://bestsamina.github.io/posts/2018-02-08-cord-init/</link>
+      <pubDate>Thu, 08 Feb 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2018-02-08-cord-init/</guid>
+      <description>本篇為參考 CORD 之「Central Office Re-architected as a Datacenter, IEEE Communications, October 2016」與 https://wiki.opencord.org/pages/viewpage.action?pageId=1278047 所做的整理筆記。
+ 簡介 CORD 全名為 『Central Office Re-architected as a Datacenter』，是由 ONLAB(ONF) 所提出的一個新的電信網路機房的概念設計。這設計將會帶來經濟效益與敏捷性。透過開放架構、商業化硬體、open source 軟體，拆解原本傳統且封閉的的電信服務商的網路架構，讓新的技術在這框架中實現新的電信資料中心，並且價低採購與維護成本。
+動機 為了達到 bandwidth 的需求增加以及不斷增加的服務期望，需要引進新的 Data Center 架構。然而每一家的 Telco Central Office (CO) 架構都不一樣，而這反倒也造成 CAPEX 和 OPEX 的負擔。
+因此提出 CORD 架構為新一代的 Telco Central Office ，結合三大技術：SDN(Software-Defined Networking), NFV(Network Functions Virtualization), elastic cloud services。
+並且都運行在白牌的硬體上。打造好的成本效益與敏捷性的網路。
+註：CAPEX: Capital Expenditure(資本性支出), OPEX: Operating Expenditure(運營性支出)。
+介紹 CORD 包含三大趨勢技術：</description>
+    </item>
+    
+    <item>
+      <title>[CORD] 學習筆記</title>
+      <link>https://bestsamina.github.io/2018/02/08/cord-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</link>
+      <pubDate>Thu, 08 Feb 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/2018/02/08/cord-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</guid>
+      <description>這邊是 CORD 的學習筆記
+ [CORD] 初步認識 CORD 是什麼之筆記  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -29,10 +29,10 @@
     
     <item>
       <title>[CORD] 學習筆記</title>
-      <link>https://bestsamina.github.io/series/cord/</link>
+      <link>https://bestsamina.github.io/2018/02/08/cord-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</link>
       <pubDate>Thu, 08 Feb 2018 14:51:05 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/series/cord/</guid>
+      <guid>https://bestsamina.github.io/2018/02/08/cord-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</guid>
       <description>這邊是 CORD 的學習筆記
  [CORD] 初步認識 CORD 是什麼之筆記  </description>
     </item>
@@ -51,10 +51,10 @@ Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的�
     
     <item>
       <title>[TGmeetup] 就讓這專案蒐集世界各地的技術社群資訊吧！</title>
-      <link>https://bestsamina.github.io/series/tgmeetup/</link>
+      <link>https://bestsamina.github.io/2018/01/28/tgmeetup-%E5%B0%B1%E8%AE%93%E9%80%99%E5%B0%88%E6%A1%88%E8%92%90%E9%9B%86%E4%B8%96%E7%95%8C%E5%90%84%E5%9C%B0%E7%9A%84%E6%8A%80%E8%A1%93%E7%A4%BE%E7%BE%A4%E8%B3%87%E8%A8%8A%E5%90%A7/</link>
       <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/series/tgmeetup/</guid>
+      <guid>https://bestsamina.github.io/2018/01/28/tgmeetup-%E5%B0%B1%E8%AE%93%E9%80%99%E5%B0%88%E6%A1%88%E8%92%90%E9%9B%86%E4%B8%96%E7%95%8C%E5%90%84%E5%9C%B0%E7%9A%84%E6%8A%80%E8%A1%93%E7%A4%BE%E7%BE%A4%E8%B3%87%E8%A8%8A%E5%90%A7/</guid>
       <description> [TGmeetup] 就讓這專案蒐集世界各地的技術社群資訊吧！ TGmeetup 簡介 TGmeetup 是一個專門透過 API 蒐集各社群活動資訊的專案。藉此蒐集諸多社群資訊以及活動資訊。
  恩。標題有點聳動，野心很大XD 不過孵化專案的時候，有想到這一點，想說一個 repo 蒐集就好，沒必要分散，就出現了 country code 的資料夾了。
  Repository: https://github.com/TGmeetup/TGmeetup
@@ -109,10 +109,10 @@ Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的�
     
     <item>
       <title>[Build container] 自己的 Container 自己寫</title>
-      <link>https://bestsamina.github.io/series/my-own-container/</link>
+      <link>https://bestsamina.github.io/2018/01/03/build-container-%E8%87%AA%E5%B7%B1%E7%9A%84-container-%E8%87%AA%E5%B7%B1%E5%AF%AB/</link>
       <pubDate>Wed, 03 Jan 2018 14:51:05 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/series/my-own-container/</guid>
+      <guid>https://bestsamina.github.io/2018/01/03/build-container-%E8%87%AA%E5%B7%B1%E7%9A%84-container-%E8%87%AA%E5%B7%B1%E5%AF%AB/</guid>
       <description>手工打造自己的 - mini-container 前言 有在使用 Docker 的人一定對這 Container 的工具不陌生，但身為一個資工人的自己，我開始問自己，那這工具怎麼實作出來的？結果，我完全沒有任何頭緒。看著 docker 或 moby 的程式碼，我完全不知的怎麼下手。 有的只有承認自己是多麼的弱。再想想，我光是期末專題的純手工打造 Mini-filesystem 就已經花了好幾天在看 linux 的 ext2 原始碼。還研究了很久。雖然最後終於從如何切 block 到 inode 到 VFS 到 CLI 一連串的有點貫通後，和隊友一同開發出一個 ext2 的變形 FS 。為了能夠好好的掌握這技術背後是怎麼打造的，這系列，將是我研讀 自己動手寫 Docker 這本書，再加上自己實作與理解的部分，用自己的想法所寫下的紀錄。也希望透過這系列的紀錄，能夠讓自己將這技術儲存在自己的腦袋記憶中。
 目錄 1. Docker 簡介與 Go 環境安裝 2. Container with Linux Namespace 3. [(待) 關於 Linux Namespace]() 4. [(待) 關於 Linux Cgroups]() (待續)</description>
     </item>
