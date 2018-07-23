@@ -22,7 +22,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-04-03T14:51:05&#43;08:00"/>
+<meta property="og:updated_time" content="2018-06-27T14:51:05&#43;08:00"/>
 
 
 
@@ -135,6 +135,23 @@
 <div class="content container">
             <div class="post-list">
     
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/2018-06-27-dpdk-ovs-vagrant/">在 vagrant(Ubuntu 16.04) 中安裝 DPDK 與 OVS 紀錄筆記</a>
+        </span>
+        <span class="item__date">
+          Jun 27, 27067
+        </span>
+        本篇使用的 Vagrantfile 可參閱 https://github.com/sufuf3/network-study-notes/blob/master/DPDK_OVS/Vagrantfile
+ 前言 這是一個 Open vSwitch with DPDK 的安裝紀錄，OVS 可以在 userspace 完全使用 DPDK library 。
+環境需求  如果是使用 Linux ，在 Linux 中 kernel 版本要大於 v3.0.0 版。 DPDK v17.11.2 如果會使用到物理的 NIC 網卡，那就要使用有支援 DPDK 的網卡。可以參考 http://core.dpdk.org/supported/。(網卡查詢：`lspci | grep -i net`)   參考來源：http://docs.openvswitch.org/en/latest/intro/install/dpdk/
+前置作業 參考 http://doc.dpdk.org/guides/linux_gsg/sys_reqs.html 在系統需求上，有三個在編譯 DPDK 的前置作業。
+1. 在 x86 上 BIOS 設定的先決條件 不過大多數的平台，不需要特殊的 BIOS 設定，所以這邊跳過。
+2. 需要的工具以及 Libraries  GNU make coreutils: cmp, sed, grep, arch, etc.
+        <div class="read-more-link">
+            <a href="/posts/2018-06-27-dpdk-ovs-vagrant/">Read More…</a>
+        </div>
+        </div>
       <div class="post-list__item">
         <span class="item__title--big">
           <a href="/posts/2018-02-08-cord-init/">[CORD] 初步認識 CORD 是什麼之筆記</a>
