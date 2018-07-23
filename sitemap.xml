@@ -98,21 +98,17 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/page/awesome-blogs/</loc>
-  </url>
-  
-  <url>
     <loc>https://bestsamina.github.io/about/</loc>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/agile/</loc>
+    <loc>https://bestsamina.github.io/categories/agile/</loc>
     <lastmod>2017-07-02T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/categories/agile/</loc>
+    <loc>https://bestsamina.github.io/tags/agile/</loc>
     <lastmod>2017-07-02T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -124,14 +120,12 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/categories/</loc>
-    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
-    <priority>0</priority>
+    <loc>https://bestsamina.github.io/page/awesome-blogs/</loc>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/container/</loc>
-    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
+    <loc>https://bestsamina.github.io/categories/</loc>
+    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -142,13 +136,19 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/cord/</loc>
-    <lastmod>2018-02-08T14:51:05+08:00</lastmod>
+    <loc>https://bestsamina.github.io/tags/container/</loc>
+    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bestsamina.github.io/categories/cord/</loc>
+    <lastmod>2018-02-08T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/cord/</loc>
     <lastmod>2018-02-08T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -178,20 +178,14 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/javascript/</loc>
-    <lastmod>2017-11-27T14:51:05+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bestsamina.github.io/categories/javascript/</loc>
     <lastmod>2017-11-27T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/linux/</loc>
-    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
+    <loc>https://bestsamina.github.io/tags/javascript/</loc>
+    <lastmod>2017-11-27T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -202,13 +196,19 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/machine-learning/</loc>
-    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+    <loc>https://bestsamina.github.io/tags/linux/</loc>
+    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bestsamina.github.io/categories/machine-learning/</loc>
+    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/machine-learning/</loc>
     <lastmod>2017-06-22T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -291,13 +291,13 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/tgmeetup/</loc>
+    <loc>https://bestsamina.github.io/categories/tgmeetup/</loc>
     <lastmod>2018-01-28T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/categories/tgmeetup/</loc>
+    <loc>https://bestsamina.github.io/tags/tgmeetup/</loc>
     <lastmod>2018-01-28T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
