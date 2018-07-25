@@ -140,8 +140,7 @@
           <a href="/posts/2018-06-27-dpdk-ovs-vagrant/">在 vagrant(Ubuntu 16.04) 中安裝 DPDK 與 OVS 紀錄筆記</a>
         </span>
         <span class="item__date">
-          Jun 27, 27067
-        </span>
+          Jun 27, 2018</span>
         本篇使用的 Vagrantfile 可參閱 https://github.com/sufuf3/network-study-notes/blob/master/DPDK_OVS/Vagrantfile
  前言 這是一個 Open vSwitch with DPDK 的安裝紀錄，OVS 可以在 userspace 完全使用 DPDK library 。
 環境需求  如果是使用 Linux ，在 Linux 中 kernel 版本要大於 v3.0.0 版。 DPDK v17.11.2 如果會使用到物理的 NIC 網卡，那就要使用有支援 DPDK 的網卡。可以參考 http://core.dpdk.org/supported/。(網卡查詢：`lspci | grep -i net`)   參考來源：http://docs.openvswitch.org/en/latest/intro/install/dpdk/
@@ -157,8 +156,7 @@
           <a href="/posts/2018-02-08-cord-init/">[CORD] 初步認識 CORD 是什麼之筆記</a>
         </span>
         <span class="item__date">
-          Feb 8, 8027
-        </span>
+          Feb 08, 2018</span>
         本篇為參考 CORD 之「Central Office Re-architected as a Datacenter, IEEE Communications, October 2016」與 https://wiki.opencord.org/pages/viewpage.action?pageId=1278047 所做的整理筆記。
  簡介 CORD 全名為 『Central Office Re-architected as a Datacenter』，是由 ONLAB(ONF) 所提出的一個新的電信網路機房的概念設計。這設計將會帶來經濟效益與敏捷性。透過開放架構、商業化硬體、open source 軟體，拆解原本傳統且封閉的的電信服務商的網路架構，讓新的技術在這框架中實現新的電信資料中心，並且價低採購與維護成本。
 動機 為了達到 bandwidth 的需求增加以及不斷增加的服務期望，需要引進新的 Data Center 架構。然而每一家的 Telco Central Office (CO) 架構都不一樣，而這反倒也造成 CAPEX 和 OPEX 的負擔。
@@ -175,8 +173,7 @@
           <a href="/posts/2018-01-28-install-w-meetup-api/">[TGmeetup] 之詳細安裝操作步驟</a>
         </span>
         <span class="item__date">
-          Jan 28, 28017
-        </span>
+          Jan 28, 2018</span>
         此篇文章內容同步於 https://hackmd.io/s/ByrxYmi4G 。
 安裝流程  Step 1. 申請 meetup_api 的 auth Key  申請 OAuth2 認證 取得 Key 和 secret 在本機端啟動 SimpleHTTPServer 取得 access token 同意該 OAuth 使用者可以使用你的帳號。 轉導向到自己本機的 8000 port 並取得一次性的 access token 準備取得 refresh token 取得 refresh token 與 access token  Step 2. 下載專案並編輯 API.cfg 檔 Step 3. 進行安裝  安裝說明 請依據以下安裝說明進行，謝謝。
 Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的說明文件來進行，並提供簡單的取得方法。
@@ -190,8 +187,7 @@ Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的�
           <a href="/posts/2018-01-28-tgmeetups-birthday/">[TGmeetup] 從孵化到出生之全記錄</a>
         </span>
         <span class="item__date">
-          Jan 28, 28017
-        </span>
+          Jan 28, 2018</span>
         Repository: https://github.com/TGmeetup/TGmeetup
 前言 趁著今天公開專案日(2018/01/28)，就來紀錄一下從啟動到執行這專案的整個過程吧！算是一篇 TGmeetup 專案的雜感吧！
  可能會講比較多的廢話。還請包涵。
@@ -208,8 +204,7 @@ Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的�
           <a href="/posts/2018-01-14-container-linux-namespace/">[Build container] Container with Linux Namespace</a>
         </span>
         <span class="item__date">
-          Jan 14, 14017
-        </span>
+          Jan 14, 2018</span>
         目錄：
 * 前言
 * Linux Namespace 類別
@@ -231,8 +226,7 @@ Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的�
           <a href="/posts/2018-01-03-my-container-setup-env/">[Build container] Docker 簡介與 Go 環境安裝</a>
         </span>
         <span class="item__date">
-          Jan 3, 3017
-        </span>
+          Jan 03, 2018</span>
         Docker 簡介 就軟體的 Docker 來說，Docker 是一個開放原始碼軟體專案。可以讓應用程式佈署在軟體容器下並執行。在 Linix 中， Docker 利用 Linux Kernel 中的資源分離機制，如cgroups, Namespace ，來建立獨立的軟體容器（containers）。 它最早釋出於2013/03/13，原作者為 Solomon Hykes 。 他於 2013 PyCon 的 5 分鐘 lightning talk 中提出 The Future of Linux Containers。 並在 lightning talk 中簡單展示 Docker 的使用方法。
  小小疑惑: 為什麼 go 語言的專案會跑到 PyCon 中發表呢？我覺得比較有關的會是 open source 或是 Linux 相關的 Conference 呢！？
  Docker 擁有的特點有：  輕量化：共享同一台系統的 Kernel 資源，所以可以迅速啟動而且用的 memory 較少。而且 image 是 Filesystem 建制的，所以可以共享相同文件。 open source 標準：可以運行於 Linux distributions 和 Windows OS.
@@ -245,8 +239,7 @@ Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的�
           <a href="/posts/2017-11-27-npm/">了解 npm 的二三事</a>
         </span>
         <span class="item__date">
-          Nov 27, 27117
-        </span>
+          Nov 27, 2017</span>
         了解 npm 的二三事 什麼是 NPM 如果你有寫過 python ，你應該會很熟悉 pip ，pip 是一個 python 的套件管理系統。(pip is package management system used to install and manage software packages written in Python. &ndash;from Wikipedia) 那什麼是 npm 呢？ 就是 Node.js 的 套件管理系統啦！ (A default package manager for the JavaScript runtime environment Node.js &ndash; from Wikipedia) NPM 全名 Node Package Manager。
  什麼是&rdquo;套件管理系統&rdquo;？  A package manager is a set of tools that automates and manages computer software.
         <div class="read-more-link">
@@ -258,8 +251,7 @@ Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的�
           <a href="/posts/2017-07-02-scrum-framework/">Scrum framework</a>
         </span>
         <span class="item__date">
-          Jul 2, 2077
-        </span>
+          Jul 02, 2017</span>
         一個 Sprint 為期 1~4 周。
 1. 角色 可一人分飾多角，每個腳色都該做好自己的職責。
 * Product Owner (PO):  決定整個產品，設定產品待辦項目的優先順序。  * Scrum Master: 教練的角色，可及時地為團隊成員提供幫助。
@@ -275,8 +267,7 @@ Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的�
           <a href="/posts/2017-07-02-scrum-hsinchu-part2/">Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 2</a>
         </span>
         <span class="item__date">
-          Jul 2, 2077
-        </span>
+          Jul 02, 2017</span>
         講師: David Ko
 Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 2 - Scrum 基礎觀念介紹 1. 甚麼是 Scrum 🏉 A. Scrum 是一個開發複雜系統的框架(Scrum framework) B. Scrum 是&hellip;  沒有 engineering practices
  像是 TDD, Unit testing, 搭檔編程  輕量級的用法  C. Scrum 方法的特性  頻繁交付高價值
@@ -294,8 +285,7 @@ Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum �
           <a href="/posts/2017-07-02-scrum-hsinchu-part3/">Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 3</a>
         </span>
         <span class="item__date">
-          Jul 2, 2077
-        </span>
+          Jul 02, 2017</span>
         講師: David Ko
 Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 3 - 如何組織需求(Scrum 需求清單) 1. 產品需求清單 (Product Backlog) 1-1. 甚麼是產品需求清單?  所要要做的事情的清單 做甚麼事的清單 根據商業價值來排序  1-2. 產品需求清單項目的種類 2. 使用者故事 (User Story) 2-1. 甚麼是使用者故事  軟體的需求 用商業語言來描述 每個故事不會太大
  寫在便利貼上 通常是由使用者寫   2-2. 使用者故事樣板 As a [role], I want to [fuction] because of [business value].
@@ -309,8 +299,7 @@ eg. As a bookstore customer, I can search for a book by the title, so that I can
           <a href="/posts/2017-07-02-scrum-hsinchu-part4/">Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 4</a>
         </span>
         <span class="item__date">
-          Jul 2, 2077
-        </span>
+          Jul 02, 2017</span>
         講師: David Ko
 Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 4. Scrum 會議 1. 敏捷評估  小小迷之聲1:
 就是評估這個專案可以多久完成啦！以人/天為單位。 是說，比起經驗法則，這個有個依據，雖然很多還是自己定義的 XDD。但忘了問問題的部分是，那個人/天的人的能力標準是以哪個為單位基準? junior 感覺不是，但非常 senior 的工程師感覺會做很快，中間感覺合適。但又感覺應該要依據即將參與這專案的工程師能力素質的比例，來做衡量。比方 junior 與 senior 比例約 3:2 ，如果原先是以介在 senior 和 junior 中間的能力來做估算就還要程以相對的比例，會比較好吧? 不過只是估算啦！ 拍腦袋 與 敏捷評估 之間是個誤差值多和少的概念。
@@ -326,8 +315,7 @@ Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum �
           <a href="/posts/2017-07-02-scrum-hsinchu-part5/">Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 5</a>
         </span>
         <span class="item__date">
-          Jul 2, 2077
-        </span>
+          Jul 02, 2017</span>
          講師: David Ko
 Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 5. Scrum 開發方法總結  敏捷是一種文化，並不是流程 Scrum 是管理的框架 思維：
  是照妖鏡 - 可及早看到問題點 像下棋 - 有規則、需教練指導    小小迷之聲: 也像各種運動比賽
@@ -339,8 +327,7 @@ Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum �
           <a href="/posts/2017-07-01-scrum-hsinchu-part1/">Scrum 敏捷軟體開發 一日體驗營@新竹 - Part 1</a>
         </span>
         <span class="item__date">
-          Jul 1, 1077
-        </span>
+          Jul 01, 2017</span>
         講師: David Ko
 Outline  敏捷觀念簡介 Scrum 基礎觀念介紹 如何組織需求 Scrum 會議 Scrum 開發方法總結  Part 1 - 敏捷觀念簡介 0. Why post it 為什麼用便利貼
 - 所有東西都可以看的到
@@ -379,8 +366,7 @@ Lean Software Development
           <a href="/posts/2017-06-22-ml-supervised-and-unsupervised-learning/">[機器學習] Supervised and Unsupervised Learning (監督學習與非監督學習) -Week 1-1</a>
         </span>
         <span class="item__date">
-          Jun 22, 22067
-        </span>
+          Jun 22, 2017</span>
         第一週 - From Stanford&rsquo;s coursera
  Machine Learning  Supervised Learning  Regression Classification  Unsupervised Learning  Clustering Cocktail Party Algorithm    Machine Learning (機器學習)  定義：
  Arthur Samuel: the field of study that gives computers the ability to learn without being explicitly programmed. Tom Mitchell: A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.
@@ -393,8 +379,7 @@ Lean Software Development
           <a href="/posts/2017-03-15-apt/">apt指令之套件管理整理</a>
         </span>
         <span class="item__date">
-          Mar 15, 15037
-        </span>
+          Mar 15, 2017</span>
         Ubuntu(Debian) 系列 apt-get  apt-get update
 更新套件資訊(基本上沒事就跑一下，習慣登入就下一下指令) apt-get check
 檢查系統上的套件相依性情形 apt-get upgrade
@@ -420,8 +405,7 @@ eg. apt-get install vim  -y 若有問問題都回答Yes apt-get &ndash;reinstall
           <a href="/posts/2017-02-17-stacer/">Stacer - 系統優化器</a>
         </span>
         <span class="item__date">
-          Feb 17, 17027
-        </span>
+          Feb 17, 2017</span>
         Stacer - 系統優化器 這套工具類似 Windows 上面安裝 CCleaner 加上系統資源監控！
 來源 https://github.com/oguzhaninan/Stacer
 安裝環境 Ubuntu base 桌面版本
@@ -441,8 +425,7 @@ reference: https://itsfoss.com/optimize-ubuntu-stacer/
           <a href="/posts/2017-02-01-tmux/">終端機的超狂工具-TMUX 與指令整理</a>
         </span>
         <span class="item__date">
-          Feb 1, 1027
-        </span>
+          Feb 01, 2017</span>
          Tmux是個終端機工具(Terminal multiplexer)，可以管理多個session，window和panel。
 如何安裝 Debian / Ubuntu：apt-get install tmux
 關於session的指令  tmux：開啟一個新的client(包含一個session，window，panel) tmux ls：列出有那些sessions tmux a：重回上次最新的client tmux a -t [number]：重回該number的session  關於window的指令 預設的操作要加上 Ctrl-b 功能鍵
