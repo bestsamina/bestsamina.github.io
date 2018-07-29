@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.44" />
+    
+    
+    <title>[CORD] CORD 平台學習筆記 • Samina&#39;s 技術筆記 X 點滴紀錄</title>
+<meta name="description" content="Samina&#39;s 技術筆記 X 點滴紀錄 :: 記錄一些技術筆記與生活紀錄">
+<meta name="keywords" content="blog,python,golang,javascript,container,opencord,cord,sdn,network">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[CORD] CORD 平台學習筆記"/>
+<meta name="twitter:description" content="From: https://wiki.opencord.org/display/CORD/Documentation
+ 分為三個 components:
+ Trellis:  CORD fabric 的網路架構 service composition 中的 overlay 虛擬化角色。  CORD Monitoring Service  是 CORD service ，專門蒐集與分析即時的 metrics。  XOS  專門 configure 和控制 CORD services.   Trellis  From: https://wiki.opencord.org/display/CORD/Trellis%3A&#43;CORD&#43;Network&#43;Infrastructure
+  underlay leaf-spine fabric &#43; overlay virtual networking &#43; unified SDN control (underlay &#43; overlay)    The efficient of unified SDN control (underlay &#43; overlay)  為了 tenant 網絡的分佈式虛擬 routing 多播流量傳輸的優化 目前有兩個 ONOS cluster  onos-cord  負責 overlay((virtual networking and service composition)) 和 access 的 infrastructure。 分別 hosts VTN 和 vOLT 的 APP。 Multicast control: IGMP snooping  onos-fabric  負責控制 fabric 與upstream routers 的介接。 Multicast control: PIM-SSM     Trellis Underlay Fabric  Ref: https://wiki."/>
+
+<meta property="og:title" content="[CORD] CORD 平台學習筆記" />
+<meta property="og:description" content="From: https://wiki.opencord.org/display/CORD/Documentation
+ 分為三個 components:
+ Trellis:  CORD fabric 的網路架構 service composition 中的 overlay 虛擬化角色。  CORD Monitoring Service  是 CORD service ，專門蒐集與分析即時的 metrics。  XOS  專門 configure 和控制 CORD services.   Trellis  From: https://wiki.opencord.org/display/CORD/Trellis%3A&#43;CORD&#43;Network&#43;Infrastructure
+  underlay leaf-spine fabric &#43; overlay virtual networking &#43; unified SDN control (underlay &#43; overlay)    The efficient of unified SDN control (underlay &#43; overlay)  為了 tenant 網絡的分佈式虛擬 routing 多播流量傳輸的優化 目前有兩個 ONOS cluster  onos-cord  負責 overlay((virtual networking and service composition)) 和 access 的 infrastructure。 分別 hosts VTN 和 vOLT 的 APP。 Multicast control: IGMP snooping  onos-fabric  負責控制 fabric 與upstream routers 的介接。 Multicast control: PIM-SSM     Trellis Underlay Fabric  Ref: https://wiki." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bestsamina.github.io/posts/2018-07-26-cord-platform/" />
+
+
+
+<meta property="article:published_time" content="2018-07-26T15:51:05&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-07-26T15:51:05&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+    <!-- highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://bestsamina.github.io//css/print.min.css" media="print">
+    <link rel="stylesheet" href="https://bestsamina.github.io//css/hyde-hyde.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png"></head>
+
+    <body>
+        
+<div class="sidebar text-center">
+  <div class="container ">
+    <div class="sidebar-about">
+      <div class="site__title">
+        <a href="https://bestsamina.github.io/">Samina&#39;s 技術筆記 X 點滴紀錄</a>
+      </div>
+      
+      
+      
+      <p>
+        <img src="https://bestsamina.github.io/images/sufuf3_1519028337_878.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
+      <p class="site__description">
+         記錄一些技術筆記與生活紀錄 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+				<li>
+					<a href="/series/">
+						<span>Series</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tags/">
+						<span>Tags</span>
+					</a>
+				</li>
+				<li>
+					<a href="/page/awesome-blogs">
+						<span>Awesome-Blogs</span>
+					</a>
+				</li>
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social text-center">
+	<a href="https://twitter.com/sufuf3149"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://github.com/sufuf3"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://gitlab.com/sufuf3"><i class="fab fa-gitlab fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 Samina Fu.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+<div class="content container">
+            <article>
+  <header>
+    <h1>[CORD] CORD 平台學習筆記</h1>
+     
+    
+<div class="post__meta">
+    
+    <i class="fas fa-calendar-alt"></i> Jul 26, 2018
+    in
+              <a class="post__category" href="/categories/cord">CORD</a>
+              
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="post__tag" href="/tags/cord">#cord</a>
+           
+      
+          <a class="post__tag" href="/tags/trellis">#trellis</a>
+           
+      
+          <a class="post__tag" href="/tags/opencord">#opencord</a>
+           
+      
+          <a class="post__tag" href="/tags/xos">#xos</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 3 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    
+
+<blockquote>
+<p>From: <a href="https://wiki.opencord.org/display/CORD/Documentation">https://wiki.opencord.org/display/CORD/Documentation</a></p>
+</blockquote>
+
+<p>分為三個 components:</p>
+
+<ul>
+<li>Trellis:
+
+<ul>
+<li>CORD fabric 的網路架構</li>
+<li>service composition 中的 overlay 虛擬化角色。</li>
+</ul></li>
+<li>CORD Monitoring Service
+
+<ul>
+<li>是 CORD service ，專門蒐集與分析即時的 metrics。</li>
+</ul></li>
+<li>XOS
+
+<ul>
+<li>專門 configure 和控制 CORD services.</li>
+</ul></li>
+</ul>
+
+<h2 id="trellis">Trellis</h2>
+
+<blockquote>
+<p>From: <a href="https://wiki.opencord.org/display/CORD/Trellis%3A+CORD+Network+Infrastructure">https://wiki.opencord.org/display/CORD/Trellis%3A+CORD+Network+Infrastructure</a></p>
+</blockquote>
+
+<ul>
+<li>underlay leaf-spine fabric + overlay virtual networking + unified SDN control (underlay + overlay)
+<br /></li>
+</ul>
+
+<p><img src="https://wiki.opencord.org/download/attachments/1278078/trellis1.jpg?version=1&amp;modificationDate=1469902523365&amp;api=v2" alt="" /><br />
+<img src="https://wiki.opencord.org/download/attachments/1278078/cord_trellis.jpg?version=1&amp;modificationDate=1469902673504&amp;api=v2" alt="" /></p>
+
+<ul>
+<li>The efficient of unified SDN control (underlay + overlay)
+
+<ul>
+<li>為了 tenant 網絡的分佈式虛擬 routing</li>
+<li>多播流量傳輸的優化</li>
+<li>目前有兩個 ONOS cluster
+
+<ul>
+<li>onos-cord
+
+<ul>
+<li>負責 overlay((virtual networking and service composition)) 和 access 的 infrastructure。</li>
+<li>分別 hosts VTN 和 vOLT 的 APP。</li>
+<li>Multicast control: IGMP snooping</li>
+</ul></li>
+<li>onos-fabric
+
+<ul>
+<li>負責控制 fabric</li>
+<li>與upstream routers 的介接。</li>
+<li>Multicast control: PIM-SSM</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="trellis-underlay-fabric">Trellis Underlay Fabric</h3>
+
+<blockquote>
+<p>Ref: <a href="https://wiki.opencord.org/display/CORD/Trellis+Underlay+Fabric">https://wiki.opencord.org/display/CORD/Trellis+Underlay+Fabric</a></p>
+</blockquote>
+
+<ul>
+<li>SDN based Leaf-Spine fabric</li>
+<li>使用 data plane 的 headers: ARP, MAC, VLAN, IPv4, MPLS, VXLAN</li>
+<li>不使用 distributed protocols</li>
+<li>fabric 特點：
+
+<ul>
+<li>L2 switching within a rack handled at leaf-switches (ToRs)</li>
+<li>L3 forwarding across racks using ECMP hashing and MPLS segment routing.</li>
+<li>vRouter integration for interfacing with upstream metro-router, providing reachability to publicly routable IP addresses.</li>
+<li>VLAN cross-connect feature to switch QinQ packets between OLT I/O blades and vSG containers (R-CORD feature).</li>
+<li>IPv4 multicast forwarding and pruning for IPTV streams (with vRouter integration) from upstream router to residential subscribers (R-CORD feature).</li>
+<li>XOS integration via REST API calls to dynamically configure end-hosts and VLAN cross-connects at runtime.</li>
+<li>Ability to use the fabric in single-rack or multi-rack configurations.</li>
+</ul></li>
+</ul>
+
+<p><img src="https://lh4.googleusercontent.com/xpxx5oAF_Xf6IjDmAcYFbSfyUV6Y0QeyTyMNsXCtWyZyKSmBQQzp31zBwvYVHm3IULB4XL9Qy31NzcjYLi2TzcM1IEhIQbf_zcKUGh2myHOxiZGvXFerclZQAIK7UqGm8aVY-CGK" alt="" /><br />
+Overlay and Underlay packet walk-through.<br />
+<img src="https://lh6.googleusercontent.com/tCwnE8UL-xKyXKDGugWVLakYGam-9sa6fkRYN-IOtAfqXiMogqzOwmkRhfNELE-3TqBQ6GmqYgz6mZpQ5gHH9DsK4fpJdO2aYL8_NFF4JWnZyAqwXezom-iIyFZMhfDBdm3X17Zn" alt="" /></p>
+
+<h3 id="virtual-network-overlay">Virtual Network Overlay</h3>
+
+<blockquote>
+<p>Ref: <a href="https://wiki.opencord.org/display/CORD/Virtual+Network+Overlay">https://wiki.opencord.org/display/CORD/Virtual+Network+Overlay</a></p>
+</blockquote>
+
+<p><img src="https://lh6.googleusercontent.com/butp-czda5S_yVBYwUk-eLt49rrVhA_Q2H96sYraZjRBHX0p4TQQLqOG0K_1ZGq4_W9xSOaQDjmrCJnOxHLHeTuzcAJqUDvLkSvgkzvRK9VVEph0mRA3lZlTEUKb--j5qdNAMWhN" alt="" /></p>
+
+<ul>
+<li>Services 有他們自己的 virtual networks (VNs) - 不論是 VM 或是 container 都是在同一個</li>
+<li>scale</li>
+<li>每個 compute node 上的 VM 或是 container 都要連到 OVS 上</li>
+<li>每個 Virtual Network (or service) 都要有自己的 Load-Balancer(LB) 分布在每個 OVS 網路中。LB 專門選擇 VM instance 的。</li>
+<li>Service composition walkthrough</li>
+
+<li><p>XOS 和 ONOS 的 VTN app 會互相協調以保持虛擬的 infrastructure 狀態是最新的。 ( VTN updates tables in a special purpose OVS pipeline to reflect the desired subscriber service flow. OVS forwarding pipeline 如下)
+<img src="https://lh3.googleusercontent.com/-tfPjWtqHZkTH2tLadgs-frvETcuRtwsTts9GB8H5U5EXpz4hVbiO_wWsaJHdQK509azZ8GohNkWb8K3kT-_Q78e6rFWlyDienEUrFCPLsxyRgGxvbDgzMv1qTjF5dp_3Oc70ddl" alt="" /></p></li>
+
+<li><p>Subscriber traffic is NATted by the vSG.</p></li>
+</ul>
+
+<h4 id="virtual-tenant-network-vtn-posts-2018-07-29-cord-vtn"><a href="posts/2018-07-29-cord-vtn">Virtual Tenant Network(VTN)</a></h4>
+
+<h3 id="virtual-router-vrouter">Virtual Router (vRouter)</h3>
+
+<blockquote>
+<p>Ref: <a href="https://wiki.opencord.org/pages/viewpage.action?pageId=1278093">https://wiki.opencord.org/pages/viewpage.action?pageId=1278093</a></p>
+</blockquote>
+
+<ul>
+<li>implemented as a network control application<br /></li>
+<li>running on ONOS</li>
+<li>Perform L3 unicast routing to/from CO; participate in dynamic routing protocols (current supports OSPF and BGP)</li>
+<li>Multicast signaling and forwarding (currently supports PIM-SSM)</li>
+<li>Quagga 支持多種路由協議，允許 vRouter支持這些協議</li>
+<li>Quagga 將配置為與上游路由器通信: OSPF &amp; iBGP</li>
+<li>使用 FIB Push Interface (FPI): enables it to push routes to an external entity</li>
+</ul>
+
+<p><img src="https://lh6.googleusercontent.com/JjekSLLwBTY0jhCh_HSazXyAt5IU4mfoZ8yJairOUDwJXq_t1AB8sJyLeUY5yEejoJLWt942pBFfss55W8fPouD2PgL4gVwSOlNryUThqA0CWR-d7SfFtjb6Nwob7GX8oTY9b04A" alt="" /></p>
+
+<h4 id="routing-control-traffic-is-handled-by-redirecting-to-towards-the-quagga-instance-connected-on-the-dataplane">Routing control traffic is handled by redirecting to towards the Quagga instance connected on the dataplane</h4>
+
+<p><img src="https://lh4.googleusercontent.com/PRBfvmUayyZenmcfptmn7pGoG6zdJdtA17Vz0RiczIvqHwRW1EossWMoIlkBc4PR2kap8FXQKQzIXNsJI1sG0CjOpoGg06RTSexhv9Sc7rEtGQzpP03XPd1uofco25tBaPQj80Kg" alt="" /></p>
+
+<h4 id="multicast">Multicast</h4>
+
+<h4 id="dataplane">Dataplane</h4>
+
+<p>Components that make up the vRouter ONOS app<br />
+<img src="https://lh5.googleusercontent.com/5NWpDLDewAmgwV63TAaKaU9BKjmVUe9Fa_kmjgvkqFyaPjALjbgGBHBY4MbJNtTvblO5pZWuCEwKBzhYDgDx3mm9hEW62Ou7o1y8jUOJk-DlV8_NO5Tn3I71AYkkXRNMKy2iP3Fb" alt="" />
+* Forwarding Plane Manager (FPM): decode routes from the external Netlink protocol<br />
+FIB installer: use ONOS BgpRouter application 的 SingleSwitchFibInstaller component<br />
+- SingleSwitchFibInstaller component
+    - install routes into a single switch
+    - generate FlowObjectives and submit them to ONOS</p>
+
+<h2 id="cord-monitoring-service">CORD Monitoring Service</h2>
+
+<p>XOS Monitoring service 支持：</p>
+
+<ul>
+<li>real time network observability for SDN fixed</li>
+<li>mobile networks in a Telco Central Office</li>
+</ul>
+
+<p>須提供：</p>
+
+<ul>
+<li>Analytics</li>
+<li>support multi-tenancy</li>
+<li>檢測服務</li>
+<li>adjust the level of probing in the underlying devices</li>
+<li>aggregate probing information</li>
+<li>redirect data streams through a &ldquo;probe VM&rdquo; for deeper level of instrumentation that is not otherwise available from underlying devices</li>
+</ul>
+
+<p><img src="https://lh6.googleusercontent.com/0ISh2XYNBi7NoWLlzU6dY4zkXE8B16VcpcvofANS3OrIj5IFJ64U0OXGN-MvKcfD6VFKqeeASLkTKPNnoYMvb43sLIqOafgE3I8Y-qAam1GW8hiBnq7VTH8Ep0MXBnRVDpzALAjI" alt="" /></p>
+
+<p>Using <a href="http://docs.openstack.org/developer/ceilometer/">OpenStack Ceilometer framework</a> as Monitoring service.<br />
+<img src="https://lh5.googleusercontent.com/kKcvHnPTpVIbPgY7QZpQpVdXadW181PYEDh28AfnVUK8_btWf3dfnO92nFnnoTe5Vfm9LnuQxZjYCgMcYXfzo-4OL3gqbRSIoYUGVeI5DnaVpDrBB3kB4-f6sDWpPxloCPGwHzEZ" alt="" /><br />
+Internal implementation based on OpenStack’s Ceilometer.<br />
+<img src="https://lh6.googleusercontent.com/jOKxVnuSb8brtYM8JAO-8gGXX12-t1hVmnRE1KWlYSje8BhpsGfM1e4Y9Xfovbc_yJLxQN7i8Px7YejRxBCgl8suIXEKL3Tldcqu-UP1FQLtdQoE5syhfh_HLBM3WZKzp0U7CnwP" alt="" /><br />
+Monitoring service integrated into XOS.<br />
+<img src="https://lh5.googleusercontent.com/hVsGneGPeYIhLbkrTuyldws94U1TL31p6PjBQ2WNBpCHyMHn8ntS9PNHkQAJbH1jqZmcWWx7nGS32VTwPF2u9-_n7PfvSwD0kqu87luu3gXPQlj5K8jn5rsccNo6To6hF8mJdOAb" alt="" /></p>
+
+<h3 id="cord-定義">CORD 定義</h3>
+
+<blockquote>
+<p><a href="https://wiki.opencord.org/display/CORD/Defining+CORD">https://wiki.opencord.org/display/CORD/Defining+CORD</a></p>
+</blockquote>
+
+<p>現今所謂的 R-CORD, M-CORD 都是 CORD 的其中一個 Solution 。<br />
+每個 solution 都是為了解決不同的 access technology<br />
+<img src="https://lh6.googleusercontent.com/L83lsymO848rFWfmU9sxNARcCzhWD0lhqAzdbHaoMkEKjtLhHR7K-5abo4gtmld_i9X6fvMFm0erydmyRGrUiQUNaPz0fP0-s5Pa07aL1JWLTrf913EELMdwuRhR5vCh-K69i6td" alt="" /><br />
+<strong>Solutions are defined by a Service Graph</strong></p>
+
+<ul>
+<li>a set of Services and Dependencies between Services</li>
+<li>a Service consists of a Controller and one or more Slices</li>
+<li>a Slice is a logical resource container that includes a set of Instances and a set of Networks</li>
+</ul>
+
+<p>個別的 components 可以單獨的被使用。可以確保與 CORD Vision 一致，但也可以以不同 integrated 的方式代替 CORD Architectures。<br />
+<strong>Today’s CORD Reference Platform includes the following software components: XOS, ONOS, OpenStack, Docker, VTN (an ONOS app that implements overlay virtual networks), and Fabric (an ONOS app that manages the switching fabric).</strong></p>
+
+<h3 id="xos-posts-2018-07-29-cord-xos"><a href="posts/2018-07-29-cord-xos">XOS</a></h3>
+
+  </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            
+        </li>
+        <li class="post__nav--previous">
+            <i class="fas fa-chevron-left"></i>
+            <a href="/posts/2018-06-27-dpdk-ovs-vagrant/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <span class="previous__title">在 vagrant(Ubuntu 16.04) 中安裝 DPDK 與 OVS 紀錄筆記</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+  <div class="post__related">
+    
+    
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/2018/02/08/cord-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">[CORD] 學習筆記</a>
+      
+      <time class="pull-right hidden-tablet">Feb 08 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/2018-02-08-cord-init/">[CORD] 初步認識 CORD 是什麼之筆記</a>
+      
+      <time class="pull-right hidden-tablet">Feb 08 &#39;18</time>
+      
+  </span>
+</li>
+
+    </ul>
+    
+</div>
+</article>
+        </div>
+        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+      (function () {
+            
+            
+            
+            if (location.hostname === "localhost" || 
+            	location.hostname === "127.0.0.1" || 
+            	location.hostname === "") {
+                return;
+			}
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'bestsamina';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                  dsq);
+      })();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+    </body>
+</html>

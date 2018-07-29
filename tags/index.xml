@@ -42,7 +42,7 @@
     <item>
       <title>Cord</title>
       <link>https://bestsamina.github.io/tags/cord/</link>
-      <pubDate>Thu, 08 Feb 2018 14:51:05 +0800</pubDate>
+      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/cord/</guid>
       <description></description>
@@ -69,7 +69,7 @@
     <item>
       <title>Dpdk</title>
       <link>https://bestsamina.github.io/tags/dpdk/</link>
-      <pubDate>Wed, 27 Jun 2018 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 27 Jun 2018 14:51:05 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/dpdk/</guid>
       <description></description>
@@ -159,7 +159,7 @@
     <item>
       <title>Network</title>
       <link>https://bestsamina.github.io/tags/network/</link>
-      <pubDate>Wed, 27 Jun 2018 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 27 Jun 2018 14:51:05 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/network/</guid>
       <description></description>
@@ -195,7 +195,7 @@
     <item>
       <title>Opencord</title>
       <link>https://bestsamina.github.io/tags/opencord/</link>
-      <pubDate>Thu, 08 Feb 2018 14:51:05 +0800</pubDate>
+      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/opencord/</guid>
       <description></description>
@@ -204,7 +204,7 @@
     <item>
       <title>Ovs</title>
       <link>https://bestsamina.github.io/tags/ovs/</link>
-      <pubDate>Wed, 27 Jun 2018 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 27 Jun 2018 14:51:05 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/ovs/</guid>
       <description></description>
@@ -265,9 +265,18 @@
     </item>
     
     <item>
+      <title>Trellis</title>
+      <link>https://bestsamina.github.io/tags/trellis/</link>
+      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/trellis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ubuntu</title>
       <link>https://bestsamina.github.io/tags/ubuntu/</link>
-      <pubDate>Wed, 27 Jun 2018 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 27 Jun 2018 14:51:05 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/ubuntu/</guid>
       <description></description>
@@ -285,9 +294,18 @@
     <item>
       <title>Vagrant</title>
       <link>https://bestsamina.github.io/tags/vagrant/</link>
-      <pubDate>Wed, 27 Jun 2018 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 27 Jun 2018 14:51:05 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/vagrant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xos</title>
+      <link>https://bestsamina.github.io/tags/xos/</link>
+      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/xos/</guid>
       <description></description>
     </item>
     

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samina Fu</copyright>
-    <lastBuildDate>Wed, 27 Jun 2018 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 27 Jun 2018 14:51:05 +0800</lastBuildDate>
     
 	<atom:link href="https://bestsamina.github.io/tags/dpdk/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>在 vagrant(Ubuntu 16.04) 中安裝 DPDK 與 OVS 紀錄筆記</title>
       <link>https://bestsamina.github.io/posts/2018-06-27-dpdk-ovs-vagrant/</link>
-      <pubDate>Wed, 27 Jun 2018 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 27 Jun 2018 14:51:05 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/posts/2018-06-27-dpdk-ovs-vagrant/</guid>
       <description>本篇使用的 Vagrantfile 可參閱 https://github.com/sufuf3/network-study-notes/blob/master/DPDK_OVS/Vagrantfile
