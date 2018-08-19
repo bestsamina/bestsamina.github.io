@@ -36,7 +36,7 @@ SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
 SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
 假設在一個實體主機上有幾台 VM，此時當實體主機上的網卡 (NIC) 收到一個封包的時候，會向 CPU 發送一個中斷請求 (interrupt request = IRQ)，然後 CPU 就必須中斷目前在做的事情，轉而處理這封包，把封包送到對的 VM 中。而封包那麼多，中斷就會一直發生，這樣也會降低 CPU 的效能。而且不只有實體主機上這個 CPU 的 IRQ 問題，VMM (Virtual Machine Manager) 的 CPU 也會被中斷，只要它辨識出 package 要送往的 VM ，它就會向 VM 自己的 CPU 請求中斷，叫 VM 的 CPU 來處理這封包。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bestsamina.github.io/posts/2018-08-20-dpdk-sriov-study/" />
+<meta property="og:url" content="https://bestsamina.github.io/posts/2018-08-20-dpdk-sriov-learn/" />
 
 
 

@@ -14,10 +14,10 @@
     
     <item>
       <title>關於加速 NFV Data Plane 的 SR-IOV 與 DPDK</title>
-      <link>https://bestsamina.github.io/posts/2018-08-20-dpdk-sriov-study/</link>
+      <link>https://bestsamina.github.io/posts/2018-08-20-dpdk-sriov-learn/</link>
       <pubDate>Mon, 20 Aug 2018 00:20:05 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/posts/2018-08-20-dpdk-sriov-study/</guid>
+      <guid>https://bestsamina.github.io/posts/2018-08-20-dpdk-sriov-learn/</guid>
       <description>本篇是個初步理解 SR-IOV 與 DPDK 兩個技術的筆記。
 內容綜合官網的說明、參考 https://www.metaswitch.com/blog/accelerating-the-nfv-data-plane 的描述、自我的理解。 如有任何描述錯誤，敬請指教。
  本篇是個個人筆記。文章脈絡大致如下：
