@@ -3,16 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://bestsamina.github.io/posts/2018-07-29-cord-vtn/</loc>
-    <lastmod>2018-07-30T15:51:05+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bestsamina.github.io/posts/2018-07-29-cord-xos/</loc>
-    <lastmod>2018-07-30T15:51:05+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bestsamina.github.io/posts/2018-07-26-cord-platform/</loc>
     <lastmod>2018-07-26T15:51:05+08:00</lastmod>
   </url>
@@ -173,13 +163,13 @@
   
   <url>
     <loc>https://bestsamina.github.io/tags/cord/</loc>
-    <lastmod>2018-07-30T15:51:05+08:00</lastmod>
+    <lastmod>2018-07-26T15:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bestsamina.github.io/categories/cord/</loc>
-    <lastmod>2018-07-30T15:51:05+08:00</lastmod>
+    <lastmod>2018-07-26T15:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -281,7 +271,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/tags/network/</loc>
-    <lastmod>2018-07-30T15:51:05+08:00</lastmod>
+    <lastmod>2018-06-27T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -311,7 +301,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/tags/opencord/</loc>
-    <lastmod>2018-07-30T15:51:05+08:00</lastmod>
+    <lastmod>2018-07-26T15:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -328,7 +318,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/posts/</loc>
-    <lastmod>2018-07-30T15:51:05+08:00</lastmod>
+    <lastmod>2018-07-26T15:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -340,7 +330,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/</loc>
-    <lastmod>2018-07-30T15:51:05+08:00</lastmod>
+    <lastmod>2018-07-26T15:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -417,14 +407,8 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/vtn/</loc>
-    <lastmod>2018-07-30T15:51:05+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bestsamina.github.io/tags/xos/</loc>
-    <lastmod>2018-07-30T15:51:05+08:00</lastmod>
+    <lastmod>2018-07-26T15:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   

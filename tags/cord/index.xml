@@ -7,32 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samina Fu</copyright>
-    <lastBuildDate>Mon, 30 Jul 2018 15:51:05 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Jul 2018 15:51:05 +0800</lastBuildDate>
     
 	<atom:link href="https://bestsamina.github.io/tags/cord/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>[CORD] CORD-VTN 認識</title>
-      <link>https://bestsamina.github.io/posts/2018-07-29-cord-vtn/</link>
-      <pubDate>Mon, 30 Jul 2018 15:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/posts/2018-07-29-cord-vtn/</guid>
-      <description> Ref:
-https://wiki.opencord.org/display/CORD/VTN+Design+Note
-https://wiki.opencord.org/display/CORD/Service+Composition+and+the+Role+of+VTN
- </description>
-    </item>
-    
-    <item>
-      <title>[CORD] CORD-XOS 認識</title>
-      <link>https://bestsamina.github.io/posts/2018-07-29-cord-xos/</link>
-      <pubDate>Mon, 30 Jul 2018 15:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/posts/2018-07-29-cord-xos/</guid>
-      <description> Ref: https://wiki.opencord.org/display/CORD/XOS+and+the+CORD+Controller
- </description>
-    </item>
     
     <item>
       <title>[CORD] CORD 平台學習筆記</title>
