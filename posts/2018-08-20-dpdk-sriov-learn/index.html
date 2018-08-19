@@ -285,11 +285,14 @@ SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
 <p>圖片與文章參考來源：<a href="https://software.intel.com/en-us/articles/open-vswitch-with-dpdk-overview">https://software.intel.com/en-us/articles/open-vswitch-with-dpdk-overview</a></p>
 </blockquote>
 
-<p>Linux kernel 的 overhead 包含：<br />
-- System calls
-- Context switching on blocking I/O
-- Data copying from kernel to user space
-- Interrupt handling in kernel</p>
+<p>Linux kernel 的 overhead 包含：</p>
+
+<ul>
+<li>System calls</li>
+<li>Context switching on blocking I/O</li>
+<li>Data copying from kernel to user space</li>
+<li>Interrupt handling in kernel</li>
+</ul>
 
 <p>所以 DPDK 就出來了。</p>
 
