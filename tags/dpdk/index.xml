@@ -7,10 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samina Fu</copyright>
-    <lastBuildDate>Wed, 27 Jun 2018 14:51:05 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 Aug 2018 00:20:05 +0800</lastBuildDate>
     
 	<atom:link href="https://bestsamina.github.io/tags/dpdk/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>關於加速 NFV Data Plane 的 SR-IOV 與 DPDK</title>
+      <link>https://bestsamina.github.io/posts/2018-08-20-dpdk-sriov-study/</link>
+      <pubDate>Mon, 20 Aug 2018 00:20:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2018-08-20-dpdk-sriov-study/</guid>
+      <description>本篇是個初步理解 SR-IOV 與 DPDK 兩個技術的筆記。
+內容綜合官網的說明、參考 https://www.metaswitch.com/blog/accelerating-the-nfv-data-plane 的描述、自我的理解。 如有任何描述錯誤，敬請指教。
+ 本篇是個個人筆記。文章脈絡大致如下：
+- 一句話形容 SR-IOV 與 DPDK - SR-IOV 的源起 - SR-IOV 的技術理解 - DPDK 的緣起 - DPDK 的技術理解
+一句話形容 SR-IOV 與 DPDK 一句話秒懂的形容：
+- SR-IOV: SR-IOV 是一種技術，使用這項技術，就讓虛擬主機或是虛擬化的容器如同直接接上實體網卡一樣，封包一進到實體主機的網卡後，就等於直接進到虛擬主機或是虛擬化的容器中。 - DPDK: DPDK 這項技術，可以讓進到實體主機的網路封包，直接跳過 Linux Kernel 層，送到 User space 的 Applications 做處理。
+以上兩種技術，皆是 Intel 最先提出的。
+SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
+假設在一個實體主機上有幾台 VM，此時當實體主機上的網卡 (NIC) 收到一個封包的時候，會向 CPU 發送一個中斷請求 (interrupt request = IRQ)，然後 CPU 就必須中斷目前在做的事情，轉而處理這封包，把封包送到對的 VM 中。而封包那麼多，中斷就會一直發生，這樣也會降低 CPU 的效能。而且不只有實體主機上這個 CPU 的 IRQ 問題，VMM (Virtual Machine Manager) 的 CPU 也會被中斷，只要它辨識出 package 要送往的 VM ，它就會向 VM 自己的 CPU 請求中斷，叫 VM 的 CPU 來處理這封包。</description>
+    </item>
     
     <item>
       <title>在 vagrant(Ubuntu 16.04) 中安裝 DPDK 與 OVS 紀錄筆記</title>
