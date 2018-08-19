@@ -18,10 +18,8 @@
 <meta name="twitter:description" content="本篇是個初步理解 SR-IOV 與 DPDK 兩個技術的筆記。
 內容綜合官網的說明、參考 https://www.metaswitch.com/blog/accelerating-the-nfv-data-plane 的描述、自我的理解。 如有任何描述錯誤，敬請指教。
  本篇是個個人筆記。文章脈絡大致如下：
-- 一句話形容 SR-IOV 與 DPDK - SR-IOV 的源起 - SR-IOV 的技術理解 - DPDK 的緣起 - DPDK 的技術理解
-一句話形容 SR-IOV 與 DPDK 一句話秒懂的形容：
-- SR-IOV: SR-IOV 是一種技術，使用這項技術，就讓虛擬主機或是虛擬化的容器如同直接接上實體網卡一樣，封包一進到實體主機的網卡後，就等於直接進到虛擬主機或是虛擬化的容器中。 - DPDK: DPDK 這項技術，可以讓進到實體主機的網路封包，直接跳過 Linux Kernel 層，送到 User space 的 Applications 做處理。
-以上兩種技術，皆是 Intel 最先提出的。
+ 一句話形容 SR-IOV 與 DPDK SR-IOV 的源起 SR-IOV 的技術理解 DPDK 的緣起 DPDK 的技術理解  一句話形容 SR-IOV 與 DPDK 一句話秒懂的形容：
+ SR-IOV: SR-IOV 是一種技術，使用這項技術，就讓虛擬主機或是虛擬化的容器如同直接接上實體網卡一樣，封包一進到實體主機的網卡後，就等於直接進到虛擬主機或是虛擬化的容器中。 DPDK: DPDK 這項技術，可以讓進到實體主機的網路封包，直接跳過 Linux Kernel 層，送到 User space 的 Applications 做處理。   以上兩種技術，皆是 Intel 最先提出的。
 SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
 假設在一個實體主機上有幾台 VM，此時當實體主機上的網卡 (NIC) 收到一個封包的時候，會向 CPU 發送一個中斷請求 (interrupt request = IRQ)，然後 CPU 就必須中斷目前在做的事情，轉而處理這封包，把封包送到對的 VM 中。而封包那麼多，中斷就會一直發生，這樣也會降低 CPU 的效能。而且不只有實體主機上這個 CPU 的 IRQ 問題，VMM (Virtual Machine Manager) 的 CPU 也會被中斷，只要它辨識出 package 要送往的 VM ，它就會向 VM 自己的 CPU 請求中斷，叫 VM 的 CPU 來處理這封包。"/>
 
@@ -29,10 +27,8 @@ SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
 <meta property="og:description" content="本篇是個初步理解 SR-IOV 與 DPDK 兩個技術的筆記。
 內容綜合官網的說明、參考 https://www.metaswitch.com/blog/accelerating-the-nfv-data-plane 的描述、自我的理解。 如有任何描述錯誤，敬請指教。
  本篇是個個人筆記。文章脈絡大致如下：
-- 一句話形容 SR-IOV 與 DPDK - SR-IOV 的源起 - SR-IOV 的技術理解 - DPDK 的緣起 - DPDK 的技術理解
-一句話形容 SR-IOV 與 DPDK 一句話秒懂的形容：
-- SR-IOV: SR-IOV 是一種技術，使用這項技術，就讓虛擬主機或是虛擬化的容器如同直接接上實體網卡一樣，封包一進到實體主機的網卡後，就等於直接進到虛擬主機或是虛擬化的容器中。 - DPDK: DPDK 這項技術，可以讓進到實體主機的網路封包，直接跳過 Linux Kernel 層，送到 User space 的 Applications 做處理。
-以上兩種技術，皆是 Intel 最先提出的。
+ 一句話形容 SR-IOV 與 DPDK SR-IOV 的源起 SR-IOV 的技術理解 DPDK 的緣起 DPDK 的技術理解  一句話形容 SR-IOV 與 DPDK 一句話秒懂的形容：
+ SR-IOV: SR-IOV 是一種技術，使用這項技術，就讓虛擬主機或是虛擬化的容器如同直接接上實體網卡一樣，封包一進到實體主機的網卡後，就等於直接進到虛擬主機或是虛擬化的容器中。 DPDK: DPDK 這項技術，可以讓進到實體主機的網路封包，直接跳過 Linux Kernel 層，送到 User space 的 Applications 做處理。   以上兩種技術，皆是 Intel 最先提出的。
 SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
 假設在一個實體主機上有幾台 VM，此時當實體主機上的網卡 (NIC) 收到一個封包的時候，會向 CPU 發送一個中斷請求 (interrupt request = IRQ)，然後 CPU 就必須中斷目前在做的事情，轉而處理這封包，把封包送到對的 VM 中。而封包那麼多，中斷就會一直發生，這樣也會降低 CPU 的效能。而且不只有實體主機上這個 CPU 的 IRQ 問題，VMM (Virtual Machine Manager) 的 CPU 也會被中斷，只要它辨識出 package 要送往的 VM ，它就會向 VM 自己的 CPU 請求中斷，叫 VM 的 CPU 來處理這封包。" />
 <meta property="og:type" content="article" />
@@ -197,18 +193,25 @@ SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
 內容綜合官網的說明、參考 <a href="https://www.metaswitch.com/blog/accelerating-the-nfv-data-plane">https://www.metaswitch.com/blog/accelerating-the-nfv-data-plane</a> 的描述、自我的理解。 如有任何描述錯誤，敬請指教。</p>
 </blockquote>
 
-<p>本篇是個個人筆記。文章脈絡大致如下：<br />
-- 一句話形容 SR-IOV 與 DPDK
-- SR-IOV 的源起
-- SR-IOV 的技術理解
-- DPDK 的緣起
-- DPDK 的技術理解</p>
+<p>本篇是個個人筆記。文章脈絡大致如下：</p>
+
+<ul>
+<li>一句話形容 SR-IOV 與 DPDK</li>
+<li>SR-IOV 的源起</li>
+<li>SR-IOV 的技術理解</li>
+<li>DPDK 的緣起</li>
+<li>DPDK 的技術理解</li>
+</ul>
 
 <h2 id="一句話形容-sr-iov-與-dpdk">一句話形容 SR-IOV 與 DPDK</h2>
 
-<p>一句話秒懂的形容：<br />
-- SR-IOV: SR-IOV 是一種技術，使用這項技術，就讓虛擬主機或是虛擬化的容器如同直接接上實體網卡一樣，封包一進到實體主機的網卡後，就等於直接進到虛擬主機或是虛擬化的容器中。
-- <a href="https://www.dpdk.org/">DPDK</a>: DPDK 這項技術，可以讓進到實體主機的網路封包，直接跳過 Linux Kernel 層，送到 User space 的 Applications 做處理。</p>
+<p>一句話秒懂的形容：</p>
+
+<ul>
+<li>SR-IOV: SR-IOV 是一種技術，使用這項技術，就讓虛擬主機或是虛擬化的容器如同直接接上實體網卡一樣，封包一進到實體主機的網卡後，就等於直接進到虛擬主機或是虛擬化的容器中。</li>
+<li><a href="https://www.dpdk.org/">DPDK</a>: DPDK 這項技術，可以讓進到實體主機的網路封包，直接跳過 Linux Kernel 層，送到 User space 的 Applications 做處理。
+<br /></li>
+</ul>
 
 <p>以上兩種技術，皆是 Intel 最先提出的。</p>
 
@@ -217,13 +220,19 @@ SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
 <p>這一切要回到當初，虛擬主機的技術講起。<br />
 假設在一個實體主機上有幾台 VM，此時當實體主機上的網卡 (NIC) 收到一個封包的時候，會向 CPU 發送一個中斷請求 (interrupt request = <a href="https://linuxgazette.net/issue38/blanchard.html">IRQ</a>)，然後 CPU 就必須中斷目前在做的事情，轉而處理這封包，把封包送到對的 VM 中。而封包那麼多，中斷就會一直發生，這樣也會降低 CPU 的效能。而且不只有實體主機上這個 CPU 的 IRQ 問題，VMM (Virtual Machine Manager) 的 CPU 也會被中斷，只要它辨識出 package 要送往的 VM ，它就會向 VM 自己的 CPU 請求中斷，叫 VM 的 CPU 來處理這封包。</p>
 
-<p><img src="https://i.imgur.com/ltZut6A.png" alt="" /><br />
-&gt; 圖片來自：<a href="https://software.intel.com/file/1919">https://software.intel.com/file/1919</a></p>
+<p><img src="https://i.imgur.com/ltZut6A.png" alt="" /></p>
+
+<blockquote>
+<p>圖片來自：<a href="https://software.intel.com/file/1919">https://software.intel.com/file/1919</a></p>
+</blockquote>
 
 <p>所以，Intel 為了解決實體層 CPU 被打斷的問題，它推出了 Virtual Machine Device Queues (VMDq) 這項技術。如名稱，VMDq 可以讓 VMM 在 NIC 中分配一個直接的 queue 給 VM。</p>
 
-<p><img src="https://i.imgur.com/2Qk6CXc.png" alt="" /><br />
-&gt; 圖片來自：<a href="https://software.intel.com/file/1919">https://software.intel.com/file/1919</a></p>
+<p><img src="https://i.imgur.com/2Qk6CXc.png" alt="" /></p>
+
+<blockquote>
+<p>圖片來自：<a href="https://software.intel.com/file/1919">https://software.intel.com/file/1919</a></p>
+</blockquote>
 
 <p>不過有個麻煩，就是 data-plane-centric VNF 仍然會降低效能。畢竟都打算直接從實體網卡送到 VM ，幹嘛還要經過 VMM 的 vswitch 這一層呢？所以就來看看 SR-IOV。</p>
 
@@ -231,7 +240,7 @@ SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
 
 <ul>
 <li>全名：Single Root I/O Virtualization and Sharing Specification</li>
-<li>規範由 <a href="https://pcisig.com/">PCI-SIG (Peripheral Component Interconnect Special Interest Group)</a> 定義和維護 (SR-IOV 是在 <sup>2007</sup>&frasl;<sub>09</sub> 被提出，且是基於 <a href="https://support.amd.com/TechDocs/48882_IOMMU.pdf">AMD (IOV) 的技術 input-output memory management unit (IOMMU) 標準</a>。)</li>
+<li>規範由 <a href="https://pcisig.com/">PCI-SIG (Peripheral Component Interconnect Special Interest Group)</a> 定義和維護 (SR-IOV 是在 2007 年 09 月被提出，且是基於 <a href="https://support.amd.com/TechDocs/48882_IOMMU.pdf">AMD (IOV) 的技術 input-output memory management unit (IOMMU) 標準</a>。)</li>
 <li>只有特定網卡的型號才有支援</li>
 <li>SR-IOV 的兩種功能
 
@@ -270,8 +279,11 @@ SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
 
 <p>在 SDN 的時代，我們還是需要 vSwitch，但 vSwitch 是慢的， 所以之後有人提出 Megaflow ，在 OVS kernel 中裝 secondary flow cache，來提高效能。<br />
 不過不管怎麼樣，OVS 仍然靠 kernel space data path 轉送 packets。然而當封包量多的時候，這種情況會花費較高的 IPC (Inter-Process Communication)，網路吞吐量就會受到 Linux network stack 的限制。<br />
-<img src="https://i.imgur.com/8JjcMPJ.png" alt="" /><br />
-&gt; 圖片與文章參考來源：<a href="https://software.intel.com/en-us/articles/open-vswitch-with-dpdk-overview">https://software.intel.com/en-us/articles/open-vswitch-with-dpdk-overview</a></p>
+<img src="https://i.imgur.com/8JjcMPJ.png" alt="" /></p>
+
+<blockquote>
+<p>圖片與文章參考來源：<a href="https://software.intel.com/en-us/articles/open-vswitch-with-dpdk-overview">https://software.intel.com/en-us/articles/open-vswitch-with-dpdk-overview</a></p>
+</blockquote>
 
 <p>Linux kernel 的 overhead 包含：<br />
 - System calls
@@ -285,7 +297,7 @@ SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
 
 <ul>
 <li>全名：Data Plane Developer Kit</li>
-<li><sup>2011</sup>&frasl;<sub>09</sub> 被 Intel 提出，2013 以 open source 釋出</li>
+<li>2011 年 09 月被 Intel 提出，2013 以 open source 釋出</li>
 <li>license 是 BSD</li>
 </ul>
 
