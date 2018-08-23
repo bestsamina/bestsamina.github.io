@@ -343,9 +343,10 @@ EAL 提供的 service 有：</p>
 </ul>
 
 <p>所以就要指定特定的 CPU 來處理 DPDK。<br />
-DPDK 需要 hugepage memory ，因為可以讓 multiple DPDK processes 一起使用，<br />
-讓不同的 process 共同 access 同一塊 shared memory，inter-process communication (IPC) 也會變得更簡單。<br />
-因此，我們也會配置 Hugepage</p>
+因為 packet buffers 需要使用到 很大的 memory pool allocation ，所以需要使用到 Hugepage。這意味著 HUGETLBFS 選項需要在 running 的 kernel 中啟用。
+使用 hugepage allocations ，可以使用更少 page 並提高效能，可以減少 TLBs(Translation Lookaside Buffers)，減少虛擬的 page address 轉換到物理的 page address。如果沒有 hugepage，TLB 缺失率會變高，因為會發生在使用標準的 4k page size，降低。
+而且 Hugepage 可以讓 multiple DPDK processes 一起使用，<br />
+讓不同的 process 共同 access 同一塊 shared memory，inter-process communication (IPC) 也會變得更簡單。</p>
 
 <h2 id="參考文件">參考文件</h2>
 
