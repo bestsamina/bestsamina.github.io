@@ -180,7 +180,7 @@ SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
     
     
     <br/>
-    <i class="fas fa-clock"></i> 2 min read
+    <i class="fas fa-clock"></i> 3 min read
 </div>
 
 
@@ -298,11 +298,56 @@ SR-IOV 的源起 這一切要回到當初，虛擬主機的技術講起。
 
 <h2 id="dpdk-的技術理解">DPDK 的技術理解</h2>
 
+<h2 id="dpdk-的技術理解-1">DPDK 的技術理解</h2>
+
 <ul>
 <li>全名：Data Plane Developer Kit</li>
-<li>2011 年 09 月被 Intel 提出，2013 以 open source 釋出</li>
+<li><sup>2011</sup>&frasl;<sub>09</sub> 被 Intel 提出，2013 以 open source 釋出</li>
 <li>license 是 BSD</li>
+<li>他是加速封包處理的框架</li>
+<li>他可以跑在任何的 processors 上，原本只有支援的 CPU 是 intel x86 ，不過現在延伸到 IBM power 和 ARM 都可以。</li>
 </ul>
+
+<p>在概念上，它就是直接將封包跳過 kernel 層，直接到 user space 處理。<br />
+<img src="https://i.imgur.com/KTBX4Dk.png" alt="" /><br />
+&gt; 圖片與文章參考來源：<a href="https://software.intel.com/en-us/articles/open-vswitch-with-dpdk-overview">https://software.intel.com/en-us/articles/open-vswitch-with-dpdk-overview</a></p>
+
+<p>如同下圖這張表的差異比較。<br />
+<img src="https://i.imgur.com/zWlbD2m.png" alt="" /></p>
+
+<p>然而到底怎麼做到的？<br />
+DPDK 會在每個特殊的環境中建立 Environment Abstraction Layer (EAL)。<br />
+這個環境抽象層(EAL)，是通過 make ，在 Linux 的 user space 編譯完成。(就是這步：<code>sudo make install T=$DPDK_TARGET DESTDIR=install</code>)<br />
+EAL 會提供一個通用的 interface (就是 ./usertools/&hellip;) ，它隱藏內部很多的 libraries 和 Apps.<br />
+EAL 提供的 service 有：</p>
+
+<ul>
+<li>DPDK loading and launching</li>
+<li>Support for multi-process and multi-thread execution types</li>
+<li>Core affinity/assignment procedures</li>
+<li>System memory allocation/de-allocation</li>
+<li>Atomic/lock operations</li>
+<li>Time reference</li>
+<li>PCI bus access</li>
+<li>Trace and debug functions</li>
+<li>CPU feature identification</li>
+<li>Interrupt handling</li>
+<li>Alarm operations</li>
+<li>Memory management (malloc)</li>
+</ul>
+
+<p>比方說使用 <code>igb_uio.ko</code> ，就是 igb 這個 intel 網卡驅動程式借助 UIO (Userspace IO) 技術，將那張網卡硬體mapping 到 user space 中。<br />
+當綁定後， PMD（Poll Mode Drivers）會直接 accesses RX 和 TX 的 descriptors，不會有任何中斷。以便在使用者的應用程式中快速接收，處理和傳送 package。那他有兩種模式 (run-to-completion 和 pipeline)。</p>
+
+<ul>
+<li>pipeline 模式就是透過 API 來不斷輪詢在多個 port RX 之間。</li>
+<li>run-to-completion 模式就是透過 API 來不斷輪詢特定 port 的 RX 。</li>
+</ul>
+
+<p>所以就要指定特定的 CPU 來處理 DPDK。<br />
+DPDK 需要 hugepage memory ，因為可以讓 multiple DPDK processes 一起使用，<br />
+讓不同的 process 共同 access 同一塊 shared memory，inter-process communication (IPC) 也會變得更簡單。<br />
+因此，我們也會配置 Hugepage</p>
 
 <h2 id="參考文件">參考文件</h2>
 
