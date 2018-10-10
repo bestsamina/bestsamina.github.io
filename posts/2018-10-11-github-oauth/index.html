@@ -23,7 +23,7 @@
 所以就要來用 OAuth 了。
 以下是參考 Authorizing OAuth Apps 申請 OAuth 的紀錄。(讓自己下次在申請 OAuth 時，可以翻閱這個筆記，快速記得。)
 1. 申請 OAuth2 認證 到 https://github.com/settings/applications/new 註冊成為 OAuth 使用者。
-- 必填欄位 &ldquo;Application name&rdquo; &ldquo;Homepage URL&rdquo; 與 &ldquo;Authorization callback URL&rdquo; - Application name：為 Application 名字的字串 (這邊可以隨意的字串，方便管理即可。) - Authorization callback URL：請填入 http://localhost:8000/ (這欄位是為了拿一次性的 access token，後面會提供如何設定的範例，這會需要在本機上進行。) - Homepage URL: 隨意的 URL"/>
+ 必填欄位 &ldquo;Application name&rdquo; &ldquo;Homepage URL&rdquo; 與 &ldquo;Authorization callback URL&rdquo;  Application name：為 Application 名字的字串 (這邊可以隨意的字串，方便管理即可。) Authorization callback URL：請填入 http://localhost:8000/ (這欄位是為了拿一次性的 access token，後面會提供如何設定的範例，這會需要在本機上進行。) Homepage URL: 隨意的 URL    範例圖"/>
 
 <meta property="og:title" content="申請 GitHub OAuth 權限紀錄" />
 <meta property="og:description" content="前言 會來使用 GitHub 的 OAuth 是因為發現 TGmeetupBot 在開 issue 的時候，總是會開到重複的 Event Issue。
@@ -34,7 +34,7 @@
 所以就要來用 OAuth 了。
 以下是參考 Authorizing OAuth Apps 申請 OAuth 的紀錄。(讓自己下次在申請 OAuth 時，可以翻閱這個筆記，快速記得。)
 1. 申請 OAuth2 認證 到 https://github.com/settings/applications/new 註冊成為 OAuth 使用者。
-- 必填欄位 &ldquo;Application name&rdquo; &ldquo;Homepage URL&rdquo; 與 &ldquo;Authorization callback URL&rdquo; - Application name：為 Application 名字的字串 (這邊可以隨意的字串，方便管理即可。) - Authorization callback URL：請填入 http://localhost:8000/ (這欄位是為了拿一次性的 access token，後面會提供如何設定的範例，這會需要在本機上進行。) - Homepage URL: 隨意的 URL" />
+ 必填欄位 &ldquo;Application name&rdquo; &ldquo;Homepage URL&rdquo; 與 &ldquo;Authorization callback URL&rdquo;  Application name：為 Application 名字的字串 (這邊可以隨意的字串，方便管理即可。) Authorization callback URL：請填入 http://localhost:8000/ (這欄位是為了拿一次性的 access token，後面會提供如何設定的範例，這會需要在本機上進行。) Homepage URL: 隨意的 URL    範例圖" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bestsamina.github.io/posts/2018-10-11-github-oauth/" />
 
@@ -210,11 +210,18 @@
 
 <h2 id="1-申請-oauth2-認證">1. 申請 OAuth2 認證</h2>
 
-<p>到 <a href="https://github.com/settings/applications/new">https://github.com/settings/applications/new</a> 註冊成為 OAuth 使用者。<br />
-- 必填欄位 &ldquo;Application name&rdquo; &ldquo;Homepage URL&rdquo; 與 &ldquo;Authorization callback URL&rdquo;
-    - Application name：為 Application 名字的字串 (這邊可以隨意的字串，方便管理即可。)
-    - Authorization callback URL：請填入 <a href="http://localhost:8000/">http://localhost:8000/</a> (這欄位是為了拿一次性的 access token，後面會提供如何設定的範例，這會需要在本機上進行。)
-    - Homepage URL: 隨意的 URL</p>
+<p>到 <a href="https://github.com/settings/applications/new">https://github.com/settings/applications/new</a> 註冊成為 OAuth 使用者。</p>
+
+<ul>
+<li>必填欄位 &ldquo;Application name&rdquo; &ldquo;Homepage URL&rdquo; 與 &ldquo;Authorization callback URL&rdquo;
+
+<ul>
+<li>Application name：為 Application 名字的字串 (這邊可以隨意的字串，方便管理即可。)</li>
+<li>Authorization callback URL：請填入 <a href="http://localhost:8000/">http://localhost:8000/</a> (這欄位是為了拿一次性的 access token，後面會提供如何設定的範例，這會需要在本機上進行。)</li>
+<li>Homepage URL: 隨意的 URL
+<br /></li>
+</ul></li>
+</ul>
 
 <p>範例圖<br />
 <img src="https://i.imgur.com/gIxMjSA.png" alt="" /></p>
@@ -227,9 +234,12 @@
 
 <h2 id="3-在本機端啟動-simplehttpserver">3. 在本機端啟動 SimpleHTTPServer</h2>
 
-<p>在拿 access token 之前，我們先來在本機端開個 8000 port。<br />
-    - 安裝 python2 環境在本機上。
-    - 在你的任意目錄底下輸入 <code>python -m SimpleHTTPServer 8000</code></p>
+<p>在拿 access token 之前，我們先來在本機端開個 8000 port。</p>
+
+<ul>
+<li>安裝 python2 環境在本機上。</li>
+<li>在你的任意目錄底下輸入 <code>python -m SimpleHTTPServer 8000</code></li>
+</ul>
 
 <h2 id="4-取得-access-token">4. 取得 access token</h2>
 
@@ -256,11 +266,14 @@
 
 <h4 id="方法-1-terminal-或是程式撰寫">方法 1: terminal 或是程式撰寫</h4>
 
-<p>此方法僅用描述的方式，以下為一些注意項目<br />
-1. 使用 POST 的方法取得
-2. Header encoded 方法使用 <code>application/x-www-form-urlencoded</code>
-3. URL 為 <code>https://github.com/login/oauth/access_token</code>
-4. body 中的 request key 與 value 如下</p>
+<p>此方法僅用描述的方式，以下為一些注意項目</p>
+
+<ol>
+<li>使用 POST 的方法取得</li>
+<li>Header encoded 方法使用 <code>application/x-www-form-urlencoded</code></li>
+<li>URL 為 <code>https://github.com/login/oauth/access_token</code></li>
+<li>body 中的 request key 與 value 如下</li>
+</ol>
 
 <pre><code>client_id=CLIENT_ID
 &amp;client_secret=CLIENT_SECRET
