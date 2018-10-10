@@ -22,7 +22,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-08-20T00:20:05&#43;08:00"/>
+<meta property="og:updated_time" content="2018-10-11T01:10:15&#43;08:00"/>
 
 
 
@@ -135,6 +135,26 @@
 <div class="content container">
             <div class="post-list">
     
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/2018-10-11-github-oauth/">申請 GitHub OAuth 權限紀錄</a>
+        </span>
+        <span class="item__date">
+          Oct 11, 2018</span>
+        title: &ldquo;2018 10 11 GitHub OAuth&rdquo;
+draft: true 前言 會來使用 GitHub 的 OAuth 是因為發現 TGmeetupBot 在開 issue 的時候，總是會開到重複的 Event Issue。
+在經過一番的拆解後，發現雖然都是使用 Basic authentication ，用 Postman 是可以看到所有的 Issue ，但是用程式卻是只能看到最新的 30 筆 issue。
+所以就需要 query 更多的 GitHub API 來比對沒撈到的 issue 用搜尋的方式確保不會開到重複的 Issue。
+但卻碰上 Rate limiting 的問題了。
+因為每小時只能有 60 個請求，但現在卻超過了。
+所以就要來用 OAuth 了。
+以下是參考 Authorizing OAuth Apps 申請 OAuth 的紀錄。(讓自己下次在申請 OAuth 時，可以翻閱這個筆記，快速記得。)
+1. 申請 OAuth2 認證 到 https://github.com/settings/applications/new 註冊成為 OAuth 使用者。
+- 必填欄位 &ldquo;Application name&rdquo; &ldquo;Homepage URL&rdquo; 與 &ldquo;Authorization callback URL&rdquo; - Application name：為 Application 名字的字串 (這邊可以隨意的字串，方便管理即可。) - Authorization callback URL：請填入 http://localhost:8000/ (這欄位是為了拿一次性的 access token，後面會提供如何設定的範例，這會需要在本機上進行。) - Homepage URL: 隨意的 URL
+        <div class="read-more-link">
+            <a href="/posts/2018-10-11-github-oauth/">Read More…</a>
+        </div>
+        </div>
       <div class="post-list__item">
         <span class="item__title--big">
           <a href="/posts/2018-08-20-dpdk-sriov-learn/">關於加速 NFV Data Plane 的 SR-IOV 與 DPDK</a>

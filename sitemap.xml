@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bestsamina.github.io/posts/2018-10-11-github-oauth/</loc>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/posts/2018-08-20-dpdk-sriov-learn/</loc>
     <lastmod>2018-08-20T00:20:05+08:00</lastmod>
   </url>
@@ -145,6 +150,18 @@
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/tags/authorization/</loc>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/categories/authorization/</loc>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/page/awesome-blogs/</loc>
   </url>
   
@@ -198,7 +215,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/tags/github/</loc>
-    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -282,7 +299,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/categories/network/</loc>
-    <lastmod>2018-08-20T00:20:05+08:00</lastmod>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -295,6 +312,12 @@
   <url>
     <loc>https://bestsamina.github.io/tags/npm/</loc>
     <lastmod>2017-11-27T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/oauth/</loc>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -323,19 +346,19 @@
   
   <url>
     <loc>https://bestsamina.github.io/posts/</loc>
-    <lastmod>2018-08-20T00:20:05+08:00</lastmod>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bestsamina.github.io/tags/rfc/</loc>
-    <lastmod>2018-04-03T14:51:05+08:00</lastmod>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bestsamina.github.io/</loc>
-    <lastmod>2018-08-20T00:20:05+08:00</lastmod>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -377,7 +400,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/tags/tgmeetup/</loc>
-    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
