@@ -15,8 +15,7 @@
 <meta name="keywords" content="blog,python,golang,javascript,container,opencord,cord,sdn,network">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="申請 GitHub OAuth 權限紀錄"/>
-<meta name="twitter:description" content="title: &ldquo;2018 10 11 GitHub OAuth&rdquo;
-draft: true 前言 會來使用 GitHub 的 OAuth 是因為發現 TGmeetupBot 在開 issue 的時候，總是會開到重複的 Event Issue。
+<meta name="twitter:description" content="前言 會來使用 GitHub 的 OAuth 是因為發現 TGmeetupBot 在開 issue 的時候，總是會開到重複的 Event Issue。
 在經過一番的拆解後，發現雖然都是使用 Basic authentication ，用 Postman 是可以看到所有的 Issue ，但是用程式卻是只能看到最新的 30 筆 issue。
 所以就需要 query 更多的 GitHub API 來比對沒撈到的 issue 用搜尋的方式確保不會開到重複的 Issue。
 但卻碰上 Rate limiting 的問題了。
@@ -27,8 +26,7 @@ draft: true 前言 會來使用 GitHub 的 OAuth 是因為發現 TGmeetupBot 在
 - 必填欄位 &ldquo;Application name&rdquo; &ldquo;Homepage URL&rdquo; 與 &ldquo;Authorization callback URL&rdquo; - Application name：為 Application 名字的字串 (這邊可以隨意的字串，方便管理即可。) - Authorization callback URL：請填入 http://localhost:8000/ (這欄位是為了拿一次性的 access token，後面會提供如何設定的範例，這會需要在本機上進行。) - Homepage URL: 隨意的 URL"/>
 
 <meta property="og:title" content="申請 GitHub OAuth 權限紀錄" />
-<meta property="og:description" content="title: &ldquo;2018 10 11 GitHub OAuth&rdquo;
-draft: true 前言 會來使用 GitHub 的 OAuth 是因為發現 TGmeetupBot 在開 issue 的時候，總是會開到重複的 Event Issue。
+<meta property="og:description" content="前言 會來使用 GitHub 的 OAuth 是因為發現 TGmeetupBot 在開 issue 的時候，總是會開到重複的 Event Issue。
 在經過一番的拆解後，發現雖然都是使用 Basic authentication ，用 Postman 是可以看到所有的 Issue ，但是用程式卻是只能看到最新的 30 筆 issue。
 所以就需要 query 更多的 GitHub API 來比對沒撈到的 issue 用搜尋的方式確保不會開到重複的 Issue。
 但卻碰上 Rate limiting 的問題了。
@@ -198,12 +196,6 @@ draft: true 前言 會來使用 GitHub 的 OAuth 是因為發現 TGmeetupBot 在
   </header>
   <div class="post">
     
-
-<hr />
-
-<p>title: &ldquo;2018 10 11 GitHub OAuth&rdquo;</p>
-
-<h2 id="draft-true">draft: true</h2>
 
 <h2 id="前言">前言</h2>
 
