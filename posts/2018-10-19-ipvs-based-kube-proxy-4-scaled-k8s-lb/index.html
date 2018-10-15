@@ -283,13 +283,16 @@ Service 是抽象的一層，主要定義一組 pod 和網路的規則讓外部�
 <p>有<a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/">三種</a>：</p>
 
 <ul>
-<li><p><a href="https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/userspace">userspace (older)</a>: 由圖所知，當 Client service IP 時，會從 iptables 到 kube-Proxy ，再由 kube-proxy 處理封包的轉送到後端的 pod。<br />
+<li><p><a href="https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/userspace">userspace (older)</a>:
+由圖所知，當 Client service IP 時，會從 iptables 到 kube-Proxy ，再由 kube-proxy 處理封包的轉送到後端的 pod。<br />
 <img src="https://d33wubrfki0l68.cloudfront.net/b8e1022c2dd815d8dd36b1bc4f0cc3ad870a924f/1dd12/images/docs/services-userspace-overview.svg" alt="" /></p></li>
 
-<li><p><a href="https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/iptables">iptables (faster)</a>: iptables 就比 userspace 好一些，因為 client 請求 service IP 後，就交給 kernel space 的 iptables 處理封包的轉送。而下 iptables rule 就是當 api-server 拿到 service 的 yaml 檔後，api-server 會給 kube-proxy 來處理，而 kube-proxy 就來下 iptables 的 rule 囉！<br />
+<li><p><a href="https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/iptables">iptables (faster)</a>:
+iptables 就比 userspace 好一些，因為 client 請求 service IP 後，就交給 iptables 處理封包的轉送。而下 iptables rule 就是當 api-server 拿到 service 的 yaml 檔後，api-server 會給 kube-proxy 來處理，而 kube-proxy 就來下 iptables 的 rule 囉！<br />
 <img src="https://d33wubrfki0l68.cloudfront.net/837afa5715eb31fb9ca6516ec6863e810f437264/42951/images/docs/services-iptables-overview.svg" alt="" /></p></li>
 
-<li><p><a href="https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/ipvs">ipvs (experimental)</a>: 和 iptables mode 方式雷同，但是是使用 kernel space 的 IPVS 方法處理要轉送的封包，不受限於 iptables 的規則。<br />
+<li><p><a href="https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/ipvs">ipvs (experimental)</a>:
+和 iptables mode 方式雷同，但是是使用 kernel space 的 IPVS 方法處理要轉送的封包，不受限於 iptables 的規則。<br />
 <img src="https://d33wubrfki0l68.cloudfront.net/3ece58e40119539d5e999fe137e79b5015c24275/77563/images/docs/services-ipvs-overview.svg" alt="" /></p></li>
 </ul>
 
