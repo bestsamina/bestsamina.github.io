@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samina Fu</copyright>
-    <lastBuildDate>Fri, 09 Mar 2018 14:51:05 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Oct 2018 11:25:11 +0800</lastBuildDate>
     
 	<atom:link href="https://bestsamina.github.io/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>實現 IPVS-based K8s service load balancing - 不同 namespace 擁有自己的 external IP</title>
+      <link>https://bestsamina.github.io/posts/2018-10-15-hands-on-k8s-kube-proxy-w-ipvs-lb/</link>
+      <pubDate>Mon, 15 Oct 2018 11:25:11 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2018-10-15-hands-on-k8s-kube-proxy-w-ipvs-lb/</guid>
+      <description>文章脈絡 - 前置作業 - 環境說明 - K8s 於不同 namespace 擁有自己的 external IP 之環境 - 部署 - 測試
+前置作業  把 IPVS 的 kernel module load 進來  modprobe -- ip_vs modprobe -- ip_vs_rr modprobe -- ip_vs_wrr modprobe -- ip_vs_sh modprobe -- nf_conntrack_ipv4 cut -f1 -d &amp;quot; &amp;quot; /proc/modules | grep -e ip_vs -e nf_conntrack_ipv4   在啟動 kube-proxy 時，參數設為  --proxy-mode=ipvs  (如果要使用其他演算法，那可以設定 --ipvs-scheduler=rr rr 改為其他的)
+ 如果是在 v.10 之前的版本， kube-proxy 要加下面的參數  --feature-gates=SupportIPVSProxyMode=true   建立 k8s 環境(安裝 tool: https://github.</description>
+    </item>
     
     <item>
       <title>[Kubernetes] 學習筆記</title>

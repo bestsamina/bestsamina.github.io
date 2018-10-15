@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kubernetes on Samina&#39;s 技術筆記 X 點滴紀錄</title>
-    <link>https://bestsamina.github.io/tags/kubernetes/</link>
-    <description>Recent content in Kubernetes on Samina&#39;s 技術筆記 X 點滴紀錄</description>
+    <title>Ipvs on Samina&#39;s 技術筆記 X 點滴紀錄</title>
+    <link>https://bestsamina.github.io/tags/ipvs/</link>
+    <description>Recent content in Ipvs on Samina&#39;s 技術筆記 X 點滴紀錄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samina Fu</copyright>
     <lastBuildDate>Mon, 15 Oct 2018 11:25:11 +0800</lastBuildDate>
     
-	<atom:link href="https://bestsamina.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bestsamina.github.io/tags/ipvs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,16 +21,6 @@
       <description>文章脈絡 - 前置作業 - 環境說明 - K8s 於不同 namespace 擁有自己的 external IP 之環境 - 部署 - 測試
 前置作業  把 IPVS 的 kernel module load 進來  modprobe -- ip_vs modprobe -- ip_vs_rr modprobe -- ip_vs_wrr modprobe -- ip_vs_sh modprobe -- nf_conntrack_ipv4 cut -f1 -d &amp;quot; &amp;quot; /proc/modules | grep -e ip_vs -e nf_conntrack_ipv4   在啟動 kube-proxy 時，參數設為  --proxy-mode=ipvs  (如果要使用其他演算法，那可以設定 --ipvs-scheduler=rr rr 改為其他的)
  如果是在 v.10 之前的版本， kube-proxy 要加下面的參數  --feature-gates=SupportIPVSProxyMode=true   建立 k8s 環境(安裝 tool: https://github.</description>
-    </item>
-    
-    <item>
-      <title>[Kubernetes] 學習筆記</title>
-      <link>https://bestsamina.github.io/2018/03/09/kubernetes-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</link>
-      <pubDate>Fri, 09 Mar 2018 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/2018/03/09/kubernetes-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</guid>
-      <description>這是 Kubernetes 相關的學習筆記
- https://github.com/sufuf3/kubernetes-hard-way-deploy https://sufuf3149.gitbooks.io/kubernetes-hard-way-deploy/content/  </description>
     </item>
     
   </channel>
