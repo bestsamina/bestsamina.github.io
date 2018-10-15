@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samina Fu</copyright>
-    <lastBuildDate>Mon, 15 Oct 2018 11:25:11 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Oct 2018 12:05:37 +0800</lastBuildDate>
     
 	<atom:link href="https://bestsamina.github.io/tags/ipvs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing</title>
+      <link>https://bestsamina.github.io/posts/2018-10-19-ipvs-based-kube-proxy-4-scaled-k8s-lb/</link>
+      <pubDate>Mon, 15 Oct 2018 12:05:37 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2018-10-19-ipvs-based-kube-proxy-4-scaled-k8s-lb/</guid>
+      <description>這篇為 10&amp;frasl;19 talk 的文字版， slides 是 https://speakerdeck.com/sufuf3/ipvs-based-kube-proxy-for-scaled-kubernetes-load-balancing 。
+ 內容脈絡
+ Preface (前言) Introduction (介紹) Kube-Proxy  What is Kube-proxy (什麼是 Kube-proxy) Kube-Proxy mode  IPVS  LVS What is IPVS (什麼是 IPVS) IPVS with Netfilter (IPVS 和 Netfilter) IPVS vs iptables (IPVS 與 iptables 的比較)  IPVS-based Kube-proxy  Why using IPVS? (為什麼要用 IPVS) How IPVS-based Kube-proxy work? (IPVS-based Kube-proxy 是怎麼運作的) Run Kube-proxy in IPVS mode (來執行 IPVS mode 的 Kube-proxy) IPVS Service Network Topology Example  Implement IPVS-based K8s service load balancing (實現 IPVS-based K8s service load balancing) Conclusion (結論)  Preface (前言) 在一般使用 Kubernetes 的 kube-proxy 情況下，通常都使用 iptables 模式。</description>
+    </item>
     
     <item>
       <title>實現 IPVS-based K8s service load balancing - 不同 namespace 擁有自己的 external IP</title>
