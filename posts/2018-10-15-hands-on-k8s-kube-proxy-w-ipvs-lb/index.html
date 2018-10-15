@@ -17,12 +17,12 @@
 <meta name="twitter:title" content="實現 IPVS-based K8s service load balancing - 不同 namespace 擁有自己的 external IP"/>
 <meta name="twitter:description" content="文章脈絡
  前置作業 環境說明 K8s 於不同 namespace 擁有自己的 external IP 之環境  部署 測試   前置作業 1. 把 IPVS 的 kernel module load 進來 modprobe -- ip_vs modprobe -- ip_vs_rr modprobe -- ip_vs_wrr modprobe -- ip_vs_sh modprobe -- nf_conntrack_ipv4 cut -f1 -d &quot; &quot; /proc/modules | grep -e ip_vs -e nf_conntrack_ipv4  2. 在啟動 kube-proxy 時，參數設為 --proxy-mode=ipvs  (如果要使用其他演算法，那可以設定 --ipvs-scheduler=rr rr 改為其他的)
-3. 如果是在 v.10 之前的版本， kube-proxy 要加下面的參數 --feature-gates=SupportIPVSProxyMode=true   建立 k8s 環境(安裝 tool: https://github."/>
+3. 如果是在 v.10 之前的版本， kube-proxy 要加下面的參數 --feature-gates=SupportIPVSProxyMode=true  4."/>
 
 <meta property="og:title" content="實現 IPVS-based K8s service load balancing - 不同 namespace 擁有自己的 external IP" />
 <meta property="og:description" content="文章脈絡
  前置作業 環境說明 K8s 於不同 namespace 擁有自己的 external IP 之環境  部署 測試   前置作業 1. 把 IPVS 的 kernel module load 進來 modprobe -- ip_vs modprobe -- ip_vs_rr modprobe -- ip_vs_wrr modprobe -- ip_vs_sh modprobe -- nf_conntrack_ipv4 cut -f1 -d &quot; &quot; /proc/modules | grep -e ip_vs -e nf_conntrack_ipv4  2. 在啟動 kube-proxy 時，參數設為 --proxy-mode=ipvs  (如果要使用其他演算法，那可以設定 --ipvs-scheduler=rr rr 改為其他的)
-3. 如果是在 v.10 之前的版本， kube-proxy 要加下面的參數 --feature-gates=SupportIPVSProxyMode=true   建立 k8s 環境(安裝 tool: https://github." />
+3. 如果是在 v.10 之前的版本， kube-proxy 要加下面的參數 --feature-gates=SupportIPVSProxyMode=true  4." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bestsamina.github.io/posts/2018-10-15-hands-on-k8s-kube-proxy-w-ipvs-lb/" />
 
@@ -228,9 +228,9 @@ cut -f1 -d &quot; &quot;  /proc/modules | grep -e ip_vs -e nf_conntrack_ipv4
 <pre><code>--feature-gates=SupportIPVSProxyMode=true
 </code></pre>
 
-<ol>
-<li>建立 k8s 環境(安裝 tool: <a href="https://github.com/kairen/kube-ansible">https://github.com/kairen/kube-ansible</a>)</li>
-</ol>
+<h3 id="4-建立-k8s-環境">4. 建立 k8s 環境</h3>
+
+<p>安裝 tool: <a href="https://github.com/kairen/kube-ansible">https://github.com/kairen/kube-ansible</a></p>
 
 <h2 id="環境說明">環境說明</h2>
 
@@ -294,12 +294,12 @@ sudo ifconfig eth0:1 100.67.151.10 netmask 255.255.0.0 broadcast 100.67.255.255
 
 <h3 id="測試">測試</h3>
 
-<ol>
-<li><p>從外部 access (可 access 100.67.0.0/16 網段的 client)
-打開瀏覽器連 <a href="http://100.67.151.9">http://100.67.151.9</a> 與 <a href="http://100.67.151.10">http://100.67.151.10</a></p></li>
+<h4 id="1-從外部-access">1. 從外部 access</h4>
 
-<li><p>相關資訊</p></li>
-</ol>
+<p>(可 access 100.67.0.0/16 網段的 client)<br />
+打開瀏覽器連 <a href="http://100.67.151.9">http://100.67.151.9</a> 與 <a href="http://100.67.151.10">http://100.67.151.10</a></p>
+
+<h4 id="2-相關資訊">2. 相關資訊</h4>
 
 <pre><code>$ ip a
 2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000
