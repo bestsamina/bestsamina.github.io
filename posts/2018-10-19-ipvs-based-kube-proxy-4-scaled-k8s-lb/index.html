@@ -528,7 +528,7 @@ TCP  100.67.151.9:80 rr
 <p>回過頭來，再次複習一下，這次我們要探討的是 kube-proxy 中的 IPVS，我們知道 kube-proxy 是要處理封包針對不同的 service 做轉送，是處理網路規則的。講白話一點就是， pod 開出給外面 access 的 port 或是對應的 IP 等， repuest 進來， kube-proxy 要把這個封包送到對應的 pod，讓 pod 處理，在回應出去。<br />
 而可以做到封包轉送這件事的在 kube-proxy mode 中有三種方式可以做到。<br />
 目前普遍是 iptables。但 IPVS 也可以做到，而且效能更好。<br />
-以下是 IPVS 與本次介紹的的一些重點整理</p>
+以下是 IPVS 與本次介紹的一些重點整理</p>
 
 <ul>
 <li>IPVS 是 LVS 中的 L4 負載均衡器</li>
