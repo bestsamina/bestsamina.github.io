@@ -358,7 +358,7 @@ iptables 規則設定是：n 張 table，每張 table 內有 m 個 chain ，每�
 雖然封包不會跑過所有的 Table 和 chain。<br />
 但 rules 通常會是很多的。雖然封包只要被拆解一次，但封包在比對每個 rule 時，都要再看要用進來的這個封包用什麼欄位來和目前輪到的 rule 進行比對。<br />
 這也是為什麼我們在下 rule 的時候很重視 rule 的順序性。(所以 rule 也會因人的設定好不好，效能也會有差異)<br />
-IPVS 在判斷上面就簡單很多，他是用 hash table(雜湊表)，在時間複雜度上，通常是是 O(1)，即便遇到最差的情況(worst case)，也只是 O(n)。理論可以參考：<a href="https://zh.wikipedia.org/wiki/%E5%93%88%E5%B8%8C%E8%A1%A8(至於怎麼做，就要翻">https://zh.wikipedia.org/wiki/%E5%93%88%E5%B8%8C%E8%A1%A8(至於怎麼做，就要翻</a> source code 了)</p>
+IPVS 在判斷上面就簡單很多，他是用 hash table(雜湊表)，在時間複雜度上，通常是是 O(1)，即便遇到最差的情況(worst case)，也只是 O(n)。理論可以參考：<a href="https://zh.wikipedia.org/wiki/%E5%93%88%E5%B8%8C%E8%A1%A8">https://zh.wikipedia.org/wiki/%E5%93%88%E5%B8%8C%E8%A1%A8</a> (至於怎麼做，就要翻 source code 了)</p>
 
 <p>就上面的兩種分析封包判斷要往哪走的方法，我們也可以了解到他們在封包轉送上的效率是有差別的。</p>
 
