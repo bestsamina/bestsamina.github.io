@@ -538,25 +538,6 @@ TCP  100.67.151.9:80 rr
 <li>了解 kube-proxy 的 IPVS mode 的運作原理</li>
 </ul>
 
-<h2 id="implement-ipvs-based-k8s-service-load-balancing-實現-ipvs-based-k8s-service-load-balancing-1">Implement IPVS-based K8s service load balancing (實現 IPVS-based K8s service load balancing)</h2>
-
-<p>請參考這篇<a href="https://bestsamina.github.io/posts/2018-10-15-hands-on-k8s-kube-proxy-w-ipvs-lb/">筆記</a></p>
-
-<h2 id="conclusion-結論-1">Conclusion (結論)</h2>
-
-<ul>
-<li>IPVS 是 LVS 中的 L4 負載均衡器</li>
-<li>IPVS提供
-
-<ul>
-<li>在 cluster 中更好的可擴展性和效能</li>
-<li>有比 iptables 更多的 load balancing 演算法</li>
-<li>server 的健康檢查和連接重試等</li>
-</ul></li>
-<li>我們可以使用 kube-proxy 的 IPVS 模式</li>
-<li>了解 kube-proxy 的 IPVS mode 的運作原理</li>
-</ul>
-
 <h2 id="其他">其他</h2>
 
 <p>在搜尋 IPVS 的過程中，發現了 <a href="https://lwn.net/Articles/747551/">BPF(Berkeley Packet Filter)</a> 一個即將要取代 iptables 的工具。 cilium 這篇 blog 也指出為何要用 BPF。 而 Facebook 也發現 BPF 效能比 IPVS 好，所以換成 BPF。<br />
