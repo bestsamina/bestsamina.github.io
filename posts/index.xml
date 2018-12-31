@@ -22,10 +22,11 @@
 1. 孵化 TGmeetup 專案 在 2017 年，接觸到了社群，也了解辦社群活動時，總是希望可以不和其他相同領域的社群活動衝突，也因此開始構思了這個蒐集全台灣社群活動的工具。
 而在前面設計初期，想了很多，建構了這個專案的雛形，也演變成其實可以蒐集全世界的技術社群資訊。再透過活動報名平台的 API 來蒐集到最新的活動資訊。
 當然，從原本的設計是需要自己 Host 一台 server，但懶人如我，想說技術性的社群應該都會用 CLI ，一開始就以不要自己維護機器的方式進行。
-一開始我只做了 CLI 版，感謝 Lego 一起加入開發，也做了 Web、RSS、Calendar&amp;hellip;。 當然還有很多可以加強改善的地方，以及需要更多的社群資料的加入。 很感謝給予星星支持這個專案的朋友，我會努力繼續地讓這個專案越來越好 :)
+一開始我只做了 CLI 版，感謝 Lego 一起加入開發，也做了 Web、RSS、Calendar&amp;hellip;。 當然還有很多可以加強改善的地方，以及需要更多的社群資料的加入。
+很感謝給予星星支持這個專案的朋友，我會努力繼續地讓這個專案越來越好 :)
 這邊有更詳細的專案出生紀錄呢! [TGmeetup] 從孵化到出生之全記錄
 2. 接觸 Kubernetes 感謝 Sam 的介紹，進到 ITRI 實習，接觸了 Kubernetes 。感謝 Mac 哥指點，Kubernetes 要在最短時間內學習有效，就是 Hard way 手動安裝啦！這個基礎的學習經驗，真的幫助了不少在往後的 debug。然後在 ITRI 一起被台灣衫 2 號玩(誤)，真的是驚險刺激。雖然一個 Intern 理論上不會有什麼太多的事情，不過時間上，卻也運用的很剛好 XD。能夠協助解完一到又一到的 Issue ，也是挺有成就感的。:) 經驗值+1。
-3. 認識在社群的前輩和朋友 因為是 DigitalOcean Hsinchu 的志工，一方面努力的找講者，也是努力的在找可以和其他社群合作的方法。在自己人脈不夠多的情況下，今年，真的很感謝 Louie Lu, Max Huang, Kevin Cyu 擔任講者。 在 COSCUP 的聯合社群活動中，感謝 Gene Kuo, Kai-Ren Bai, Hung-Wei Chiu, Evan Lin, Phil Huang 的幫忙，以及協助 DigitalOcean Hsinchu 社群很多。 當然最要感謝的是 DigitalOcean Hsinchu 的志工們，尤其是 David Lu, Jacky 這兩位超級 carry 的夥伴。 以及透過 TGmeetup 也認識了很多前輩，包含 PyHUG, TFC, DevOps Taiwan 等社群前輩，雖然沒辦法一一列出，但真的很感謝有這些交流。 另外，透過一個 5 行的 PR 參加了上海的 KubeCon 經驗，也讓我學習到很多。雖然很多是簡短的交談，但在當中卻是獲益良多。</description>
+3. 認識在社群的前輩和朋友 因為是 DigitalOcean Hsinchu 的志工，一方面努力的找講者，也是努力的在找可以和其他社群合作的方法。在自己人脈不夠多的情況下，今年，真的很感謝 Louie Lu, Max Huang, Kevin Cyu 擔任講者。</description>
     </item>
     
     <item>
