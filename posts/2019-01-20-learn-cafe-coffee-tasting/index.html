@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<meta name="google-site-verification" content="86pjrD_mrnBLozy63MgmlPcYTh6-MHixr_RZhm2Wji0" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.44" />
+    
+    
+    <title>[咖啡學習] 味覺/嗅覺開發課程 - 拆解咖啡風味與香瓶體驗 • Life &amp; Technological Journey of Samina</title>
+<meta name="description" content="Life &amp; Technological Journey of Samina - Hello and welcome to my blog. My name is Samina Fu. This blog is about technology and the record of my life. Hope the logs can help you and me someday.">
+<meta name="keywords" content="blog,python,golang,javascript,container,opencord,cord,sdn,network">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[咖啡學習] 味覺/嗅覺開發課程 - 拆解咖啡風味與香瓶體驗"/>
+<meta name="twitter:description" content="時間：2019/01/20 地點：新竹 RD cafe 課程資訊：https://www.facebook.com/events/760707187623478/
+  內容脈絡  前言 筆記 過程與心得   前言 不知道從何時開始，總之咖啡目前已經變成我日常中的一部份。 回頭想想，才發現，我喝咖啡那麼久，但都不了解咖啡，覺得很不 OK。 所以心中蒙發了想要好好了解咖啡的念頭。
+當然，作為一個工程師，自己的本業會努力深入，而咖啡這個坑，我想我只要掌握基本的常識即可。畢竟術業有專攻。除非，碰咖啡碰到深陷其中囉！
+今年目標希望好好的來學習咖啡囉！
+講師 RD cafe 的烘豆師 - Justin 林永祥 講師，有取得 CQI Q Grader 的證書，也擔任台灣諸多生豆品質評鑑的評審。
+筆記  以下為自己參考講義與自我理解的內容，所以可能會有誤的地方，還請指教。
+  咖啡練習 味覺訓練 SCAA 新版風味輪 香瓶 36 味 vs 香瓶 T100 發非風味地圖 T100 介紹 嗅覺訓練 如何描述咖啡風味  咖啡練習  最好的練習，就是多人一起喝同一壺咖啡，一起描述咖啡的風味 在高溫的時候喝最好 吃清淡一些  好咖啡 vs 好喝咖啡  客觀 vs 主觀 咖啡豆好壞 vs 好喝、滑順、不酸、不苦 &hellip;  咖啡品嘗  好咖啡包含：餘韻(Aftertaste)、口感(Body)、平衡性(Balance) 通常描述上會包含  香氣(乾/溼香) (Fragrance/Aroma)  研磨後 vs 粉被水浸泡後  風味 Flavor  咖啡特徵  餘韻 Aftertaste  咖啡喝下後，停留在口腔內的好風味  酸質 Acidity 口感 Body  觸感 (滑順 or 刮舌)  平衡性 Balance  風味 &#43; 酸味 &#43; 甜味 &#43; 口感 &hellip; / N  乾淨度 Clean Cup / 甜度 Sweetness / 一致性 Uniformity   味覺訓練  咖啡五味：酸甜苦鹹鮮 Q Grader 杯測師 9 杯魔鬼水：甜鹹酸 x 弱(#1)中(#2)強(#3) Q Grader 杯測師 魔王水：混合 2 種以上的甜鹹酸 &amp; 不同強度   前兩種都有答對，最後一種只能判斷甜鹹酸 ，強度和答案是顛倒或微出入 (因為如下說明)"/>
+
+<meta property="og:title" content="[咖啡學習] 味覺/嗅覺開發課程 - 拆解咖啡風味與香瓶體驗" />
+<meta property="og:description" content="時間：2019/01/20 地點：新竹 RD cafe 課程資訊：https://www.facebook.com/events/760707187623478/
+  內容脈絡  前言 筆記 過程與心得   前言 不知道從何時開始，總之咖啡目前已經變成我日常中的一部份。 回頭想想，才發現，我喝咖啡那麼久，但都不了解咖啡，覺得很不 OK。 所以心中蒙發了想要好好了解咖啡的念頭。
+當然，作為一個工程師，自己的本業會努力深入，而咖啡這個坑，我想我只要掌握基本的常識即可。畢竟術業有專攻。除非，碰咖啡碰到深陷其中囉！
+今年目標希望好好的來學習咖啡囉！
+講師 RD cafe 的烘豆師 - Justin 林永祥 講師，有取得 CQI Q Grader 的證書，也擔任台灣諸多生豆品質評鑑的評審。
+筆記  以下為自己參考講義與自我理解的內容，所以可能會有誤的地方，還請指教。
+  咖啡練習 味覺訓練 SCAA 新版風味輪 香瓶 36 味 vs 香瓶 T100 發非風味地圖 T100 介紹 嗅覺訓練 如何描述咖啡風味  咖啡練習  最好的練習，就是多人一起喝同一壺咖啡，一起描述咖啡的風味 在高溫的時候喝最好 吃清淡一些  好咖啡 vs 好喝咖啡  客觀 vs 主觀 咖啡豆好壞 vs 好喝、滑順、不酸、不苦 &hellip;  咖啡品嘗  好咖啡包含：餘韻(Aftertaste)、口感(Body)、平衡性(Balance) 通常描述上會包含  香氣(乾/溼香) (Fragrance/Aroma)  研磨後 vs 粉被水浸泡後  風味 Flavor  咖啡特徵  餘韻 Aftertaste  咖啡喝下後，停留在口腔內的好風味  酸質 Acidity 口感 Body  觸感 (滑順 or 刮舌)  平衡性 Balance  風味 &#43; 酸味 &#43; 甜味 &#43; 口感 &hellip; / N  乾淨度 Clean Cup / 甜度 Sweetness / 一致性 Uniformity   味覺訓練  咖啡五味：酸甜苦鹹鮮 Q Grader 杯測師 9 杯魔鬼水：甜鹹酸 x 弱(#1)中(#2)強(#3) Q Grader 杯測師 魔王水：混合 2 種以上的甜鹹酸 &amp; 不同強度   前兩種都有答對，最後一種只能判斷甜鹹酸 ，強度和答案是顛倒或微出入 (因為如下說明)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bestsamina.github.io/posts/2019-01-20-learn-cafe-coffee-tasting/" />
+
+
+
+<meta property="article:published_time" content="2019-01-20T23:40:26&#43;08:00"/>
+
+<meta property="article:modified_time" content="2019-01-20T23:40:26&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+    <!-- highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://bestsamina.github.io//css/print.min.css" media="print">
+    <link rel="stylesheet" href="https://bestsamina.github.io//css/hyde-hyde.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png"></head>
+
+    <body>
+        
+<div class="sidebar text-center">
+  <div class="container ">
+    <div class="sidebar-about">
+      <div class="site__title">
+        <a href="https://bestsamina.github.io/">Life &amp; Technological Journey of Samina</a>
+      </div>
+      
+      
+      
+      <p>
+        <img src="https://bestsamina.github.io/images/sufuf3_1519028337_878.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
+      <p class="site__description">
+         This blog is about technology and the record of my life. Hope the logs can help you and me someday. 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+				<li>
+					<a href="/series/">
+						<span>Series</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tags/">
+						<span>Tags</span>
+					</a>
+				</li>
+				<li>
+					<a href="/categories/">
+						<span>Categories</span>
+					</a>
+				</li>
+				<li>
+					<a href="/page/awesome-blogs">
+						<span>Awesome-Blogs</span>
+					</a>
+				</li>
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social text-center">
+	<a href="https://twitter.com/sufuf3149"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://github.com/sufuf3"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://gitlab.com/sufuf3"><i class="fab fa-gitlab fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@sufuf3149"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2019 Samina Fu.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+<div class="content container">
+            <article>
+  <header>
+    <h1>[咖啡學習] 味覺/嗅覺開發課程 - 拆解咖啡風味與香瓶體驗</h1>
+     
+    
+<div class="post__meta">
+    
+    <i class="fas fa-calendar-alt"></i> Jan 20, 2019
+    in
+              
+              <ul>
+              <a class="post__category" href="/categories/life/coffee">Life/coffee</a>
+              </ul>
+              
+              
+              
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="post__tag" href="/tags/coffee">#coffee</a>
+           
+      
+          <a class="post__tag" href="/tags/cafe">#cafe</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    
+
+<blockquote>
+<p>時間：2019/01/20
+地點：新竹 RD cafe
+課程資訊：<a href="https://www.facebook.com/events/760707187623478/">https://www.facebook.com/events/760707187623478/</a></p>
+</blockquote>
+
+<ul>
+<li>內容脈絡
+
+<ul>
+<li>前言</li>
+<li>筆記</li>
+<li>過程與心得</li>
+</ul></li>
+</ul>
+
+<h2 id="前言">前言</h2>
+
+<p>不知道從何時開始，總之咖啡目前已經變成我日常中的一部份。
+回頭想想，才發現，我喝咖啡那麼久，但都不了解咖啡，覺得很不 OK。
+所以心中蒙發了想要好好了解咖啡的念頭。<br />
+當然，作為一個工程師，自己的本業會努力深入，而咖啡這個坑，我想我只要掌握基本的常識即可。畢竟術業有專攻。除非，碰咖啡碰到深陷其中囉！<br />
+今年目標希望好好的來學習咖啡囉！</p>
+
+<h2 id="講師">講師</h2>
+
+<p>RD cafe 的烘豆師 - Justin 林永祥 講師，有取得 CQI Q Grader 的證書，也擔任台灣諸多生豆品質評鑑的評審。</p>
+
+<h2 id="筆記">筆記</h2>
+
+<blockquote>
+<p>以下為自己參考講義與自我理解的內容，所以可能會有誤的地方，還請指教。</p>
+</blockquote>
+
+<ul>
+<li>咖啡練習</li>
+<li>味覺訓練</li>
+<li>SCAA 新版風味輪</li>
+<li>香瓶 36 味 vs 香瓶 T100</li>
+<li>發非風味地圖 T100 介紹</li>
+<li>嗅覺訓練</li>
+<li>如何描述咖啡風味</li>
+</ul>
+
+<h3 id="咖啡練習">咖啡練習</h3>
+
+<ul>
+<li>最好的練習，就是多人一起喝同一壺咖啡，一起描述咖啡的風味</li>
+<li>在高溫的時候喝最好</li>
+<li>吃清淡一些</li>
+</ul>
+
+<h4 id="好咖啡-vs-好喝咖啡">好咖啡 vs 好喝咖啡</h4>
+
+<ul>
+<li>客觀 vs 主觀</li>
+<li>咖啡豆好壞 vs 好喝、滑順、不酸、不苦 &hellip;</li>
+</ul>
+
+<h4 id="咖啡品嘗">咖啡品嘗</h4>
+
+<ul>
+<li>好咖啡包含：餘韻(Aftertaste)、口感(Body)、平衡性(Balance)</li>
+<li>通常描述上會包含
+
+<ul>
+<li>香氣(乾/溼香) (Fragrance/Aroma)
+
+<ul>
+<li>研磨後 vs 粉被水浸泡後</li>
+</ul></li>
+<li>風味 Flavor
+
+<ul>
+<li>咖啡特徵</li>
+</ul></li>
+<li>餘韻 Aftertaste
+
+<ul>
+<li>咖啡喝下後，停留在口腔內的好風味</li>
+</ul></li>
+<li>酸質 Acidity</li>
+<li>口感 Body
+
+<ul>
+<li>觸感 (滑順 or 刮舌)</li>
+</ul></li>
+<li>平衡性 Balance
+
+<ul>
+<li>風味 + 酸味 + 甜味 + 口感 &hellip; / N</li>
+</ul></li>
+<li>乾淨度 Clean Cup / 甜度 Sweetness / 一致性 Uniformity</li>
+</ul></li>
+</ul>
+
+<h3 id="味覺訓練">味覺訓練</h3>
+
+<ul>
+<li>咖啡五味：酸甜苦鹹鮮</li>
+<li>Q Grader 杯測師 9 杯魔鬼水：甜鹹酸 x 弱(#1)中(#2)強(#3)</li>
+<li>Q Grader 杯測師 魔王水：混合 2 種以上的甜鹹酸 &amp; 不同強度</li>
+</ul>
+
+<blockquote>
+<p>前兩種都有答對，最後一種只能判斷甜鹹酸 ，強度和答案是顛倒或微出入 (因為如下說明)</p>
+</blockquote>
+
+<ul>
+<li>鹹會把甜帶出</li>
+<li>酸會把甜壓抑</li>
+<li>甜會把酸帶出</li>
+</ul>
+
+<h3 id="scaa-新版風味輪">SCAA 新版風味輪</h3>
+
+<p><a href="https://sca.coffee/research/coffee-tasters-flavor-wheel/">https://sca.coffee/research/coffee-tasters-flavor-wheel/</a><br />
+<img src="https://www.researchgate.net/publication/310573975/figure/fig3/AS:565855059746816@1511921767842/The-2016-SCAA-and-WCR-Coffee-Tasters-Flavor-Wheel.png" alt="Coffee-Tasters-Flavor-Wheel" /><br />
+From: <a href="https://www.researchgate.net/figure/The-2016-SCAA-and-WCR-Coffee-Tasters-Flavor-Wheel_fig3_310573975">https://www.researchgate.net/figure/The-2016-SCAA-and-WCR-Coffee-Tasters-Flavor-Wheel_fig3_310573975</a></p>
+
+<h3 id="香瓶-36-味-vs-香瓶-t100">香瓶 36 味 vs 香瓶 T100</h3>
+
+<ul>
+<li>Le Nez du Café Revelation 36 aromas
+
+<ul>
+<li>是法國開發</li>
+<li>一組約超過 1 萬元</li>
+<li><a href="https://www.lenez.com/en/kits/coffee/revelation">https://www.lenez.com/en/kits/coffee/revelation</a></li>
+<li>分類
+
+<ul>
+<li>酵素群組：香的&hellip;</li>
+<li>焦糖化群組：焦糖、巧克力&hellip;</li>
+<li>乾餾群組：胡椒、八角&hellip;</li>
+<li>瑕疵風味群組：泥土&hellip;</li>
+</ul></li>
+</ul></li>
+<li>Coffee Flavor Map T100
+
+<ul>
+<li>是韓國開發</li>
+<li>一組約 9500 元</li>
+<li>分類
+
+<ul>
+<li>熱帶水果類 Tropical fruit: 百香、鳳梨&hellip;</li>
+<li>莓果類 Berry like：藍莓、蔓越莓&hellip; 沉穩酸</li>
+<li>柑橘類及其他水果 Citrus &amp; other fruits：檸檬橘子&hellip;明亮酸</li>
+<li>帶核水果類 Stone fruit：水蜜桃、水梨</li>
+<li>焦糖及巧克力類 Caramel &amp; chocolate</li>
+<li>草本及花草類 Herb &amp; Flower：仙草、藥草 / 茉莉花、野薑花、金盞花 &hellip;</li>
+<li>香料類 Spice</li>
+<li>蔬菜類 Vegetable：小黃瓜</li>
+<li>鹹味及其他類 Savory &amp; others</li>
+<li>穀物及堅果類 Cereal &amp; nut</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="咖啡風味地圖-t100-介紹">咖啡風味地圖 T100 介紹</h3>
+
+<ul>
+<li>風味是用嗅的</li>
+<li>中焙通常會出現：焦糖及巧克力類</li>
+
+<li><p>極淺焙會出現蔬菜類、草本及花草類</p></li>
+
+<li><p>黃金曼特寧(中深焙): 有藥草味</p></li>
+
+<li><p>衣索比亞 日曬耶加: 藍莓、葡萄、水蜜桃</p></li>
+
+<li><p>入口的第1口是不準確的，因為味蕾還沒喚醒</p></li>
+
+<li><p>通常是第四口才分辨出來風味</p></li>
+</ul>
+
+<h3 id="如何描述咖啡風味">如何描述咖啡風味</h3>
+
+<p>咖啡風味拆解</p>
+
+<ul>
+<li>如何運用新版風味輪
+
+<ul>
+<li>由內而外</li>
+</ul></li>
+<li>搭配 T100 咖啡風味地圖
+
+<ul>
+<li>先找出類別</li>
+<li>細分風味</li>
+<li>增加咖啡風味記憶庫</li>
+</ul></li>
+</ul>
+
+<h2 id="過程與心得">過程與心得</h2>
+
+<p>前面練習了 17 杯的味覺練習，才發現自己的味覺細胞蠻厲害的，最起碼可以分辨的出混雜的味覺，雖然比例沒抓準，但還算正常 XD
+中間喝了兩個咖啡，但要一下分辨什麼風味，還是沒辦法。
+倒是後面的風味瓶嘗試，分類的答對率還算高。而且一下猜出芭樂汁和草莓味，還被講師記住，覺得太有趣了！</p>
+
+<p>至於這個課程值不值得呢？自己覺得幸好有這個課程的體驗，因為每個人嗅覺的體驗因為所接觸的事物，會不太相同。自己從中也了解自己的嗅覺感觀呢！</p>
+
+<p>而我想我未來喝咖啡，應該會努力試圖的去分類它的風味，在忙碌中，因為一杯咖啡，啟動味覺和嗅覺的感官，片刻的讓這些感官去感受，也是種雅緻。</p>
+
+<p>PS. 透過味覺和嗅覺的感官練習，真心覺得要做任何一種和飲食相關的專業&rdquo;師&rdquo;，真的很不容易。這兩種感官的敏銳度要足夠強，才能做出美味的料理。而消費者在不知道該食物或飲品的情況下，真的會很容易忽略感受食物的部分。</p>
+
+  </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            
+        </li>
+        <li class="post__nav--previous">
+            <i class="fas fa-chevron-left"></i>
+            <a href="/posts/2018-12-31-2018retrospect/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <span class="previous__title">2018 in retrospect and prospect</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+  <div class="post__related">
+    
+    
+    
+</div>
+</article>
+        </div>
+        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+      (function () {
+            
+            
+            
+            if (location.hostname === "localhost" || 
+            	location.hostname === "127.0.0.1" || 
+            	location.hostname === "") {
+                return;
+			}
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'bestsamina';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                  dsq);
+      })();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+
+    </body>
+</html>
