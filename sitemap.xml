@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bestsamina.github.io/posts/2019-01-25-til-5g-k8s-info/</loc>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/posts/2019-01-20-learn-cafe-coffee-tasting/</loc>
     <lastmod>2019-01-20T23:40:26+08:00</lastmod>
   </url>
@@ -154,6 +159,12 @@
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/tags/5g/</loc>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/about/</loc>
   </url>
   
@@ -283,7 +294,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/tags/k8s/</loc>
-    <lastmod>2018-10-15T12:05:37+08:00</lastmod>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -295,7 +306,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/tags/kubernetes/</loc>
-    <lastmod>2018-10-15T12:05:37+08:00</lastmod>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -313,7 +324,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/</loc>
-    <lastmod>2019-01-20T23:40:26+08:00</lastmod>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -414,7 +425,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/posts/</loc>
-    <lastmod>2019-01-20T23:40:26+08:00</lastmod>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -479,8 +490,26 @@
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/tags/til/</loc>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/tags/tmux/</loc>
     <lastmod>2017-02-01T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/todayilearned/</loc>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/categories/todayilearned/</loc>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   

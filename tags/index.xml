@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>5g</title>
+      <link>https://bestsamina.github.io/tags/5g/</link>
+      <pubDate>Fri, 25 Jan 2019 00:57:02 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/5g/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Agile</title>
       <link>https://bestsamina.github.io/tags/agile/</link>
       <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
@@ -150,7 +159,7 @@
     <item>
       <title>K8s</title>
       <link>https://bestsamina.github.io/tags/k8s/</link>
-      <pubDate>Mon, 15 Oct 2018 12:05:37 +0800</pubDate>
+      <pubDate>Fri, 25 Jan 2019 00:57:02 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/k8s/</guid>
       <description></description>
@@ -168,7 +177,7 @@
     <item>
       <title>Kubernetes</title>
       <link>https://bestsamina.github.io/tags/kubernetes/</link>
-      <pubDate>Mon, 15 Oct 2018 12:05:37 +0800</pubDate>
+      <pubDate>Fri, 25 Jan 2019 00:57:02 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/kubernetes/</guid>
       <description></description>
@@ -337,11 +346,29 @@
     </item>
     
     <item>
+      <title>Til</title>
+      <link>https://bestsamina.github.io/tags/til/</link>
+      <pubDate>Fri, 25 Jan 2019 00:57:02 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/til/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Tmux</title>
       <link>https://bestsamina.github.io/tags/tmux/</link>
       <pubDate>Wed, 01 Feb 2017 14:51:05 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/tmux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Todayilearned</title>
+      <link>https://bestsamina.github.io/tags/todayilearned/</link>
+      <pubDate>Fri, 25 Jan 2019 00:57:02 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/todayilearned/</guid>
       <description></description>
     </item>
     
