@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/posts/2018-10-26-worklog/</loc>
+    <lastmod>2018-10-26T20:44:02+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/posts/2018-10-19-ipvs-based-kube-proxy-4-scaled-k8s-lb/</loc>
     <lastmod>2018-10-15T12:05:37+08:00</lastmod>
   </url>
@@ -521,7 +526,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/tags/ubuntu/</loc>
-    <lastmod>2018-06-27T14:51:05+08:00</lastmod>
+    <lastmod>2018-10-26T20:44:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   

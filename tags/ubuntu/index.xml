@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samina Fu</copyright>
-    <lastBuildDate>Wed, 27 Jun 2018 14:51:05 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Oct 2018 20:44:02 +0800</lastBuildDate>
     
 	<atom:link href="https://bestsamina.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>製作 Ubuntu 開機隨身碟相關參考連結</title>
+      <link>https://bestsamina.github.io/posts/2018-10-26-worklog/</link>
+      <pubDate>Fri, 26 Oct 2018 20:44:02 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2018-10-26-worklog/</guid>
+      <description>因為每次重做開機隨身碟總是要查一下要怎麼做。所以這邊就做一下記錄。方便之後查找
+ 參考連結：  https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos https://www.youtube.com/watch?v=fkBfom4FQIQ&amp;amp;feature=youtu.be  Ubuntu 16.04.5 LTS:  http://releases.ubuntu.com/16.04/   </description>
+    </item>
     
     <item>
       <title>在 vagrant(Ubuntu 16.04) 中安裝 DPDK 與 OVS 紀錄筆記</title>
