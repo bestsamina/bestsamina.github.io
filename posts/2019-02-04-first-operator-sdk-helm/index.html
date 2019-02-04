@@ -16,11 +16,15 @@
 <meta name="keywords" content="blog,python,golang,javascript,container,opencord,cord,sdn,network">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="第一次玩 operator-sdk 就上手"/>
-<meta name="twitter:description" content="文章脈絡  前言 Operator Framework 是什麼 認識 operator-sdk CLI 實作開始  建立 K8s 環境 安裝 operator-sdk CLI 用 operator-sdk CLI 建立一個 operator 了解一下新產生的 helm operator 中的檔案 編輯檔案 先在 K8s 中 deploy CRD Build operator container 在 K8s 中部署 operator 在 K8s 中部署自己定義的 custom resource  結語  前言 在接觸 Kubernetes 一陣子後，會發現一堆 operators 。 而很殘念der，自己到目前都還沒有真正好好的玩過。 雖然在 operator-sdk 出現以前，有很多人都自己手刻 operator，不過既然 operator 目前都有個 Framework 了，當然就來玩它囉！
+<meta name="twitter:description" content="文章脈絡  前言 Operator Framework 是什麼 認識 operator-sdk CLI 實作開始  建立 K8s 環境 安裝 operator-sdk CLI 用 operator-sdk CLI 建立一個 operator 了解一下新產生的 helm operator 中的檔案 編輯檔案 先在 K8s 中 deploy CRD Build operator container 在 K8s 中部署 operator 在 K8s 中部署自己定義的 custom resource  結語  前言 在接觸 Kubernetes 一陣子後，會發現一堆 operators 。
+而很殘念der，自己到目前都還沒有真正好好的玩過。
+雖然在 operator-sdk 出現以前，有很多人都自己手刻 operator，不過既然 operator 目前都有個 Framework 了，當然就來玩它囉！
 Operator Framework 是什麼  是一個 open source toolkit 管理 Kubernetes native applications, called operators, in an effective, automated, and scalable way 這個 Framework 有兩個主要的專案：  Operator SDK: 就可以用它 build operator。 Operator Lifecycle Manager (OLM): 可以管理 operators 和 CRUD Kubernetes resource 用&hellip;。(可以到這邊玩玩：https://www."/>
 
 <meta property="og:title" content="第一次玩 operator-sdk 就上手" />
-<meta property="og:description" content="文章脈絡  前言 Operator Framework 是什麼 認識 operator-sdk CLI 實作開始  建立 K8s 環境 安裝 operator-sdk CLI 用 operator-sdk CLI 建立一個 operator 了解一下新產生的 helm operator 中的檔案 編輯檔案 先在 K8s 中 deploy CRD Build operator container 在 K8s 中部署 operator 在 K8s 中部署自己定義的 custom resource  結語  前言 在接觸 Kubernetes 一陣子後，會發現一堆 operators 。 而很殘念der，自己到目前都還沒有真正好好的玩過。 雖然在 operator-sdk 出現以前，有很多人都自己手刻 operator，不過既然 operator 目前都有個 Framework 了，當然就來玩它囉！
+<meta property="og:description" content="文章脈絡  前言 Operator Framework 是什麼 認識 operator-sdk CLI 實作開始  建立 K8s 環境 安裝 operator-sdk CLI 用 operator-sdk CLI 建立一個 operator 了解一下新產生的 helm operator 中的檔案 編輯檔案 先在 K8s 中 deploy CRD Build operator container 在 K8s 中部署 operator 在 K8s 中部署自己定義的 custom resource  結語  前言 在接觸 Kubernetes 一陣子後，會發現一堆 operators 。
+而很殘念der，自己到目前都還沒有真正好好的玩過。
+雖然在 operator-sdk 出現以前，有很多人都自己手刻 operator，不過既然 operator 目前都有個 Framework 了，當然就來玩它囉！
 Operator Framework 是什麼  是一個 open source toolkit 管理 Kubernetes native applications, called operators, in an effective, automated, and scalable way 這個 Framework 有兩個主要的專案：  Operator SDK: 就可以用它 build operator。 Operator Lifecycle Manager (OLM): 可以管理 operators 和 CRUD Kubernetes resource 用&hellip;。(可以到這邊玩玩：https://www." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/" />
@@ -212,8 +216,8 @@ Operator Framework 是什麼  是一個 open source toolkit 管理 Kubernetes na
 
 <h2 id="前言">前言</h2>
 
-<p>在接觸 Kubernetes 一陣子後，會發現一堆 operators 。
-而很殘念der，自己到目前都還沒有真正好好的玩過。
+<p>在接觸 Kubernetes 一陣子後，會發現一堆 operators 。<br />
+而很殘念der，自己到目前都還沒有真正好好的玩過。<br />
 雖然在 operator-sdk 出現以前，有很多人都自己手刻 operator，不過既然 operator 目前都有個 Framework 了，當然就來玩它囉！</p>
 
 <h2 id="operator-framework-是什麼">Operator Framework 是什麼</h2>
@@ -225,7 +229,7 @@ Operator Framework 是什麼  是一個 open source toolkit 管理 Kubernetes na
 
 <ul>
 <li><a href="https://github.com/operator-framework/operator-sdk">Operator SDK</a>: 就可以用它 build operator。</li>
-<li><a href="https://github.com/operator-framework/operator-lifecycle-manager">Operator Lifecycle Manager</a> (OLM): 可以管理 operators 和 CRUD Kubernetes resource 用&hellip;。(可以到這邊玩玩：<a href="https://www.katacoda.com/openshift/courses/operatorframework/operator-lifecycle-manager，簡單玩完後會發現功能蠻強大的">https://www.katacoda.com/openshift/courses/operatorframework/operator-lifecycle-manager，簡單玩完後會發現功能蠻強大的</a>)</li>
+<li><a href="https://github.com/operator-framework/operator-lifecycle-manager">Operator Lifecycle Manager</a> (OLM): 可以管理 operators 和 CRUD Kubernetes resource 用&hellip;。(可以到這邊玩玩：<a href="https://www.katacoda.com/openshift/courses/operatorframework/operator-lifecycle-manager">https://www.katacoda.com/openshift/courses/operatorframework/operator-lifecycle-manager</a> ，簡單玩完後會發現功能蠻強大的)</li>
 </ul></li>
 </ul>
 
@@ -401,7 +405,7 @@ Date:   Sat Feb 2 12:11:10 2019 +0000
 
 <h4 id="1-watches-yaml">1. <code>watches.yaml</code></h4>
 
-<p>default 的 operator 會依據 <code>watches.yaml</code> 這個檔案來監控 我們自己定義的 kind 這個 resource 的事件。基本上，在我們執行 <code>operator-sdk new</code> 就已經依據我們定義的名稱產生好，所以這份檔案基本上*不需要修改*。</p>
+<p>default 的 operator 會依據 <code>watches.yaml</code> 這個檔案來監控 我們自己定義的 kind 這個 resource 的事件。基本上，在我們執行 <code>operator-sdk new</code> 就已經依據我們定義的名稱產生好，所以這份檔案基本上<strong>不需要修改</strong>。</p>
 
 <pre><code>---
 - version: v1alpha1
