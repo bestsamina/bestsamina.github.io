@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/</loc>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/posts/2019-01-25-til-5g-k8s-info/</loc>
     <lastmod>2019-01-25T00:57:02+08:00</lastmod>
   </url>
@@ -280,6 +285,12 @@
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/tags/helm/</loc>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/tags/ipvs/</loc>
     <lastmod>2018-10-15T12:05:37+08:00</lastmod>
     <priority>0</priority>
@@ -311,13 +322,13 @@
   
   <url>
     <loc>https://bestsamina.github.io/tags/kubernetes/</loc>
-    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bestsamina.github.io/categories/kubernetes/</loc>
-    <lastmod>2018-10-15T12:05:37+08:00</lastmod>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -329,7 +340,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/</loc>
-    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -418,6 +429,18 @@
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/tags/operator/</loc>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/operator-sdk/</loc>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/tags/ovs/</loc>
     <lastmod>2018-08-20T00:20:05+08:00</lastmod>
     <priority>0</priority>
@@ -430,7 +453,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/posts/</loc>
-    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
