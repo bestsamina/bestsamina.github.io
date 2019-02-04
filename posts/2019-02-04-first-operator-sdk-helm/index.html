@@ -520,7 +520,8 @@ pod/play-k8s-operator-5c8fdc8fd-6m8tv   1/1     Running       0          6m44s
 <p>編輯 <code>deploy/crds/GROUP_VERSION_CRDNAME_cr.yaml</code> 後 deploy。</p>
 
 <p>在我未來的專案設計流程中，會是需要先自己 create 一個 namespace 後，再依據已經建立的 namespace ，建立自己的 resource。<br />
-不過即便是跑最新的 v0.4.0 或是用 master 上最新的 commit build 出 helm-operator image ，除了可以部署在 default namespace 外，目前都尚未成功可以部署在自己 create 的 namespace 中 。因此這部份待解決中&hellip;。</p>
+以下就簡單的來用 default namespace 部署。
+<!--不過即便是跑最新的 v0.4.0 或是用 master 上最新的 commit build 出 helm-operator image ，除了可以部署在 default namespace 外，目前都尚未成功可以部署在自己 create 的 namespace 中 。因此這部份待解決中...。  --></p>
 
 <h4 id="1-編輯-deploy-crds-group-version-crdname-cr-yaml">1. 編輯 <code>deploy/crds/GROUP_VERSION_CRDNAME_cr.yaml</code></h4>
 
