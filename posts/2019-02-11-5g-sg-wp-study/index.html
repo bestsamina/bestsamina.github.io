@@ -382,15 +382,15 @@ as a virtualized / cloud-native function instantiated on an appropriate platform
 <p>1) Multi-network interfaces<br />
 2) Service function chaining<br />
 3) Data plane acceleration<br />
-    i) low packet processing time to reach very low latency
-    ii) predictability and stability of packet processing delay to minimize jitter
-    iii) guaranteed and prioritized bandwidth for each Telco workload to prevent network contention
-    iv) low CPU consumption for network tasks to allow low energy usage
-    v) native network performance for Telco workloads
-4) Enhanced platform awareness
-     i) CPU pinning to avoid unpredictable latency and host CPU overcommit by dedicating CPUs to the Telco containers
-     ii) Numa awareness to improve the utilization of compute resources for Telco containers that need to avoid cross NUMA node memory access
-    iii) huge pages to accelerate the memory management by using larger page sizes.
+    i) low packet processing time to reach very low latency<br />
+    ii) predictability and stability of packet processing delay to minimize jitter<br />
+    iii) guaranteed and prioritized bandwidth for each Telco workload to prevent network contention<br />
+    iv) low CPU consumption for network tasks to allow low energy usage<br />
+    v) native network performance for Telco workloads<br />
+4) Enhanced platform awareness<br />
+     i) CPU pinning to avoid unpredictable latency and host CPU overcommit by dedicating CPUs to the Telco containers<br />
+     ii) Numa awareness to improve the utilization of compute resources for Telco containers that need to avoid cross NUMA node memory access<br />
+    iii) huge pages to accelerate the memory management by using larger page sizes.<br />
 5) Environment aware scheduling</p>
 
 <h2 id="5-technology-enablers-open-source-and-standards">5 Technology Enablers – Open source and Standards</h2>
@@ -402,13 +402,12 @@ as a virtualized / cloud-native function instantiated on an appropriate platform
 <a href="https://www.etsi.org/technologies/nfv">https://www.etsi.org/technologies/nfv</a></li>
 <li>TM Forum
 <a href="https://www.tmforum.org/virtualization/">https://www.tmforum.org/virtualization/</a></li>
-
-<li><p>Open Networking Foundation
+<li>Open Networking Foundation
 Open Networking Foundation (ONF)
-Central Office Re-architected as a Datacenter (CORD)</p>
-
-<h3 id="5-2-open-source-software">5.2 Open Source Software</h3></li>
+Central Office Re-architected as a Datacenter (CORD)</li>
 </ul>
+
+<h3 id="5-2-open-source-software">5.2 Open Source Software</h3>
 
 <p>可以參考 CNCF 的軟體來實作<br />
 MANO frameworks such as Linux Foundation’s ONAP [41], ONF XOS [42], Cloudify [43] and ETSI OSM [44] are starting to evolve towards this approach for microservices.</p>
