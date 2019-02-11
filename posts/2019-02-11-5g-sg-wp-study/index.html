@@ -398,19 +398,27 @@ as a virtualized / cloud-native function instantiated on an appropriate platform
 
 <p>Several features must be integrated to the aforementioned frameworks:</p>
 
-<p>1) Multi-network interfaces<br />
-2) Service function chaining<br />
-3) Data plane acceleration<br />
-    i) low packet processing time to reach very low latency<br />
-    ii) predictability and stability of packet processing delay to minimize jitter<br />
-    iii) guaranteed and prioritized bandwidth for each Telco workload to prevent network contention<br />
-    iv) low CPU consumption for network tasks to allow low energy usage<br />
-    v) native network performance for Telco workloads<br />
-4) Enhanced platform awareness<br />
-     i) CPU pinning to avoid unpredictable latency and host CPU overcommit by dedicating CPUs to the Telco containers<br />
-     ii) Numa awareness to improve the utilization of compute resources for Telco containers that need to avoid cross NUMA node memory access<br />
-    iii) huge pages to accelerate the memory management by using larger page sizes.<br />
-5) Environment aware scheduling</p>
+<ol>
+<li>Multi-network interfaces<br /></li>
+<li>Service function chaining<br /></li>
+<li>Data plane acceleration<br />
+
+<ul>
+<li>low packet processing time to reach very low latency<br /></li>
+<li>predictability and stability of packet processing delay to minimize jitter<br /></li>
+<li>guaranteed and prioritized bandwidth for each Telco workload to prevent network contention<br /></li>
+<li>low CPU consumption for network tasks to allow low energy usage<br /></li>
+<li>native network performance for Telco workloads<br /></li>
+</ul></li>
+<li>Enhanced platform awareness<br />
+
+<ul>
+<li>CPU pinning to avoid unpredictable latency and host CPU overcommit by dedicating CPUs to the Telco containers<br /></li>
+<li>Numa awareness to improve the utilization of compute resources for Telco containers that need to avoid cross NUMA node memory access<br /></li>
+<li>huge pages to accelerate the memory management by using larger page sizes.<br /></li>
+</ul></li>
+<li>Environment aware scheduling<br /></li>
+</ol>
 
 <h2 id="5-technology-enablers-open-source-and-standards">5 Technology Enablers – Open source and Standards</h2>
 
