@@ -205,6 +205,41 @@
 
 
   </header>
+<aside>
+  <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#preface-前言">Preface (前言)</a></li>
+<li><a href="#introduction-介紹">Introduction (介紹)</a></li>
+<li><a href="#kube-proxy">Kube-Proxy</a>
+<ul>
+<li><a href="#what-is-kube-proxy-什麼是-kube-proxy">What is Kube-proxy (什麼是 Kube-proxy)</a></li>
+<li><a href="#kube-proxy-mode">Kube-Proxy mode</a></li>
+</ul></li>
+<li><a href="#ipvs">IPVS</a>
+<ul>
+<li><a href="#lvs">LVS</a></li>
+<li><a href="#what-is-ipvs-什麼是-ipvs">What is IPVS (什麼是 IPVS)</a></li>
+<li><a href="#ipvs-with-netfilter-ipvs-和-netfilter">IPVS with Netfilter (IPVS 和 Netfilter)</a></li>
+<li><a href="#ipvs-vs-iptables-ipvs-與-iptables-的比較">IPVS vs iptables (IPVS 與 iptables 的比較)</a></li>
+</ul></li>
+<li><a href="#ipvs-based-kube-proxy">IPVS-based Kube-proxy</a>
+<ul>
+<li><a href="#why-using-ipvs-為什麼要用-ipvs">Why using IPVS? (為什麼要用 IPVS)</a></li>
+<li><a href="#how-ipvs-based-kube-proxy-work-ipvs-based-kube-proxy-是怎麼運作的">How IPVS-based Kube-proxy work? (IPVS-based Kube-proxy 是怎麼運作的)</a></li>
+<li><a href="#run-kube-proxy-in-ipvs-mode-來執行-ipvs-mode-的-kube-proxy">Run Kube-proxy in IPVS mode (來執行 IPVS mode 的 Kube-proxy)</a></li>
+<li><a href="#ipvs-service-network-topology">IPVS Service Network Topology</a></li>
+<li><a href="#example">Example</a></li>
+</ul></li>
+<li><a href="#implement-ipvs-based-k8s-service-load-balancing-實現-ipvs-based-k8s-service-load-balancing">Implement IPVS-based K8s service load balancing (實現 IPVS-based K8s service load balancing)</a></li>
+<li><a href="#conclusion-結論">Conclusion (結論)</a></li>
+<li><a href="#其他">其他</a></li>
+<li><a href="#參考">參考</a></li>
+</ul></li>
+</ul>
+</nav>
+</aside>
   <div class="post">
     
 
@@ -625,6 +660,7 @@ TCP  100.67.151.9:80 rr
     
 </div>
 </article>
+
         </div>
         <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 

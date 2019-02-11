@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samina Fu</copyright>
-    <lastBuildDate>Mon, 04 Feb 2019 14:33:14 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Feb 2019 14:33:14 +0800</lastBuildDate>
     
 	<atom:link href="https://bestsamina.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>5G-PPP Software Network White Paper 畫重點筆記</title>
+      <link>https://bestsamina.github.io/posts/2019-02-11-5g-sg-wp-study/</link>
+      <pubDate>Mon, 11 Feb 2019 14:33:14 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2019-02-11-5g-sg-wp-study/</guid>
+      <description>From Webscale to Telco, the Cloud Native Journey
+ https://5g-ppp.eu/white-papers/
+ 這邊是一篇&amp;rdquo;畫重點&amp;rdquo;的筆記，關於 5G &amp;amp; Cloud Native ，From 5G-PPP(5G Infrastructure Public Private Partnership) 的白皮書。
+Table of Contents 1 Introduction  Software in 5G-PPP so far  from “boxes” to “functions”, and from “protocols” to “APIs”  Cloud impact in general Cloud impact in telecom ecosystem in particular
+ covering Service-Oriented Architecture (SOA), Microservices Architecture (MSA) and Service-Based Architecture (SBA), the latter being adopted in next generation CORE [15] telcograde enhancements that should be added in frameworks like Kubernetes, monitoring, stateless design, etc&amp;hellip; What are the specific requirements between Webscale and telco players?</description>
+    </item>
     
     <item>
       <title>第一次玩 operator-sdk 就上手</title>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bestsamina.github.io/posts/2019-02-11-5g-sg-wp-study/</loc>
+    <lastmod>2019-02-11T14:33:14+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/</loc>
     <lastmod>2019-02-04T14:33:14+08:00</lastmod>
   </url>
@@ -170,7 +175,13 @@
   
   <url>
     <loc>https://bestsamina.github.io/tags/5g/</loc>
-    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
+    <lastmod>2019-02-11T14:33:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/categories/5g/</loc>
+    <lastmod>2019-02-11T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -220,7 +231,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/categories/</loc>
-    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
+    <lastmod>2019-02-11T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -340,7 +351,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/</loc>
-    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
+    <lastmod>2019-02-11T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -453,7 +464,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/posts/</loc>
-    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
+    <lastmod>2019-02-11T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   

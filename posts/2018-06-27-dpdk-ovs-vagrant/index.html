@@ -211,6 +211,61 @@
 
 
   </header>
+<aside>
+  <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#環境需求">環境需求</a></li>
+<li><a href="#前置作業">前置作業</a>
+<ul>
+<li><a href="#1-在-x86-上-bios-設定的先決條件">1. 在 x86 上 BIOS 設定的先決條件</a></li>
+<li><a href="#2-需要的工具以及-libraries">2. 需要的工具以及 Libraries</a></li>
+<li><a href="#3-系統軟體">3. 系統軟體</a>
+<ul>
+<li><a href="#4-在-linux-的環境中使用-hugepages">4. 在 Linux 的環境中使用 Hugepages</a></li>
+</ul></li>
+<li><a href="#前置作業設定與套件安裝操作-在-ubuntu-16-04-進行">前置作業設定與套件安裝操作(在 Ubuntu 16.04 進行)</a>
+<ul>
+<li><a href="#1-預先保留-hugepages-給-dpdk-用">1. 預先保留 Hugepages 給 DPDK 用</a></li>
+<li><a href="#2-using-hugepages-with-the-dpdk">2. Using Hugepages with the DPDK</a></li>
+</ul></li>
+<li><a href="#3-設定-kernel-變數在執行的時候">3. 設定 kernel 變數在執行的時候</a>
+<ul>
+<li><a href="#4-library-安裝">4. library 安裝</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#安裝-dpdk">安裝 DPDK</a>
+<ul>
+<li><a href="#1-下載-dpdk-安裝包">1. 下載 DPDK 安裝包</a></li>
+<li><a href="#2-設定-dpdk-相關的環境變數">2. 設定 DPDK 相關的環境變數</a></li>
+<li><a href="#3-build-與安裝-dpdk-library">3. Build 與安裝 DPDK library</a></li>
+<li><a href="#4-設定-dpdk-為-shared-library">4. 設定 DPDK 為 shared library</a></li>
+</ul></li>
+<li><a href="#設定-linux-drivers">設定 Linux Drivers</a>
+<ul>
+<li><a href="#1-load-uio-kernel-module">1. load uio kernel module</a></li>
+<li><a href="#2-insert-kmod-igb-uio-module-到-linux-kernel">2. insert kmod/igb_uio  module 到 Linux Kernel</a></li>
+<li><a href="#3-開機後還是可以-load-uio-的設定">3. 開機後還是可以 load UIO 的設定</a></li>
+<li><a href="#4-綁定-network-ports-到-kernel-modules">4. 綁定 Network Ports 到 Kernel Modules</a></li>
+</ul></li>
+<li><a href="#安裝-ovs">安裝 OVS</a>
+<ul>
+<li><a href="#1-下載-ovs-安裝包">1. 下載 OVS 安裝包</a></li>
+<li><a href="#安裝-ovs-1">安裝 OVS</a></li>
+<li><a href="#關機後可以用-ovs">關機後可以用 OVS</a></li>
+<li><a href="#移除">移除</a></li>
+</ul></li>
+<li><a href="#setup-open-vswitch">Setup Open vSwitch</a>
+<ul>
+<li><a href="#1-設定-open-vswitch-的遠端-database-server">1. 設定 Open vSwitch 的遠端 database server</a></li>
+<li><a href="#2-設定-ovs-vswitchd">2. 設定 ovs-vswitchd</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+</aside>
   <div class="post">
     
 
@@ -677,6 +732,7 @@ $ ovs-vsctl add-port br0 dpdk0 -- set Interface dpdk0 type=dpdk options:dpdk-dev
     
 </div>
 </article>
+
         </div>
         <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 

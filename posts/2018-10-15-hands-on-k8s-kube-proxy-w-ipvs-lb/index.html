@@ -205,6 +205,39 @@
 
 
   </header>
+<aside>
+  <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#前置作業">前置作業</a>
+<ul>
+<li><a href="#1-把-ipvs-的-kernel-module-load-進來">1. 把 IPVS 的 kernel module load 進來</a></li>
+<li><a href="#2-在啟動-kube-proxy-時-參數設為">2. 在啟動 kube-proxy 時，參數設為</a></li>
+<li><a href="#3-如果是在-v-10-之前的版本-kube-proxy-要加下面的參數">3. 如果是在 v.10 之前的版本， kube-proxy 要加下面的參數</a></li>
+<li><a href="#4-建立-k8s-環境">4. 建立 k8s 環境</a></li>
+</ul></li>
+<li><a href="#環境說明">環境說明</a></li>
+<li><a href="#k8s-於不同-namespace-擁有自己的-external-ip-之環境">K8s 於不同 namespace 擁有自己的 external IP 之環境</a>
+<ul>
+<li><a href="#部署">部署</a>
+<ul>
+<li><a href="#1-create-namespaces">1. create namespaces</a></li>
+<li><a href="#2-create-deployments">2. Create deployments</a></li>
+<li><a href="#3-create-service">3. Create service</a></li>
+<li><a href="#4-將-vip-list-綁定在網卡上-這步驟在-v1-10-x-要做-但若是-v-1-11-x-請跳過此步-因為">4. 將 VIP List 綁定在網卡上(這步驟在 v1.10.x 要做，但若是 v.1.11.x 請跳過此步，因為)</a></li>
+</ul></li>
+<li><a href="#測試">測試</a>
+<ul>
+<li><a href="#1-從外部-access">1. 從外部 access</a></li>
+<li><a href="#2-相關資訊">2. 相關資訊</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#ref">Ref</a></li>
+</ul></li>
+</ul>
+</nav>
+</aside>
   <div class="post">
     
 
@@ -449,6 +482,7 @@ TCP  100.67.151.10:80 rr
     
 </div>
 </article>
+
         </div>
         <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
