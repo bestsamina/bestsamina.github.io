@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Life on Life &amp; Technological Journey of Samina</title>
-    <link>https://bestsamina.github.io/categories/life/</link>
-    <description>Recent content in Life on Life &amp; Technological Journey of Samina</description>
+    <title>Teaching Skill on Life &amp; Technological Journey of Samina</title>
+    <link>https://bestsamina.github.io/tags/teaching-skill/</link>
+    <description>Recent content in Teaching Skill on Life &amp; Technological Journey of Samina</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samina Fu</copyright>
     <lastBuildDate>Wed, 06 Mar 2019 23:59:35 +0800</lastBuildDate>
     
-	<atom:link href="https://bestsamina.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bestsamina.github.io/tags/teaching-skill/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -29,23 +29,6 @@
 王永福老師的一開始開宗明義的告訴我們為何辦簽書會以及我們會得到什麼收穫。也介紹他自己。而在一開始，有注意到王老師的簡報風格多數是照片配文字，且字並不多，呈現的幾乎是重點。 在這場演講中，他分三個案例： 教學：分享三種教學法。 分享：實際使用老師的 教學技術 的 &amp;ldquo;學習看 X 光片之教學&amp;rdquo;。 修煉：給予大家建議和參考。
 而在教學案例中，王老師分三個實際的教學法： 第一種：老師很常會用的教學法，通常不會問學生問題 (問：&amp;rdquo;到這邊有問題嗎？&amp;rdquo; 這種問題自認為不算。) 第二種：有互動的課程 (使用分組) 第三種：幫參與的人創造一個投入的理由，讓大家投入到整個課程中。
 接著是一位馬偕醫院的醫師使用&amp;rdquo;教學得技術&amp;rdquo;教大家&amp;rdquo;如何看 X 光片&amp;rdquo;。 敬佩的是因為他的教法，就連我這個不能考進醫學系的人都知道如何看 X 光片！而且花費的時間真的不多。 只要使用&amp;rdquo;來&amp;rdquo;、&amp;rdquo;找&amp;rdquo;、&amp;rdquo;查&amp;rdquo;三步驟，及會看 Ｘ 光片。 - 來辨色 - 越硬越白 - 空氣最黑 &amp;gt; 肺臟 &amp;gt; 液體 &amp;gt; 骨頭 &amp;gt; 金屬最白 - 找正常 - 找 R (or L) - 可以看到脊椎 - 可以看到肩頰骨是三角形的 - 可以看到肺的血管，像樹根 (樹狀圖) - 可以看到心臟 - 查異常 - 可以知道氣胸(比原本的肺臟黑)、腫瘤(有點白)、積水(淺灰)&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>2018 in retrospect and prospect</title>
-      <link>https://bestsamina.github.io/posts/2018-12-31-2018retrospect/</link>
-      <pubDate>Mon, 31 Dec 2018 12:00:02 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/posts/2018-12-31-2018retrospect/</guid>
-      <description>2018 年是一個不斷學習和成長的一年。在 2017 年總是不斷的貶低自己，也嘗盡了很多苦頭，也就下定決心重新歸零學習。不過原本是以為外務沒那麼多，專心學習就好，但看來 2018 年並不是如此。這邊就來做個紀錄了。
-1. 孵化 TGmeetup 專案 在 2017 年，接觸到了社群，也了解辦社群活動時，總是希望可以不和其他相同領域的社群活動衝突，也因此開始構思了這個蒐集全台灣社群活動的工具。
-而在前面設計初期，想了很多，建構了這個專案的雛形，也演變成其實可以蒐集全世界的技術社群資訊。再透過活動報名平台的 API 來蒐集到最新的活動資訊。
-當然，從原本的設計是需要自己 Host 一台 server，但懶人如我，想說技術性的社群應該都會用 CLI ，一開始就以不要自己維護機器的方式進行。
-一開始我只做了 CLI 版，感謝 Lego 一起加入開發，也做了 Web、RSS、Calendar&amp;hellip;。 當然還有很多可以加強改善的地方，以及需要更多的社群資料的加入。
-很感謝給予星星支持這個專案的朋友，我會努力繼續地讓這個專案越來越好 :)
-這邊有更詳細的專案出生紀錄呢! [TGmeetup] 從孵化到出生之全記錄
-2. 接觸 Kubernetes 感謝 Sam 的介紹，進到 ITRI 實習，接觸了 Kubernetes 。感謝 Mac 哥指點，Kubernetes 要在最短時間內學習有效，就是 Hard way 手動安裝啦！這個基礎的學習經驗，真的幫助了不少在往後的 debug。然後在 ITRI 一起被台灣衫 2 號玩(誤)，真的是驚險刺激。雖然一個 Intern 理論上不會有什麼太多的事情，不過時間上，卻也運用的很剛好 XD。能夠協助解完一個又一個的 Issue ，也是挺有成就感的。:) 經驗值+1。
-3. 認識在社群的前輩和朋友 因為是 DigitalOcean Hsinchu 的志工，一方面努力的找講者，也是努力的在找可以和其他社群合作的方法。在自己人脈不夠多的情況下，今年，真的很感謝 Louie Lu, Max Huang, Kevin Cyu 擔任講者。</description>
     </item>
     
   </channel>

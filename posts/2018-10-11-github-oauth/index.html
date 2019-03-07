@@ -2,28 +2,13 @@
 <html lang="en-us">
     <head>
     <link href="http://gmpg.org/xfn/11" rel="profile">
-    
-    <script type="text/javascript">
-      var _paq = window._paq || [];
-       
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="https://github.matomo.cloud/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '1']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-      })();
-    </script>
-    
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Cache-Control" content="public" />
 <meta name="google-site-verification" content="86pjrD_mrnBLozy63MgmlPcYTh6-MHixr_RZhm2Wji0" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.44" />
+<meta name="generator" content="Hugo 0.54.0" />
     
     
     <title>申請 GitHub OAuth 權限紀錄 • Life &amp; Technological Journey of Samina</title>
@@ -53,22 +38,8 @@
  必填欄位 &ldquo;Application name&rdquo; &ldquo;Homepage URL&rdquo; 與 &ldquo;Authorization callback URL&rdquo;  Application name：為 Application 名字的字串 (這邊可以隨意的字串，方便管理即可。) Authorization callback URL：請填入 http://localhost:8000/ (這欄位是為了拿一次性的 access token，後面會提供如何設定的範例，這會需要在本機上進行。) Homepage URL: 隨意的 URL    範例圖" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bestsamina.github.io/posts/2018-10-11-github-oauth/" />
-
-
-
 <meta property="article:published_time" content="2018-10-11T01:10:15&#43;08:00"/>
-
 <meta property="article:modified_time" content="2018-10-11T01:10:15&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
 
 
     <!-- Font-Awesome -->
@@ -222,30 +193,6 @@
 
 
   </header>
-<aside>
-  <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#前言">前言</a></li>
-<li><a href="#1-申請-oauth2-認證">1. 申請 OAuth2 認證</a></li>
-<li><a href="#2-取得-client-id-和-client-secret">2. 取得 Client ID 和 Client Secret</a></li>
-<li><a href="#3-在本機端啟動-simplehttpserver">3. 在本機端啟動 SimpleHTTPServer</a></li>
-<li><a href="#4-取得-access-token">4. 取得 access token</a></li>
-<li><a href="#5-同意該-oauth-使用者可以使用你的帳號">5. 同意該 OAuth 使用者可以使用你的帳號</a></li>
-<li><a href="#6-轉導向到自己本機的-8000-port-並取得-access-token">6. 轉導向到自己本機的 8000 port 並取得 access token</a></li>
-<li><a href="#7-來拿-access-token">7. 來拿 access token</a>
-<ul>
-<li>
-<ul>
-<li><a href="#方法-1-terminal-或是程式撰寫">方法 1: terminal 或是程式撰寫</a></li>
-<li><a href="#方法-2-使用-postman">方法 2: 使用 Postman</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-</aside>
   <div class="post">
     
 
@@ -424,7 +371,6 @@
     
 </div>
 </article>
-
         </div>
         <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
@@ -461,19 +407,6 @@
 
     </div>
     
-
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-101232014-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
 
     </body>
 </html>

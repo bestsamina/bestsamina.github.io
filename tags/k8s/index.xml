@@ -7,21 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samina Fu</copyright>
-    <lastBuildDate>Fri, 25 Jan 2019 00:57:02 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Oct 2018 12:05:37 +0800</lastBuildDate>
     
 	<atom:link href="https://bestsamina.github.io/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>[TIL] 5G 與 Kubernetes 的一些資料</title>
-      <link>https://bestsamina.github.io/posts/2019-01-25-til-5g-k8s-info/</link>
-      <pubDate>Fri, 25 Jan 2019 00:57:02 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/posts/2019-01-25-til-5g-k8s-info/</guid>
-      <description>因為要開始面對準備論文的參考文件，加上對 5G 不熟，所以從 Video 開始來看。
-找到一些蠻不錯的影片，下面分別對這些影片做個間單的描述。
-  ⭐ Migrating the Next Generation Mobile Core Towards 5G with Kubernetes - Karla Saur, Intel - Published on 12 Jul 2018 ⭐ Kaloom  Kaloom SDF Features - Published on 27 Nov 2018 Kubernetes Integration with Kaloom SDF - Published on 11 Dec 2018  The Telco Networking Journey to Cloud Native: The Good, Bad, and Ugly - Heather Kirksey - Published on 15 Dec 2018 Keynote: Opening Remarks and Networking Journey to CNFs - Arpit Joshipura &amp;amp; Dan Kohn - Published on 26 Sep 2018  1.</description>
-    </item>
     
     <item>
       <title>IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing</title>
