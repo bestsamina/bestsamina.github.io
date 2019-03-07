@@ -45,6 +45,42 @@
     </item>
     
     <item>
+      <title>5G-PPP Software Network White Paper 畫重點筆記</title>
+      <link>https://bestsamina.github.io/posts/2019-02-11-5g-sg-wp-study/</link>
+      <pubDate>Mon, 11 Feb 2019 14:33:14 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2019-02-11-5g-sg-wp-study/</guid>
+      <description>From Webscale to Telco, the Cloud Native Journey
+ https://5g-ppp.eu/white-papers/
+ 這邊是一篇&amp;rdquo;畫重點&amp;rdquo;的筆記，關於 5G &amp;amp; Cloud Native ，From 5G-PPP(5G Infrastructure Public Private Partnership) 的白皮書。
+1 Introduction  Software in 5G-PPP so far  from “boxes” to “functions”, and from “protocols” to “APIs”  Cloud impact in general Cloud impact in telecom ecosystem in particular
+ covering Service-Oriented Architecture (SOA), Microservices Architecture (MSA) and Service-Based Architecture (SBA), the latter being adopted in next generation CORE [15] telcograde enhancements that should be added in frameworks like Kubernetes, monitoring, stateless design, etc&amp;hellip; What are the specific requirements between Webscale and telco players?</description>
+    </item>
+    
+    <item>
+      <title>第一次玩 operator-sdk 就上手</title>
+      <link>https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/</link>
+      <pubDate>Mon, 04 Feb 2019 14:33:14 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/</guid>
+      <description>文章脈絡  前言 Operator Framework 是什麼 認識 operator-sdk CLI 實作開始  建立 K8s 環境 安裝 operator-sdk CLI 用 operator-sdk CLI 建立一個 operator 了解一下新產生的 helm operator 中的檔案 編輯檔案 先在 K8s 中 deploy CRD Build operator container 在 K8s 中部署 operator 在 K8s 中部署自己定義的 custom resource  結語  前言 在接觸 Kubernetes 一陣子後，會發現一堆 operators 。
+而很殘念der，自己到目前都還沒有真正好好的玩過。
+雖然在 operator-sdk 出現以前，有很多人都自己手刻 operator，不過既然 operator 目前都有個 Framework 了，當然就來玩它囉！
+Operator Framework 是什麼  是一個 open source toolkit 管理 Kubernetes native applications, called operators, in an effective, automated, and scalable way 這個 Framework 有兩個主要的專案：  Operator SDK: 就可以用它 build operator。 Operator Lifecycle Manager (OLM): 可以管理 operators 和 CRUD Kubernetes resource 用&amp;hellip;。(可以到這邊玩玩：https://www.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] 5G 與 Kubernetes 的一些資料</title>
+      <link>https://bestsamina.github.io/posts/2019-01-25-til-5g-k8s-info/</link>
+      <pubDate>Fri, 25 Jan 2019 00:57:02 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2019-01-25-til-5g-k8s-info/</guid>
+      <description>因為要開始面對準備論文的參考文件，加上對 5G 不熟，所以從 Video 開始來看。
+找到一些蠻不錯的影片，下面分別對這些影片做個間單的描述。
+  ⭐ Migrating the Next Generation Mobile Core Towards 5G with Kubernetes - Karla Saur, Intel - Published on 12 Jul 2018 ⭐ Kaloom  Kaloom SDF Features - Published on 27 Nov 2018 Kubernetes Integration with Kaloom SDF - Published on 11 Dec 2018  The Telco Networking Journey to Cloud Native: The Good, Bad, and Ugly - Heather Kirksey - Published on 15 Dec 2018 Keynote: Opening Remarks and Networking Journey to CNFs - Arpit Joshipura &amp;amp; Dan Kohn - Published on 26 Sep 2018  1.</description>
+    </item>
+    
+    <item>
       <title>[咖啡學習] 味覺/嗅覺開發課程 - 拆解咖啡風味與香瓶體驗</title>
       <link>https://bestsamina.github.io/posts/2019-01-20-learn-cafe-coffee-tasting/</link>
       <pubDate>Sun, 20 Jan 2019 23:40:26 +0800</pubDate>
@@ -76,6 +112,16 @@
 這邊有更詳細的專案出生紀錄呢! [TGmeetup] 從孵化到出生之全記錄
 2. 接觸 Kubernetes 感謝 Sam 的介紹，進到 ITRI 實習，接觸了 Kubernetes 。感謝 Mac 哥指點，Kubernetes 要在最短時間內學習有效，就是 Hard way 手動安裝啦！這個基礎的學習經驗，真的幫助了不少在往後的 debug。然後在 ITRI 一起被台灣衫 2 號玩(誤)，真的是驚險刺激。雖然一個 Intern 理論上不會有什麼太多的事情，不過時間上，卻也運用的很剛好 XD。能夠協助解完一個又一個的 Issue ，也是挺有成就感的。:) 經驗值+1。
 3. 認識在社群的前輩和朋友 因為是 DigitalOcean Hsinchu 的志工，一方面努力的找講者，也是努力的在找可以和其他社群合作的方法。在自己人脈不夠多的情況下，今年，真的很感謝 Louie Lu, Max Huang, Kevin Cyu 擔任講者。</description>
+    </item>
+    
+    <item>
+      <title>[TIL] 製作 Ubuntu 開機隨身碟相關參考連結</title>
+      <link>https://bestsamina.github.io/posts/2018-10-26-worklog/</link>
+      <pubDate>Fri, 26 Oct 2018 20:44:02 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2018-10-26-worklog/</guid>
+      <description>因為每次重做開機隨身碟總是要查一下要怎麼做。所以這邊就做一下記錄。方便之後查找
+ 參考連結：  https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos https://www.youtube.com/watch?v=fkBfom4FQIQ&amp;amp;feature=youtu.be  Ubuntu 16.04.5 LTS:  http://releases.ubuntu.com/16.04/   </description>
     </item>
     
     <item>

@@ -8,6 +8,21 @@
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/posts/2019-02-11-5g-sg-wp-study/</loc>
+    <lastmod>2019-02-11T14:33:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/</loc>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2019-01-25-til-5g-k8s-info/</loc>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/posts/2019-01-20-learn-cafe-coffee-tasting/</loc>
     <lastmod>2019-01-20T23:40:26+08:00</lastmod>
   </url>
@@ -15,6 +30,11 @@
   <url>
     <loc>https://bestsamina.github.io/posts/2018-12-31-2018retrospect/</loc>
     <lastmod>2018-12-31T12:00:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/posts/2018-10-26-worklog/</loc>
+    <lastmod>2018-10-26T20:44:02+08:00</lastmod>
   </url>
   
   <url>
@@ -159,6 +179,18 @@
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/tags/5g/</loc>
+    <lastmod>2019-02-11T14:33:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/categories/5g/</loc>
+    <lastmod>2019-02-11T14:33:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/about/</loc>
   </url>
   
@@ -210,7 +242,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/categories/</loc>
-    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
+    <lastmod>2019-02-11T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -275,6 +307,12 @@
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/tags/helm/</loc>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/tags/ipvs/</loc>
     <lastmod>2018-10-15T12:05:37+08:00</lastmod>
     <priority>0</priority>
@@ -294,7 +332,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/tags/k8s/</loc>
-    <lastmod>2018-10-15T12:05:37+08:00</lastmod>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -306,13 +344,13 @@
   
   <url>
     <loc>https://bestsamina.github.io/tags/kubernetes/</loc>
-    <lastmod>2018-10-15T12:05:37+08:00</lastmod>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bestsamina.github.io/categories/kubernetes/</loc>
-    <lastmod>2018-10-15T12:05:37+08:00</lastmod>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -413,6 +451,18 @@
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/tags/operator/</loc>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/operator-sdk/</loc>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/tags/ovs/</loc>
     <lastmod>2018-08-20T00:20:05+08:00</lastmod>
     <priority>0</priority>
@@ -496,8 +546,26 @@
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/tags/til/</loc>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/tags/tmux/</loc>
     <lastmod>2017-02-01T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/todayilearned/</loc>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/categories/todayilearned/</loc>
+    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -509,7 +577,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/tags/ubuntu/</loc>
-    <lastmod>2018-06-27T14:51:05+08:00</lastmod>
+    <lastmod>2018-10-26T20:44:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   

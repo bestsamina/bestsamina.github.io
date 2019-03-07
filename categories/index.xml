@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samina Fu</copyright>
-    <lastBuildDate>Sun, 02 Jul 2017 14:51:05 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Feb 2019 14:33:14 +0800</lastBuildDate>
     
 	<atom:link href="https://bestsamina.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>5g</title>
+      <link>https://bestsamina.github.io/categories/5g/</link>
+      <pubDate>Mon, 11 Feb 2019 14:33:14 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/5g/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Agile</title>
@@ -60,7 +69,7 @@
     <item>
       <title>Kubernetes</title>
       <link>https://bestsamina.github.io/categories/kubernetes/</link>
-      <pubDate>Mon, 15 Oct 2018 12:05:37 +0800</pubDate>
+      <pubDate>Mon, 04 Feb 2019 14:33:14 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/categories/kubernetes/</guid>
       <description></description>
@@ -117,6 +126,15 @@
       <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/categories/tgmeetup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Todayilearned</title>
+      <link>https://bestsamina.github.io/categories/todayilearned/</link>
+      <pubDate>Fri, 25 Jan 2019 00:57:02 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/todayilearned/</guid>
       <description></description>
     </item>
     
