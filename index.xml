@@ -14,10 +14,10 @@
     
     <item>
       <title>[TIL] VPP 相關 Troubleshooting 紀錄</title>
-      <link>https://bestsamina.github.io/posts/2019-3-08-til-vpp-troubleshooting/</link>
+      <link>https://bestsamina.github.io/posts/2019-03-08-til-vpp-troubleshooting/</link>
       <pubDate>Fri, 08 Mar 2019 14:33:14 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/posts/2019-3-08-til-vpp-troubleshooting/</guid>
+      <guid>https://bestsamina.github.io/posts/2019-03-08-til-vpp-troubleshooting/</guid>
       <description>VPP 目前只能使用 2M 的 Hugepage 依據目前以下的兩份文件，是建議使用 2M 的 Hugepage，自己測試時，即便已經宣告 1G 的 Hugepage 是沒辦法執行的
  https://fdio-vpp.readthedocs.io/en/latest/gettingstarted/users/configuring/hugepages.html https://media.readthedocs.org/pdf/adenisco-vpp-docs/vpp-13957/adenisco-vpp-docs.pdf - 2.1.2  安裝 VPP 後，DOWN 的 Network Interface 使用 ifconfig (or ip a ) 會看不到。 在這之前，不僅安裝了 VPP ，還更新 i40e 的 driver
 在眾多的程序後，發現 ifconfig 看不到那些有支援 SR-IOV VF 的 interface，以為是 driver 被我更新更新到壞掉了。
