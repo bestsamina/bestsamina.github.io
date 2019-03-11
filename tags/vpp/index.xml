@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vpp on Life &amp; Technological Journey of Samina</title>
+    <link>https://bestsamina.github.io/tags/vpp/</link>
+    <description>Recent content in Vpp on Life &amp; Technological Journey of Samina</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Samina Fu</copyright>
+    <lastBuildDate>Fri, 08 Mar 2019 14:33:14 +0800</lastBuildDate>
+    
+	<atom:link href="https://bestsamina.github.io/tags/vpp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[TIL] VPP 相關 Troubleshooting 紀錄</title>
+      <link>https://bestsamina.github.io/posts/2019-3-08-til-vpp-troubleshooting/</link>
+      <pubDate>Fri, 08 Mar 2019 14:33:14 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2019-3-08-til-vpp-troubleshooting/</guid>
+      <description>VPP 目前只能使用 2M 的 Hugepage 依據目前以下的兩份文件，是建議使用 2M 的 Hugepage，自己測試時，即便已經宣告 1G 的 Hugepage 是沒辦法執行的 - https://fdio-vpp.readthedocs.io/en/latest/gettingstarted/users/configuring/hugepages.html - https://media.readthedocs.org/pdf/adenisco-vpp-docs/vpp-13957/adenisco-vpp-docs.pdf - 2.1.2
+安裝 VPP 後，DOWN 的 Network Interface 使用 ifconfig (or ip a ) 會看不到。 在這之前，不僅安裝了 VPP ，還更新 i40e 的 driver 在眾多的程序後，發現 ifconfig 看不到那些有支援 SR-IOV VF 的 interface，以為是 driver 被我更新更新到壞掉了。 一直重新 make install driver 但還是沒效。 仔細一看，發現 igb 的另外一個 DOWN 的 Network Interface 也不見了。 不過硬體資訊有看到
+$ sudo lshw -class network -businfo [sudo] password for winlab: Bus info Device Class Description ========================================================= pci@0000:01:00.</description>
+    </item>
+    
+  </channel>
+</rss>
