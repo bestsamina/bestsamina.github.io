@@ -16,13 +16,19 @@
 <meta name="keywords" content="blog,python,golang,javascript,container,opencord,cord,sdn,network">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[TIL] VPP 相關 Troubleshooting 紀錄"/>
-<meta name="twitter:description" content="VPP 目前只能使用 2M 的 Hugepage 依據目前以下的兩份文件，是建議使用 2M 的 Hugepage，自己測試時，即便已經宣告 1G 的 Hugepage 是沒辦法執行的 - https://fdio-vpp.readthedocs.io/en/latest/gettingstarted/users/configuring/hugepages.html - https://media.readthedocs.org/pdf/adenisco-vpp-docs/vpp-13957/adenisco-vpp-docs.pdf - 2.1.2
-安裝 VPP 後，DOWN 的 Network Interface 使用 ifconfig (or ip a ) 會看不到。 在這之前，不僅安裝了 VPP ，還更新 i40e 的 driver 在眾多的程序後，發現 ifconfig 看不到那些有支援 SR-IOV VF 的 interface，以為是 driver 被我更新更新到壞掉了。 一直重新 make install driver 但還是沒效。 仔細一看，發現 igb 的另外一個 DOWN 的 Network Interface 也不見了。 不過硬體資訊有看到
+<meta name="twitter:description" content="VPP 目前只能使用 2M 的 Hugepage 依據目前以下的兩份文件，是建議使用 2M 的 Hugepage，自己測試時，即便已經宣告 1G 的 Hugepage 是沒辦法執行的
+ https://fdio-vpp.readthedocs.io/en/latest/gettingstarted/users/configuring/hugepages.html https://media.readthedocs.org/pdf/adenisco-vpp-docs/vpp-13957/adenisco-vpp-docs.pdf - 2.1.2  安裝 VPP 後，DOWN 的 Network Interface 使用 ifconfig (or ip a ) 會看不到。 在這之前，不僅安裝了 VPP ，還更新 i40e 的 driver
+在眾多的程序後，發現 ifconfig 看不到那些有支援 SR-IOV VF 的 interface，以為是 driver 被我更新更新到壞掉了。
+一直重新 make install driver 但還是沒效。
+仔細一看，發現 igb 的另外一個 DOWN 的 Network Interface 也不見了。 不過硬體資訊有看到
 $ sudo lshw -class network -businfo [sudo] password for winlab: Bus info Device Class Description ========================================================= pci@0000:01:00."/>
 
 <meta property="og:title" content="[TIL] VPP 相關 Troubleshooting 紀錄" />
-<meta property="og:description" content="VPP 目前只能使用 2M 的 Hugepage 依據目前以下的兩份文件，是建議使用 2M 的 Hugepage，自己測試時，即便已經宣告 1G 的 Hugepage 是沒辦法執行的 - https://fdio-vpp.readthedocs.io/en/latest/gettingstarted/users/configuring/hugepages.html - https://media.readthedocs.org/pdf/adenisco-vpp-docs/vpp-13957/adenisco-vpp-docs.pdf - 2.1.2
-安裝 VPP 後，DOWN 的 Network Interface 使用 ifconfig (or ip a ) 會看不到。 在這之前，不僅安裝了 VPP ，還更新 i40e 的 driver 在眾多的程序後，發現 ifconfig 看不到那些有支援 SR-IOV VF 的 interface，以為是 driver 被我更新更新到壞掉了。 一直重新 make install driver 但還是沒效。 仔細一看，發現 igb 的另外一個 DOWN 的 Network Interface 也不見了。 不過硬體資訊有看到
+<meta property="og:description" content="VPP 目前只能使用 2M 的 Hugepage 依據目前以下的兩份文件，是建議使用 2M 的 Hugepage，自己測試時，即便已經宣告 1G 的 Hugepage 是沒辦法執行的
+ https://fdio-vpp.readthedocs.io/en/latest/gettingstarted/users/configuring/hugepages.html https://media.readthedocs.org/pdf/adenisco-vpp-docs/vpp-13957/adenisco-vpp-docs.pdf - 2.1.2  安裝 VPP 後，DOWN 的 Network Interface 使用 ifconfig (or ip a ) 會看不到。 在這之前，不僅安裝了 VPP ，還更新 i40e 的 driver
+在眾多的程序後，發現 ifconfig 看不到那些有支援 SR-IOV VF 的 interface，以為是 driver 被我更新更新到壞掉了。
+一直重新 make install driver 但還是沒效。
+仔細一看，發現 igb 的另外一個 DOWN 的 Network Interface 也不見了。 不過硬體資訊有看到
 $ sudo lshw -class network -businfo [sudo] password for winlab: Bus info Device Class Description ========================================================= pci@0000:01:00." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bestsamina.github.io/posts/2019-3-08-til-vpp-troubleshooting/" />
@@ -178,15 +184,18 @@ $ sudo lshw -class network -businfo [sudo] password for winlab: Bus info Device 
 
 <h1 id="vpp-目前只能使用-2m-的-hugepage">VPP 目前只能使用 2M 的 Hugepage</h1>
 
-<p>依據目前以下的兩份文件，是建議使用 2M 的 Hugepage，自己測試時，即便已經宣告 1G 的 Hugepage 是沒辦法執行的
-- <a href="https://fdio-vpp.readthedocs.io/en/latest/gettingstarted/users/configuring/hugepages.html">https://fdio-vpp.readthedocs.io/en/latest/gettingstarted/users/configuring/hugepages.html</a>
-- <a href="https://media.readthedocs.org/pdf/adenisco-vpp-docs/vpp-13957/adenisco-vpp-docs.pdf">https://media.readthedocs.org/pdf/adenisco-vpp-docs/vpp-13957/adenisco-vpp-docs.pdf</a> - 2.1.2</p>
+<p>依據目前以下的兩份文件，是建議使用 2M 的 Hugepage，自己測試時，即便已經宣告 1G 的 Hugepage 是沒辦法執行的</p>
+
+<ul>
+<li><a href="https://fdio-vpp.readthedocs.io/en/latest/gettingstarted/users/configuring/hugepages.html">https://fdio-vpp.readthedocs.io/en/latest/gettingstarted/users/configuring/hugepages.html</a></li>
+<li><a href="https://media.readthedocs.org/pdf/adenisco-vpp-docs/vpp-13957/adenisco-vpp-docs.pdf">https://media.readthedocs.org/pdf/adenisco-vpp-docs/vpp-13957/adenisco-vpp-docs.pdf</a> - 2.1.2</li>
+</ul>
 
 <h1 id="安裝-vpp-後-down-的-network-interface-使用-ifconfig-or-ip-a-會看不到">安裝 VPP 後，DOWN 的 Network Interface 使用 <code>ifconfig</code> (or <code>ip a</code> ) 會看不到。</h1>
 
-<p>在這之前，不僅安裝了 VPP ，還更新 i40e 的 driver
-在眾多的程序後，發現 <code>ifconfig</code> 看不到那些有支援 SR-IOV VF 的 interface，以為是 driver 被我更新更新到壞掉了。
-一直重新 <code>make install</code> driver 但還是沒效。
+<p>在這之前，不僅安裝了 VPP ，還更新 i40e 的 driver<br />
+在眾多的程序後，發現 <code>ifconfig</code> 看不到那些有支援 SR-IOV VF 的 interface，以為是 driver 被我更新更新到壞掉了。<br />
+一直重新 <code>make install</code> driver 但還是沒效。<br />
 仔細一看，發現 <code>igb</code> 的另外一個 DOWN 的 Network Interface 也不見了。
 不過硬體資訊有看到</p>
 
@@ -202,7 +211,7 @@ pci@0000:08:00.0  enp8s0           network    I210 Gigabit Network Connection
 pci@0000:09:00.0                   network    I210 Gigabit Network Connection
 </code></pre>
 
-<p>這樣就開始研究，為何 DOWN 的 Interface 會自己不見。
+<p>這樣就開始研究，為何 DOWN 的 Interface 會自己不見。<br />
 使用 dmesg 也看不出所以然</p>
 
 <pre><code class="language-sh">$ dmesg | grep igb
@@ -242,8 +251,8 @@ e:0}, d:resource.infDecAmount{Dec:(*inf.Dec)(nil)}, s:&quot;110&quot;, Format:&q
 Mar 11 13:17:56 kubecord-a kubelet[8532]: E0311 13:17:56.693956    8532 kubelet.go:2236] node &quot;kubecord-a&quot; not found
 </code></pre>
 
-<p>原本會宣告 1G 的 Hugepages 是因為 DPDK，2M 的 Hugepages 是因為 VPP。
-而因為 <code>/etc/default/grub</code> 的 <code>GRUB_CMDLINE_LINUX</code> 沒把 2M 的移除，導致 k8s 起不來。
+<p>原本會宣告 1G 的 Hugepages 是因為 DPDK，2M 的 Hugepages 是因為 VPP。<br />
+而因為 <code>/etc/default/grub</code> 的 <code>GRUB_CMDLINE_LINUX</code> 沒把 2M 的移除，導致 k8s 起不來。<br />
 而把 VPP 移除，2M 的設定也不需要，所以移除 2M 的設定，<code>update-grub</code> 後重開機，Kubernetes 就回來了！</p>
 
   </div>
