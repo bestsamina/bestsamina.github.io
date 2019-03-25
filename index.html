@@ -21,7 +21,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://bestsamina.github.io/" />
 
-<meta property="og:updated_time" content="2019-03-08T14:33:14&#43;08:00"/>
+<meta property="og:updated_time" content="2019-03-23T14:33:14&#43;08:00"/>
 
 
     <!-- Font-Awesome -->
@@ -131,6 +131,22 @@
 <div class="content container">
             <div class="post-list">
     
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/2019-03-23-til-change-speed/">[TIL] 在 Ubuntu 16.04 改變網卡速度</a>
+        </span>
+        <span class="item__date">
+          Mar 23, 2019</span>
+        網卡限速設定參考：https://www.shellhacks.com/change-speed-duplex-ethernet-card-linux/
+不過不曉得為何在 Ubuntu 16.04 中 ethtool 的指令不能 work。
+以下是記錄可以 work 的方法。
+ 原本的 Network Interface 狀態
+  ens11f0 沒有接上網路線，ens11f3 有接網路線 所以 Speed 和 Duplex 有接上網路線的就有顯示。 不過 ens11f3 這樣還是不能和 100Mb/s 的互相 ping 成功，Link detected 也顯示 no，interface 也是 DOWN 的。
+$ sudo ethtool ens11f0 Settings for ens11f0: Supported ports: [ ] Supported link modes: 10000baseT/Full Supported pause frame use: Symmetric Supports auto-negotiation: Yes Advertised link modes: 10000baseT/Full Advertised pause frame use: No Advertised auto-negotiation: Yes Speed: Unknown!
+        <div class="read-more-link">
+            <a href="/posts/2019-03-23-til-change-speed/">Read More…</a>
+        </div>
+        </div>
       <div class="post-list__item">
         <span class="item__title--big">
           <a href="/posts/2019-03-08-til-vpp-troubleshooting/">[TIL] VPP 相關 Troubleshooting 紀錄</a>
