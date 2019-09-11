@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bestsamina.github.io/posts/2019-09-11-japan-working-visa/</loc>
+    <lastmod>2019-09-11T16:48:35+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/posts/2019-03-23-til-change-speed/</loc>
     <lastmod>2019-03-23T14:33:14+08:00</lastmod>
   </url>
@@ -329,6 +334,12 @@
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/tags/japan/</loc>
+    <lastmod>2019-09-11T16:48:35+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/tags/javascript/</loc>
     <lastmod>2017-11-27T14:51:05+08:00</lastmod>
     <priority>0</priority>
@@ -366,13 +377,13 @@
   
   <url>
     <loc>https://bestsamina.github.io/categories/life/</loc>
-    <lastmod>2019-03-06T23:59:35+08:00</lastmod>
+    <lastmod>2019-09-11T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bestsamina.github.io/</loc>
-    <lastmod>2019-03-23T14:33:14+08:00</lastmod>
+    <lastmod>2019-09-11T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -485,7 +496,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/posts/</loc>
-    <lastmod>2019-03-23T14:33:14+08:00</lastmod>
+    <lastmod>2019-09-11T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -600,6 +611,12 @@
   <url>
     <loc>https://bestsamina.github.io/tags/vagrant/</loc>
     <lastmod>2018-06-27T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/visa/</loc>
+    <lastmod>2019-09-11T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
