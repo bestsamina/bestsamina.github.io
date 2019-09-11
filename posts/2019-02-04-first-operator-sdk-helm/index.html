@@ -2,6 +2,21 @@
 <html lang="en-us">
     <head>
     <link href="http://gmpg.org/xfn/11" rel="profile">
+    
+    <script type="text/javascript">
+      var _paq = window._paq || [];
+       
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://github.matomo.cloud/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Cache-Control" content="public" />
@@ -176,6 +191,45 @@ Operator Framework 是什麼  是一個 open source toolkit 管理 Kubernetes na
 
 
   </header>
+<aside>
+  <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#文章脈絡">文章脈絡</a></li>
+<li><a href="#前言">前言</a></li>
+<li><a href="#operator-framework-是什麼">Operator Framework 是什麼</a></li>
+<li><a href="#認識-operator-sdk-cli">認識 operator-sdk CLI</a></li>
+<li><a href="#實作開始">實作開始</a>
+<ul>
+<li><a href="#1-建立-k8s-環境">1. 建立 K8s 環境</a></li>
+<li><a href="#2-安裝-operator-sdk-cli">2. 安裝 operator-sdk CLI</a></li>
+<li><a href="#3-用-operator-sdk-cli-建立一個-operator">3. 用 operator-sdk CLI 建立一個 operator</a></li>
+<li><a href="#4-了解一下新產生的-helm-operator-中的檔案">4. 了解一下新產生的 helm operator 中的檔案</a></li>
+<li><a href="#5-編輯檔案">5. 編輯檔案</a>
+<ul>
+<li><a href="#1-watches-yaml">1. <code>watches.yaml</code></a></li>
+<li><a href="#2-helm-charts">2. helm-charts</a></li>
+</ul></li>
+<li><a href="#6-先在-k8s-中-deploy-crd">6. 先在 K8s 中 deploy CRD</a></li>
+<li><a href="#7-build-operator-container">7. Build operator container</a></li>
+<li><a href="#8-在-k8s-中部署-operator">8. 在 K8s 中部署 operator</a>
+<ul>
+<li><a href="#1-修改-deploy-operator-yaml-的-image-來源">1. 修改 <code>deploy/operator.yaml</code> 的 image 來源</a></li>
+<li><a href="#2-部署-operator">2. 部署 operator</a></li>
+</ul></li>
+<li><a href="#9-在-k8s-中部署自己定義的-custom-resource">9. 在 K8s 中部署自己定義的 custom resource</a>
+<ul>
+<li><a href="#1-編輯-deploy-crds-group-version-crdname-cr-yaml">1. 編輯 <code>deploy/crds/GROUP_VERSION_CRDNAME_cr.yaml</code></a></li>
+<li><a href="#2-建立自己的-resource">2. 建立自己的 resource</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#結語">結語</a></li>
+<li><a href="#參考連結">參考連結</a></li>
+</ul></li>
+</ul>
+</nav>
+</aside>
   <div class="post">
     
 
@@ -616,6 +670,7 @@ replicaset.apps/example-mytest-6bxnrell81eqsmdueqsqy7l7z-798dc58c8   1         1
     
 </div>
 </article>
+
         </div>
         <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
@@ -652,6 +707,7 @@ replicaset.apps/example-mytest-6bxnrell81eqsmdueqsqy7l7z-798dc58c8   1         1
 
     </div>
     
+
 
     </body>
 </html>

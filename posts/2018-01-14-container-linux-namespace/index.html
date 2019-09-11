@@ -2,6 +2,21 @@
 <html lang="en-us">
     <head>
     <link href="http://gmpg.org/xfn/11" rel="profile">
+    
+    <script type="text/javascript">
+      var _paq = window._paq || [];
+       
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://github.matomo.cloud/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Cache-Control" content="public" />
@@ -192,6 +207,100 @@
 
 
   </header>
+<aside>
+  <nav id="TableOfContents">
+<ul>
+<li><a href="#前言">前言</a>
+<ul>
+<li>
+<ul>
+<li><a href="#實作環境摘要">實作環境摘要</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#linux-namespace-類別">Linux Namespace 類別</a></li>
+<li><a href="#the-system-calls-of-namespaces-api">The system calls of namespaces API</a></li>
+<li><a href="#uts-namespaces-clone-newuts">UTS namespaces (CLONE_NEWUTS)</a>
+<ul>
+<li>
+<ul>
+<li><a href="#介紹">介紹</a></li>
+<li><a href="#實作流程">實作流程</a>
+<ul>
+<li><a href="#step-1-撰寫程式">Step 1. 撰寫程式</a></li>
+<li><a href="#step-2-執行程式">Step 2. 執行程式</a></li>
+<li><a href="#step-3-觀察">Step 3. 觀察</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#ipc-namespaces-clone-newipc">IPC namespaces (CLONE_NEWIPC)</a>
+<ul>
+<li>
+<ul>
+<li><a href="#介紹-1">介紹</a></li>
+<li><a href="#實作流程-1">實作流程</a>
+<ul>
+<li><a href="#step-1-撰寫程式-1">Step 1. 撰寫程式</a></li>
+<li><a href="#step-2-執行程式-1">Step 2. 執行程式</a></li>
+<li><a href="#step-3-觀察-1">Step 3. 觀察</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#pid-namespaces-clone-newpid">PID namespaces (CLONE_NEWPID)</a>
+<ul>
+<li>
+<ul>
+<li><a href="#介紹-2">介紹</a></li>
+<li><a href="#實作流程-2">實作流程</a>
+<ul>
+<li><a href="#step-1-撰寫程式-2">Step 1. 撰寫程式</a></li>
+<li><a href="#step-2-執行程式-2">Step 2. 執行程式</a></li>
+<li><a href="#step-3-觀察-2">Step 3. 觀察</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#mount-namespaces-clone-newns">Mount namespaces (CLONE_NEWNS)</a>
+<ul>
+<li>
+<ul>
+<li><a href="#介紹-3">介紹</a></li>
+<li><a href="#實作流程-3">實作流程</a>
+<ul>
+<li><a href="#step-1-撰寫程式-3">Step 1. 撰寫程式</a></li>
+<li><a href="#step-2-執行程式-3">Step 2. 執行程式</a></li>
+<li><a href="#step-3-觀察-3">Step 3. 觀察</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#user-namespaces-clone-newuser">User namespaces (CLONE_NEWUSER)</a>
+<ul>
+<li>
+<ul>
+<li><a href="#介紹-4">介紹</a></li>
+<li><a href="#實作流程-4">實作流程</a>
+<ul>
+<li><a href="#step-1-撰寫程式-4">Step 1. 撰寫程式</a></li>
+<li><a href="#step-2-執行程式-4">Step 2. 執行程式</a></li>
+<li><a href="#step-3-觀察-4">Step 3. 觀察</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#network-namespaces-clone-newnet">Network namespaces (CLONE_NEWNET)</a>
+<ul>
+<li>
+<ul>
+<li><a href="#介紹-5">介紹</a></li>
+<li><a href="#實作流程-5">實作流程</a>
+<ul>
+<li><a href="#step-1-撰寫程式-5">Step 1. 撰寫程式</a></li>
+<li><a href="#step-2-執行程式-5">Step 2. 執行程式</a></li>
+<li><a href="#step-3-觀察-5">Step 3. 觀察</a></li>
+</ul></li>
+<li><a href="#相關系列文">相關系列文：</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+</aside>
   <div class="post">
     
 
@@ -601,7 +710,7 @@ Warning: cannot open /proc/net/dev (No such file or directory). Limited output.
         
 <li>
   <span class="list__title--small">
-    <a href="/2018/01/03/build-container-%E8%87%AA%E5%B7%B1%E7%9A%84-container-%E8%87%AA%E5%B7%B1%E5%AF%AB/">[Build container] 自己的 Container 自己寫</a>
+    <a href="/posts/2018-01-03-my-container-setup-env/">[Build container] Docker 簡介與 Go 環境安裝</a>
       
       <time class="pull-right hidden-tablet">Jan 03 &#39;18</time>
       
@@ -610,7 +719,7 @@ Warning: cannot open /proc/net/dev (No such file or directory). Limited output.
 
 <li>
   <span class="list__title--small">
-    <a href="/posts/2018-01-03-my-container-setup-env/">[Build container] Docker 簡介與 Go 環境安裝</a>
+    <a href="/2018/01/03/build-container-%E8%87%AA%E5%B7%B1%E7%9A%84-container-%E8%87%AA%E5%B7%B1%E5%AF%AB/">[Build container] 自己的 Container 自己寫</a>
       
       <time class="pull-right hidden-tablet">Jan 03 &#39;18</time>
       
@@ -621,6 +730,7 @@ Warning: cannot open /proc/net/dev (No such file or directory). Limited output.
     
 </div>
 </article>
+
         </div>
         <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
@@ -657,6 +767,7 @@ Warning: cannot open /proc/net/dev (No such file or directory). Limited output.
 
     </div>
     
+
 
     </body>
 </html>
