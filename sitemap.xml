@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bestsamina.github.io/posts/2019-09-29-book-avoidant-attachment/</loc>
+    <lastmod>2019-09-29T16:48:35+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/posts/2019-09-11-japan-working-visa/</loc>
     <lastmod>2019-09-11T16:48:35+08:00</lastmod>
   </url>
@@ -250,6 +255,18 @@
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/tags/books/</loc>
+    <lastmod>2019-09-29T16:48:35+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/categories/books/</loc>
+    <lastmod>2019-09-29T16:48:35+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/tags/cafe/</loc>
     <lastmod>2019-01-20T23:40:26+08:00</lastmod>
     <priority>0</priority>
@@ -383,7 +400,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/</loc>
-    <lastmod>2019-09-11T16:48:35+08:00</lastmod>
+    <lastmod>2019-09-29T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -496,7 +513,13 @@
   
   <url>
     <loc>https://bestsamina.github.io/posts/</loc>
-    <lastmod>2019-09-11T16:48:35+08:00</lastmod>
+    <lastmod>2019-09-29T16:48:35+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/psychology/</loc>
+    <lastmod>2019-09-29T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
