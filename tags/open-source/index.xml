@@ -52,6 +52,26 @@ Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的�
     </item>
     
     <item>
+      <title>Stacer - 系統優化器</title>
+      <link>https://bestsamina.github.io/posts/2017-02-17-stacer/</link>
+      <pubDate>Fri, 17 Feb 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/posts/2017-02-17-stacer/</guid>
+      <description>Stacer - 系統優化器 這套工具類似 Windows 上面安裝 CCleaner 加上系統資源監控！
+來源 https://github.com/oguzhaninan/Stacer
+安裝環境 Ubuntu base 桌面版本
+介紹 在GitHub上面的介紹就是&amp;rdquo;Ubuntu System Optimizer&amp;rdquo;！
+安裝  到GitHub頁面上點選releases
+ 依據作業系統的位元數，選擇要下載的deb包
+ 安裝
+  畫面 整個就是超級漂亮的！而且是用JavaScript寫的，超猛！
+雖然Linux Mint就有系統資源監控了
+不過既然安裝這麼漂亮的東西，當然是要來支持一下了！
+Stacer另外還包含的功能：  System Cleaner：可以清除Apt cache, Crash Reports, System Logs, App Cache，不過如果有些服務紀錄是需要留的，還是要注意一下，別全選了~ Startup Apps：這個我的電腦裡沒有出現~ Services：不用在sudo service XXX stop，直接滑鼠點一下就好哩！ Uninstaller：可移除安裝的套件 介紹完畢~  之後要很潮的打開它:)
+reference: https://itsfoss.com/optimize-ubuntu-stacer/</description>
+    </item>
+    
+    <item>
       <title>終端機的超狂工具-TMUX 與指令整理</title>
       <link>https://bestsamina.github.io/posts/2017-02-01-tmux/</link>
       <pubDate>Wed, 01 Feb 2017 14:51:05 +0800</pubDate>

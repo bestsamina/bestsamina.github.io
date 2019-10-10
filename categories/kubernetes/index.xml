@@ -7,44 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Samina Fu</copyright>
-    <lastBuildDate>Mon, 04 Feb 2019 14:33:14 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 09 Mar 2018 14:51:05 +0800</lastBuildDate>
     
 	<atom:link href="https://bestsamina.github.io/categories/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>第一次玩 operator-sdk 就上手</title>
-      <link>https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/</link>
-      <pubDate>Mon, 04 Feb 2019 14:33:14 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/</guid>
-      <description>文章脈絡  前言 Operator Framework 是什麼 認識 operator-sdk CLI 實作開始  建立 K8s 環境 安裝 operator-sdk CLI 用 operator-sdk CLI 建立一個 operator 了解一下新產生的 helm operator 中的檔案 編輯檔案 先在 K8s 中 deploy CRD Build operator container 在 K8s 中部署 operator 在 K8s 中部署自己定義的 custom resource  結語  前言 在接觸 Kubernetes 一陣子後，會發現一堆 operators 。
-而很殘念der，自己到目前都還沒有真正好好的玩過。
-雖然在 operator-sdk 出現以前，有很多人都自己手刻 operator，不過既然 operator 目前都有個 Framework 了，當然就來玩它囉！
-Operator Framework 是什麼  是一個 open source toolkit 管理 Kubernetes native applications, called operators, in an effective, automated, and scalable way 這個 Framework 有兩個主要的專案：  Operator SDK: 就可以用它 build operator。 Operator Lifecycle Manager (OLM): 可以管理 operators 和 CRUD Kubernetes resource 用&amp;hellip;。(可以到這邊玩玩：https://www.</description>
-    </item>
-    
-    <item>
-      <title>IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing</title>
-      <link>https://bestsamina.github.io/posts/2018-10-19-ipvs-based-kube-proxy-4-scaled-k8s-lb/</link>
-      <pubDate>Mon, 15 Oct 2018 12:05:37 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/posts/2018-10-19-ipvs-based-kube-proxy-4-scaled-k8s-lb/</guid>
-      <description>這篇為 10月19日 talk 的文字版， slides 是 https://speakerdeck.com/sufuf3/ipvs-based-kube-proxy-for-scaled-kubernetes-load-balancing 。
- 內容脈絡
- Preface (前言) Introduction (介紹) Kube-Proxy  What is Kube-proxy (什麼是 Kube-proxy) Kube-Proxy mode  IPVS  LVS What is IPVS (什麼是 IPVS) IPVS with Netfilter (IPVS 和 Netfilter) IPVS vs iptables (IPVS 與 iptables 的比較)  IPVS-based Kube-proxy  Why using IPVS? (為什麼要用 IPVS) How IPVS-based Kube-proxy work? (IPVS-based Kube-proxy 是怎麼運作的) Run Kube-proxy in IPVS mode (來執行 IPVS mode 的 Kube-proxy) IPVS Service Network Topology Example  Implement IPVS-based K8s service load balancing (實現 IPVS-based K8s service load balancing) Conclusion (結論)  Preface (前言) 在一般使用 Kubernetes 的 kube-proxy 情況下，通常都使用 iptables 模式。</description>
-    </item>
-    
-    <item>
-      <title>實現 IPVS-based K8s service load balancing - 不同 namespace 擁有自己的 external IP</title>
-      <link>https://bestsamina.github.io/posts/2018-10-15-hands-on-k8s-kube-proxy-w-ipvs-lb/</link>
-      <pubDate>Mon, 15 Oct 2018 11:25:11 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/posts/2018-10-15-hands-on-k8s-kube-proxy-w-ipvs-lb/</guid>
-      <description>文章脈絡
- 前置作業 環境說明 K8s 於不同 namespace 擁有自己的 external IP 之環境  部署 測試   前置作業 1. 把 IPVS 的 kernel module load 進來 modprobe -- ip_vs modprobe -- ip_vs_rr modprobe -- ip_vs_wrr modprobe -- ip_vs_sh modprobe -- nf_conntrack_ipv4 cut -f1 -d &amp;quot; &amp;quot; /proc/modules | grep -e ip_vs -e nf_conntrack_ipv4  2. 在啟動 kube-proxy 時，參數設為 --proxy-mode=ipvs  (如果要使用其他演算法，那可以設定 --ipvs-scheduler=rr rr 改為其他的)
-3. 如果是在 v.10 之前的版本， kube-proxy 要加下面的參數 --feature-gates=SupportIPVSProxyMode=true  4.</description>
-    </item>
     
     <item>
       <title>[Kubernetes] 學習筆記</title>
