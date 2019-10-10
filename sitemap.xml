@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bestsamina.github.io/posts/2019-10-10-k3s-intro-and-play/</loc>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/posts/2019-09-29-book-avoidant-attachment/</loc>
     <lastmod>2019-09-29T16:48:35+08:00</lastmod>
   </url>
@@ -199,13 +204,13 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/5g/</loc>
+    <loc>https://bestsamina.github.io/categories/5g/</loc>
     <lastmod>2019-02-11T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/categories/5g/</loc>
+    <loc>https://bestsamina.github.io/tags/5g/</loc>
     <lastmod>2019-02-11T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -215,13 +220,13 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/agile/</loc>
+    <loc>https://bestsamina.github.io/categories/agile/</loc>
     <lastmod>2017-07-02T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/categories/agile/</loc>
+    <loc>https://bestsamina.github.io/tags/agile/</loc>
     <lastmod>2017-07-02T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -233,13 +238,13 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/authorization/</loc>
+    <loc>https://bestsamina.github.io/categories/authorization/</loc>
     <lastmod>2018-10-11T01:10:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/categories/authorization/</loc>
+    <loc>https://bestsamina.github.io/tags/authorization/</loc>
     <lastmod>2018-10-11T01:10:15+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -255,13 +260,13 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/books/</loc>
+    <loc>https://bestsamina.github.io/categories/books/</loc>
     <lastmod>2019-09-29T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/categories/books/</loc>
+    <loc>https://bestsamina.github.io/tags/books/</loc>
     <lastmod>2019-09-29T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -279,14 +284,20 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/coffee/</loc>
-    <lastmod>2019-01-20T23:40:26+08:00</lastmod>
+    <loc>https://bestsamina.github.io/categories/cloud-native/</loc>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/container/</loc>
-    <lastmod>2018-10-15T12:05:37+08:00</lastmod>
+    <loc>https://bestsamina.github.io/tags/cloud-native/</loc>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/coffee/</loc>
+    <lastmod>2019-01-20T23:40:26+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -297,13 +308,19 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/cord/</loc>
-    <lastmod>2018-07-26T15:51:05+08:00</lastmod>
+    <loc>https://bestsamina.github.io/tags/container/</loc>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bestsamina.github.io/categories/cord/</loc>
+    <lastmod>2018-07-26T15:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/cord/</loc>
     <lastmod>2018-07-26T15:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -357,20 +374,26 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/javascript/</loc>
-    <lastmod>2017-11-27T14:51:05+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bestsamina.github.io/categories/javascript/</loc>
     <lastmod>2017-11-27T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://bestsamina.github.io/tags/javascript/</loc>
+    <lastmod>2017-11-27T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/k3s/</loc>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bestsamina.github.io/tags/k8s/</loc>
-    <lastmod>2019-01-25T00:57:02+08:00</lastmod>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -381,14 +404,14 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/kubernetes/</loc>
+    <loc>https://bestsamina.github.io/categories/kubernetes/</loc>
     <lastmod>2019-02-04T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/categories/kubernetes/</loc>
-    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
+    <loc>https://bestsamina.github.io/tags/kubernetes/</loc>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -400,7 +423,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/</loc>
-    <lastmod>2019-09-29T16:48:35+08:00</lastmod>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -411,25 +434,25 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/linux/</loc>
-    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bestsamina.github.io/categories/linux/</loc>
     <lastmod>2017-03-15T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/machine-learning/</loc>
-    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+    <loc>https://bestsamina.github.io/tags/linux/</loc>
+    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bestsamina.github.io/categories/machine-learning/</loc>
+    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bestsamina.github.io/tags/machine-learning/</loc>
     <lastmod>2017-06-22T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -447,14 +470,14 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/network/</loc>
-    <lastmod>2019-03-23T14:33:14+08:00</lastmod>
+    <loc>https://bestsamina.github.io/categories/network/</loc>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/categories/network/</loc>
-    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
+    <loc>https://bestsamina.github.io/tags/network/</loc>
+    <lastmod>2019-03-23T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -513,7 +536,7 @@
   
   <url>
     <loc>https://bestsamina.github.io/posts/</loc>
-    <lastmod>2019-09-29T16:48:35+08:00</lastmod>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -578,14 +601,14 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/tgmeetup/</loc>
-    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
+    <loc>https://bestsamina.github.io/categories/tgmeetup/</loc>
+    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/categories/tgmeetup/</loc>
-    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
+    <loc>https://bestsamina.github.io/tags/tgmeetup/</loc>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -602,13 +625,13 @@
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/tags/todayilearned/</loc>
+    <loc>https://bestsamina.github.io/categories/todayilearned/</loc>
     <lastmod>2019-03-23T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bestsamina.github.io/categories/todayilearned/</loc>
+    <loc>https://bestsamina.github.io/tags/todayilearned/</loc>
     <lastmod>2019-03-23T14:33:14+08:00</lastmod>
     <priority>0</priority>
   </url>

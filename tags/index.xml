@@ -85,6 +85,15 @@
     </item>
     
     <item>
+      <title>Cloud Native</title>
+      <link>https://bestsamina.github.io/tags/cloud-native/</link>
+      <pubDate>Thu, 10 Oct 2019 16:48:35 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/cloud-native/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Coffee</title>
       <link>https://bestsamina.github.io/tags/coffee/</link>
       <pubDate>Sun, 20 Jan 2019 23:40:26 +0800</pubDate>
@@ -96,7 +105,7 @@
     <item>
       <title>Container</title>
       <link>https://bestsamina.github.io/tags/container/</link>
-      <pubDate>Mon, 15 Oct 2018 12:05:37 +0800</pubDate>
+      <pubDate>Thu, 10 Oct 2019 16:48:35 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/container/</guid>
       <description></description>
@@ -193,9 +202,18 @@
     </item>
     
     <item>
+      <title>K3s</title>
+      <link>https://bestsamina.github.io/tags/k3s/</link>
+      <pubDate>Thu, 10 Oct 2019 16:48:35 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/k3s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>K8s</title>
       <link>https://bestsamina.github.io/tags/k8s/</link>
-      <pubDate>Fri, 25 Jan 2019 00:57:02 +0800</pubDate>
+      <pubDate>Thu, 10 Oct 2019 16:48:35 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/k8s/</guid>
       <description></description>
@@ -213,7 +231,7 @@
     <item>
       <title>Kubernetes</title>
       <link>https://bestsamina.github.io/tags/kubernetes/</link>
-      <pubDate>Mon, 04 Feb 2019 14:33:14 +0800</pubDate>
+      <pubDate>Thu, 10 Oct 2019 16:48:35 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/kubernetes/</guid>
       <description></description>

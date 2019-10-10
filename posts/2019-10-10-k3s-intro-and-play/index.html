@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    
+    <script type="text/javascript">
+      var _paq = window._paq || [];
+       
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://github.matomo.cloud/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<meta name="google-site-verification" content="86pjrD_mrnBLozy63MgmlPcYTh6-MHixr_RZhm2Wji0" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.54.0" />
+    
+    
+    <title>邊緣運算之容器管理工具 - K3s 之介紹與玩耍 • Life &amp; Technological Journey of Samina</title>
+<meta name="description" content="Life &amp; Technological Journey of Samina - Hello and welcome to my blog. My name is Samina Fu. This blog is about technology and the record of my life. Hope the logs can help you and me someday.">
+<meta name="keywords" content="blog,python,golang,javascript,container,opencord,cord,sdn,network">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="邊緣運算之容器管理工具 - K3s 之介紹與玩耍"/>
+<meta name="twitter:description" content="前言 Kubernetes 是雲原生技術 (cloud-native technologies)，也是雲原生計算 (Cloud Native Computing) 重要的技術之一，而且在使用 Kubernetes 時，應用的硬體資源通常也比較好。然而， 容器 (Container) 技術的崛起，也帶動了邊緣運算 (Edge computing) 導入 Container 技術的風潮。
+邊緣運算顧名思義就是將應用程式等服務運算，由網路中心節點，移往網路邏輯上的邊緣節點來處理。也就是從網路中心節點處理大型服務來分解，切割成更小、更容易管理的部份，分散到邊緣節點去處理。可以想像，如果網路中心節點的角色如同總經理，邊緣節點的角色如同部門經理，而終端裝置的角色如同基層員工。在這架構下，想當然耳就是個分散式架構，而邊緣節點因為更接近於終端裝置，因此可以加快資料的處理與傳送速度，減少延遲。如同基層員工直經回報部門經理，而重要的資訊，部門經理再回報給總經理一樣。也因此在邊緣運算的應用中一直都有重要的應用場景在，例如大家常聽到的 IoT。
+當邊緣運算節點硬體效能越來越強，能做的事情當然也就可以越來越多，即便是個嵌入式主機板，也是可以跑很多應用程式的 Container 的。然而有了越來越多的容器，當然也需要厲害的 Container 管理工具。
+K3s 就是在這需求下誕生的產品。
+K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開源專案，也是 CNCF 官方認證的 Kubernetes 發布版本。而且是以產品設計出發的，讓管理者在設備資源有限的環境下，仍然可以良好的運作 Kubernetes，並管理 containers。因此，在這優勢下，K3s 可以很好的應用在 Edge, IoT, CI, ARM 等情境、環境下。
+它所需的系統資源並不多：
+ 在 Server 端： 只需要 512 MB 在 Node 端：只需要 75MB Disk 大小只需 200MB  而且可以用在 x86_64, ARMv7, ARM64 等平台架構。"/>
+
+<meta property="og:title" content="邊緣運算之容器管理工具 - K3s 之介紹與玩耍" />
+<meta property="og:description" content="前言 Kubernetes 是雲原生技術 (cloud-native technologies)，也是雲原生計算 (Cloud Native Computing) 重要的技術之一，而且在使用 Kubernetes 時，應用的硬體資源通常也比較好。然而， 容器 (Container) 技術的崛起，也帶動了邊緣運算 (Edge computing) 導入 Container 技術的風潮。
+邊緣運算顧名思義就是將應用程式等服務運算，由網路中心節點，移往網路邏輯上的邊緣節點來處理。也就是從網路中心節點處理大型服務來分解，切割成更小、更容易管理的部份，分散到邊緣節點去處理。可以想像，如果網路中心節點的角色如同總經理，邊緣節點的角色如同部門經理，而終端裝置的角色如同基層員工。在這架構下，想當然耳就是個分散式架構，而邊緣節點因為更接近於終端裝置，因此可以加快資料的處理與傳送速度，減少延遲。如同基層員工直經回報部門經理，而重要的資訊，部門經理再回報給總經理一樣。也因此在邊緣運算的應用中一直都有重要的應用場景在，例如大家常聽到的 IoT。
+當邊緣運算節點硬體效能越來越強，能做的事情當然也就可以越來越多，即便是個嵌入式主機板，也是可以跑很多應用程式的 Container 的。然而有了越來越多的容器，當然也需要厲害的 Container 管理工具。
+K3s 就是在這需求下誕生的產品。
+K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開源專案，也是 CNCF 官方認證的 Kubernetes 發布版本。而且是以產品設計出發的，讓管理者在設備資源有限的環境下，仍然可以良好的運作 Kubernetes，並管理 containers。因此，在這優勢下，K3s 可以很好的應用在 Edge, IoT, CI, ARM 等情境、環境下。
+它所需的系統資源並不多：
+ 在 Server 端： 只需要 512 MB 在 Node 端：只需要 75MB Disk 大小只需 200MB  而且可以用在 x86_64, ARMv7, ARM64 等平台架構。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bestsamina.github.io/posts/2019-10-10-k3s-intro-and-play/" />
+<meta property="article:published_time" content="2019-10-10T16:48:35&#43;08:00"/>
+<meta property="article:modified_time" content="2019-10-10T16:48:35&#43;08:00"/>
+
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+    <!-- highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://bestsamina.github.io//css/print.min.css" media="print">
+    <link rel="stylesheet" href="https://bestsamina.github.io//css/hyde-hyde.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png"></head>
+
+    <body>
+        
+<div class="sidebar text-center">
+  <div class="container ">
+    <div class="sidebar-about">
+      <div class="site__title">
+        <a href="https://bestsamina.github.io/">Life &amp; Technological Journey of Samina</a>
+      </div>
+      
+      
+      
+      <p>
+        <img src="https://bestsamina.github.io/images/sufuf3_1519028337_878.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
+      <p class="site__description">
+         This blog is about technology and the record of my life. Hope the logs can help you and me someday. 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+				<li>
+					<a href="/series/">
+						<span>Series</span>
+					</a>
+				</li>
+				<li>
+					<a href="/tags/">
+						<span>Tags</span>
+					</a>
+				</li>
+				<li>
+					<a href="/categories/">
+						<span>Categories</span>
+					</a>
+				</li>
+				<li>
+					<a href="/page/awesome-blogs">
+						<span>Awesome-Blogs</span>
+					</a>
+				</li>
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social text-center">
+	<a href="https://twitter.com/sufuf3149"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://github.com/sufuf3"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://gitlab.com/sufuf3"><i class="fab fa-gitlab fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://medium.com/@sufuf3149"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://ko-fi.com/sufuf3149"><i class="fas fa-coffee fa-lg" aria-hidden="true"></i></a>
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2019 Samina Fu.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+<div class="content container">
+            <article>
+  <header>
+    <h1>邊緣運算之容器管理工具 - K3s 之介紹與玩耍</h1>
+     
+    
+<div class="post__meta">
+    
+    <i class="fas fa-calendar-alt"></i> Oct 10, 2019
+    in
+              
+              
+              <a class="post__category" href="/categories/cloud-native">A CLOUD-NATIVE</a>
+              
+              
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="post__tag" href="/tags/kubernetes">#kubernetes</a>
+           
+      
+          <a class="post__tag" href="/tags/k8s">#k8s</a>
+           
+      
+          <a class="post__tag" href="/tags/k3s">#k3s</a>
+           
+      
+          <a class="post__tag" href="/tags/cloud-native">#cloud-native</a>
+           
+      
+          <a class="post__tag" href="/tags/container">#container</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+<aside>
+  <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#k3s-介紹">K3s 介紹</a>
+<ul>
+<li><a href="#k3s-簡介">K3s 簡介</a></li>
+<li><a href="#k3s-架構">K3s 架構</a></li>
+</ul></li>
+<li><a href="#部署-k3s-cluster">部署 K3s cluster</a></li>
+<li><a href="#功能驗證">功能驗證</a></li>
+<li><a href="#在-arm-上面部署-k3s-cluster">在 ARM 上面部署 K3s Cluster</a></li>
+<li><a href="#結語">結語</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul></li>
+</ul>
+</nav>
+</aside>
+  <div class="post">
+    
+
+<h2 id="前言">前言</h2>
+
+<p>Kubernetes 是雲原生技術 (cloud-native technologies)，也是雲原生計算 (Cloud Native Computing) 重要的技術之一，而且在使用 Kubernetes 時，應用的硬體資源通常也比較好。然而， 容器 (Container) 技術的崛起，也帶動了邊緣運算 (Edge computing) 導入 Container 技術的風潮。</p>
+
+<p>邊緣運算顧名思義就是將應用程式等服務運算，由網路中心節點，移往網路邏輯上的邊緣節點來處理。也就是從網路中心節點處理大型服務來分解，切割成更小、更容易管理的部份，分散到邊緣節點去處理。可以想像，如果網路中心節點的角色如同總經理，邊緣節點的角色如同部門經理，而終端裝置的角色如同基層員工。在這架構下，想當然耳就是個分散式架構，而邊緣節點因為更接近於終端裝置，因此可以加快資料的處理與傳送速度，減少延遲。如同基層員工直經回報部門經理，而重要的資訊，部門經理再回報給總經理一樣。也因此在邊緣運算的應用中一直都有重要的應用場景在，例如大家常聽到的 IoT。</p>
+
+<p>當邊緣運算節點硬體效能越來越強，能做的事情當然也就可以越來越多，即便是個嵌入式主機板，也是可以跑很多應用程式的 Container 的。然而有了越來越多的容器，當然也需要厲害的 Container 管理工具。</p>
+
+<p>K3s 就是在這需求下誕生的產品。</p>
+
+<h2 id="k3s-介紹">K3s 介紹</h2>
+
+<h3 id="k3s-簡介">K3s 簡介</h3>
+
+<p>K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開源專案，也是 CNCF 官方認證的 Kubernetes 發布版本。而且是以產品設計出發的，讓管理者在設備資源有限的環境下，仍然可以良好的運作 Kubernetes，並管理 containers。因此，在這優勢下，K3s 可以很好的應用在 Edge, IoT, CI, ARM 等情境、環境下。<br />
+它所需的系統資源並不多：</p>
+
+<ul>
+<li>在 Server 端： 只需要 512 MB</li>
+<li>在 Node 端：只需要 75MB</li>
+<li>Disk 大小只需 200MB</li>
+</ul>
+
+<p>而且可以用在 x86_64, ARMv7, ARM64 等平台架構。</p>
+
+<h3 id="k3s-架構">K3s 架構</h3>
+
+<p>K3s 是將 Kubernetes 的元件 (包含 kube-apiserver, kube-controller-manager, kube-scheduler, kubelet, kube-proxy) 打包在一起，並以 server 和 angent 的 model 形式呈現。</p>
+
+<p>因此 K3s 的架構可以看到如下， 如圖所示，可以到有 Server 與 Angent。</p>
+
+<ul>
+<li>Server: (Kubernetes 管理元件 + SQLite + Tunnel Proxy)
+
+<ul>
+<li>API Server: 來提供 API 的，並且會將資料存到資料庫(預設使用 SQLite)。</li>
+<li>SQLite: 是存放 Cluster status 資料的地方。同時也有支援 etcd, Mysql, Postgres (v0.9.1 ref: <a href="https://rancher.com/docs/k3s/latest/en/installation/#server-options">server-options K3S_STORAGE_ENDPOINT</a>)</li>
+<li>Scheduler: 和 Kubernetes 一樣有選 Node run pod 的功能。</li>
+<li>Controller Manager: 算是 K3s 的後端程式，是處理 Kubernetes resource 的 controller manager。</li>
+</ul></li>
+<li>Angent: (Kubernetes data plan 元件 + Tunnel Proxy)
+
+<ul>
+<li>Kube-proxy: 就是做 forwrading 用的。</li>
+<li>Flannel: Pod 溝通用的網路。</li>
+<li>Kubelet: 啟動 container 用。</li>
+</ul></li>
+<li>Tunnel Proxy of Server &amp; Angent:
+
+<ul>
+<li>在 Server 的 <a href="https://github.com/rancher/k3s/blob/v0.9.1/pkg/daemons/control/tunnel.go"><code>pkg/daemons/control/tunnel.go</code></a> 程式中會看到 <code>setupTunnel</code>，而在程式中也會看到 <code>setupProxyDialer</code> ，所以可想而知，在 Server 端，會有 Tunnel 和 Proxy 的功能。<br /></li>
+<li>而在在圖中，可以看到 Angent 的 kubelet 會傳資料給 Tunnel Proxy ，那是怎麼傳的？在 <a href="https://github.com/rancher/k3s/blob/v0.9.1/pkg/agent/tunnel/tunnel.go#L168"><code>v0.9.1/pkg/agent/tunnel/tunnel.go#L168</code></a> 我們也看到其實 angent 程式也是透過 wss 協定方式進行資料傳輸和 Server 端溝通，因此這樣就可以串起來說，Server 和 Angent 之間是怎麼溝通了。<br /></li>
+</ul></li>
+</ul>
+
+<p><img src="https://k3s.io/images/how-it-works-k3s.svg" alt="" /></p>
+
+<h2 id="部署-k3s-cluster">部署 K3s cluster</h2>
+
+<h2 id="功能驗證">功能驗證</h2>
+
+<h2 id="在-arm-上面部署-k3s-cluster">在 ARM 上面部署 K3s Cluster</h2>
+
+<h2 id="結語">結語</h2>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+<li><a href="https://k3s.io/">https://k3s.io/</a></li>
+<li><a href="https://rancher.com/docs/k3s/latest/en/">https://rancher.com/docs/k3s/latest/en/</a></li>
+</ul>
+
+  </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            
+        </li>
+        <li class="post__nav--previous">
+            <i class="fas fa-chevron-left"></i>
+            <a href="/posts/2019-09-29-book-avoidant-attachment/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <span class="previous__title">[讀書紀錄] 孤獨的冷漠 x 十三歲後，我不再是我</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+  <div class="post__related">
+    
+    
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/2018-10-19-ipvs-based-kube-proxy-4-scaled-k8s-lb/">IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing</a>
+      
+      <time class="pull-right hidden-tablet">Oct 15 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/2018-10-15-hands-on-k8s-kube-proxy-w-ipvs-lb/">實現 IPVS-based K8s service load balancing - 不同 namespace 擁有自己的 external IP</a>
+      
+      <time class="pull-right hidden-tablet">Oct 15 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/2019-01-25-til-5g-k8s-info/">[TIL] 5G 與 Kubernetes 的一些資料</a>
+      
+      <time class="pull-right hidden-tablet">Jan 25 &#39;19</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/03/09/kubernetes-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">[Kubernetes] 學習筆記</a>
+      
+      <time class="pull-right hidden-tablet">Mar 09 &#39;18</time>
+      
+  </span>
+</li>
+
+    </ul>
+    
+</div>
+</article>
+
+        </div>
+        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+      (function () {
+            
+            
+            
+            if (location.hostname === "localhost" || 
+            	location.hostname === "127.0.0.1" || 
+            	location.hostname === "") {
+                return;
+			}
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'bestsamina';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                  dsq);
+      })();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+
+
+    </body>
+</html>
