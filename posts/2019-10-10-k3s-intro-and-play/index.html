@@ -250,9 +250,9 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
 
 <h3 id="k3s-架構">K3s 架構</h3>
 
-<p>K3s 是將 Kubernetes 的元件 (包含 kube-apiserver, kube-controller-manager, kube-scheduler, kubelet, kube-proxy) 打包在一起，並以 server 和 angent 的 model 形式呈現。</p>
+<p>K3s 是將 Kubernetes 的元件 (包含 kube-apiserver, kube-controller-manager, kube-scheduler, kubelet, kube-proxy) 打包在一起，並以 server 和 agent 的 model 形式呈現。</p>
 
-<p>因此 K3s 的架構可以看到如下， 如圖所示，可以到有 Server 與 Angent。</p>
+<p>因此 K3s 的架構可以看到如下， 如圖所示，可以到有 Server 與 Agent。</p>
 
 <ul>
 <li>Server: (Kubernetes 管理元件 + SQLite + Tunnel Proxy)
@@ -263,18 +263,18 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
 <li>Scheduler: 和 Kubernetes 一樣有選 Node run pod 的功能。</li>
 <li>Controller Manager: 算是 K3s 的後端程式，是處理 Kubernetes resource 的 controller manager。</li>
 </ul></li>
-<li>Angent: (Kubernetes data plan 元件 + Tunnel Proxy)
+<li>Agent: (Kubernetes data plan 元件 + Tunnel Proxy)
 
 <ul>
 <li>Kube-proxy: 就是做 forwrading 用的。</li>
 <li>Flannel: Pod 溝通用的網路。</li>
 <li>Kubelet: 啟動 container 用。</li>
 </ul></li>
-<li>Tunnel Proxy of Server &amp; Angent:
+<li>Tunnel Proxy of Server &amp; Agent:
 
 <ul>
 <li>在 Server 的 <a href="https://github.com/rancher/k3s/blob/v0.9.1/pkg/daemons/control/tunnel.go"><code>pkg/daemons/control/tunnel.go</code></a> 程式中會看到 <code>setupTunnel</code>，而在程式中也會看到 <code>setupProxyDialer</code> ，所以可想而知，在 Server 端，會有 Tunnel 和 Proxy 的功能。<br /></li>
-<li>而在在圖中，可以看到 Angent 的 kubelet 會傳資料給 Tunnel Proxy ，那是怎麼傳的？在 <a href="https://github.com/rancher/k3s/blob/v0.9.1/pkg/agent/tunnel/tunnel.go#L168"><code>v0.9.1/pkg/agent/tunnel/tunnel.go#L168</code></a> 我們也看到其實 angent 程式也是透過 wss 協定方式進行資料傳輸和 Server 端溝通，因此這樣就可以串起來說，Server 和 Angent 之間是怎麼溝通了。<br /></li>
+<li>而在在圖中，可以看到 Agent 的 kubelet 會傳資料給 Tunnel Proxy ，那是怎麼傳的？在 <a href="https://github.com/rancher/k3s/blob/v0.9.1/pkg/agent/tunnel/tunnel.go#L168"><code>v0.9.1/pkg/agent/tunnel/tunnel.go#L168</code></a> 我們也看到其實 agent 程式也是透過 wss 協定方式進行資料傳輸和 Server 端溝通，因此這樣就可以串起來說，Server 和 Agent 之間是怎麼溝通了。<br /></li>
 </ul></li>
 </ul>
 
