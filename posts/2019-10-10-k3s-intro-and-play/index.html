@@ -37,7 +37,7 @@
 K3s 就是在這需求下誕生的產品。
 K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開源專案，也是 CNCF 官方認證的 Kubernetes 發布版本。而且是以產品設計出發的，讓管理者在設備資源有限的環境下，仍然可以良好的運作 Kubernetes，並管理 containers。因此，在這優勢下，K3s 可以很好的應用在 Edge, IoT, CI, ARM 等情境、環境下。
 它所需的系統資源並不多：
- 在 Server 端： 只需要 512 MB 在 Node 端：只需要 75MB Disk 大小只需 200MB  而且可以用在 x86_64, ARMv7, ARM64 等平台架構。"/>
+ 在 Server 端： 只需要 512 MB 的 RAM 在 Node 端：只需要 75MB 的 RAM Disk 大小只需 200MB  而且可以用在 x86_64, ARMv7, ARM64 等平台架構。"/>
 
 <meta property="og:title" content="邊緣運算之容器管理工具 - K3s 之介紹與玩耍" />
 <meta property="og:description" content="前言 Kubernetes 是雲原生技術 (cloud-native technologies)，也是雲原生計算 (Cloud Native Computing) 重要的技術之一，而且在使用 Kubernetes 時，應用的硬體資源通常也比較好。然而， 容器 (Container) 技術的崛起，也帶動了邊緣運算 (Edge computing) 導入 Container 技術的風潮。
@@ -46,7 +46,7 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
 K3s 就是在這需求下誕生的產品。
 K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開源專案，也是 CNCF 官方認證的 Kubernetes 發布版本。而且是以產品設計出發的，讓管理者在設備資源有限的環境下，仍然可以良好的運作 Kubernetes，並管理 containers。因此，在這優勢下，K3s 可以很好的應用在 Edge, IoT, CI, ARM 等情境、環境下。
 它所需的系統資源並不多：
- 在 Server 端： 只需要 512 MB 在 Node 端：只需要 75MB Disk 大小只需 200MB  而且可以用在 x86_64, ARMv7, ARM64 等平台架構。" />
+ 在 Server 端： 只需要 512 MB 的 RAM 在 Node 端：只需要 75MB 的 RAM Disk 大小只需 200MB  而且可以用在 x86_64, ARMv7, ARM64 等平台架構。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bestsamina.github.io/posts/2019-10-10-k3s-intro-and-play/" />
 <meta property="article:published_time" content="2019-10-10T16:48:35&#43;08:00"/>
@@ -195,7 +195,7 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
     
     
     <br/>
-    <i class="fas fa-clock"></i> 1 min read
+    <i class="fas fa-clock"></i> 5 min read
 </div>
 
 
@@ -211,8 +211,14 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
 <li><a href="#k3s-簡介">K3s 簡介</a></li>
 <li><a href="#k3s-架構">K3s 架構</a></li>
 </ul></li>
-<li><a href="#部署-k3s-cluster">部署 K3s cluster</a></li>
+<li><a href="#部署-k3s-cluster">部署 K3s cluster</a>
+<ul>
+<li><a href="#1-首先在-master-上安裝-k3s-server">1. 首先在 Master 上安裝 K3s Server</a></li>
+<li><a href="#2-安裝-k3s-node">2. 安裝 K3s Node</a></li>
+</ul></li>
+<li><a href="#快速安裝法">快速安裝法</a></li>
 <li><a href="#功能驗證">功能驗證</a></li>
+<li><a href="#移除安裝">移除安裝</a></li>
 <li><a href="#在-arm-上面部署-k3s-cluster">在 ARM 上面部署 K3s Cluster</a></li>
 <li><a href="#結語">結語</a></li>
 <li><a href="#reference">Reference</a></li>
@@ -241,8 +247,8 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
 它所需的系統資源並不多：</p>
 
 <ul>
-<li>在 Server 端： 只需要 512 MB</li>
-<li>在 Node 端：只需要 75MB</li>
+<li>在 Server 端： 只需要 512 MB 的 RAM</li>
+<li>在 Node 端：只需要 75MB 的 RAM</li>
 <li>Disk 大小只需 200MB</li>
 </ul>
 
@@ -282,11 +288,204 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
 
 <h2 id="部署-k3s-cluster">部署 K3s cluster</h2>
 
+<p>在部署 Cluster 之前需要先準備的環境如下：<br />
+兩台 Host (VM 或主機) ， Server VM 的 RAM 至少需要 512 MB，Work Node VM 的 RAM 至少需要 75MB，並且兩台主機都已經安裝好 Docker 了。</p>
+
+<h3 id="1-首先在-master-上安裝-k3s-server">1. 首先在 Master 上安裝 K3s Server</h3>
+
+<p>切換到 root 使用者，並執行以下的 Command</p>
+
+<pre><code>IPADDR=$(ip a show enp0s8 | grep &quot;inet &quot; | awk '{print $2}' | cut -d / -f1)
+curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v0.9.1 INSTALL_K3S_EXEC=&quot;--docker --node-ip=${IPADDR} --flannel-iface=enp0s8 --write-kubeconfig-mode 644 --no-deploy=servicelb --no-deploy=traefik&quot; sh -
+</code></pre>
+
+<p>我們會執行 <a href="https://get.k3s.io">https://get.k3s.io</a> 這程式裡面的腳本，而帶入的 option 有：</p>
+
+<ul>
+<li><code>INSTALL_K3S_VERSION</code>: 指定安裝 K3s 的版本</li>
+<li><code>INSTALL_K3S_EXEC</code>: 指定 <code>k3s server</code> 執行的 option
+
+<ul>
+<li><code>--docker</code>: 選用 Docker 當作 K3s 的 container 引擎。</li>
+<li><code>--node-ip=${IPADDR}</code>: 設定 Master Node 的 IP</li>
+<li><code>--flannel-iface=enp0s8</code>: 設定 flannel 溝通用的 network interface ，請記得這邊的 <code>enp0s8</code> 改成自己主機的 network interface。</li>
+<li><code>--write-kubeconfig-mode 644</code>: 設定 kubeconfig 的權限 mode。</li>
+<li><code>--no-deploy=servicelb --no-deploy=traefik</code>: 設定不要部署 packaged 的 components。</li>
+</ul></li>
+</ul>
+
+<p>這樣 K3s server 就安裝完了。<br />
+可以使用 <code>systemctl status k3s</code> 與 <code>journalctl -u k3s</code> 查看 K3s 的 Service 狀態。</p>
+
+<p>並在進行下一步驟前，執行 <code>echo &quot;export NODE_TOKEN=$(sudo cat /var/lib/rancher/k3s/server/node-token)&quot;</code> 紀錄 Cluster Node 之間認證用的 Token。</p>
+
+<h3 id="2-安裝-k3s-node">2. 安裝 K3s Node</h3>
+
+<p>先在 <code>/etc/hosts</code> 加入 master node 與 IP 的對應。</p>
+
+<pre><code>echo &quot;$K3SMASTER_IPADDRESS       $K3SMASTER_HOSTNAME&quot; | sudo tee -a /etc/hosts
+</code></pre>
+
+<p>接著切換到 root 使用者後，貼上剛剛 Master Node 上取得的認證 token，如下</p>
+
+<pre><code>export NODE_TOKEN=K10571d20534c867fe6ce8d... 
+</code></pre>
+
+<p>並執行以下的 Command 來安裝 K3s agent</p>
+
+<pre><code>export K3SMASTER_IPADDRESS=...
+IPADDR=$(ip a show enp0s8 | grep &quot;inet &quot; | awk '{print $2}' | cut -d / -f1)
+curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v0.9.1 INSTALL_K3S_EXEC=&quot;--docker --node-ip=${IPADDR} --flannel-iface=enp0s8&quot; K3S_URL=https://${K3SMASTER_IPADDRESS}:6443 K3S_TOKEN=${NODE_TOKEN} sh -
+</code></pre>
+
+<p>在執行 <a href="https://get.k3s.io">https://get.k3s.io</a> 這程式裡面的腳本中，<code>INSTALL_K3S_EXEC</code> 而外帶入的 option 有：</p>
+
+<ul>
+<li><code>K3S_URL</code>: 是讓 agent 知道他要和哪個 server 連線</li>
+<li><code>K3S_TOKEN</code>: 是用來認證用的</li>
+</ul>
+
+<p>這樣 K3s agent 就安裝完了。<br />
+可以使用 <code>systemctl status k3s-agent</code> 查看 k3s-agent 的 Service 狀態。</p>
+
+<h2 id="快速安裝法">快速安裝法</h2>
+
+<p>如果不想要依照以上方法一步一步操作的話，也可以參考 <a href="https://github.com/sufuf3/k3s-lab">https://github.com/sufuf3/k3s-lab</a> repository 來嘗試快速部署起一個 K3s Cluster。<br />
+在使用 <a href="https://github.com/sufuf3/k3s-lab">https://github.com/sufuf3/k3s-lab</a> 這個方法部署，環境需要具備 VirtualBox 以及 Vagrant ，並且主機尚有 1.6G 的 RAM 可以使用。<br />
+安裝方法如下：</p>
+
+<ol>
+<li>在 Host 上啟動兩台 VM 並且在 Master 的 VM 中安裝 K3s server。</li>
+</ol>
+
+<pre><code>$ sh deploy-vagrant.sh
+</code></pre>
+
+<ol>
+<li>在第一步驟完成後，會得到類似 <code>export NODE_TOKEN=K10571d20534c867fe6ce8d...</code> 的字串，將這字串複製後，透過 <code>vageant ssh node1</code> 進入 node 的 VM 並且執行以下的指令<br /></li>
+</ol>
+
+<pre><code>sudo su -
+cd /home/vagrant/
+export NODE_TOKEN=K10571d20534c867fe6ce8d... // 是複製的字串
+sh install-k3s-node.sh ${NODE_TOKEN}
+</code></pre>
+
+<p>這樣就完成以上部署 K3s Cluster 了。接下來我們來驗證 K3s Cluster 是否正常吧！</p>
+
 <h2 id="功能驗證">功能驗證</h2>
+
+<p>首先先進入 Master Node，你可以透過 k3s 指令看到它有支援的 commands，如下，因此我們可以直接使用 kubectl, crictl, ctr：<br />
+而因為我們使用 Docker 為我們的 container 引擎，所以本篇只用 kubectl 來和大家一起驗證。</p>
+
+<pre><code>$ k3s -h
+NAME:
+   k3s - Kubernetes, but small and simple
+
+USAGE:
+   k3s [global options] command [command options] [arguments...]
+
+VERSION:
+   v0.9.1 (755bd1c6)
+
+COMMANDS:
+   server   Run management server
+   agent    Run node agent
+   kubectl  Run kubectl
+   crictl   Run crictl
+   ctr      Run ctr
+   help, h  Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --debug        Turn on debug logs
+   --help, -h     show help
+   --version, -v  print the version
+</code></pre>
+
+<p>我們可以透過 kubectl 來查看 Cluster node 資訊與 component 的狀態。</p>
+
+<pre><code>$ kubectl get no -o wide
+NAME     STATUS   ROLES    AGE   VERSION         INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
+master   Ready    master   97m   v1.15.4-k3s.1   192.168.0.200   &lt;none&gt;        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
+node1    Ready    worker   93m   v1.15.4-k3s.1   192.168.0.201   &lt;none&gt;        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
+
+$ kubectl get componentstatus
+NAME                 STATUS    MESSAGE   ERROR
+scheduler            Healthy   ok
+controller-manager   Healthy   ok
+</code></pre>
+
+<p>也可以用 kubectl 來跑一個 deployment 來啟動一個 nginx ，如以下 Lab。</p>
+
+<pre><code>$ kubectl run mynginx --image=nginx --replicas=1 --port=80
+deployment.apps/mynginx created
+$ kubectl expose deployment mynginx --port 80
+service/mynginx exposed
+
+$ kubectl get deploy,po,svc -o wide -l run=mynginx
+NAME                            READY   UP-TO-DATE   AVAILABLE   AGE    CONTAINERS   IMAGES   SELECTOR
+deployment.extensions/mynginx   1/1     1            1           115s   mynginx      nginx    run=mynginx
+
+NAME                           READY   STATUS    RESTARTS   AGE    IP          NODE    NOMINATED NODE   READINESS GATES
+pod/mynginx-568f57494d-nsc8r   1/1     Running   0          115s   10.42.1.2   node1   &lt;none&gt;           &lt;none&gt;
+
+NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/mynginx   ClusterIP   10.43.220.117   &lt;none&gt;        80/TCP    27s   run=mynginx
+
+$ curl 10.43.220.117
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;/p&gt;
+
+&lt;p&gt;For online documentation and support please refer to
+&lt;a href=&quot;http://nginx.org/&quot;&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+Commercial support is available at
+&lt;a href=&quot;http://nginx.com/&quot;&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>如上，其實使用方式和 Kubernetes 使用原本資源方法是一樣的，所以要更換 install 的工具，其實並不是太困難。</p>
+
+<h2 id="移除安裝">移除安裝</h2>
+
+<p>在 K3s Server 端執行</p>
+
+<pre><code>systemctl stop k3s &amp;&amp; /usr/local/bin/k3s-uninstall.sh
+</code></pre>
+
+<p>；在 k3s agent 端執行</p>
+
+<pre><code>systemctl stop k3s-agent &amp;&amp; /usr/local/bin/k3s-agent-uninstall.sh
+</code></pre>
 
 <h2 id="在-arm-上面部署-k3s-cluster">在 ARM 上面部署 K3s Cluster</h2>
 
+<p>而在 ARM 上面部署，也是雷同的，不過有以下幾點是需要注意的</p>
+
+<ul>
+<li>若是要編譯 Kernel 請確定 vxlan, iptables, netfilter, ip_vs 等必要的 module 都有開啟。</li>
+<li>若需要安裝 Docker ，請確定 Cgroup 在該編譯的 Kernel 版本是沒有 issue 的。也請確定使用的 Kernel 版本是符合 Kubernetes 官網上的描述。</li>
+</ul>
+
 <h2 id="結語">結語</h2>
+
+<p>因緣際會下，接觸 K3s ，其實蠻有趣的，覺得邊緣運算和雲端運算有共同類似的技術可以交流，也是很開心的。最近也光了一些時間，翻了一下 K3s 的 code，覺得有趣。之後若有時間，也許會來寫一篇深入研究 K3s 源碼的分享。</p>
 
 <h2 id="reference">Reference</h2>
 

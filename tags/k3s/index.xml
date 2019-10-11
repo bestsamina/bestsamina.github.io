@@ -24,7 +24,7 @@
 K3s 就是在這需求下誕生的產品。
 K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開源專案，也是 CNCF 官方認證的 Kubernetes 發布版本。而且是以產品設計出發的，讓管理者在設備資源有限的環境下，仍然可以良好的運作 Kubernetes，並管理 containers。因此，在這優勢下，K3s 可以很好的應用在 Edge, IoT, CI, ARM 等情境、環境下。
 它所需的系統資源並不多：
- 在 Server 端： 只需要 512 MB 在 Node 端：只需要 75MB Disk 大小只需 200MB  而且可以用在 x86_64, ARMv7, ARM64 等平台架構。</description>
+ 在 Server 端： 只需要 512 MB 的 RAM 在 Node 端：只需要 75MB 的 RAM Disk 大小只需 200MB  而且可以用在 x86_64, ARMv7, ARM64 等平台架構。</description>
     </item>
     
   </channel>
