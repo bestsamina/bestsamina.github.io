@@ -1,55 +1,25 @@
 <!DOCTYPE html>
-<html lang="en-us">
-    <head>
-    <link href="http://gmpg.org/xfn/11" rel="profile">
-    <script data-ad-client="ca-pub-6396786781922729" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77171360-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<html lang='en'><head>
+  <title>邊緣運算之容器管理工具 - K3s 之介紹與玩耍 - Samina Website</title>
+  <link rel='canonical' href='https://bestsamina.github.io/posts/2019-10-10-k3s-intro-and-play/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#D250F4' />
+  
 
-      gtag('config', 'UA-77171360-2');
-    </script>
-    
-    <script type="text/javascript">
-      var _paq = window._paq || [];
-       
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="https://github.matomo.cloud/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '1']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-      })();
-    </script>
-    
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
-<meta name="google-site-verification" content="86pjrD_mrnBLozy63MgmlPcYTh6-MHixr_RZhm2Wji0" />
-<!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.54.0" />
-    
-    
-    <title>邊緣運算之容器管理工具 - K3s 之介紹與玩耍 • Life &amp; Technological Journey of Samina</title>
-<meta name="description" content="Life &amp; Technological Journey of Samina - Hello and welcome to my blog. My name is Samina Fu. This blog is about technology and the record of my life. Hope the logs can help you and me someday.">
-<meta name="keywords" content="blog,python,golang,javascript,container,opencord,cord,sdn,network">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="邊緣運算之容器管理工具 - K3s 之介紹與玩耍"/>
-<meta name="twitter:description" content="前言 Kubernetes 是雲原生技術 (cloud-native technologies)，也是雲原生計算 (Cloud Native Computing) 重要的技術之一，而且在使用 Kubernetes 時，應用的硬體資源通常也比較好。然而， 容器 (Container) 技術的崛起，也帶動了邊緣運算 (Edge computing) 導入 Container 技術的風潮。
-邊緣運算顧名思義就是將應用程式等服務運算，由網路中心節點，移往網路邏輯上的邊緣節點來處理。也就是從網路中心節點處理大型服務來分解，切割成更小、更容易管理的部份，分散到邊緣節點去處理。可以想像，如果網路中心節點的角色如同總經理，邊緣節點的角色如同部門經理，而終端裝置的角色如同基層員工。在這架構下，想當然耳就是個分散式架構，而邊緣節點因為更接近於終端裝置，因此可以加快資料的處理與傳送速度，減少延遲。如同基層員工直經回報部門經理，而重要的資訊，部門經理再回報給總經理一樣。也因此在邊緣運算的應用中一直都有重要的應用場景在，例如大家常聽到的 IoT。
-當邊緣運算節點硬體效能越來越強，能做的事情當然也就可以越來越多，即便是個嵌入式主機板，也是可以跑很多應用程式的 Container 的。然而有了越來越多的容器，當然也需要厲害的 Container 管理工具。
-K3s 就是在這需求下誕生的產品。
-K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開源專案，也是 CNCF 官方認證的 Kubernetes 發布版本。而且是以產品設計出發的，讓管理者在設備資源有限的環境下，仍然可以良好的運作 Kubernetes，並管理 containers。因此，在這優勢下，K3s 可以很好的應用在 Edge, IoT, CI, ARM 等情境、環境下。
-它所需的系統資源並不多：
- 在 Server 端： 只需要 512 MB 的 RAM 在 Node 端：只需要 75MB 的 RAM Disk 大小只需 200MB  而且可以用在 x86_64, ARMv7, ARM64 等平台架構。"/>
+  <meta name="generator" content="Hugo 0.97.3" />
 
-<meta property="og:title" content="邊緣運算之容器管理工具 - K3s 之介紹與玩耍" />
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://bestsamina.github.io/sass/style.min.eabe1aa4bd266a15f7b39b122bd6a5cc75cb067e5373631ac21d7815d6240d6f.css" integrity="sha256-6r4apL0mahX3s5sSK9alzHXLBn5Tc2Mawh14FdYkDW8=" media="screen">
+<link rel="stylesheet" href="https://bestsamina.github.io/syntax.min.css" integrity="" media="screen">
+
+  <meta property="og:title" content="邊緣運算之容器管理工具 - K3s 之介紹與玩耍" />
 <meta property="og:description" content="前言 Kubernetes 是雲原生技術 (cloud-native technologies)，也是雲原生計算 (Cloud Native Computing) 重要的技術之一，而且在使用 Kubernetes 時，應用的硬體資源通常也比較好。然而， 容器 (Container) 技術的崛起，也帶動了邊緣運算 (Edge computing) 導入 Container 技術的風潮。
 邊緣運算顧名思義就是將應用程式等服務運算，由網路中心節點，移往網路邏輯上的邊緣節點來處理。也就是從網路中心節點處理大型服務來分解，切割成更小、更容易管理的部份，分散到邊緣節點去處理。可以想像，如果網路中心節點的角色如同總經理，邊緣節點的角色如同部門經理，而終端裝置的角色如同基層員工。在這架構下，想當然耳就是個分散式架構，而邊緣節點因為更接近於終端裝置，因此可以加快資料的處理與傳送速度，減少延遲。如同基層員工直經回報部門經理，而重要的資訊，部門經理再回報給總經理一樣。也因此在邊緣運算的應用中一直都有重要的應用場景在，例如大家常聽到的 IoT。
 當邊緣運算節點硬體效能越來越強，能做的事情當然也就可以越來越多，即便是個嵌入式主機板，也是可以跑很多應用程式的 Container 的。然而有了越來越多的容器，當然也需要厲害的 Container 管理工具。
@@ -58,337 +28,362 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
 它所需的系統資源並不多：
  在 Server 端： 只需要 512 MB 的 RAM 在 Node 端：只需要 75MB 的 RAM Disk 大小只需 200MB  而且可以用在 x86_64, ARMv7, ARM64 等平台架構。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bestsamina.github.io/posts/2019-10-10-k3s-intro-and-play/" />
-<meta property="article:published_time" content="2019-10-10T16:48:35&#43;08:00"/>
-<meta property="article:modified_time" content="2019-10-10T16:48:35&#43;08:00"/>
+<meta property="og:url" content="https://bestsamina.github.io/posts/2019-10-10-k3s-intro-and-play/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-10-10T16:48:35+08:00" />
+<meta property="article:modified_time" content="2019-10-10T16:48:35+08:00" />
 
 
-    <!-- Font-Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
-    <!-- highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <link rel="stylesheet" href="https://bestsamina.github.io//css/print.min.css" media="print">
-    <link rel="stylesheet" href="https://bestsamina.github.io//css/hyde-hyde.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png"></head>
+  <meta itemprop="name" content="邊緣運算之容器管理工具 - K3s 之介紹與玩耍">
+<meta itemprop="description" content="前言 Kubernetes 是雲原生技術 (cloud-native technologies)，也是雲原生計算 (Cloud Native Computing) 重要的技術之一，而且在使用 Kubernetes 時，應用的硬體資源通常也比較好。然而， 容器 (Container) 技術的崛起，也帶動了邊緣運算 (Edge computing) 導入 Container 技術的風潮。
+邊緣運算顧名思義就是將應用程式等服務運算，由網路中心節點，移往網路邏輯上的邊緣節點來處理。也就是從網路中心節點處理大型服務來分解，切割成更小、更容易管理的部份，分散到邊緣節點去處理。可以想像，如果網路中心節點的角色如同總經理，邊緣節點的角色如同部門經理，而終端裝置的角色如同基層員工。在這架構下，想當然耳就是個分散式架構，而邊緣節點因為更接近於終端裝置，因此可以加快資料的處理與傳送速度，減少延遲。如同基層員工直經回報部門經理，而重要的資訊，部門經理再回報給總經理一樣。也因此在邊緣運算的應用中一直都有重要的應用場景在，例如大家常聽到的 IoT。
+當邊緣運算節點硬體效能越來越強，能做的事情當然也就可以越來越多，即便是個嵌入式主機板，也是可以跑很多應用程式的 Container 的。然而有了越來越多的容器，當然也需要厲害的 Container 管理工具。
+K3s 就是在這需求下誕生的產品。
+K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開源專案，也是 CNCF 官方認證的 Kubernetes 發布版本。而且是以產品設計出發的，讓管理者在設備資源有限的環境下，仍然可以良好的運作 Kubernetes，並管理 containers。因此，在這優勢下，K3s 可以很好的應用在 Edge, IoT, CI, ARM 等情境、環境下。
+它所需的系統資源並不多：
+ 在 Server 端： 只需要 512 MB 的 RAM 在 Node 端：只需要 75MB 的 RAM Disk 大小只需 200MB  而且可以用在 x86_64, ARMv7, ARM64 等平台架構。"><meta itemprop="datePublished" content="2019-10-10T16:48:35+08:00" />
+<meta itemprop="dateModified" content="2019-10-10T16:48:35+08:00" />
+<meta itemprop="wordCount" content="876">
+<meta itemprop="keywords" content="Kubernetes,K8s,K3s,cloud-native,container," />
+</head>
+<body>
 
-    <body>
-        
-<div class="sidebar text-center">
-  <div class="container ">
-    <div class="sidebar-about">
-      <div class="site__title">
-        <a href="https://bestsamina.github.io/">Life &amp; Technological Journey of Samina</a>
-      </div>
-      
-      
-      
-      <p>
-        <img src="https://bestsamina.github.io/images/sufuf3_1519028337_878.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
-      </p>
-      
-      <p class="site__description">
-         This blog is about technology and the record of my life. Hope the logs can help you and me someday. 
-      </p>
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://bestsamina.github.io/images/default-sidebar.jpg&#39;)">
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
+      </a>
     </div>
-    <div>
-	<ul class="sidebar-nav">
-		
-				<li>
-					<a href="/posts/">
-						<span>Posts</span>
-					</a>
-				</li>
-				<li>
-					<a href="/series/">
-						<span>Series</span>
-					</a>
-				</li>
-				<li>
-					<a href="/tags/">
-						<span>Tags</span>
-					</a>
-				</li>
-				<li>
-					<a href="/categories/">
-						<span>Categories</span>
-					</a>
-				</li>
-				<li>
-					<a href="/page/awesome-blogs">
-						<span>Awesome-Blogs</span>
-					</a>
-				</li>
-				<li>
-					<a href="/about/">
-						<span>About</span>
-					</a>
-				</li>
-		</li>
-	</ul>
-</div>
-
-    <p>
-      <section class="social text-center">
-	<a href="https://twitter.com/sufuf3149"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
-	
-	&nbsp;<a href="https://github.com/sufuf3"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	&nbsp;<a href="https://gitlab.com/sufuf3"><i class="fab fa-gitlab fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="https://medium.com/@sufuf3149"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	&nbsp;<a href="https://ko-fi.com/sufuf3149"><i class="fas fa-coffee fa-lg" aria-hidden="true"></i></a>
-</section>
-
-    </p>
-    <p class="copyright">
-      &copy; 2021 Samina Fu.
-      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
-      <br/>Built with
-      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+    <h2>Hi, I'm Samina 👋</h2>
+    <h3>This is my Life & Technological Journey</h3>
+    <div class="menu">
       
-    </p>
+
+        <p>
+            <a href="/posts/">
+                Post
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+        <p>
+            <a href="/tags/">
+                Tags
+            </a>
+        </p>
+
+        <p>
+            <a href="/categories/">
+                Categories
+            </a>
+        </p>
+
+        <p>
+            <a href="/page/awesome-blogs/">
+                Awesome-blogs
+            </a>
+        </p>
+
+      
+    </div>
   </div>
-  <div>
+
+  <div class="socials">
+      
+  
+    <a href="https://github.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM71.182 98.494c-2.156.385-2.952-.95-2.952-2.053 0-1.386.051-8.471.051-14.195 0-4.005-1.335-6.546-2.9-7.881C74.878 73.313 84.89 72.003 84.89 55.6c0-4.671-1.669-7.007-4.39-10.01.436-1.105 1.9-5.648-.436-11.552-3.568-1.104-11.731 4.595-11.731 4.595-3.389-.95-7.06-1.438-10.679-1.438-3.62 0-7.29.488-10.679 1.438 0 0-8.163-5.699-11.73-4.595-2.337 5.878-.899 10.422-.437 11.551-2.72 3.004-4.004 5.34-4.004 10.011 0 16.326 9.574 17.712 19.072 18.765-1.232 1.104-2.336 3.003-2.72 5.724-2.44 1.104-8.677 3.004-12.4-3.568-2.335-4.056-6.545-4.39-6.545-4.39-4.159-.05-.282 2.619-.282 2.619 2.772 1.283 4.723 6.212 4.723 6.212 2.49 7.624 14.4 5.057 14.4 5.057 0 3.568.052 9.37.052 10.422 0 1.104-.77 2.438-2.952 2.053C27.21 92.821 15.35 76.701 15.35 57.86c0-23.564 18.02-41.456 41.585-41.456s42.663 17.892 42.663 41.456c.026 18.842-11.474 34.988-28.416 40.635zM46 82.81c-.488.103-.95-.102-1.001-.436-.051-.385.282-.719.77-.822.488-.05.95.154 1.001.488.077.334-.257.668-.77.77zm-2.439-.23c0 .333-.385.615-.898.615-.565.052-.95-.23-.95-.616 0-.333.385-.616.899-.616.487-.051.95.231.95.616zm-3.516-.283c-.103.334-.616.488-1.053.334-.488-.103-.821-.488-.719-.822.103-.334.617-.488 1.053-.385.513.154.847.54.719.873zm-3.158-1.386c-.23.282-.718.23-1.104-.154-.385-.334-.487-.822-.23-1.053.23-.282.718-.23 1.103.154.334.334.462.847.231 1.053zm-2.336-2.336c-.23.154-.667 0-.95-.385-.282-.385-.282-.822 0-1.001.283-.231.72-.052.95.333.283.385.283.847 0 1.053zm-1.668-2.49c-.231.23-.616.103-.899-.154-.282-.334-.333-.719-.102-.899.23-.23.616-.102.898.154.282.334.334.72.103.899zm-1.72-1.9c-.103.231-.436.283-.719.103-.334-.154-.488-.436-.385-.667.103-.154.385-.231.719-.103.334.18.488.462.385.667z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://gitlab.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M23.76 5.544c-.693-1.991-3.512-1.991-4.228 0L6.892 44.653h29.532c-.022 0-12.663-39.11-12.663-39.11zM.426 64.34c-.582 1.79.067 3.782 1.589 4.923l55.464 41.167-50.61-65.778L.426 64.34zm35.977-19.688L57.5 110.43l21.098-65.778H36.402zm78.173 19.688l-6.444-19.688L57.5 110.43l55.464-41.167a4.475 4.475 0 0 0 1.61-4.923zM95.468 5.544c-.694-1.991-3.513-1.991-4.229 0L78.576 44.653h29.533L95.468 5.543z" />
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://medium.com/@sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M0 0v115h115V0H0zm95.542 27.235l-6.16 5.905a1.81 1.81 0 0 0-.693 1.72v43.458c-.103.667.154 1.335.693 1.72l6.032 5.904v1.31h-30.29v-1.259l6.238-6.058c.616-.616.616-.795.616-1.72V43.074L54.625 87.123h-2.336l-20.202-44.05v29.52c-.18 1.233.257 2.49 1.13 3.39l8.111 9.83v1.31H18.277v-1.31l8.111-9.83a3.93 3.93 0 0 0 1.053-3.39v-34.14a2.93 2.93 0 0 0-.976-2.516l-7.213-8.702v-1.309h22.41l17.301 37.991 15.222-37.965h21.357v1.283z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://twitter.com/sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM90.126 40.763c.051.72.051 1.464.051 2.182 0 22.256-16.942 47.9-47.9 47.9-9.548 0-18.404-2.772-25.848-7.547 1.36.154 2.67.205 4.055.205 7.881 0 15.12-2.67 20.895-7.187-7.392-.154-13.604-5.006-15.735-11.68 2.593.385 4.929.385 7.598-.308a16.837 16.837 0 0 1-13.476-16.531v-.205a16.824 16.824 0 0 0 7.598 2.13 16.8 16.8 0 0 1-7.496-14.016c0-3.131.822-6.006 2.285-8.496a47.803 47.803 0 0 0 34.705 17.61c-2.387-11.424 6.161-20.69 16.429-20.69 4.851 0 9.215 2.027 12.296 5.313a32.99 32.99 0 0 0 10.678-4.056 16.792 16.792 0 0 1-7.393 9.267c3.389-.36 6.674-1.31 9.703-2.618a35.437 35.437 0 0 1-8.445 8.727z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  </div>
+</header>
+
+<div class="mobile-header">
+  <p> Samina Website </p>
+  <div class="hamburger">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
   </div>
 </div>
-<div class="content container">
-            <article>
+
+<div class="overlay-menu">
   <header>
-    <h1>邊緣運算之容器管理工具 - K3s 之介紹與玩耍</h1>
-     
-    
-<div class="post__meta">
-    
-    <i class="fas fa-calendar-alt"></i> Oct 10, 2019
-    in
-              
-              
-              <a class="post__category" href="/categories/cloud-native">A CLOUD-NATIVE</a>
-              
-              
-    
-      
-      
-          <br/>
-           <i class="fas fa-tags"></i>
-          
-          <a class="post__tag" href="/tags/kubernetes">#kubernetes</a>
-           
-      
-          <a class="post__tag" href="/tags/k8s">#k8s</a>
-           
-      
-          <a class="post__tag" href="/tags/k3s">#k3s</a>
-           
-      
-          <a class="post__tag" href="/tags/cloud-native">#cloud-native</a>
-           
-      
-          <a class="post__tag" href="/tags/container">#container</a>
-          
-      
-    
-    
-    <br/>
-    <i class="fas fa-clock"></i> 5 min read
+    <div class="intro">
+      <div class="logo-container">
+        <a href="/">
+          <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
+        </a>
+      </div>
+      <h2>Hi, I'm Samina 👋</h2>
+      <h3>This is my Life & Technological Journey</h3>
+      <div class="menu">
+        
+
+        <p>
+            <a href="/posts/">
+                Post
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+        <p>
+            <a href="/tags/">
+                Tags
+            </a>
+        </p>
+
+        <p>
+            <a href="/categories/">
+                Categories
+            </a>
+        </p>
+
+        <p>
+            <a href="/page/awesome-blogs/">
+                Awesome-blogs
+            </a>
+        </p>
+
+        
+      </div>
+    </div>
+
+    <div class="socials">
+        
+  
+    <a href="https://github.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM71.182 98.494c-2.156.385-2.952-.95-2.952-2.053 0-1.386.051-8.471.051-14.195 0-4.005-1.335-6.546-2.9-7.881C74.878 73.313 84.89 72.003 84.89 55.6c0-4.671-1.669-7.007-4.39-10.01.436-1.105 1.9-5.648-.436-11.552-3.568-1.104-11.731 4.595-11.731 4.595-3.389-.95-7.06-1.438-10.679-1.438-3.62 0-7.29.488-10.679 1.438 0 0-8.163-5.699-11.73-4.595-2.337 5.878-.899 10.422-.437 11.551-2.72 3.004-4.004 5.34-4.004 10.011 0 16.326 9.574 17.712 19.072 18.765-1.232 1.104-2.336 3.003-2.72 5.724-2.44 1.104-8.677 3.004-12.4-3.568-2.335-4.056-6.545-4.39-6.545-4.39-4.159-.05-.282 2.619-.282 2.619 2.772 1.283 4.723 6.212 4.723 6.212 2.49 7.624 14.4 5.057 14.4 5.057 0 3.568.052 9.37.052 10.422 0 1.104-.77 2.438-2.952 2.053C27.21 92.821 15.35 76.701 15.35 57.86c0-23.564 18.02-41.456 41.585-41.456s42.663 17.892 42.663 41.456c.026 18.842-11.474 34.988-28.416 40.635zM46 82.81c-.488.103-.95-.102-1.001-.436-.051-.385.282-.719.77-.822.488-.05.95.154 1.001.488.077.334-.257.668-.77.77zm-2.439-.23c0 .333-.385.615-.898.615-.565.052-.95-.23-.95-.616 0-.333.385-.616.899-.616.487-.051.95.231.95.616zm-3.516-.283c-.103.334-.616.488-1.053.334-.488-.103-.821-.488-.719-.822.103-.334.617-.488 1.053-.385.513.154.847.54.719.873zm-3.158-1.386c-.23.282-.718.23-1.104-.154-.385-.334-.487-.822-.23-1.053.23-.282.718-.23 1.103.154.334.334.462.847.231 1.053zm-2.336-2.336c-.23.154-.667 0-.95-.385-.282-.385-.282-.822 0-1.001.283-.231.72-.052.95.333.283.385.283.847 0 1.053zm-1.668-2.49c-.231.23-.616.103-.899-.154-.282-.334-.333-.719-.102-.899.23-.23.616-.102.898.154.282.334.334.72.103.899zm-1.72-1.9c-.103.231-.436.283-.719.103-.334-.154-.488-.436-.385-.667.103-.154.385-.231.719-.103.334.18.488.462.385.667z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://gitlab.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M23.76 5.544c-.693-1.991-3.512-1.991-4.228 0L6.892 44.653h29.532c-.022 0-12.663-39.11-12.663-39.11zM.426 64.34c-.582 1.79.067 3.782 1.589 4.923l55.464 41.167-50.61-65.778L.426 64.34zm35.977-19.688L57.5 110.43l21.098-65.778H36.402zm78.173 19.688l-6.444-19.688L57.5 110.43l55.464-41.167a4.475 4.475 0 0 0 1.61-4.923zM95.468 5.544c-.694-1.991-3.513-1.991-4.229 0L78.576 44.653h29.533L95.468 5.543z" />
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://medium.com/@sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M0 0v115h115V0H0zm95.542 27.235l-6.16 5.905a1.81 1.81 0 0 0-.693 1.72v43.458c-.103.667.154 1.335.693 1.72l6.032 5.904v1.31h-30.29v-1.259l6.238-6.058c.616-.616.616-.795.616-1.72V43.074L54.625 87.123h-2.336l-20.202-44.05v29.52c-.18 1.233.257 2.49 1.13 3.39l8.111 9.83v1.31H18.277v-1.31l8.111-9.83a3.93 3.93 0 0 0 1.053-3.39v-34.14a2.93 2.93 0 0 0-.976-2.516l-7.213-8.702v-1.309h22.41l17.301 37.991 15.222-37.965h21.357v1.283z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://twitter.com/sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM90.126 40.763c.051.72.051 1.464.051 2.182 0 22.256-16.942 47.9-47.9 47.9-9.548 0-18.404-2.772-25.848-7.547 1.36.154 2.67.205 4.055.205 7.881 0 15.12-2.67 20.895-7.187-7.392-.154-13.604-5.006-15.735-11.68 2.593.385 4.929.385 7.598-.308a16.837 16.837 0 0 1-13.476-16.531v-.205a16.824 16.824 0 0 0 7.598 2.13 16.8 16.8 0 0 1-7.496-14.016c0-3.131.822-6.006 2.285-8.496a47.803 47.803 0 0 0 34.705 17.61c-2.387-11.424 6.161-20.69 16.429-20.69 4.851 0 9.215 2.027 12.296 5.313a32.99 32.99 0 0 0 10.678-4.056 16.792 16.792 0 0 1-7.393 9.267c3.389-.36 6.674-1.31 9.703-2.618a35.437 35.437 0 0 1-8.445 8.727z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+    </div>
+  </header>
 </div>
 
-
-  </header>
-<aside>
-  <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#前言">前言</a></li>
-<li><a href="#k3s-介紹">K3s 介紹</a>
-<ul>
-<li><a href="#k3s-簡介">K3s 簡介</a></li>
-<li><a href="#k3s-架構">K3s 架構</a></li>
-</ul></li>
-<li><a href="#部署-k3s-cluster">部署 K3s cluster</a>
-<ul>
-<li><a href="#1-首先在-master-上安裝-k3s-server">1. 首先在 Master 上安裝 K3s Server</a></li>
-<li><a href="#2-安裝-k3s-node">2. 安裝 K3s Node</a></li>
-</ul></li>
-<li><a href="#快速安裝法">快速安裝法</a></li>
-<li><a href="#功能驗證">功能驗證</a></li>
-<li><a href="#移除安裝">移除安裝</a></li>
-<li><a href="#在-arm-上面部署-k3s-cluster">在 ARM 上面部署 K3s Cluster</a></li>
-<li><a href="#結語">結語</a></li>
-<li><a href="#reference">Reference</a></li>
-</ul></li>
-</ul>
-</nav>
-</aside>
-  <div class="post">
+  <div class="content-wrapper">
     
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://bestsamina.github.io/">Home</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://bestsamina.github.io/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://bestsamina.github.io/posts/2019-10-10-k3s-intro-and-play/">邊緣運算之容器管理工具 - K3s 之介紹與玩耍</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>邊緣運算之容器管理工具 - K3s 之介紹與玩耍</h1>
 
 <h2 id="前言">前言</h2>
-
 <p>Kubernetes 是雲原生技術 (cloud-native technologies)，也是雲原生計算 (Cloud Native Computing) 重要的技術之一，而且在使用 Kubernetes 時，應用的硬體資源通常也比較好。然而， 容器 (Container) 技術的崛起，也帶動了邊緣運算 (Edge computing) 導入 Container 技術的風潮。</p>
-
 <p>邊緣運算顧名思義就是將應用程式等服務運算，由網路中心節點，移往網路邏輯上的邊緣節點來處理。也就是從網路中心節點處理大型服務來分解，切割成更小、更容易管理的部份，分散到邊緣節點去處理。可以想像，如果網路中心節點的角色如同總經理，邊緣節點的角色如同部門經理，而終端裝置的角色如同基層員工。在這架構下，想當然耳就是個分散式架構，而邊緣節點因為更接近於終端裝置，因此可以加快資料的處理與傳送速度，減少延遲。如同基層員工直經回報部門經理，而重要的資訊，部門經理再回報給總經理一樣。也因此在邊緣運算的應用中一直都有重要的應用場景在，例如大家常聽到的 IoT。</p>
-
 <p>當邊緣運算節點硬體效能越來越強，能做的事情當然也就可以越來越多，即便是個嵌入式主機板，也是可以跑很多應用程式的 Container 的。然而有了越來越多的容器，當然也需要厲害的 Container 管理工具。</p>
-
 <p>K3s 就是在這需求下誕生的產品。</p>
-
 <h2 id="k3s-介紹">K3s 介紹</h2>
-
 <h3 id="k3s-簡介">K3s 簡介</h3>
-
-<p>K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開源專案，也是 CNCF 官方認證的 Kubernetes 發布版本。而且是以產品設計出發的，讓管理者在設備資源有限的環境下，仍然可以良好的運作 Kubernetes，並管理 containers。因此，在這優勢下，K3s 可以很好的應用在 Edge, IoT, CI, ARM 等情境、環境下。<br />
+<p>K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開源專案，也是 CNCF 官方認證的 Kubernetes 發布版本。而且是以產品設計出發的，讓管理者在設備資源有限的環境下，仍然可以良好的運作 Kubernetes，並管理 containers。因此，在這優勢下，K3s 可以很好的應用在 Edge, IoT, CI, ARM 等情境、環境下。<br>
 它所需的系統資源並不多：</p>
-
 <ul>
 <li>在 Server 端： 只需要 512 MB 的 RAM</li>
 <li>在 Node 端：只需要 75MB 的 RAM</li>
 <li>Disk 大小只需 200MB</li>
 </ul>
-
 <p>而且可以用在 x86_64, ARMv7, ARM64 等平台架構。</p>
-
 <h3 id="k3s-架構">K3s 架構</h3>
-
 <p>K3s 是將 Kubernetes 的元件 (包含 kube-apiserver, kube-controller-manager, kube-scheduler, kubelet, kube-proxy) 打包在一起，並以 server 和 agent 的 model 形式呈現。</p>
-
 <p>因此 K3s 的架構可以看到如下， 如圖所示，可以到有 Server 與 Agent。</p>
-
 <ul>
 <li>Server: (Kubernetes 管理元件 + SQLite + Tunnel Proxy)
-
 <ul>
 <li>API Server: 來提供 API 的，並且會將資料存到資料庫(預設使用 SQLite)。</li>
 <li>SQLite: 是存放 Cluster status 資料的地方。同時也有支援 etcd, Mysql, Postgres (v0.9.1 ref: <a href="https://rancher.com/docs/k3s/latest/en/installation/#server-options">server-options K3S_STORAGE_ENDPOINT</a>)</li>
 <li>Scheduler: 和 Kubernetes 一樣有選 Node run pod 的功能。</li>
 <li>Controller Manager: 算是 K3s 的後端程式，是處理 Kubernetes resource 的 controller manager。</li>
-</ul></li>
+</ul>
+</li>
 <li>Agent: (Kubernetes data plan 元件 + Tunnel Proxy)
-
 <ul>
 <li>Kube-proxy: 就是做 forwrading 用的。</li>
 <li>Flannel: Pod 溝通用的網路。</li>
 <li>Kubelet: 啟動 container 用。</li>
-</ul></li>
-<li>Tunnel Proxy of Server &amp; Agent:
-
-<ul>
-<li>在 Server 的 <a href="https://github.com/rancher/k3s/blob/v0.9.1/pkg/daemons/control/tunnel.go"><code>pkg/daemons/control/tunnel.go</code></a> 程式中會看到 <code>setupTunnel</code>，而在程式中也會看到 <code>setupProxyDialer</code> ，所以可想而知，在 Server 端，會有 Tunnel 和 Proxy 的功能。<br /></li>
-<li>而在在圖中，可以看到 Agent 的 kubelet 會傳資料給 Tunnel Proxy ，那是怎麼傳的？在 <a href="https://github.com/rancher/k3s/blob/v0.9.1/pkg/agent/tunnel/tunnel.go#L168"><code>v0.9.1/pkg/agent/tunnel/tunnel.go#L168</code></a> 我們也看到其實 agent 程式也是透過 wss 協定方式進行資料傳輸和 Server 端溝通，因此這樣就可以串起來說，Server 和 Agent 之間是怎麼溝通了。<br /></li>
-</ul></li>
 </ul>
-
-<p><img src="https://k3s.io/images/how-it-works-k3s.svg" alt="" /></p>
-
+</li>
+<li>Tunnel Proxy of Server &amp; Agent:
+<ul>
+<li>在 Server 的 <a href="https://github.com/rancher/k3s/blob/v0.9.1/pkg/daemons/control/tunnel.go"><code>pkg/daemons/control/tunnel.go</code></a> 程式中會看到 <code>setupTunnel</code>，而在程式中也會看到 <code>setupProxyDialer</code> ，所以可想而知，在 Server 端，會有 Tunnel 和 Proxy 的功能。</li>
+<li>而在在圖中，可以看到 Agent 的 kubelet 會傳資料給 Tunnel Proxy ，那是怎麼傳的？在 <a href="https://github.com/rancher/k3s/blob/v0.9.1/pkg/agent/tunnel/tunnel.go#L168"><code>v0.9.1/pkg/agent/tunnel/tunnel.go#L168</code></a> 我們也看到其實 agent 程式也是透過 wss 協定方式進行資料傳輸和 Server 端溝通，因此這樣就可以串起來說，Server 和 Agent 之間是怎麼溝通了。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://k3s.io/images/how-it-works-k3s.svg" alt=""></p>
 <h2 id="部署-k3s-cluster">部署 K3s cluster</h2>
-
-<p>在部署 Cluster 之前需要先準備的環境如下：<br />
+<p>在部署 Cluster 之前需要先準備的環境如下：<br>
 兩台 Host (VM 或主機) ， Server VM 的 RAM 至少需要 512 MB，Work Node VM 的 RAM 至少需要 75MB，並且兩台主機都已經安裝好 Docker 了。</p>
-
 <h3 id="1-首先在-master-上安裝-k3s-server">1. 首先在 Master 上安裝 K3s Server</h3>
-
 <p>切換到 root 使用者，並執行以下的 Command</p>
-
-<pre><code>IPADDR=$(ip a show enp0s8 | grep &quot;inet &quot; | awk '{print $2}' | cut -d / -f1)
-curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v0.9.1 INSTALL_K3S_EXEC=&quot;--docker --node-ip=${IPADDR} --flannel-iface=enp0s8 --write-kubeconfig-mode 644 --no-deploy=servicelb --no-deploy=traefik&quot; sh -
-</code></pre>
-
-<p>我們會執行 <a href="https://get.k3s.io">https://get.k3s.io</a> 這程式裡面的腳本，而帶入的 option 有：</p>
-
+<pre tabindex="0"><code>IPADDR=$(ip a show enp0s8 | grep &#34;inet &#34; | awk &#39;{print $2}&#39; | cut -d / -f1)
+curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v0.9.1 INSTALL_K3S_EXEC=&#34;--docker --node-ip=${IPADDR} --flannel-iface=enp0s8 --write-kubeconfig-mode 644 --no-deploy=servicelb --no-deploy=traefik&#34; sh -
+</code></pre><p>我們會執行 <a href="https://get.k3s.io">https://get.k3s.io</a> 這程式裡面的腳本，而帶入的 option 有：</p>
 <ul>
 <li><code>INSTALL_K3S_VERSION</code>: 指定安裝 K3s 的版本</li>
 <li><code>INSTALL_K3S_EXEC</code>: 指定 <code>k3s server</code> 執行的 option
-
 <ul>
 <li><code>--docker</code>: 選用 Docker 當作 K3s 的 container 引擎。</li>
 <li><code>--node-ip=${IPADDR}</code>: 設定 Master Node 的 IP</li>
 <li><code>--flannel-iface=enp0s8</code>: 設定 flannel 溝通用的 network interface ，請記得這邊的 <code>enp0s8</code> 改成自己主機的 network interface。</li>
 <li><code>--write-kubeconfig-mode 644</code>: 設定 kubeconfig 的權限 mode。</li>
 <li><code>--no-deploy=servicelb --no-deploy=traefik</code>: 設定不要部署 packaged 的 components。</li>
-</ul></li>
 </ul>
-
-<p>這樣 K3s server 就安裝完了。<br />
+</li>
+</ul>
+<p>這樣 K3s server 就安裝完了。<br>
 可以使用 <code>systemctl status k3s</code> 與 <code>journalctl -u k3s</code> 查看 K3s 的 Service 狀態。</p>
-
 <p>並在進行下一步驟前，執行 <code>echo &quot;export NODE_TOKEN=$(sudo cat /var/lib/rancher/k3s/server/node-token)&quot;</code> 紀錄 Cluster Node 之間認證用的 Token。</p>
-
 <h3 id="2-安裝-k3s-node">2. 安裝 K3s Node</h3>
-
 <p>先在 <code>/etc/hosts</code> 加入 master node 與 IP 的對應。</p>
-
-<pre><code>echo &quot;$K3SMASTER_IPADDRESS       $K3SMASTER_HOSTNAME&quot; | sudo tee -a /etc/hosts
-</code></pre>
-
-<p>接著切換到 root 使用者後，貼上剛剛 Master Node 上取得的認證 token，如下</p>
-
-<pre><code>export NODE_TOKEN=K10571d20534c867fe6ce8d... 
-</code></pre>
-
-<p>並執行以下的 Command 來安裝 K3s agent</p>
-
-<pre><code>export K3SMASTER_IPADDRESS=...
-IPADDR=$(ip a show enp0s8 | grep &quot;inet &quot; | awk '{print $2}' | cut -d / -f1)
-curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v0.9.1 INSTALL_K3S_EXEC=&quot;--docker --node-ip=${IPADDR} --flannel-iface=enp0s8&quot; K3S_URL=https://${K3SMASTER_IPADDRESS}:6443 K3S_TOKEN=${NODE_TOKEN} sh -
-</code></pre>
-
-<p>在執行 <a href="https://get.k3s.io">https://get.k3s.io</a> 這程式裡面的腳本中，<code>INSTALL_K3S_EXEC</code> 而外帶入的 option 有：</p>
-
+<pre tabindex="0"><code>echo &#34;$K3SMASTER_IPADDRESS       $K3SMASTER_HOSTNAME&#34; | sudo tee -a /etc/hosts
+</code></pre><p>接著切換到 root 使用者後，貼上剛剛 Master Node 上取得的認證 token，如下</p>
+<pre tabindex="0"><code>export NODE_TOKEN=K10571d20534c867fe6ce8d... 
+</code></pre><p>並執行以下的 Command 來安裝 K3s agent</p>
+<pre tabindex="0"><code>export K3SMASTER_IPADDRESS=...
+IPADDR=$(ip a show enp0s8 | grep &#34;inet &#34; | awk &#39;{print $2}&#39; | cut -d / -f1)
+curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v0.9.1 INSTALL_K3S_EXEC=&#34;--docker --node-ip=${IPADDR} --flannel-iface=enp0s8&#34; K3S_URL=https://${K3SMASTER_IPADDRESS}:6443 K3S_TOKEN=${NODE_TOKEN} sh -
+</code></pre><p>在執行 <a href="https://get.k3s.io">https://get.k3s.io</a> 這程式裡面的腳本中，<code>INSTALL_K3S_EXEC</code> 而外帶入的 option 有：</p>
 <ul>
 <li><code>K3S_URL</code>: 是讓 agent 知道他要和哪個 server 連線</li>
 <li><code>K3S_TOKEN</code>: 是用來認證用的</li>
 </ul>
-
-<p>這樣 K3s agent 就安裝完了。<br />
+<p>這樣 K3s agent 就安裝完了。<br>
 可以使用 <code>systemctl status k3s-agent</code> 查看 k3s-agent 的 Service 狀態。</p>
-
 <h2 id="快速安裝法">快速安裝法</h2>
-
-<p>如果不想要依照以上方法一步一步操作的話，也可以參考 <a href="https://github.com/sufuf3/k3s-lab">https://github.com/sufuf3/k3s-lab</a> repository 來嘗試快速部署起一個 K3s Cluster。<br />
-在使用 <a href="https://github.com/sufuf3/k3s-lab">https://github.com/sufuf3/k3s-lab</a> 這個方法部署，環境需要具備 VirtualBox 以及 Vagrant ，並且主機尚有 1.6G 的 RAM 可以使用。<br />
+<p>如果不想要依照以上方法一步一步操作的話，也可以參考 <a href="https://github.com/sufuf3/k3s-lab">https://github.com/sufuf3/k3s-lab</a> repository 來嘗試快速部署起一個 K3s Cluster。<br>
+在使用 <a href="https://github.com/sufuf3/k3s-lab">https://github.com/sufuf3/k3s-lab</a> 這個方法部署，環境需要具備 VirtualBox 以及 Vagrant ，並且主機尚有 1.6G 的 RAM 可以使用。<br>
 安裝方法如下：</p>
-
 <ol>
 <li>在 Host 上啟動兩台 VM 並且在 Master 的 VM 中安裝 K3s server。</li>
 </ol>
-
-<pre><code>$ sh deploy-vagrant.sh
-</code></pre>
-
-<ol>
-<li>在第一步驟完成後，會得到類似 <code>export NODE_TOKEN=K10571d20534c867fe6ce8d...</code> 的字串，將這字串複製後，透過 <code>vageant ssh node1</code> 進入 node 的 VM 並且執行以下的指令<br /></li>
+<pre tabindex="0"><code>$ sh deploy-vagrant.sh
+</code></pre><ol start="2">
+<li>在第一步驟完成後，會得到類似 <code>export NODE_TOKEN=K10571d20534c867fe6ce8d...</code> 的字串，將這字串複製後，透過 <code>vageant ssh node1</code> 進入 node 的 VM 並且執行以下的指令</li>
 </ol>
-
-<pre><code>sudo su -
+<pre tabindex="0"><code>sudo su -
 cd /home/vagrant/
 export NODE_TOKEN=K10571d20534c867fe6ce8d... // 是複製的字串
 sh install-k3s-node.sh ${NODE_TOKEN}
-</code></pre>
-
-<p>這樣就完成以上部署 K3s Cluster 了。接下來我們來驗證 K3s Cluster 是否正常吧！</p>
-
+</code></pre><p>這樣就完成以上部署 K3s Cluster 了。接下來我們來驗證 K3s Cluster 是否正常吧！</p>
 <h2 id="功能驗證">功能驗證</h2>
-
-<p>首先先進入 Master Node，你可以透過 k3s 指令看到它有支援的 commands，如下，因此我們可以直接使用 kubectl, crictl, ctr：<br />
+<p>首先先進入 Master Node，你可以透過 k3s 指令看到它有支援的 commands，如下，因此我們可以直接使用 kubectl, crictl, ctr：<br>
 而因為我們使用 Docker 為我們的 container 引擎，所以本篇只用 kubectl 來和大家一起驗證。</p>
-
-<pre><code>$ k3s -h
+<pre tabindex="0"><code>$ k3s -h
 NAME:
    k3s - Kubernetes, but small and simple
 
@@ -410,11 +405,8 @@ GLOBAL OPTIONS:
    --debug        Turn on debug logs
    --help, -h     show help
    --version, -v  print the version
-</code></pre>
-
-<p>我們可以透過 kubectl 來查看 Cluster node 資訊與 component 的狀態。</p>
-
-<pre><code>$ kubectl get no -o wide
+</code></pre><p>我們可以透過 kubectl 來查看 Cluster node 資訊與 component 的狀態。</p>
+<pre tabindex="0"><code>$ kubectl get no -o wide
 NAME     STATUS   ROLES    AGE   VERSION         INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
 master   Ready    master   97m   v1.15.4-k3s.1   192.168.0.200   &lt;none&gt;        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
 node1    Ready    worker   93m   v1.15.4-k3s.1   192.168.0.201   &lt;none&gt;        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
@@ -423,11 +415,8 @@ $ kubectl get componentstatus
 NAME                 STATUS    MESSAGE   ERROR
 scheduler            Healthy   ok
 controller-manager   Healthy   ok
-</code></pre>
-
-<p>也可以用 kubectl 來跑一個 deployment 來啟動一個 nginx ，如以下 Lab。</p>
-
-<pre><code>$ kubectl run mynginx --image=nginx --replicas=1 --port=80
+</code></pre><p>也可以用 kubectl 來跑一個 deployment 來啟動一個 nginx ，如以下 Lab。</p>
+<pre tabindex="0"><code>$ kubectl run mynginx --image=nginx --replicas=1 --port=80
 deployment.apps/mynginx created
 $ kubectl expose deployment mynginx --port 80
 service/mynginx exposed
@@ -461,154 +450,60 @@ $ curl 10.43.220.117
 working. Further configuration is required.&lt;/p&gt;
 
 &lt;p&gt;For online documentation and support please refer to
-&lt;a href=&quot;http://nginx.org/&quot;&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+&lt;a href=&#34;http://nginx.org/&#34;&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
 Commercial support is available at
-&lt;a href=&quot;http://nginx.com/&quot;&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;http://nginx.com/&#34;&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-
-<p>如上，其實使用方式和 Kubernetes 使用原本資源方法是一樣的，所以要更換 install 的工具，其實並不是太困難。</p>
-
+</code></pre><p>如上，其實使用方式和 Kubernetes 使用原本資源方法是一樣的，所以要更換 install 的工具，其實並不是太困難。</p>
 <h2 id="移除安裝">移除安裝</h2>
-
 <p>在 K3s Server 端執行</p>
-
-<pre><code>systemctl stop k3s &amp;&amp; /usr/local/bin/k3s-uninstall.sh
-</code></pre>
-
-<p>；在 k3s agent 端執行</p>
-
-<pre><code>systemctl stop k3s-agent &amp;&amp; /usr/local/bin/k3s-agent-uninstall.sh
-</code></pre>
-
-<h2 id="在-arm-上面部署-k3s-cluster">在 ARM 上面部署 K3s Cluster</h2>
-
+<pre tabindex="0"><code>systemctl stop k3s &amp;&amp; /usr/local/bin/k3s-uninstall.sh
+</code></pre><p>；在 k3s agent 端執行</p>
+<pre tabindex="0"><code>systemctl stop k3s-agent &amp;&amp; /usr/local/bin/k3s-agent-uninstall.sh
+</code></pre><h2 id="在-arm-上面部署-k3s-cluster">在 ARM 上面部署 K3s Cluster</h2>
 <p>而在 ARM 上面部署，也是雷同的，不過有以下幾點是需要注意的</p>
-
 <ul>
 <li>若是要編譯 Kernel 請確定 vxlan, iptables, netfilter, ip_vs 等必要的 module 都有開啟。</li>
 <li>若需要安裝 Docker ，請確定 Cgroup 在該編譯的 Kernel 版本是沒有 issue 的。也請確定使用的 Kernel 版本是符合 Kubernetes 官網上的描述。</li>
 </ul>
-
 <h2 id="結語">結語</h2>
-
 <p>因緣際會下，接觸 K3s ，其實蠻有趣的，覺得邊緣運算和雲端運算有共同類似的技術可以交流，也是很開心的。最近也光了一些時間，翻了一下 K3s 的 code，覺得有趣。之後若有時間，也許會來寫一篇深入研究 K3s 源碼的分享。</p>
-
 <h2 id="reference">Reference</h2>
-
 <ul>
 <li><a href="https://k3s.io/">https://k3s.io/</a></li>
 <li><a href="https://rancher.com/docs/k3s/latest/en/">https://rancher.com/docs/k3s/latest/en/</a></li>
 </ul>
 
+
+    </main>
   </div>
-  <div>
-    <ul class="post__nav">
-        <li class="post__nav--next">
-            <a href="/posts/2019-12-31-2019retrospect/">                
-                <span class="next__heading">NEXT</span>
-                <span>2019 in retrospect and prospect</span>
-            </a>
-            <i class="fas fa-chevron-right"></i>
-        </li>
-        <li class="post__nav--previous">
-            <i class="fas fa-chevron-left"></i>
-            <a href="/posts/2019-09-29-book-avoidant-attachment/">                
-                <span class="previous__heading">PREVIOUS</span>
-                <span class="previous__title">[讀書紀錄] 孤獨的冷漠 x 十三歲後，我不再是我</span>
-            </a>
-        </li>
-    </ul>
-</div>
-
-  <div class="post__related">
-    
-    
-    
-    <h2>Related Articles</h2>
-    <ul class="related-posts">
-        
-<li>
-  <span class="list__title--small">
-    <a href="/posts/2018-10-19-ipvs-based-kube-proxy-4-scaled-k8s-lb/">IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing</a>
-      
-      <time class="pull-right hidden-tablet">Oct 15 &#39;18</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/posts/2018-10-15-hands-on-k8s-kube-proxy-w-ipvs-lb/">實現 IPVS-based K8s service load balancing - 不同 namespace 擁有自己的 external IP</a>
-      
-      <time class="pull-right hidden-tablet">Oct 15 &#39;18</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/posts/2019-01-25-til-5g-k8s-info/">[TIL] 5G 與 Kubernetes 的一些資料</a>
-      
-      <time class="pull-right hidden-tablet">Jan 25 &#39;19</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/2018/03/09/kubernetes-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">[Kubernetes] 學習筆記</a>
-      
-      <time class="pull-right hidden-tablet">Mar 09 &#39;18</time>
-      
-  </span>
-</li>
-
-    </ul>
-    
-</div>
-</article>
-
-        </div>
-        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-<script type="text/javascript">
-    hljs.configure({languages: []});
-    hljs.initHighlightingOnLoad();
-</script>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-      (function () {
-            
-            
-            
-            if (location.hostname === "localhost" || 
-            	location.hostname === "127.0.0.1" || 
-            	location.hostname === "") {
-                return;
-			}
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            var disqus_shortname = 'bestsamina';
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
-                  dsq);
-      })();
-</script>
-
-<noscript>
-	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p>@Samina Fu</p>
     </div>
-    
-
-
-    </body>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+  <script type="text/javascript">
+    document.querySelector('.mobile-header').addEventListener('click', function () {
+      var om = document.querySelector(".overlay-menu");
+      if (document.querySelector('.hamburger').classList.contains("cross")) {
+        document.querySelector('.hamburger').classList.remove("cross");
+        om.style.display = "none";
+        om.style.width = "0%";
+        om.style.height = "0%";
+      }
+      else {
+        document.querySelector('.hamburger').classList.add("cross");
+        om.style.width = "100%";
+        om.style.height = "80vh";
+        om.style.display = "block";
+      }
+    });
+  </script>
+</body>
 </html>

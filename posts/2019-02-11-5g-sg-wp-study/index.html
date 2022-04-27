@@ -1,251 +1,306 @@
 <!DOCTYPE html>
-<html lang="en-us">
-    <head>
-    <link href="http://gmpg.org/xfn/11" rel="profile">
-    <script data-ad-client="ca-pub-6396786781922729" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77171360-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<html lang='en'><head>
+  <title>5G-PPP Software Network White Paper 畫重點筆記 - Samina Website</title>
+  <link rel='canonical' href='https://bestsamina.github.io/posts/2019-02-11-5g-sg-wp-study/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#D250F4' />
+  
 
-      gtag('config', 'UA-77171360-2');
-    </script>
-    
-    <script type="text/javascript">
-      var _paq = window._paq || [];
-       
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="https://github.matomo.cloud/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '1']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-      })();
-    </script>
-    
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
-<meta name="google-site-verification" content="86pjrD_mrnBLozy63MgmlPcYTh6-MHixr_RZhm2Wji0" />
-<!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.54.0" />
-    
-    
-    <title>5G-PPP Software Network White Paper 畫重點筆記 • Life &amp; Technological Journey of Samina</title>
-<meta name="description" content="Life &amp; Technological Journey of Samina - Hello and welcome to my blog. My name is Samina Fu. This blog is about technology and the record of my life. Hope the logs can help you and me someday.">
-<meta name="keywords" content="blog,python,golang,javascript,container,opencord,cord,sdn,network">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="5G-PPP Software Network White Paper 畫重點筆記"/>
-<meta name="twitter:description" content="From Webscale to Telco, the Cloud Native Journey
- https://5g-ppp.eu/white-papers/
- 這邊是一篇&rdquo;畫重點&rdquo;的筆記，關於 5G &amp; Cloud Native ，From 5G-PPP(5G Infrastructure Public Private Partnership) 的白皮書。
-1 Introduction  Software in 5G-PPP so far  from “boxes” to “functions”, and from “protocols” to “APIs”  Cloud impact in general Cloud impact in telecom ecosystem in particular
- covering Service-Oriented Architecture (SOA), Microservices Architecture (MSA) and Service-Based Architecture (SBA), the latter being adopted in next generation CORE [15] telcograde enhancements that should be added in frameworks like Kubernetes, monitoring, stateless design, etc&hellip; What are the specific requirements between Webscale and telco players?"/>
+  <meta name="generator" content="Hugo 0.97.3" />
 
-<meta property="og:title" content="5G-PPP Software Network White Paper 畫重點筆記" />
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://bestsamina.github.io/sass/style.min.eabe1aa4bd266a15f7b39b122bd6a5cc75cb067e5373631ac21d7815d6240d6f.css" integrity="sha256-6r4apL0mahX3s5sSK9alzHXLBn5Tc2Mawh14FdYkDW8=" media="screen">
+<link rel="stylesheet" href="https://bestsamina.github.io/syntax.min.css" integrity="" media="screen">
+
+  <meta property="og:title" content="5G-PPP Software Network White Paper 畫重點筆記" />
 <meta property="og:description" content="From Webscale to Telco, the Cloud Native Journey
  https://5g-ppp.eu/white-papers/
- 這邊是一篇&rdquo;畫重點&rdquo;的筆記，關於 5G &amp; Cloud Native ，From 5G-PPP(5G Infrastructure Public Private Partnership) 的白皮書。
-1 Introduction  Software in 5G-PPP so far  from “boxes” to “functions”, and from “protocols” to “APIs”  Cloud impact in general Cloud impact in telecom ecosystem in particular
+ 這邊是一篇&quot;畫重點&quot;的筆記，關於 5G &amp; Cloud Native ，From 5G-PPP(5G Infrastructure Public Private Partnership) 的白皮書。
+1 Introduction   Software in 5G-PPP so far
+ from “boxes” to “functions”, and from “protocols” to “APIs”    Cloud impact in general
+  Cloud impact in telecom ecosystem in particular
  covering Service-Oriented Architecture (SOA), Microservices Architecture (MSA) and Service-Based Architecture (SBA), the latter being adopted in next generation CORE [15] telcograde enhancements that should be added in frameworks like Kubernetes, monitoring, stateless design, etc&hellip; What are the specific requirements between Webscale and telco players?" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bestsamina.github.io/posts/2019-02-11-5g-sg-wp-study/" />
-<meta property="article:published_time" content="2019-02-11T14:33:14&#43;08:00"/>
-<meta property="article:modified_time" content="2019-02-11T14:33:14&#43;08:00"/>
+<meta property="og:url" content="https://bestsamina.github.io/posts/2019-02-11-5g-sg-wp-study/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-02-11T14:33:14+08:00" />
+<meta property="article:modified_time" content="2019-02-11T14:33:14+08:00" />
 
 
-    <!-- Font-Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
-    <!-- highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <link rel="stylesheet" href="https://bestsamina.github.io//css/print.min.css" media="print">
-    <link rel="stylesheet" href="https://bestsamina.github.io//css/hyde-hyde.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png"></head>
+  <meta itemprop="name" content="5G-PPP Software Network White Paper 畫重點筆記">
+<meta itemprop="description" content="From Webscale to Telco, the Cloud Native Journey
+ https://5g-ppp.eu/white-papers/
+ 這邊是一篇&quot;畫重點&quot;的筆記，關於 5G &amp; Cloud Native ，From 5G-PPP(5G Infrastructure Public Private Partnership) 的白皮書。
+1 Introduction   Software in 5G-PPP so far
+ from “boxes” to “functions”, and from “protocols” to “APIs”    Cloud impact in general
+  Cloud impact in telecom ecosystem in particular
+ covering Service-Oriented Architecture (SOA), Microservices Architecture (MSA) and Service-Based Architecture (SBA), the latter being adopted in next generation CORE [15] telcograde enhancements that should be added in frameworks like Kubernetes, monitoring, stateless design, etc&hellip; What are the specific requirements between Webscale and telco players?"><meta itemprop="datePublished" content="2019-02-11T14:33:14+08:00" />
+<meta itemprop="dateModified" content="2019-02-11T14:33:14+08:00" />
+<meta itemprop="wordCount" content="980">
+<meta itemprop="keywords" content="5G," />
+</head>
+<body>
 
-    <body>
-        
-<div class="sidebar text-center">
-  <div class="container ">
-    <div class="sidebar-about">
-      <div class="site__title">
-        <a href="https://bestsamina.github.io/">Life &amp; Technological Journey of Samina</a>
-      </div>
-      
-      
-      
-      <p>
-        <img src="https://bestsamina.github.io/images/sufuf3_1519028337_878.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
-      </p>
-      
-      <p class="site__description">
-         This blog is about technology and the record of my life. Hope the logs can help you and me someday. 
-      </p>
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://bestsamina.github.io/images/default-sidebar.jpg&#39;)">
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
+      </a>
     </div>
-    <div>
-	<ul class="sidebar-nav">
-		
-				<li>
-					<a href="/posts/">
-						<span>Posts</span>
-					</a>
-				</li>
-				<li>
-					<a href="/series/">
-						<span>Series</span>
-					</a>
-				</li>
-				<li>
-					<a href="/tags/">
-						<span>Tags</span>
-					</a>
-				</li>
-				<li>
-					<a href="/categories/">
-						<span>Categories</span>
-					</a>
-				</li>
-				<li>
-					<a href="/page/awesome-blogs">
-						<span>Awesome-Blogs</span>
-					</a>
-				</li>
-				<li>
-					<a href="/about/">
-						<span>About</span>
-					</a>
-				</li>
-		</li>
-	</ul>
-</div>
-
-    <p>
-      <section class="social text-center">
-	<a href="https://twitter.com/sufuf3149"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
-	
-	&nbsp;<a href="https://github.com/sufuf3"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	&nbsp;<a href="https://gitlab.com/sufuf3"><i class="fab fa-gitlab fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="https://medium.com/@sufuf3149"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	&nbsp;<a href="https://ko-fi.com/sufuf3149"><i class="fas fa-coffee fa-lg" aria-hidden="true"></i></a>
-</section>
-
-    </p>
-    <p class="copyright">
-      &copy; 2021 Samina Fu.
-      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
-      <br/>Built with
-      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+    <h2>Hi, I'm Samina 👋</h2>
+    <h3>This is my Life & Technological Journey</h3>
+    <div class="menu">
       
-    </p>
+
+        <p>
+            <a href="/posts/">
+                Post
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+        <p>
+            <a href="/tags/">
+                Tags
+            </a>
+        </p>
+
+        <p>
+            <a href="/categories/">
+                Categories
+            </a>
+        </p>
+
+        <p>
+            <a href="/page/awesome-blogs/">
+                Awesome-blogs
+            </a>
+        </p>
+
+      
+    </div>
   </div>
-  <div>
+
+  <div class="socials">
+      
+  
+    <a href="https://github.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM71.182 98.494c-2.156.385-2.952-.95-2.952-2.053 0-1.386.051-8.471.051-14.195 0-4.005-1.335-6.546-2.9-7.881C74.878 73.313 84.89 72.003 84.89 55.6c0-4.671-1.669-7.007-4.39-10.01.436-1.105 1.9-5.648-.436-11.552-3.568-1.104-11.731 4.595-11.731 4.595-3.389-.95-7.06-1.438-10.679-1.438-3.62 0-7.29.488-10.679 1.438 0 0-8.163-5.699-11.73-4.595-2.337 5.878-.899 10.422-.437 11.551-2.72 3.004-4.004 5.34-4.004 10.011 0 16.326 9.574 17.712 19.072 18.765-1.232 1.104-2.336 3.003-2.72 5.724-2.44 1.104-8.677 3.004-12.4-3.568-2.335-4.056-6.545-4.39-6.545-4.39-4.159-.05-.282 2.619-.282 2.619 2.772 1.283 4.723 6.212 4.723 6.212 2.49 7.624 14.4 5.057 14.4 5.057 0 3.568.052 9.37.052 10.422 0 1.104-.77 2.438-2.952 2.053C27.21 92.821 15.35 76.701 15.35 57.86c0-23.564 18.02-41.456 41.585-41.456s42.663 17.892 42.663 41.456c.026 18.842-11.474 34.988-28.416 40.635zM46 82.81c-.488.103-.95-.102-1.001-.436-.051-.385.282-.719.77-.822.488-.05.95.154 1.001.488.077.334-.257.668-.77.77zm-2.439-.23c0 .333-.385.615-.898.615-.565.052-.95-.23-.95-.616 0-.333.385-.616.899-.616.487-.051.95.231.95.616zm-3.516-.283c-.103.334-.616.488-1.053.334-.488-.103-.821-.488-.719-.822.103-.334.617-.488 1.053-.385.513.154.847.54.719.873zm-3.158-1.386c-.23.282-.718.23-1.104-.154-.385-.334-.487-.822-.23-1.053.23-.282.718-.23 1.103.154.334.334.462.847.231 1.053zm-2.336-2.336c-.23.154-.667 0-.95-.385-.282-.385-.282-.822 0-1.001.283-.231.72-.052.95.333.283.385.283.847 0 1.053zm-1.668-2.49c-.231.23-.616.103-.899-.154-.282-.334-.333-.719-.102-.899.23-.23.616-.102.898.154.282.334.334.72.103.899zm-1.72-1.9c-.103.231-.436.283-.719.103-.334-.154-.488-.436-.385-.667.103-.154.385-.231.719-.103.334.18.488.462.385.667z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://gitlab.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M23.76 5.544c-.693-1.991-3.512-1.991-4.228 0L6.892 44.653h29.532c-.022 0-12.663-39.11-12.663-39.11zM.426 64.34c-.582 1.79.067 3.782 1.589 4.923l55.464 41.167-50.61-65.778L.426 64.34zm35.977-19.688L57.5 110.43l21.098-65.778H36.402zm78.173 19.688l-6.444-19.688L57.5 110.43l55.464-41.167a4.475 4.475 0 0 0 1.61-4.923zM95.468 5.544c-.694-1.991-3.513-1.991-4.229 0L78.576 44.653h29.533L95.468 5.543z" />
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://medium.com/@sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M0 0v115h115V0H0zm95.542 27.235l-6.16 5.905a1.81 1.81 0 0 0-.693 1.72v43.458c-.103.667.154 1.335.693 1.72l6.032 5.904v1.31h-30.29v-1.259l6.238-6.058c.616-.616.616-.795.616-1.72V43.074L54.625 87.123h-2.336l-20.202-44.05v29.52c-.18 1.233.257 2.49 1.13 3.39l8.111 9.83v1.31H18.277v-1.31l8.111-9.83a3.93 3.93 0 0 0 1.053-3.39v-34.14a2.93 2.93 0 0 0-.976-2.516l-7.213-8.702v-1.309h22.41l17.301 37.991 15.222-37.965h21.357v1.283z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://twitter.com/sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM90.126 40.763c.051.72.051 1.464.051 2.182 0 22.256-16.942 47.9-47.9 47.9-9.548 0-18.404-2.772-25.848-7.547 1.36.154 2.67.205 4.055.205 7.881 0 15.12-2.67 20.895-7.187-7.392-.154-13.604-5.006-15.735-11.68 2.593.385 4.929.385 7.598-.308a16.837 16.837 0 0 1-13.476-16.531v-.205a16.824 16.824 0 0 0 7.598 2.13 16.8 16.8 0 0 1-7.496-14.016c0-3.131.822-6.006 2.285-8.496a47.803 47.803 0 0 0 34.705 17.61c-2.387-11.424 6.161-20.69 16.429-20.69 4.851 0 9.215 2.027 12.296 5.313a32.99 32.99 0 0 0 10.678-4.056 16.792 16.792 0 0 1-7.393 9.267c3.389-.36 6.674-1.31 9.703-2.618a35.437 35.437 0 0 1-8.445 8.727z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  </div>
+</header>
+
+<div class="mobile-header">
+  <p> Samina Website </p>
+  <div class="hamburger">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
   </div>
 </div>
-<div class="content container">
-            <article>
+
+<div class="overlay-menu">
   <header>
-    <h1>5G-PPP Software Network White Paper 畫重點筆記</h1>
-     
-    
-<div class="post__meta">
-    
-    <i class="fas fa-calendar-alt"></i> Feb 11, 2019
-    in
-              
-              
-              <a class="post__category" href="/categories/5g">A 5G</a>
-              
-              
-    
-      
-      
-          <br/>
-           <i class="fas fa-tags"></i>
-          
-          <a class="post__tag" href="/tags/5g">#5g</a>
-          
-      
-    
-    
-    <br/>
-    <i class="fas fa-clock"></i> 5 min read
+    <div class="intro">
+      <div class="logo-container">
+        <a href="/">
+          <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
+        </a>
+      </div>
+      <h2>Hi, I'm Samina 👋</h2>
+      <h3>This is my Life & Technological Journey</h3>
+      <div class="menu">
+        
+
+        <p>
+            <a href="/posts/">
+                Post
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+        <p>
+            <a href="/tags/">
+                Tags
+            </a>
+        </p>
+
+        <p>
+            <a href="/categories/">
+                Categories
+            </a>
+        </p>
+
+        <p>
+            <a href="/page/awesome-blogs/">
+                Awesome-blogs
+            </a>
+        </p>
+
+        
+      </div>
+    </div>
+
+    <div class="socials">
+        
+  
+    <a href="https://github.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM71.182 98.494c-2.156.385-2.952-.95-2.952-2.053 0-1.386.051-8.471.051-14.195 0-4.005-1.335-6.546-2.9-7.881C74.878 73.313 84.89 72.003 84.89 55.6c0-4.671-1.669-7.007-4.39-10.01.436-1.105 1.9-5.648-.436-11.552-3.568-1.104-11.731 4.595-11.731 4.595-3.389-.95-7.06-1.438-10.679-1.438-3.62 0-7.29.488-10.679 1.438 0 0-8.163-5.699-11.73-4.595-2.337 5.878-.899 10.422-.437 11.551-2.72 3.004-4.004 5.34-4.004 10.011 0 16.326 9.574 17.712 19.072 18.765-1.232 1.104-2.336 3.003-2.72 5.724-2.44 1.104-8.677 3.004-12.4-3.568-2.335-4.056-6.545-4.39-6.545-4.39-4.159-.05-.282 2.619-.282 2.619 2.772 1.283 4.723 6.212 4.723 6.212 2.49 7.624 14.4 5.057 14.4 5.057 0 3.568.052 9.37.052 10.422 0 1.104-.77 2.438-2.952 2.053C27.21 92.821 15.35 76.701 15.35 57.86c0-23.564 18.02-41.456 41.585-41.456s42.663 17.892 42.663 41.456c.026 18.842-11.474 34.988-28.416 40.635zM46 82.81c-.488.103-.95-.102-1.001-.436-.051-.385.282-.719.77-.822.488-.05.95.154 1.001.488.077.334-.257.668-.77.77zm-2.439-.23c0 .333-.385.615-.898.615-.565.052-.95-.23-.95-.616 0-.333.385-.616.899-.616.487-.051.95.231.95.616zm-3.516-.283c-.103.334-.616.488-1.053.334-.488-.103-.821-.488-.719-.822.103-.334.617-.488 1.053-.385.513.154.847.54.719.873zm-3.158-1.386c-.23.282-.718.23-1.104-.154-.385-.334-.487-.822-.23-1.053.23-.282.718-.23 1.103.154.334.334.462.847.231 1.053zm-2.336-2.336c-.23.154-.667 0-.95-.385-.282-.385-.282-.822 0-1.001.283-.231.72-.052.95.333.283.385.283.847 0 1.053zm-1.668-2.49c-.231.23-.616.103-.899-.154-.282-.334-.333-.719-.102-.899.23-.23.616-.102.898.154.282.334.334.72.103.899zm-1.72-1.9c-.103.231-.436.283-.719.103-.334-.154-.488-.436-.385-.667.103-.154.385-.231.719-.103.334.18.488.462.385.667z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://gitlab.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M23.76 5.544c-.693-1.991-3.512-1.991-4.228 0L6.892 44.653h29.532c-.022 0-12.663-39.11-12.663-39.11zM.426 64.34c-.582 1.79.067 3.782 1.589 4.923l55.464 41.167-50.61-65.778L.426 64.34zm35.977-19.688L57.5 110.43l21.098-65.778H36.402zm78.173 19.688l-6.444-19.688L57.5 110.43l55.464-41.167a4.475 4.475 0 0 0 1.61-4.923zM95.468 5.544c-.694-1.991-3.513-1.991-4.229 0L78.576 44.653h29.533L95.468 5.543z" />
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://medium.com/@sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M0 0v115h115V0H0zm95.542 27.235l-6.16 5.905a1.81 1.81 0 0 0-.693 1.72v43.458c-.103.667.154 1.335.693 1.72l6.032 5.904v1.31h-30.29v-1.259l6.238-6.058c.616-.616.616-.795.616-1.72V43.074L54.625 87.123h-2.336l-20.202-44.05v29.52c-.18 1.233.257 2.49 1.13 3.39l8.111 9.83v1.31H18.277v-1.31l8.111-9.83a3.93 3.93 0 0 0 1.053-3.39v-34.14a2.93 2.93 0 0 0-.976-2.516l-7.213-8.702v-1.309h22.41l17.301 37.991 15.222-37.965h21.357v1.283z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://twitter.com/sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM90.126 40.763c.051.72.051 1.464.051 2.182 0 22.256-16.942 47.9-47.9 47.9-9.548 0-18.404-2.772-25.848-7.547 1.36.154 2.67.205 4.055.205 7.881 0 15.12-2.67 20.895-7.187-7.392-.154-13.604-5.006-15.735-11.68 2.593.385 4.929.385 7.598-.308a16.837 16.837 0 0 1-13.476-16.531v-.205a16.824 16.824 0 0 0 7.598 2.13 16.8 16.8 0 0 1-7.496-14.016c0-3.131.822-6.006 2.285-8.496a47.803 47.803 0 0 0 34.705 17.61c-2.387-11.424 6.161-20.69 16.429-20.69 4.851 0 9.215 2.027 12.296 5.313a32.99 32.99 0 0 0 10.678-4.056 16.792 16.792 0 0 1-7.393 9.267c3.389-.36 6.674-1.31 9.703-2.618a35.437 35.437 0 0 1-8.445 8.727z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+    </div>
+  </header>
 </div>
 
-
-  </header>
-<aside>
-  <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#1-introduction">1 Introduction</a></li>
-<li><a href="#2-cloud-native-a-webscale-view">2 Cloud Native: a Webscale View</a>
-<ul>
-<li><a href="#2-1-microservice-architecture">2.1 Microservice Architecture</a></li>
-<li><a href="#2-2-twelve-factors">2.2 Twelve Factors</a></li>
-<li><a href="#2-3-technology-for-cloud-native">2.3 Technology for Cloud Native</a></li>
-</ul></li>
-<li><a href="#3-telco-requirements">3 Telco Requirements</a></li>
-<li><a href="#4-toward-telco-grade-webscale-frameworks">4 Toward Telco Grade Webscale Frameworks</a>
-<ul>
-<li><a href="#4-1-need-for-telco-grade-features">4.1 Need for Telco Grade features</a></li>
-<li><a href="#4-2-twelve-factors-in-telco-domain">4.2 Twelve Factors in Telco Domain</a></li>
-<li><a href="#4-3-telco-grade-features">4.3 Telco-Grade Features</a></li>
-</ul></li>
-<li><a href="#5-technology-enablers-open-source-and-standards">5 Technology Enablers – Open source and Standards</a>
-<ul>
-<li><a href="#5-1-standards">5.1 Standards</a></li>
-<li><a href="#5-2-open-source-software">5.2 Open Source Software</a></li>
-</ul></li>
-<li><a href="#6-conclusion">6 Conclusion</a></li>
-</ul></li>
-</ul>
-</nav>
-</aside>
-  <div class="post">
+  <div class="content-wrapper">
     
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://bestsamina.github.io/">Home</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://bestsamina.github.io/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://bestsamina.github.io/posts/2019-02-11-5g-sg-wp-study/">5G-PPP Software Network White Paper 畫重點筆記</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>5G-PPP Software Network White Paper 畫重點筆記</h1>
 
 <p>From Webscale to Telco, the Cloud Native Journey</p>
-
 <blockquote>
 <p><a href="https://5g-ppp.eu/white-papers/">https://5g-ppp.eu/white-papers/</a></p>
 </blockquote>
-
-<p>這邊是一篇&rdquo;畫重點&rdquo;的筆記，關於 5G &amp; Cloud Native ，From 5G-PPP(5G Infrastructure Public Private Partnership) 的白皮書。</p>
-
+<p>這邊是一篇&quot;畫重點&quot;的筆記，關於 5G &amp; Cloud Native ，From 5G-PPP(5G Infrastructure Public Private Partnership) 的白皮書。</p>
 <h2 id="1-introduction">1 Introduction</h2>
-
 <ul>
-<li>Software in 5G-PPP so far
-
+<li>
+<p>Software in 5G-PPP so far</p>
 <ul>
 <li>from “boxes” to “functions”, and from “protocols” to “APIs”</li>
-</ul></li>
-<li>Cloud impact in general</li>
-
-<li><p>Cloud impact in telecom ecosystem in particular</p>
-
+</ul>
+</li>
+<li>
+<p>Cloud impact in general</p>
+</li>
+<li>
+<p>Cloud impact in telecom ecosystem in particular</p>
 <ul>
 <li>covering Service-Oriented Architecture (SOA), Microservices Architecture (MSA) and Service-Based Architecture (SBA), the latter being adopted in next generation CORE [15]</li>
 <li>telcograde enhancements that should be added in frameworks like Kubernetes, monitoring, stateless design, etc&hellip;</li>
@@ -253,95 +308,78 @@
 <li>What gaps do we have in container management eco-system to achieve telco-grade performance?</li>
 <li>Which segments are critical from latency perspective?</li>
 <li>What features are required to support micro-services architecture in all the segments?</li>
-<li>Which factors are difficult to implement in telco (from <a href="https://12factor.net)?">https://12factor.net)?</a></li>
-</ul></li>
-
-<li><p>章節介紹如下：</p>
-
+<li>Which factors are difficult to implement in telco (from <a href="https://12factor.net">https://12factor.net</a>)?</li>
+</ul>
+</li>
+<li>
+<p>章節介紹如下：</p>
 <ul>
 <li>2 介紹了基於服務的體系結構，12個因素以及網絡，虛擬化，編排等所需的技術。</li>
 <li>3 列出了電信公司的要求。</li>
 <li>4 描述了電信級的增強功能。</li>
 <li>5 簡要概述了技術推動因素，開源和標準。</li>
 <li>6 結論。</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="2-cloud-native-a-webscale-view">2 Cloud Native: a Webscale View</h2>
-
-<p>SBA(Service-Based Architecture)<br />
-<img src="https://i.imgur.com/P9Zq2ki.png" alt="" /></p>
-
-<p>3 ways to implement:<br />
-either as a network element on a dedicated hardware<br />
-as a software instance running on a dedicated hardware<br />
+<p>SBA(Service-Based Architecture)<br>
+<img src="https://i.imgur.com/P9Zq2ki.png" alt=""></p>
+<p>3 ways to implement:<br>
+either as a network element on a dedicated hardware<br>
+as a software instance running on a dedicated hardware<br>
 as a virtualized / cloud-native function instantiated on an appropriate platform</p>
-
 <p>利用雲軟件技術，3GPP NF架構可實現更高的靈活性，可編程性，自動化以及顯著的成本/能耗降低。</p>
-
-<h3 id="2-1-microservice-architecture">2.1 Microservice Architecture</h3>
-
-<p>提供超可靠，低延遲的通信和高速<br />
+<h3 id="21-microservice-architecture">2.1 Microservice Architecture</h3>
+<p>提供超可靠，低延遲的通信和高速<br>
 為此，需要在架構中實現高度靈活性，可歸納如下：</p>
-
 <ul>
 <li>支持對網絡的不同要求，如網絡容量，數據速率，傳輸延遲，信息安全;</li>
 <li>支持向運營商的服務和第三方應用程序公開網絡功能</li>
 <li>支持輕鬆部署和維護。 每個功能都應該能夠根據新的要求進行升級，並根據系統能力進行橫向擴展，而不會影響其他功能。</li>
 </ul>
-
 <p>SBA benefits to 5G:</p>
-
 <ul>
 <li>Easy update of Network:
-
 <ul>
 <li>Finer granularity allows individual services to be upgraded with minimal impact to other services.</li>
 <li>Facilitated continuous integration reduces the time-to-market for installing bug fixes and rolling out new network features and operator applications.</li>
-</ul></li>
+</ul>
+</li>
 <li>Extensibility:
-
 <ul>
 <li>Light-weighted service-based interfaces are needed to communicate across services.</li>
-</ul></li>
+</ul>
+</li>
 <li>Modularity &amp; Reusability:
-
 <ul>
 <li>The network is composed of modularized services reflecting the network capabilities and provides support to key 5G features such as network slicing.</li>
 <li>A service can be easily invoked by other services (with appropriate authorization), enabling each service to be reused as much as possible.</li>
-</ul></li>
-
-<li><p>Openness</p>
-
-<ul>
-<li><p>Together with some management and control functions (i.e. authentication, authorization, accounting), the information about a 5G network can be easily exposed to external users such as 3rd parties through a specific service without complicated protocol conversion</p>
-
-<h3 id="2-2-twelve-factors">2.2 Twelve Factors</h3></li>
-</ul></li>
 </ul>
-
+</li>
+<li>Openness
+<ul>
+<li>Together with some management and control functions (i.e. authentication, authorization, accounting), the information about a 5G network can be easily exposed to external users such as 3rd parties through a specific service without complicated protocol conversion</li>
+</ul>
+</li>
+</ul>
+<h3 id="22-twelve-factors">2.2 Twelve Factors</h3>
 <p><a href="https://12factor.net/zh_cn/">https://12factor.net/zh_cn/</a></p>
-
-<h3 id="2-3-technology-for-cloud-native">2.3 Technology for Cloud Native</h3>
-
-<p>Cloud Native Trail Map<br />
+<h3 id="23-technology-for-cloud-native">2.3 Technology for Cloud Native</h3>
+<p>Cloud Native Trail Map<br>
 <a href="https://github.com/cncf/landscape/blob/master/README.md#trail-map">https://github.com/cncf/landscape/blob/master/README.md#trail-map</a></p>
-
 <h2 id="3-telco-requirements">3 Telco Requirements</h2>
-
 <ul>
 <li>5G Service Enablers
-
 <ul>
 <li>eMBB – Enhanced Mobile Broadband</li>
 <li>mMTC – Massive Machine Type Communications</li>
 <li>URLLC –Ultra-Reliable and Low Latency Communications</li>
-</ul></li>
 </ul>
-
-<p>IMT-2020 5G Triangle<br />
-<img src="https://i.imgur.com/vD2TnW1.png" alt="" /></p>
-
+</li>
+</ul>
+<p>IMT-2020 5G Triangle<br>
+<img src="https://i.imgur.com/vD2TnW1.png" alt=""></p>
 <ul>
 <li>3.1 Service Requirement: 99.999%</li>
 <li>3.2 Application Type: like multi-access edge computing (MEC)</li>
@@ -350,37 +388,37 @@ as a virtualized / cloud-native function instantiated on an appropriate platform
 <li>3.5 Business Environment</li>
 <li>3.6 Human Factors</li>
 </ul>
-
 <h2 id="4-toward-telco-grade-webscale-frameworks">4 Toward Telco Grade Webscale Frameworks</h2>
-
-<h3 id="4-1-need-for-telco-grade-features">4.1 Need for Telco Grade features</h3>
-
+<h3 id="41-need-for-telco-grade-features">4.1 Need for Telco Grade features</h3>
 <ul>
-<li>Open and modular software</li>
-<li>Intelligence in software</li>
-
-<li><p>Scalable and efficient</p></li>
-
-<li><p>Typically, telco key performance indicators taken into account include latency and bandwidth, availability and security.</p>
-
+<li>
+<p>Open and modular software</p>
+</li>
+<li>
+<p>Intelligence in software</p>
+</li>
+<li>
+<p>Scalable and efficient</p>
+</li>
+<li>
+<p>Typically, telco key performance indicators taken into account include latency and bandwidth, availability and security.</p>
 <ul>
 <li>For instance, since each microservice contributes in the overall latency, it is challenging to predict the latency of a specific service, especially in cases of large and distributed systems.</li>
 <li>container management technologies (Kubernetes, Mesos, Swarm) are using an overlay network (Layer 4) which is not optimized for low latency requirements, e.g. in the cloud RAN</li>
 <li>network availability, as 99.999% availability is commonly set by the operators. Currently, cloud-native applications are not built to handle bandwidth, latency and network availability requirements.</li>
 <li>container management include the lack of a dynamic carrier-grade orchestration, the management of containers across different sites and data centers and the lack of centralized controllers for networking aspects with respect to provisioning, resiliency, management/coordination, automatic network configuration and visibility of traffic from container-to-container across networks -whether physical or virtual.</li>
-</ul></li>
-
-<li><p>為了滿足上述要求，必須滿足以下條件：</p>
-
+</ul>
+</li>
+<li>
+<p>為了滿足上述要求，必須滿足以下條件：</p>
 <ul>
 <li>Automation of operations, upgrade, backup and restore as well as restart capabilities</li>
 <li>Monitoring, performance counter, alarms and logging/trace support</li>
 <li>Security and tenant isolation.</li>
-</ul></li>
 </ul>
-
-<h3 id="4-2-twelve-factors-in-telco-domain">4.2 Twelve Factors in Telco Domain</h3>
-
+</li>
+</ul>
+<h3 id="42-twelve-factors-in-telco-domain">4.2 Twelve Factors in Telco Domain</h3>
 <ul>
 <li>Build/Release/Run (12.V) is not a part of ETSI standards</li>
 <li>dependency declaration and management (12.II) should be of particular concern</li>
@@ -390,37 +428,31 @@ as a virtualized / cloud-native function instantiated on an appropriate platform
 <li>Disposability (12.IX), i.e. small start-up times and graceful termination, is major concern for five nines availability systems, especially for emergency services and in relation to QoS constraints.</li>
 <li>the factor on administrative processes (12.XII) seems a key aspect, and especially critical since it has less to do with technology evolution.</li>
 </ul>
-
-<h3 id="4-3-telco-grade-features">4.3 Telco-Grade Features</h3>
-
+<h3 id="43-telco-grade-features">4.3 Telco-Grade Features</h3>
 <p>Several features must be integrated to the aforementioned frameworks:</p>
-
 <ol>
-<li>Multi-network interfaces<br /></li>
-<li>Service function chaining<br /></li>
-<li>Data plane acceleration<br />
-
+<li>Multi-network interfaces</li>
+<li>Service function chaining</li>
+<li>Data plane acceleration
 <ul>
-<li>low packet processing time to reach very low latency<br /></li>
-<li>predictability and stability of packet processing delay to minimize jitter<br /></li>
-<li>guaranteed and prioritized bandwidth for each Telco workload to prevent network contention<br /></li>
-<li>low CPU consumption for network tasks to allow low energy usage<br /></li>
-<li>native network performance for Telco workloads<br /></li>
-</ul></li>
-<li>Enhanced platform awareness<br />
-
+<li>low packet processing time to reach very low latency</li>
+<li>predictability and stability of packet processing delay to minimize jitter</li>
+<li>guaranteed and prioritized bandwidth for each Telco workload to prevent network contention</li>
+<li>low CPU consumption for network tasks to allow low energy usage</li>
+<li>native network performance for Telco workloads</li>
+</ul>
+</li>
+<li>Enhanced platform awareness
 <ul>
-<li>CPU pinning to avoid unpredictable latency and host CPU overcommit by dedicating CPUs to the Telco containers<br /></li>
-<li>Numa awareness to improve the utilization of compute resources for Telco containers that need to avoid cross NUMA node memory access<br /></li>
-<li>huge pages to accelerate the memory management by using larger page sizes.<br /></li>
-</ul></li>
-<li>Environment aware scheduling<br /></li>
+<li>CPU pinning to avoid unpredictable latency and host CPU overcommit by dedicating CPUs to the Telco containers</li>
+<li>Numa awareness to improve the utilization of compute resources for Telco containers that need to avoid cross NUMA node memory access</li>
+<li>huge pages to accelerate the memory management by using larger page sizes.</li>
+</ul>
+</li>
+<li>Environment aware scheduling</li>
 </ol>
-
-<h2 id="5-technology-enablers-open-source-and-standards">5 Technology Enablers – Open source and Standards</h2>
-
-<h3 id="5-1-standards">5.1 Standards</h3>
-
+<h2 id="5-technology-enablers--open-source-and-standards">5 Technology Enablers – Open source and Standards</h2>
+<h3 id="51-standards">5.1 Standards</h3>
 <ul>
 <li>ETSI NFV
 <a href="https://www.etsi.org/technologies/nfv">https://www.etsi.org/technologies/nfv</a></li>
@@ -430,92 +462,51 @@ as a virtualized / cloud-native function instantiated on an appropriate platform
 Open Networking Foundation (ONF)
 Central Office Re-architected as a Datacenter (CORD)</li>
 </ul>
-
-<h3 id="5-2-open-source-software">5.2 Open Source Software</h3>
-
-<p>可以參考 CNCF 的軟體來實作<br />
+<h3 id="52-open-source-software">5.2 Open Source Software</h3>
+<p>可以參考 CNCF 的軟體來實作<br>
 MANO frameworks such as Linux Foundation’s ONAP [41], ONF XOS [42], Cloudify [43] and ETSI OSM [44] are starting to evolve towards this approach for microservices.</p>
-
 <h2 id="6-conclusion">6 Conclusion</h2>
-
 <ul>
 <li>The VNFs are now broken into pieces, support continuous integration and continuous development (CI/CD) and interact using service meshes.</li>
 <li>Compare the three architectures inspired from the domain driven design
-
 <ul>
 <li>Service Oriented Architecture</li>
 <li>Service Based Architecture</li>
 <li>Microservice Architecture</li>
-</ul></li>
+</ul>
+</li>
 <li>the new VNFs, microservice, are designed, a set of technology used to deploy, orchestrate, network and monitor them.</li>
 <li>Telco grade features</li>
 <li>The telco requirements that are needed to be supported in community developed open source.</li>
 </ul>
 
+
+    </main>
   </div>
-  <div>
-    <ul class="post__nav">
-        <li class="post__nav--next">
-            <a href="/posts/2019-03-06-teaching-technology/">                
-                <span class="next__heading">NEXT</span>
-                <span>王永福老師《教學的技術》新書見面會 (新竹場) 心得紀錄</span>
-            </a>
-            <i class="fas fa-chevron-right"></i>
-        </li>
-        <li class="post__nav--previous">
-            <i class="fas fa-chevron-left"></i>
-            <a href="/posts/2019-02-04-first-operator-sdk-helm/">                
-                <span class="previous__heading">PREVIOUS</span>
-                <span class="previous__title">第一次玩 operator-sdk 就上手</span>
-            </a>
-        </li>
-    </ul>
-</div>
-
-  <div class="post__related">
-    
-    
-    
-</div>
-</article>
-
-        </div>
-        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-<script type="text/javascript">
-    hljs.configure({languages: []});
-    hljs.initHighlightingOnLoad();
-</script>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-      (function () {
-            
-            
-            
-            if (location.hostname === "localhost" || 
-            	location.hostname === "127.0.0.1" || 
-            	location.hostname === "") {
-                return;
-			}
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            var disqus_shortname = 'bestsamina';
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
-                  dsq);
-      })();
-</script>
-
-<noscript>
-	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p>@Samina Fu</p>
     </div>
-    
-
-
-    </body>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+  <script type="text/javascript">
+    document.querySelector('.mobile-header').addEventListener('click', function () {
+      var om = document.querySelector(".overlay-menu");
+      if (document.querySelector('.hamburger').classList.contains("cross")) {
+        document.querySelector('.hamburger').classList.remove("cross");
+        om.style.display = "none";
+        om.style.width = "0%";
+        om.style.height = "0%";
+      }
+      else {
+        document.querySelector('.hamburger').classList.add("cross");
+        om.style.width = "100%";
+        om.style.height = "80vh";
+        om.style.display = "block";
+      }
+    });
+  </script>
+</body>
 </html>

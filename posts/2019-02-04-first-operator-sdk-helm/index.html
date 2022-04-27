@@ -1,259 +1,288 @@
 <!DOCTYPE html>
-<html lang="en-us">
-    <head>
-    <link href="http://gmpg.org/xfn/11" rel="profile">
-    <script data-ad-client="ca-pub-6396786781922729" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77171360-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<html lang='en'><head>
+  <title>第一次玩 operator-sdk 就上手 - Samina Website</title>
+  <link rel='canonical' href='https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#D250F4' />
+  
 
-      gtag('config', 'UA-77171360-2');
-    </script>
-    
-    <script type="text/javascript">
-      var _paq = window._paq || [];
-       
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="https://github.matomo.cloud/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '1']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-      })();
-    </script>
-    
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
-<meta name="google-site-verification" content="86pjrD_mrnBLozy63MgmlPcYTh6-MHixr_RZhm2Wji0" />
-<!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.54.0" />
-    
-    
-    <title>第一次玩 operator-sdk 就上手 • Life &amp; Technological Journey of Samina</title>
-<meta name="description" content="Life &amp; Technological Journey of Samina - Hello and welcome to my blog. My name is Samina Fu. This blog is about technology and the record of my life. Hope the logs can help you and me someday.">
-<meta name="keywords" content="blog,python,golang,javascript,container,opencord,cord,sdn,network">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="第一次玩 operator-sdk 就上手"/>
-<meta name="twitter:description" content="文章脈絡  前言 Operator Framework 是什麼 認識 operator-sdk CLI 實作開始  建立 K8s 環境 安裝 operator-sdk CLI 用 operator-sdk CLI 建立一個 operator 了解一下新產生的 helm operator 中的檔案 編輯檔案 先在 K8s 中 deploy CRD Build operator container 在 K8s 中部署 operator 在 K8s 中部署自己定義的 custom resource  結語  前言 在接觸 Kubernetes 一陣子後，會發現一堆 operators 。
-而很殘念der，自己到目前都還沒有真正好好的玩過。
-雖然在 operator-sdk 出現以前，有很多人都自己手刻 operator，不過既然 operator 目前都有個 Framework 了，當然就來玩它囉！
-Operator Framework 是什麼  是一個 open source toolkit 管理 Kubernetes native applications, called operators, in an effective, automated, and scalable way 這個 Framework 有兩個主要的專案：  Operator SDK: 就可以用它 build operator。 Operator Lifecycle Manager (OLM): 可以管理 operators 和 CRUD Kubernetes resource 用&hellip;。(可以到這邊玩玩：https://www."/>
+  <meta name="generator" content="Hugo 0.97.3" />
 
-<meta property="og:title" content="第一次玩 operator-sdk 就上手" />
-<meta property="og:description" content="文章脈絡  前言 Operator Framework 是什麼 認識 operator-sdk CLI 實作開始  建立 K8s 環境 安裝 operator-sdk CLI 用 operator-sdk CLI 建立一個 operator 了解一下新產生的 helm operator 中的檔案 編輯檔案 先在 K8s 中 deploy CRD Build operator container 在 K8s 中部署 operator 在 K8s 中部署自己定義的 custom resource  結語  前言 在接觸 Kubernetes 一陣子後，會發現一堆 operators 。
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://bestsamina.github.io/sass/style.min.eabe1aa4bd266a15f7b39b122bd6a5cc75cb067e5373631ac21d7815d6240d6f.css" integrity="sha256-6r4apL0mahX3s5sSK9alzHXLBn5Tc2Mawh14FdYkDW8=" media="screen">
+<link rel="stylesheet" href="https://bestsamina.github.io/syntax.min.css" integrity="" media="screen">
+
+  <meta property="og:title" content="第一次玩 operator-sdk 就上手" />
+<meta property="og:description" content="文章脈絡  前言 Operator Framework 是什麼 認識 operator-sdk CLI 實作開始  建立 K8s 環境 安裝 operator-sdk CLI 用 operator-sdk CLI 建立一個 operator 了解一下新產生的 helm operator 中的檔案 編輯檔案 先在 K8s 中 deploy CRD Build operator container 在 K8s 中部署 operator 在 K8s 中部署自己定義的 custom resource   結語  前言 在接觸 Kubernetes 一陣子後，會發現一堆 operators 。
 而很殘念der，自己到目前都還沒有真正好好的玩過。
 雖然在 operator-sdk 出現以前，有很多人都自己手刻 operator，不過既然 operator 目前都有個 Framework 了，當然就來玩它囉！
 Operator Framework 是什麼  是一個 open source toolkit 管理 Kubernetes native applications, called operators, in an effective, automated, and scalable way 這個 Framework 有兩個主要的專案：  Operator SDK: 就可以用它 build operator。 Operator Lifecycle Manager (OLM): 可以管理 operators 和 CRUD Kubernetes resource 用&hellip;。(可以到這邊玩玩：https://www." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/" />
-<meta property="article:published_time" content="2019-02-04T14:33:14&#43;08:00"/>
-<meta property="article:modified_time" content="2019-02-04T14:33:14&#43;08:00"/>
+<meta property="og:url" content="https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-02-04T14:33:14+08:00" />
+<meta property="article:modified_time" content="2019-02-04T14:33:14+08:00" />
 
 
-    <!-- Font-Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
-    <!-- highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <link rel="stylesheet" href="https://bestsamina.github.io//css/print.min.css" media="print">
-    <link rel="stylesheet" href="https://bestsamina.github.io//css/hyde-hyde.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png"></head>
+  <meta itemprop="name" content="第一次玩 operator-sdk 就上手">
+<meta itemprop="description" content="文章脈絡  前言 Operator Framework 是什麼 認識 operator-sdk CLI 實作開始  建立 K8s 環境 安裝 operator-sdk CLI 用 operator-sdk CLI 建立一個 operator 了解一下新產生的 helm operator 中的檔案 編輯檔案 先在 K8s 中 deploy CRD Build operator container 在 K8s 中部署 operator 在 K8s 中部署自己定義的 custom resource   結語  前言 在接觸 Kubernetes 一陣子後，會發現一堆 operators 。
+而很殘念der，自己到目前都還沒有真正好好的玩過。
+雖然在 operator-sdk 出現以前，有很多人都自己手刻 operator，不過既然 operator 目前都有個 Framework 了，當然就來玩它囉！
+Operator Framework 是什麼  是一個 open source toolkit 管理 Kubernetes native applications, called operators, in an effective, automated, and scalable way 這個 Framework 有兩個主要的專案：  Operator SDK: 就可以用它 build operator。 Operator Lifecycle Manager (OLM): 可以管理 operators 和 CRUD Kubernetes resource 用&hellip;。(可以到這邊玩玩：https://www."><meta itemprop="datePublished" content="2019-02-04T14:33:14+08:00" />
+<meta itemprop="dateModified" content="2019-02-04T14:33:14+08:00" />
+<meta itemprop="wordCount" content="972">
+<meta itemprop="keywords" content="operator-sdk,operator,Kubernetes,helm,Cloud-Native," />
+</head>
+<body>
 
-    <body>
-        
-<div class="sidebar text-center">
-  <div class="container ">
-    <div class="sidebar-about">
-      <div class="site__title">
-        <a href="https://bestsamina.github.io/">Life &amp; Technological Journey of Samina</a>
-      </div>
-      
-      
-      
-      <p>
-        <img src="https://bestsamina.github.io/images/sufuf3_1519028337_878.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
-      </p>
-      
-      <p class="site__description">
-         This blog is about technology and the record of my life. Hope the logs can help you and me someday. 
-      </p>
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://bestsamina.github.io/images/default-sidebar.jpg&#39;)">
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
+      </a>
     </div>
-    <div>
-	<ul class="sidebar-nav">
-		
-				<li>
-					<a href="/posts/">
-						<span>Posts</span>
-					</a>
-				</li>
-				<li>
-					<a href="/series/">
-						<span>Series</span>
-					</a>
-				</li>
-				<li>
-					<a href="/tags/">
-						<span>Tags</span>
-					</a>
-				</li>
-				<li>
-					<a href="/categories/">
-						<span>Categories</span>
-					</a>
-				</li>
-				<li>
-					<a href="/page/awesome-blogs">
-						<span>Awesome-Blogs</span>
-					</a>
-				</li>
-				<li>
-					<a href="/about/">
-						<span>About</span>
-					</a>
-				</li>
-		</li>
-	</ul>
-</div>
-
-    <p>
-      <section class="social text-center">
-	<a href="https://twitter.com/sufuf3149"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
-	
-	&nbsp;<a href="https://github.com/sufuf3"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	&nbsp;<a href="https://gitlab.com/sufuf3"><i class="fab fa-gitlab fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="https://medium.com/@sufuf3149"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	&nbsp;<a href="https://ko-fi.com/sufuf3149"><i class="fas fa-coffee fa-lg" aria-hidden="true"></i></a>
-</section>
-
-    </p>
-    <p class="copyright">
-      &copy; 2021 Samina Fu.
-      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
-      <br/>Built with
-      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+    <h2>Hi, I'm Samina 👋</h2>
+    <h3>This is my Life & Technological Journey</h3>
+    <div class="menu">
       
-    </p>
+
+        <p>
+            <a href="/posts/">
+                Post
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+        <p>
+            <a href="/tags/">
+                Tags
+            </a>
+        </p>
+
+        <p>
+            <a href="/categories/">
+                Categories
+            </a>
+        </p>
+
+        <p>
+            <a href="/page/awesome-blogs/">
+                Awesome-blogs
+            </a>
+        </p>
+
+      
+    </div>
   </div>
-  <div>
+
+  <div class="socials">
+      
+  
+    <a href="https://github.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM71.182 98.494c-2.156.385-2.952-.95-2.952-2.053 0-1.386.051-8.471.051-14.195 0-4.005-1.335-6.546-2.9-7.881C74.878 73.313 84.89 72.003 84.89 55.6c0-4.671-1.669-7.007-4.39-10.01.436-1.105 1.9-5.648-.436-11.552-3.568-1.104-11.731 4.595-11.731 4.595-3.389-.95-7.06-1.438-10.679-1.438-3.62 0-7.29.488-10.679 1.438 0 0-8.163-5.699-11.73-4.595-2.337 5.878-.899 10.422-.437 11.551-2.72 3.004-4.004 5.34-4.004 10.011 0 16.326 9.574 17.712 19.072 18.765-1.232 1.104-2.336 3.003-2.72 5.724-2.44 1.104-8.677 3.004-12.4-3.568-2.335-4.056-6.545-4.39-6.545-4.39-4.159-.05-.282 2.619-.282 2.619 2.772 1.283 4.723 6.212 4.723 6.212 2.49 7.624 14.4 5.057 14.4 5.057 0 3.568.052 9.37.052 10.422 0 1.104-.77 2.438-2.952 2.053C27.21 92.821 15.35 76.701 15.35 57.86c0-23.564 18.02-41.456 41.585-41.456s42.663 17.892 42.663 41.456c.026 18.842-11.474 34.988-28.416 40.635zM46 82.81c-.488.103-.95-.102-1.001-.436-.051-.385.282-.719.77-.822.488-.05.95.154 1.001.488.077.334-.257.668-.77.77zm-2.439-.23c0 .333-.385.615-.898.615-.565.052-.95-.23-.95-.616 0-.333.385-.616.899-.616.487-.051.95.231.95.616zm-3.516-.283c-.103.334-.616.488-1.053.334-.488-.103-.821-.488-.719-.822.103-.334.617-.488 1.053-.385.513.154.847.54.719.873zm-3.158-1.386c-.23.282-.718.23-1.104-.154-.385-.334-.487-.822-.23-1.053.23-.282.718-.23 1.103.154.334.334.462.847.231 1.053zm-2.336-2.336c-.23.154-.667 0-.95-.385-.282-.385-.282-.822 0-1.001.283-.231.72-.052.95.333.283.385.283.847 0 1.053zm-1.668-2.49c-.231.23-.616.103-.899-.154-.282-.334-.333-.719-.102-.899.23-.23.616-.102.898.154.282.334.334.72.103.899zm-1.72-1.9c-.103.231-.436.283-.719.103-.334-.154-.488-.436-.385-.667.103-.154.385-.231.719-.103.334.18.488.462.385.667z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://gitlab.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M23.76 5.544c-.693-1.991-3.512-1.991-4.228 0L6.892 44.653h29.532c-.022 0-12.663-39.11-12.663-39.11zM.426 64.34c-.582 1.79.067 3.782 1.589 4.923l55.464 41.167-50.61-65.778L.426 64.34zm35.977-19.688L57.5 110.43l21.098-65.778H36.402zm78.173 19.688l-6.444-19.688L57.5 110.43l55.464-41.167a4.475 4.475 0 0 0 1.61-4.923zM95.468 5.544c-.694-1.991-3.513-1.991-4.229 0L78.576 44.653h29.533L95.468 5.543z" />
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://medium.com/@sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M0 0v115h115V0H0zm95.542 27.235l-6.16 5.905a1.81 1.81 0 0 0-.693 1.72v43.458c-.103.667.154 1.335.693 1.72l6.032 5.904v1.31h-30.29v-1.259l6.238-6.058c.616-.616.616-.795.616-1.72V43.074L54.625 87.123h-2.336l-20.202-44.05v29.52c-.18 1.233.257 2.49 1.13 3.39l8.111 9.83v1.31H18.277v-1.31l8.111-9.83a3.93 3.93 0 0 0 1.053-3.39v-34.14a2.93 2.93 0 0 0-.976-2.516l-7.213-8.702v-1.309h22.41l17.301 37.991 15.222-37.965h21.357v1.283z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://twitter.com/sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM90.126 40.763c.051.72.051 1.464.051 2.182 0 22.256-16.942 47.9-47.9 47.9-9.548 0-18.404-2.772-25.848-7.547 1.36.154 2.67.205 4.055.205 7.881 0 15.12-2.67 20.895-7.187-7.392-.154-13.604-5.006-15.735-11.68 2.593.385 4.929.385 7.598-.308a16.837 16.837 0 0 1-13.476-16.531v-.205a16.824 16.824 0 0 0 7.598 2.13 16.8 16.8 0 0 1-7.496-14.016c0-3.131.822-6.006 2.285-8.496a47.803 47.803 0 0 0 34.705 17.61c-2.387-11.424 6.161-20.69 16.429-20.69 4.851 0 9.215 2.027 12.296 5.313a32.99 32.99 0 0 0 10.678-4.056 16.792 16.792 0 0 1-7.393 9.267c3.389-.36 6.674-1.31 9.703-2.618a35.437 35.437 0 0 1-8.445 8.727z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  </div>
+</header>
+
+<div class="mobile-header">
+  <p> Samina Website </p>
+  <div class="hamburger">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
   </div>
 </div>
-<div class="content container">
-            <article>
+
+<div class="overlay-menu">
   <header>
-    <h1>第一次玩 operator-sdk 就上手</h1>
-     
-    
-<div class="post__meta">
-    
-    <i class="fas fa-calendar-alt"></i> Feb 04, 2019
-    in
-              
-              
-              <a class="post__category" href="/categories/cloud-native">A CLOUD-NATIVE</a>
-              
-              
-    
-      
-      
-          <br/>
-           <i class="fas fa-tags"></i>
-          
-          <a class="post__tag" href="/tags/operator-sdk">#operator-sdk</a>
-           
-      
-          <a class="post__tag" href="/tags/operator">#operator</a>
-           
-      
-          <a class="post__tag" href="/tags/kubernetes">#kubernetes</a>
-           
-      
-          <a class="post__tag" href="/tags/helm">#helm</a>
-           
-      
-          <a class="post__tag" href="/tags/cloud-native">#cloud-native</a>
-          
-      
-    
-    
-    <br/>
-    <i class="fas fa-clock"></i> 5 min read
+    <div class="intro">
+      <div class="logo-container">
+        <a href="/">
+          <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
+        </a>
+      </div>
+      <h2>Hi, I'm Samina 👋</h2>
+      <h3>This is my Life & Technological Journey</h3>
+      <div class="menu">
+        
+
+        <p>
+            <a href="/posts/">
+                Post
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+        <p>
+            <a href="/tags/">
+                Tags
+            </a>
+        </p>
+
+        <p>
+            <a href="/categories/">
+                Categories
+            </a>
+        </p>
+
+        <p>
+            <a href="/page/awesome-blogs/">
+                Awesome-blogs
+            </a>
+        </p>
+
+        
+      </div>
+    </div>
+
+    <div class="socials">
+        
+  
+    <a href="https://github.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM71.182 98.494c-2.156.385-2.952-.95-2.952-2.053 0-1.386.051-8.471.051-14.195 0-4.005-1.335-6.546-2.9-7.881C74.878 73.313 84.89 72.003 84.89 55.6c0-4.671-1.669-7.007-4.39-10.01.436-1.105 1.9-5.648-.436-11.552-3.568-1.104-11.731 4.595-11.731 4.595-3.389-.95-7.06-1.438-10.679-1.438-3.62 0-7.29.488-10.679 1.438 0 0-8.163-5.699-11.73-4.595-2.337 5.878-.899 10.422-.437 11.551-2.72 3.004-4.004 5.34-4.004 10.011 0 16.326 9.574 17.712 19.072 18.765-1.232 1.104-2.336 3.003-2.72 5.724-2.44 1.104-8.677 3.004-12.4-3.568-2.335-4.056-6.545-4.39-6.545-4.39-4.159-.05-.282 2.619-.282 2.619 2.772 1.283 4.723 6.212 4.723 6.212 2.49 7.624 14.4 5.057 14.4 5.057 0 3.568.052 9.37.052 10.422 0 1.104-.77 2.438-2.952 2.053C27.21 92.821 15.35 76.701 15.35 57.86c0-23.564 18.02-41.456 41.585-41.456s42.663 17.892 42.663 41.456c.026 18.842-11.474 34.988-28.416 40.635zM46 82.81c-.488.103-.95-.102-1.001-.436-.051-.385.282-.719.77-.822.488-.05.95.154 1.001.488.077.334-.257.668-.77.77zm-2.439-.23c0 .333-.385.615-.898.615-.565.052-.95-.23-.95-.616 0-.333.385-.616.899-.616.487-.051.95.231.95.616zm-3.516-.283c-.103.334-.616.488-1.053.334-.488-.103-.821-.488-.719-.822.103-.334.617-.488 1.053-.385.513.154.847.54.719.873zm-3.158-1.386c-.23.282-.718.23-1.104-.154-.385-.334-.487-.822-.23-1.053.23-.282.718-.23 1.103.154.334.334.462.847.231 1.053zm-2.336-2.336c-.23.154-.667 0-.95-.385-.282-.385-.282-.822 0-1.001.283-.231.72-.052.95.333.283.385.283.847 0 1.053zm-1.668-2.49c-.231.23-.616.103-.899-.154-.282-.334-.333-.719-.102-.899.23-.23.616-.102.898.154.282.334.334.72.103.899zm-1.72-1.9c-.103.231-.436.283-.719.103-.334-.154-.488-.436-.385-.667.103-.154.385-.231.719-.103.334.18.488.462.385.667z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://gitlab.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M23.76 5.544c-.693-1.991-3.512-1.991-4.228 0L6.892 44.653h29.532c-.022 0-12.663-39.11-12.663-39.11zM.426 64.34c-.582 1.79.067 3.782 1.589 4.923l55.464 41.167-50.61-65.778L.426 64.34zm35.977-19.688L57.5 110.43l21.098-65.778H36.402zm78.173 19.688l-6.444-19.688L57.5 110.43l55.464-41.167a4.475 4.475 0 0 0 1.61-4.923zM95.468 5.544c-.694-1.991-3.513-1.991-4.229 0L78.576 44.653h29.533L95.468 5.543z" />
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://medium.com/@sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M0 0v115h115V0H0zm95.542 27.235l-6.16 5.905a1.81 1.81 0 0 0-.693 1.72v43.458c-.103.667.154 1.335.693 1.72l6.032 5.904v1.31h-30.29v-1.259l6.238-6.058c.616-.616.616-.795.616-1.72V43.074L54.625 87.123h-2.336l-20.202-44.05v29.52c-.18 1.233.257 2.49 1.13 3.39l8.111 9.83v1.31H18.277v-1.31l8.111-9.83a3.93 3.93 0 0 0 1.053-3.39v-34.14a2.93 2.93 0 0 0-.976-2.516l-7.213-8.702v-1.309h22.41l17.301 37.991 15.222-37.965h21.357v1.283z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://twitter.com/sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM90.126 40.763c.051.72.051 1.464.051 2.182 0 22.256-16.942 47.9-47.9 47.9-9.548 0-18.404-2.772-25.848-7.547 1.36.154 2.67.205 4.055.205 7.881 0 15.12-2.67 20.895-7.187-7.392-.154-13.604-5.006-15.735-11.68 2.593.385 4.929.385 7.598-.308a16.837 16.837 0 0 1-13.476-16.531v-.205a16.824 16.824 0 0 0 7.598 2.13 16.8 16.8 0 0 1-7.496-14.016c0-3.131.822-6.006 2.285-8.496a47.803 47.803 0 0 0 34.705 17.61c-2.387-11.424 6.161-20.69 16.429-20.69 4.851 0 9.215 2.027 12.296 5.313a32.99 32.99 0 0 0 10.678-4.056 16.792 16.792 0 0 1-7.393 9.267c3.389-.36 6.674-1.31 9.703-2.618a35.437 35.437 0 0 1-8.445 8.727z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+    </div>
+  </header>
 </div>
 
-
-  </header>
-<aside>
-  <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#文章脈絡">文章脈絡</a></li>
-<li><a href="#前言">前言</a></li>
-<li><a href="#operator-framework-是什麼">Operator Framework 是什麼</a></li>
-<li><a href="#認識-operator-sdk-cli">認識 operator-sdk CLI</a></li>
-<li><a href="#實作開始">實作開始</a>
-<ul>
-<li><a href="#1-建立-k8s-環境">1. 建立 K8s 環境</a></li>
-<li><a href="#2-安裝-operator-sdk-cli">2. 安裝 operator-sdk CLI</a></li>
-<li><a href="#3-用-operator-sdk-cli-建立一個-operator">3. 用 operator-sdk CLI 建立一個 operator</a></li>
-<li><a href="#4-了解一下新產生的-helm-operator-中的檔案">4. 了解一下新產生的 helm operator 中的檔案</a></li>
-<li><a href="#5-編輯檔案">5. 編輯檔案</a>
-<ul>
-<li><a href="#1-watches-yaml">1. <code>watches.yaml</code></a></li>
-<li><a href="#2-helm-charts">2. helm-charts</a></li>
-</ul></li>
-<li><a href="#6-先在-k8s-中-deploy-crd">6. 先在 K8s 中 deploy CRD</a></li>
-<li><a href="#7-build-operator-container">7. Build operator container</a></li>
-<li><a href="#8-在-k8s-中部署-operator">8. 在 K8s 中部署 operator</a>
-<ul>
-<li><a href="#1-修改-deploy-operator-yaml-的-image-來源">1. 修改 <code>deploy/operator.yaml</code> 的 image 來源</a></li>
-<li><a href="#2-部署-operator">2. 部署 operator</a></li>
-</ul></li>
-<li><a href="#9-在-k8s-中部署自己定義的-custom-resource">9. 在 K8s 中部署自己定義的 custom resource</a>
-<ul>
-<li><a href="#1-編輯-deploy-crds-group-version-crdname-cr-yaml">1. 編輯 <code>deploy/crds/GROUP_VERSION_CRDNAME_cr.yaml</code></a></li>
-<li><a href="#2-建立自己的-resource">2. 建立自己的 resource</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#結語">結語</a></li>
-<li><a href="#參考連結">參考連結</a></li>
-</ul></li>
-</ul>
-</nav>
-</aside>
-  <div class="post">
+  <div class="content-wrapper">
     
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://bestsamina.github.io/">Home</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://bestsamina.github.io/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/">第一次玩 operator-sdk 就上手</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>第一次玩 operator-sdk 就上手</h1>
 
 <h2 id="文章脈絡">文章脈絡</h2>
-
 <ul>
 <li>前言</li>
 <li>Operator Framework 是什麼</li>
 <li>認識 operator-sdk CLI</li>
 <li>實作開始
-
 <ol>
 <li>建立 K8s 環境</li>
 <li>安裝 operator-sdk CLI</li>
@@ -264,34 +293,28 @@ Operator Framework 是什麼  是一個 open source toolkit 管理 Kubernetes na
 <li>Build operator container</li>
 <li>在 K8s 中部署 operator</li>
 <li>在 K8s 中部署自己定義的 custom resource</li>
-</ol></li>
+</ol>
+</li>
 <li>結語</li>
 </ul>
-
 <h2 id="前言">前言</h2>
-
-<p>在接觸 Kubernetes 一陣子後，會發現一堆 operators 。<br />
-而很殘念der，自己到目前都還沒有真正好好的玩過。<br />
+<p>在接觸 Kubernetes 一陣子後，會發現一堆 operators 。<br>
+而很殘念der，自己到目前都還沒有真正好好的玩過。<br>
 雖然在 operator-sdk 出現以前，有很多人都自己手刻 operator，不過既然 operator 目前都有個 Framework 了，當然就來玩它囉！</p>
-
 <h2 id="operator-framework-是什麼">Operator Framework 是什麼</h2>
-
 <ul>
 <li>是一個 open source toolkit</li>
 <li>管理 Kubernetes native applications, called operators, in an effective, automated, and scalable way</li>
 <li>這個 Framework 有兩個主要的專案：
-
 <ul>
 <li><a href="https://github.com/operator-framework/operator-sdk">Operator SDK</a>: 就可以用它 build operator。</li>
-<li><a href="https://github.com/operator-framework/operator-lifecycle-manager">Operator Lifecycle Manager</a> (OLM): 可以管理 operators 和 CRUD Kubernetes resource 用&hellip;。(可以到這邊玩玩：<a href="https://www.katacoda.com/openshift/courses/operatorframework/operator-lifecycle-manager">https://www.katacoda.com/openshift/courses/operatorframework/operator-lifecycle-manager</a> ，簡單玩完後會發現功能蠻強大的)</li>
-</ul></li>
+<li><a href="https://github.com/operator-framework/operator-lifecycle-manager">Operator Lifecycle Manager</a> (OLM): 可以管理 operators 和 CRUD Kubernetes resource 用&hellip;。(可以到這邊玩玩：https://www.katacoda.com/openshift/courses/operatorframework/operator-lifecycle-manager ，簡單玩完後會發現功能蠻強大的)</li>
 </ul>
-
-<p>詳細的介紹請參閱：<a href="https://coreos.com/blog/introducing-operator-framework">https://coreos.com/blog/introducing-operator-framework</a></p>
-
+</li>
+</ul>
+<p>詳細的介紹請參閱：https://coreos.com/blog/introducing-operator-framework</p>
 <h2 id="認識-operator-sdk-cli">認識 operator-sdk CLI</h2>
-
-<pre><code>$ operator-sdk -h
+<pre tabindex="0"><code>$ operator-sdk -h
 An SDK for building operators with ease
 
 Usage:
@@ -314,19 +337,12 @@ Available Commands:
 
 $ operator-sdk --version
 operator-sdk version v0.4.0+git
-</code></pre>
-
-<p>本次會用到的指令就只有一個：<code>operator-sdk new</code> - 產生一個新的 operator 專案</p>
-
+</code></pre><p>本次會用到的指令就只有一個：<code>operator-sdk new</code> - 產生一個新的 operator 專案</p>
 <h2 id="實作開始">實作開始</h2>
-
 <h3 id="1-建立-k8s-環境">1. 建立 K8s 環境</h3>
-
 <p>Ref: <a href="https://github.com/operator-framework/operator-sdk#prerequisites">https://github.com/operator-framework/operator-sdk#prerequisites</a></p>
-
 <ul>
 <li>需要準備的環境有：
-
 <ul>
 <li>dep version v0.5.0+.</li>
 <li>git</li>
@@ -335,52 +351,39 @@ operator-sdk version v0.4.0+git
 <li>kubectl version v1.11.0+.</li>
 <li>Access to a kubernetes v.1.11.0+ cluster.</li>
 <li>Helm &amp; tiller server</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <p>參考安裝：</p>
-
 <ul>
 <li><a href="https://github.com/sufuf3/play-k8s-operator/blob/master/vagrant/Vagrantfile">CentOS with kubeadm@1.12.4</a>: 以下範例都是使用這個 VM 來實作的</li>
 <li><a href="https://github.com/sufuf3/hands-on-w-tutorials/tree/master/2019-01-03">Ubuntu with kubeadm@1.12.4</a></li>
 </ul>
-
 <h3 id="2-安裝-operator-sdk-cli">2. 安裝 operator-sdk CLI</h3>
-
 <p>執行方式如下：</p>
-
-<pre><code>go get -u github.com/golang/dep/cmd/dep
+<pre tabindex="0"><code>go get -u github.com/golang/dep/cmd/dep
 go get -u github.com/operator-framework/operator-sdk
 cd ~/go/src/github.com/operator-framework/operator-sdk
 make dep
 make install
-</code></pre>
-
-<h3 id="3-用-operator-sdk-cli-建立一個-operator">3. 用 operator-sdk CLI 建立一個 operator</h3>
-
+</code></pre><h3 id="3-用-operator-sdk-cli-建立一個-operator">3. 用 operator-sdk CLI 建立一個 operator</h3>
 <p>執行方式如下：</p>
-
-<pre><code>mkdir -p $GOPATH/src/github.com/&lt;GitHub_ID&gt;
+<pre tabindex="0"><code>mkdir -p $GOPATH/src/github.com/&lt;GitHub_ID&gt;
 cd $GOPATH/src/github.com/&lt;GitHub_ID&gt;
 operator-sdk new &lt;GitHub_Repo_Name&gt;
 cd &lt;GitHub_Repo_Name&gt;/
-</code></pre>
-
-<p>因為之後開發其他專案的關係，本次使用 helm 來練習。產生新專案的方式如下：
+</code></pre><p>因為之後開發其他專案的關係，本次使用 helm 來練習。產生新專案的方式如下：
 <code>operator-sdk new &lt;project-name&gt; --type=helm --kind=&lt;kind&gt; --api-version=&lt;group/version&gt;</code></p>
-
 <ul>
 <li><code>--type=helm</code> 是來建立 Helm operator operator 用的。</li>
 <li>Required: <code>--kind</code> - 是我們想打算 CRD 要定義的 kind</li>
 <li>Required: <code>--api-version</code> - 是我們想要在這專案中的 CRD 想定義哪樣的 group/version。</li>
 </ul>
-
 <p>如：</p>
-
-<pre><code>$ mkdir -p $GOPATH/src/github.com/sufuf3
+<pre tabindex="0"><code>$ mkdir -p $GOPATH/src/github.com/sufuf3
 $ cd $GOPATH/src/github.com/sufuf3
 $ operator-sdk new play-k8s-operator --api-version=samina.fu.com/v1alpha1 --kind=MyTest --type helm
-INFO[0000] Creating new Helm operator 'play-k8s-operator'.
+INFO[0000] Creating new Helm operator &#39;play-k8s-operator&#39;.
 INFO[0000] Create helm-charts/mytest/
 INFO[0000] Create build/Dockerfile
 INFO[0000] Create watches.yaml
@@ -394,11 +397,8 @@ INFO[0000] Run git init ...
 Initialized empty Git repository in /home/vagrant/go/src/github.com/sufuf3/play-k8s-operator/.git/
 INFO[0000] Run git init done
 INFO[0000] Project creation complete.
-</code></pre>
-
-<p>跑完 <code>operator-sdk new &lt;project-name&gt; --type=helm --kind=&lt;kind&gt; --api-version=&lt;group/version&gt;</code>，進到資料夾中會發現它產生好的檔案，並且用 git log 會發現有一個 commit</p>
-
-<pre><code>$ cd play-k8s-operator/
+</code></pre><p>跑完 <code>operator-sdk new &lt;project-name&gt; --type=helm --kind=&lt;kind&gt; --api-version=&lt;group/version&gt;</code>，進到資料夾中會發現它產生好的檔案，並且用 git log 會發現有一個 commit</p>
+<pre tabindex="0"><code>$ cd play-k8s-operator/
 $ tree
 .
 ├── build
@@ -432,17 +432,11 @@ Author: Samina Fu &lt;sufuf3@gmail.com&gt;
 Date:   Sat Feb 2 12:11:10 2019 +0000
 
     INITIAL COMMIT
-</code></pre>
-
-<h3 id="4-了解一下新產生的-helm-operator-中的檔案">4. 了解一下新產生的 helm operator 中的檔案</h3>
-
+</code></pre><h3 id="4-了解一下新產生的-helm-operator-中的檔案">4. 了解一下新產生的 helm operator 中的檔案</h3>
 <p>Ref: <a href="https://github.com/operator-framework/operator-sdk/blob/master/doc/helm/project_layout.md">https://github.com/operator-framework/operator-sdk/blob/master/doc/helm/project_layout.md</a></p>
-
 <p>從上面的檔案中會出現以下的資料夾和檔案：</p>
-
 <ul>
 <li><strong><code>deploy</code></strong> 資料夾：包含一組可以 deploy 到 K8s cluser 上的 resource files
-
 <ul>
 <li><strong><code>deploy/service_account.yaml</code></strong>: 建立一個這個專案名稱的 ServiceAccount</li>
 <li><strong><code>deploy/role.yaml</code></strong>: 建立一個 role 定義它能存取 K8s cluster 的規則</li>
@@ -451,139 +445,73 @@ Date:   Sat Feb 2 12:11:10 2019 +0000
 <li><strong><code>deploy/crds/GROUP_VERSION_CRDNAME_crd.yaml</code></strong>: 就是我們自己定義的 resource type，More detail: <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/">Extend the Kubernetes API with CustomResourceDefinitions</a></li>
 <li><strong><code>deploy/crds/GROUP_VERSION_CRDNAME_cr.yaml</code></strong>: 是我們要 deploy 客制的 resource，CR 代表 Custom Resource ，More detail: <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#create-custom-objects">Create custom objects</a>
 而我們也不用擔心變成 K8s API 來呼叫會出現問題，因為這檔案中的 spec 就是完全複製 <code>helm-charts</code> 底下的 values.yaml，所以原本用 helm 怎麼定義 values.yaml 中的值，這份檔案就怎麼定義。反過來說，原本我們的 values.yaml 中的 key&amp;value 怎麼寫的，在這邊就怎麼寫囉！</li>
-</ul></li>
+</ul>
+</li>
 <li><strong><code>helm-charts/&lt;kind&gt;</code></strong> 資料夾: 是熟悉的 helm-charts，用 <code>helm create</code> 指令會產生出來的檔案。</li>
 <li><strong><code>build/Dockerfile</code></strong>: 是 operator 的 Dockerfile，之後當然要 docker build 起來</li>
 <li><strong><code>watches.yaml</code></strong>: 內容包含 Group, Version, Kind, 和 Helm chart 路徑位置</li>
 </ul>
-
 <h3 id="5-編輯檔案">5. 編輯檔案</h3>
-
-<h4 id="1-watches-yaml">1. <code>watches.yaml</code></h4>
-
+<h4 id="1-watchesyaml">1. <code>watches.yaml</code></h4>
 <p>default 的 operator 會依據 <code>watches.yaml</code> 這個檔案來監控 我們自己定義的 kind 這個 resource 的事件。基本上，在我們執行 <code>operator-sdk new</code> 就已經依據我們定義的名稱產生好，所以這份檔案基本上<strong>不需要修改</strong>。</p>
-
-<pre><code>---
+<pre tabindex="0"><code>---
 - version: v1alpha1
   group: samina.fu.com
   kind: MyTest
   chart: /opt/helm/helm-charts/mytest
-</code></pre>
-
-<h4 id="2-helm-charts">2. helm-charts</h4>
-
-<p>依自己喜好來編輯自己的 helm-charts 囉！<br />
+</code></pre><h4 id="2-helm-charts">2. helm-charts</h4>
+<p>依自己喜好來編輯自己的 helm-charts 囉！<br>
 使用 <code>helm install --name NAME --dry-run --debug ./helm-charts/mytest/</code> 來 debug。</p>
-
-<p>參考：<a href="https://github.com/sufuf3/play-k8s-operator/blob/master/helm-dry-run.log">https://github.com/sufuf3/play-k8s-operator/blob/master/helm-dry-run.log</a></p>
-
+<p>參考：https://github.com/sufuf3/play-k8s-operator/blob/master/helm-dry-run.log</p>
 <h3 id="6-先在-k8s-中-deploy-crd">6. 先在 K8s 中 deploy CRD</h3>
-
-<pre><code>kubectl create -f deploy/crds/GROUP_VERSION_CRDNAME_crd.yaml
-</code></pre>
-
-<p>eg.</p>
-
-<pre><code>kubectl create -f deploy/crds/samina_v1alpha1_mytest_crd.yaml
-</code></pre>
-
-<p>然后一个新的 RESTful API 就創建了：</p>
-
-<pre><code>$ curl -s https://172.17.8.100:6443/apis/samina.fu.com/v1alpha1/namespaces/*/mytests -k | jq
+<pre tabindex="0"><code>kubectl create -f deploy/crds/GROUP_VERSION_CRDNAME_crd.yaml
+</code></pre><p>eg.</p>
+<pre tabindex="0"><code>kubectl create -f deploy/crds/samina_v1alpha1_mytest_crd.yaml
+</code></pre><p>然后一个新的 RESTful API 就創建了：</p>
+<pre tabindex="0"><code>$ curl -s https://172.17.8.100:6443/apis/samina.fu.com/v1alpha1/namespaces/*/mytests -k | jq
 {
-  &quot;apiVersion&quot;: &quot;samina.fu.com/v1alpha1&quot;,
-  &quot;items&quot;: [],
-  &quot;kind&quot;: &quot;MyTestList&quot;,
-  &quot;metadata&quot;: {
-    &quot;continue&quot;: &quot;&quot;,
-    &quot;resourceVersion&quot;: &quot;233252&quot;,
-    &quot;selfLink&quot;: &quot;/apis/samina.fu.com/v1alpha1/namespaces/*/mytests&quot;
+  &#34;apiVersion&#34;: &#34;samina.fu.com/v1alpha1&#34;,
+  &#34;items&#34;: [],
+  &#34;kind&#34;: &#34;MyTestList&#34;,
+  &#34;metadata&#34;: {
+    &#34;continue&#34;: &#34;&#34;,
+    &#34;resourceVersion&#34;: &#34;233252&#34;,
+    &#34;selfLink&#34;: &#34;/apis/samina.fu.com/v1alpha1/namespaces/*/mytests&#34;
   }
 }
-</code></pre>
-
-<h3 id="7-build-operator-container">7. Build operator container</h3>
-
-<!---#### 1. 修改 `build/Dockerfile`
-
-
-如果沒有什麼特殊需求可以不用調整這邊個檔案。不過因為目前最新的 v0.4.0 沒有我需要的[功能](https://github.com/operator-framework/operator-sdk/pull/925) 所以以下會是重 build helm-operator image 並且修改 Dockerflie
-
-1. Build helm-operator image
-參考 https://github.com/operator-framework/operator-sdk/blob/master/.travis.yml 來 build image
-```
-cd ~/go/src/github.com/operator-framework/operator-sdk
-make test/ci-helm
-./hack/image/build-helm-image.sh sufuf3/helm-operator:latest
-```
-用 `docker images` 就會看到自己 build 的 image 了。再把它 push 到 docker hub 就大功告成。
-
-2. 修改 build/Dockerfile
-再次回到自己的專案， eg. `go/src/github.com/sufuf3/play-k8s-operator` 修改 build/Dockerfile
-(記得自己的 username 要調整成自己的唷！)
-
-```
-FROM sufuf3/helm-operator:latest
-#FROM quay.io/operator-framework/helm-operator:v0.4.0
-
-COPY helm-charts/ ${HOME}/helm-charts/
-COPY watches.yaml ${HOME}/watches.yaml
-```
-
-#### 2. Build 自己的 docker image--->
-
+</code></pre><h3 id="7-build-operator-container">7. Build operator container</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>可以依據<a href="https://github.com/operator-framework/operator-sdk/blob/master/doc/helm/user-guide.md#1-run-as-a-pod-inside-a-kubernetes-cluster">官方</a>提供的 Build 方式 <code>operator-sdk build registry_name/username/image_name:v0.0.1</code> + <code>docker push</code> 來進行。
 不過 operator 維護上，最好專注在 operator 的定義，至於 build docker 這件事情可以交給懶人法 - dockerhub 自動 Build。</p>
-
 <p>eg.</p>
-
-<p><img src="https://i.imgur.com/bNytZnq.png" alt="" /></p>
-
+<p><img src="https://i.imgur.com/bNytZnq.png" alt=""></p>
 <h3 id="8-在-k8s-中部署-operator">8. 在 K8s 中部署 operator</h3>
-
-<h4 id="1-修改-deploy-operator-yaml-的-image-來源">1. 修改 <code>deploy/operator.yaml</code> 的 image 來源</h4>
-
-<pre><code>sed -i 's|REPLACE_IMAGE|repository/username/images_name:version|g' deploy/operator.yaml
-</code></pre>
-
-<p>eg.</p>
-
-<pre><code>sed -i 's|REPLACE_IMAGE|sufuf3/my-operator-test:latest|g'  deploy/operator.yaml
-</code></pre>
-
-<h4 id="2-部署-operator">2. 部署 operator</h4>
-
-<pre><code>kubectl create -f deploy/service_account.yaml
+<h4 id="1-修改-deployoperatoryaml-的-image-來源">1. 修改 <code>deploy/operator.yaml</code> 的 image 來源</h4>
+<pre tabindex="0"><code>sed -i &#39;s|REPLACE_IMAGE|repository/username/images_name:version|g&#39; deploy/operator.yaml
+</code></pre><p>eg.</p>
+<pre tabindex="0"><code>sed -i &#39;s|REPLACE_IMAGE|sufuf3/my-operator-test:latest|g&#39;  deploy/operator.yaml
+</code></pre><h4 id="2-部署-operator">2. 部署 operator</h4>
+<pre tabindex="0"><code>kubectl create -f deploy/service_account.yaml
 kubectl create -f deploy/role.yaml
 kubectl create -f deploy/role_binding.yaml
 kubectl create -f deploy/operator.yaml
-</code></pre>
-
-<p>deploy 完後就可以看到我們的 operator 是 running 的</p>
-
-<pre><code>$ kubectl get deploy,pod
+</code></pre><p>deploy 完後就可以看到我們的 operator 是 running 的</p>
+<pre tabindex="0"><code>$ kubectl get deploy,pod
 NAME                                      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 deployment.extensions/play-k8s-operator   1         1         1            1           6m44s
 
 NAME                                    READY   STATUS        RESTARTS   AGE
 pod/play-k8s-operator-5c8fdc8fd-6m8tv   1/1     Running       0          6m44s
-</code></pre>
-
-<h3 id="9-在-k8s-中部署自己定義的-custom-resource">9. 在 K8s 中部署自己定義的 custom resource</h3>
-
+</code></pre><h3 id="9-在-k8s-中部署自己定義的-custom-resource">9. 在 K8s 中部署自己定義的 custom resource</h3>
 <p>編輯 <code>deploy/crds/GROUP_VERSION_CRDNAME_cr.yaml</code> 後 deploy。</p>
-
-<p>在我未來的專案設計流程中，會是需要先自己 create 一個 namespace 後，再依據已經建立的 namespace ，建立自己的 resource。<br />
-以下就簡單的來用 default namespace 部署。
-<!--不過即便是跑最新的 v0.4.0 或是用 master 上最新的 commit build 出 helm-operator image ，除了可以部署在 default namespace 外，目前都尚未成功可以部署在自己 create 的 namespace 中 。因此這部份待解決中...。  --></p>
-
-<h4 id="1-編輯-deploy-crds-group-version-crdname-cr-yaml">1. 編輯 <code>deploy/crds/GROUP_VERSION_CRDNAME_cr.yaml</code></h4>
-
+<p>在我未來的專案設計流程中，會是需要先自己 create 一個 namespace 後，再依據已經建立的 namespace ，建立自己的 resource。<br>
+以下就簡單的來用 default namespace 部署。</p>
+<!-- raw HTML omitted -->
+<h4 id="1-編輯-deploycrdsgroup_version_crdname_cryaml">1. 編輯 <code>deploy/crds/GROUP_VERSION_CRDNAME_cr.yaml</code></h4>
 <p>spec 底下就是自己定義的 values ，在我這個練習專案中，定義如下：</p>
-
 <p><code>vim deploy/crds/samina_v1alpha1_mytest_cr.yaml</code></p>
-
-<pre><code>apiVersion: samina.fu.com/v1alpha1
+<pre tabindex="0"><code>apiVersion: samina.fu.com/v1alpha1
 kind: MyTest
 metadata:
   name: example-mytest
@@ -596,8 +524,8 @@ spec:
     repository: tensorflow/tensorflow
     tag: latest-jupyter
     pullPolicy: IfNotPresent
-  nameOverride: &quot;&quot;
-  fullnameOverride: &quot;&quot;
+  nameOverride: &#34;&#34;
+  fullnameOverride: &#34;&#34;
   service:
     type: NodePort
     port: 8888
@@ -613,16 +541,10 @@ spec:
   nodeSelector: {}
   tolerations: []
   affinity: {}
-</code></pre>
-
-<h4 id="2-建立自己的-resource">2. 建立自己的 resource</h4>
-
-<pre><code>kubectl create -f deploy/crds/samina_v1alpha1_mytest_cr.yaml
-</code></pre>
-
-<p>結果：</p>
-
-<pre><code>$ kubectl get all -l app=mytest
+</code></pre><h4 id="2-建立自己的-resource">2. 建立自己的 resource</h4>
+<pre tabindex="0"><code>kubectl create -f deploy/crds/samina_v1alpha1_mytest_cr.yaml
+</code></pre><p>結果：</p>
+<pre tabindex="0"><code>$ kubectl get all -l app=mytest
 NAME                                                           READY   STATUS    RESTARTS   AGE
 pod/example-mytest-6bxnrell81eqsmdueqsqy7l7z-798dc58c8-g8q8q   1/1     Running   0          5m46s
 
@@ -634,125 +556,46 @@ deployment.apps/example-mytest-6bxnrell81eqsmdueqsqy7l7z   1         1         1
 
 NAME                                                                 DESIRED   CURRENT   READY   AGE
 replicaset.apps/example-mytest-6bxnrell81eqsmdueqsqy7l7z-798dc58c8   1         1         1       5m46s
-</code></pre>
-
-<p>透過 API:</p>
-
-<pre><code>$ curl -s https://172.17.8.100:6443/apis/samina.fu.com/v1alpha1/namespaces/default/mytests/example-mytest -k | jq
-</code></pre>
-
-<h2 id="結語">結語</h2>
-
-<p>本次的練習 GitHub repository 參考連結：<a href="https://github.com/sufuf3/play-k8s-operator">https://github.com/sufuf3/play-k8s-operator</a></p>
-
+</code></pre><p>透過 API:</p>
+<pre tabindex="0"><code>$ curl -s https://172.17.8.100:6443/apis/samina.fu.com/v1alpha1/namespaces/default/mytests/example-mytest -k | jq
+</code></pre><h2 id="結語">結語</h2>
+<p>本次的練習 GitHub repository 參考連結：https://github.com/sufuf3/play-k8s-operator</p>
 <p>這樣透過 operator-framework/operator-sdk 要完成自己的 CRD 和 operator 真的很快速與方便，可以想見，如果是維運人員，了解需求後，可以不用寫很多的 operator 程式，就可以快速部署 operator 真的蠻便利的。且後續一樣可以很方便的使用 K8s 的 API。根本就是懶人救星。</p>
-
 <p>不過，是否要使用 operator-framework/operator-sdk ，一切還是需要自行的評估是否合適自己，小心服用。</p>
-
 <h2 id="參考連結">參考連結</h2>
-
 <ul>
 <li><a href="https://github.com/operator-framework/operator-sdk/blob/master/doc/helm/user-guide.md">https://github.com/operator-framework/operator-sdk/blob/master/doc/helm/user-guide.md</a></li>
 <li><a href="https://github.com/operator-framework/operator-sdk/blob/master/doc/proposals/helm-operator.md">https://github.com/operator-framework/operator-sdk/blob/master/doc/proposals/helm-operator.md</a></li>
 <li><a href="https://github.com/operator-framework/getting-started">https://github.com/operator-framework/getting-started</a></li>
 </ul>
 
+
+    </main>
   </div>
-  <div>
-    <ul class="post__nav">
-        <li class="post__nav--next">
-            <a href="/posts/2019-02-11-5g-sg-wp-study/">                
-                <span class="next__heading">NEXT</span>
-                <span>5G-PPP Software Network White Paper 畫重點筆記</span>
-            </a>
-            <i class="fas fa-chevron-right"></i>
-        </li>
-        <li class="post__nav--previous">
-            <i class="fas fa-chevron-left"></i>
-            <a href="/posts/2019-01-25-til-5g-k8s-info/">                
-                <span class="previous__heading">PREVIOUS</span>
-                <span class="previous__title">[TIL] 5G 與 Kubernetes 的一些資料</span>
-            </a>
-        </li>
-    </ul>
-</div>
-
-  <div class="post__related">
-    
-    
-    
-    <h2>Related Articles</h2>
-    <ul class="related-posts">
-        
-<li>
-  <span class="list__title--small">
-    <a href="/posts/2019-01-25-til-5g-k8s-info/">[TIL] 5G 與 Kubernetes 的一些資料</a>
-      
-      <time class="pull-right hidden-tablet">Jan 25 &#39;19</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/posts/2018-10-19-ipvs-based-kube-proxy-4-scaled-k8s-lb/">IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing</a>
-      
-      <time class="pull-right hidden-tablet">Oct 15 &#39;18</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/posts/2018-10-15-hands-on-k8s-kube-proxy-w-ipvs-lb/">實現 IPVS-based K8s service load balancing - 不同 namespace 擁有自己的 external IP</a>
-      
-      <time class="pull-right hidden-tablet">Oct 15 &#39;18</time>
-      
-  </span>
-</li>
-
-    </ul>
-    
-</div>
-</article>
-
-        </div>
-        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-<script type="text/javascript">
-    hljs.configure({languages: []});
-    hljs.initHighlightingOnLoad();
-</script>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-      (function () {
-            
-            
-            
-            if (location.hostname === "localhost" || 
-            	location.hostname === "127.0.0.1" || 
-            	location.hostname === "") {
-                return;
-			}
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            var disqus_shortname = 'bestsamina';
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
-                  dsq);
-      })();
-</script>
-
-<noscript>
-	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p>@Samina Fu</p>
     </div>
-    
-
-
-    </body>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+  <script type="text/javascript">
+    document.querySelector('.mobile-header').addEventListener('click', function () {
+      var om = document.querySelector(".overlay-menu");
+      if (document.querySelector('.hamburger').classList.contains("cross")) {
+        document.querySelector('.hamburger').classList.remove("cross");
+        om.style.display = "none";
+        om.style.width = "0%";
+        om.style.height = "0%";
+      }
+      else {
+        document.querySelector('.hamburger').classList.add("cross");
+        om.style.width = "100%";
+        om.style.height = "80vh";
+        om.style.display = "block";
+      }
+    });
+  </script>
+</body>
 </html>

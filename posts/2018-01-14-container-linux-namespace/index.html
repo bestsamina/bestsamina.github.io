@@ -1,351 +1,307 @@
 <!DOCTYPE html>
-<html lang="en-us">
-    <head>
-    <link href="http://gmpg.org/xfn/11" rel="profile">
-    <script data-ad-client="ca-pub-6396786781922729" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77171360-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<html lang='en'><head>
+  <title>[Build container] Container with Linux Namespace - Samina Website</title>
+  <link rel='canonical' href='https://bestsamina.github.io/posts/2018-01-14-container-linux-namespace/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#D250F4' />
+  
 
-      gtag('config', 'UA-77171360-2');
-    </script>
-    
-    <script type="text/javascript">
-      var _paq = window._paq || [];
-       
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="https://github.matomo.cloud/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '1']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-      })();
-    </script>
-    
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
-<meta name="google-site-verification" content="86pjrD_mrnBLozy63MgmlPcYTh6-MHixr_RZhm2Wji0" />
-<!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.54.0" />
-    
-    
-    <title>[Build container] Container with Linux Namespace • Life &amp; Technological Journey of Samina</title>
-<meta name="description" content="Life &amp; Technological Journey of Samina - Hello and welcome to my blog. My name is Samina Fu. This blog is about technology and the record of my life. Hope the logs can help you and me someday.">
-<meta name="keywords" content="blog,python,golang,javascript,container,opencord,cord,sdn,network">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="[Build container] Container with Linux Namespace"/>
-<meta name="twitter:description" content="目錄：
-* 前言
-* Linux Namespace 類別
-* The system calls of namespaces API
-* UTS namespaces (CLONE_NEWUTS)
-* IPC namespaces (CLONE_NEWIPC)
-* PID namespaces (CLONE_NEWPID)
-* Mount namespaces (CLONE_NEWNS)
-* User namespaces (CLONE_NEWUSER)
-* Network namespaces (CLONE_NEWNET)
-前言 Linux Namespace 是 Linux Kernel 的其中一個功能，可以隔離對應的系統資源。 關於深入了解 Linux Namespace ，會再另闢一篇來探討。 而這邊就先照著進行，不過為了想法上能夠知道在做什麼，我是套用 C&#43;&#43; 的 Namespace 概念來幫助我先進行實作，讓我透過實際的程式與操作後，而對應到原來這就是 Linux Namespace 以及要怎麼實現。 PS. 建議有一點 OS 概念跟著做會比較好，要不然，最起碼知道 PID 是什麼。
-實作環境摘要  Ubuntu 16.04 Kernel version: 4."/>
+  <meta name="generator" content="Hugo 0.97.3" />
 
-<meta property="og:title" content="[Build container] Container with Linux Namespace" />
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://bestsamina.github.io/sass/style.min.eabe1aa4bd266a15f7b39b122bd6a5cc75cb067e5373631ac21d7815d6240d6f.css" integrity="sha256-6r4apL0mahX3s5sSK9alzHXLBn5Tc2Mawh14FdYkDW8=" media="screen">
+<link rel="stylesheet" href="https://bestsamina.github.io/syntax.min.css" integrity="" media="screen">
+
+  <meta property="og:title" content="[Build container] Container with Linux Namespace" />
 <meta property="og:description" content="目錄：
-* 前言
-* Linux Namespace 類別
-* The system calls of namespaces API
-* UTS namespaces (CLONE_NEWUTS)
-* IPC namespaces (CLONE_NEWIPC)
-* PID namespaces (CLONE_NEWPID)
-* Mount namespaces (CLONE_NEWNS)
-* User namespaces (CLONE_NEWUSER)
-* Network namespaces (CLONE_NEWNET)
-前言 Linux Namespace 是 Linux Kernel 的其中一個功能，可以隔離對應的系統資源。 關於深入了解 Linux Namespace ，會再另闢一篇來探討。 而這邊就先照著進行，不過為了想法上能夠知道在做什麼，我是套用 C&#43;&#43; 的 Namespace 概念來幫助我先進行實作，讓我透過實際的程式與操作後，而對應到原來這就是 Linux Namespace 以及要怎麼實現。 PS. 建議有一點 OS 概念跟著做會比較好，要不然，最起碼知道 PID 是什麼。
-實作環境摘要  Ubuntu 16.04 Kernel version: 4." />
+ 前言 Linux Namespace 類別 The system calls of namespaces API UTS namespaces (CLONE_NEWUTS) IPC namespaces (CLONE_NEWIPC) PID namespaces (CLONE_NEWPID) Mount namespaces (CLONE_NEWNS) User namespaces (CLONE_NEWUSER) Network namespaces (CLONE_NEWNET)  前言 Linux Namespace 是 Linux Kernel 的其中一個功能，可以隔離對應的系統資源。 關於深入了解 Linux Namespace ，會再另闢一篇來探討。 而這邊就先照著進行，不過為了想法上能夠知道在做什麼，我是套用 C&#43;&#43; 的 Namespace 概念來幫助我先進行實作，讓我透過實際的程式與操作後，而對應到原來這就是 Linux Namespace 以及要怎麼實現。 PS. 建議有一點 OS 概念跟著做會比較好，要不然，最起碼知道 PID 是什麼。
+實作環境摘要  Ubuntu 16.04 Kernel version: 4.13.0-1002-gcp Go version: v1.9.2 linux/amd64  Linux Namespace 類別 依據 Linux Programmer&rsquo;s Manual 的 Namespace 文件中提到 &ldquo;One use of namespaces is to implement containers." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bestsamina.github.io/posts/2018-01-14-container-linux-namespace/" />
-<meta property="article:published_time" content="2018-01-14T14:51:05&#43;08:00"/>
-<meta property="article:modified_time" content="2018-01-14T14:51:05&#43;08:00"/>
+<meta property="og:url" content="https://bestsamina.github.io/posts/2018-01-14-container-linux-namespace/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-01-14T14:51:05+08:00" />
+<meta property="article:modified_time" content="2018-01-14T14:51:05+08:00" />
 
 
-    <!-- Font-Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
-    <!-- highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <link rel="stylesheet" href="https://bestsamina.github.io//css/print.min.css" media="print">
-    <link rel="stylesheet" href="https://bestsamina.github.io//css/hyde-hyde.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png"></head>
+  <meta itemprop="name" content="[Build container] Container with Linux Namespace">
+<meta itemprop="description" content="目錄：
+ 前言 Linux Namespace 類別 The system calls of namespaces API UTS namespaces (CLONE_NEWUTS) IPC namespaces (CLONE_NEWIPC) PID namespaces (CLONE_NEWPID) Mount namespaces (CLONE_NEWNS) User namespaces (CLONE_NEWUSER) Network namespaces (CLONE_NEWNET)  前言 Linux Namespace 是 Linux Kernel 的其中一個功能，可以隔離對應的系統資源。 關於深入了解 Linux Namespace ，會再另闢一篇來探討。 而這邊就先照著進行，不過為了想法上能夠知道在做什麼，我是套用 C&#43;&#43; 的 Namespace 概念來幫助我先進行實作，讓我透過實際的程式與操作後，而對應到原來這就是 Linux Namespace 以及要怎麼實現。 PS. 建議有一點 OS 概念跟著做會比較好，要不然，最起碼知道 PID 是什麼。
+實作環境摘要  Ubuntu 16.04 Kernel version: 4.13.0-1002-gcp Go version: v1.9.2 linux/amd64  Linux Namespace 類別 依據 Linux Programmer&rsquo;s Manual 的 Namespace 文件中提到 &ldquo;One use of namespaces is to implement containers."><meta itemprop="datePublished" content="2018-01-14T14:51:05+08:00" />
+<meta itemprop="dateModified" content="2018-01-14T14:51:05+08:00" />
+<meta itemprop="wordCount" content="1232">
+<meta itemprop="keywords" content="container,docker,Go,Linux," />
+</head>
+<body>
 
-    <body>
-        
-<div class="sidebar text-center">
-  <div class="container ">
-    <div class="sidebar-about">
-      <div class="site__title">
-        <a href="https://bestsamina.github.io/">Life &amp; Technological Journey of Samina</a>
-      </div>
-      
-      
-      
-      <p>
-        <img src="https://bestsamina.github.io/images/sufuf3_1519028337_878.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
-      </p>
-      
-      <p class="site__description">
-         This blog is about technology and the record of my life. Hope the logs can help you and me someday. 
-      </p>
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://bestsamina.github.io/images/default-sidebar.jpg&#39;)">
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
+      </a>
     </div>
-    <div>
-	<ul class="sidebar-nav">
-		
-				<li>
-					<a href="/posts/">
-						<span>Posts</span>
-					</a>
-				</li>
-				<li>
-					<a href="/series/">
-						<span>Series</span>
-					</a>
-				</li>
-				<li>
-					<a href="/tags/">
-						<span>Tags</span>
-					</a>
-				</li>
-				<li>
-					<a href="/categories/">
-						<span>Categories</span>
-					</a>
-				</li>
-				<li>
-					<a href="/page/awesome-blogs">
-						<span>Awesome-Blogs</span>
-					</a>
-				</li>
-				<li>
-					<a href="/about/">
-						<span>About</span>
-					</a>
-				</li>
-		</li>
-	</ul>
-</div>
-
-    <p>
-      <section class="social text-center">
-	<a href="https://twitter.com/sufuf3149"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
-	
-	&nbsp;<a href="https://github.com/sufuf3"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	&nbsp;<a href="https://gitlab.com/sufuf3"><i class="fab fa-gitlab fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="https://medium.com/@sufuf3149"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	&nbsp;<a href="https://ko-fi.com/sufuf3149"><i class="fas fa-coffee fa-lg" aria-hidden="true"></i></a>
-</section>
-
-    </p>
-    <p class="copyright">
-      &copy; 2021 Samina Fu.
-      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
-      <br/>Built with
-      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+    <h2>Hi, I'm Samina 👋</h2>
+    <h3>This is my Life & Technological Journey</h3>
+    <div class="menu">
       
-    </p>
+
+        <p>
+            <a href="/posts/">
+                Post
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+        <p>
+            <a href="/tags/">
+                Tags
+            </a>
+        </p>
+
+        <p>
+            <a href="/categories/">
+                Categories
+            </a>
+        </p>
+
+        <p>
+            <a href="/page/awesome-blogs/">
+                Awesome-blogs
+            </a>
+        </p>
+
+      
+    </div>
   </div>
-  <div>
+
+  <div class="socials">
+      
+  
+    <a href="https://github.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM71.182 98.494c-2.156.385-2.952-.95-2.952-2.053 0-1.386.051-8.471.051-14.195 0-4.005-1.335-6.546-2.9-7.881C74.878 73.313 84.89 72.003 84.89 55.6c0-4.671-1.669-7.007-4.39-10.01.436-1.105 1.9-5.648-.436-11.552-3.568-1.104-11.731 4.595-11.731 4.595-3.389-.95-7.06-1.438-10.679-1.438-3.62 0-7.29.488-10.679 1.438 0 0-8.163-5.699-11.73-4.595-2.337 5.878-.899 10.422-.437 11.551-2.72 3.004-4.004 5.34-4.004 10.011 0 16.326 9.574 17.712 19.072 18.765-1.232 1.104-2.336 3.003-2.72 5.724-2.44 1.104-8.677 3.004-12.4-3.568-2.335-4.056-6.545-4.39-6.545-4.39-4.159-.05-.282 2.619-.282 2.619 2.772 1.283 4.723 6.212 4.723 6.212 2.49 7.624 14.4 5.057 14.4 5.057 0 3.568.052 9.37.052 10.422 0 1.104-.77 2.438-2.952 2.053C27.21 92.821 15.35 76.701 15.35 57.86c0-23.564 18.02-41.456 41.585-41.456s42.663 17.892 42.663 41.456c.026 18.842-11.474 34.988-28.416 40.635zM46 82.81c-.488.103-.95-.102-1.001-.436-.051-.385.282-.719.77-.822.488-.05.95.154 1.001.488.077.334-.257.668-.77.77zm-2.439-.23c0 .333-.385.615-.898.615-.565.052-.95-.23-.95-.616 0-.333.385-.616.899-.616.487-.051.95.231.95.616zm-3.516-.283c-.103.334-.616.488-1.053.334-.488-.103-.821-.488-.719-.822.103-.334.617-.488 1.053-.385.513.154.847.54.719.873zm-3.158-1.386c-.23.282-.718.23-1.104-.154-.385-.334-.487-.822-.23-1.053.23-.282.718-.23 1.103.154.334.334.462.847.231 1.053zm-2.336-2.336c-.23.154-.667 0-.95-.385-.282-.385-.282-.822 0-1.001.283-.231.72-.052.95.333.283.385.283.847 0 1.053zm-1.668-2.49c-.231.23-.616.103-.899-.154-.282-.334-.333-.719-.102-.899.23-.23.616-.102.898.154.282.334.334.72.103.899zm-1.72-1.9c-.103.231-.436.283-.719.103-.334-.154-.488-.436-.385-.667.103-.154.385-.231.719-.103.334.18.488.462.385.667z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://gitlab.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M23.76 5.544c-.693-1.991-3.512-1.991-4.228 0L6.892 44.653h29.532c-.022 0-12.663-39.11-12.663-39.11zM.426 64.34c-.582 1.79.067 3.782 1.589 4.923l55.464 41.167-50.61-65.778L.426 64.34zm35.977-19.688L57.5 110.43l21.098-65.778H36.402zm78.173 19.688l-6.444-19.688L57.5 110.43l55.464-41.167a4.475 4.475 0 0 0 1.61-4.923zM95.468 5.544c-.694-1.991-3.513-1.991-4.229 0L78.576 44.653h29.533L95.468 5.543z" />
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://medium.com/@sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M0 0v115h115V0H0zm95.542 27.235l-6.16 5.905a1.81 1.81 0 0 0-.693 1.72v43.458c-.103.667.154 1.335.693 1.72l6.032 5.904v1.31h-30.29v-1.259l6.238-6.058c.616-.616.616-.795.616-1.72V43.074L54.625 87.123h-2.336l-20.202-44.05v29.52c-.18 1.233.257 2.49 1.13 3.39l8.111 9.83v1.31H18.277v-1.31l8.111-9.83a3.93 3.93 0 0 0 1.053-3.39v-34.14a2.93 2.93 0 0 0-.976-2.516l-7.213-8.702v-1.309h22.41l17.301 37.991 15.222-37.965h21.357v1.283z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://twitter.com/sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM90.126 40.763c.051.72.051 1.464.051 2.182 0 22.256-16.942 47.9-47.9 47.9-9.548 0-18.404-2.772-25.848-7.547 1.36.154 2.67.205 4.055.205 7.881 0 15.12-2.67 20.895-7.187-7.392-.154-13.604-5.006-15.735-11.68 2.593.385 4.929.385 7.598-.308a16.837 16.837 0 0 1-13.476-16.531v-.205a16.824 16.824 0 0 0 7.598 2.13 16.8 16.8 0 0 1-7.496-14.016c0-3.131.822-6.006 2.285-8.496a47.803 47.803 0 0 0 34.705 17.61c-2.387-11.424 6.161-20.69 16.429-20.69 4.851 0 9.215 2.027 12.296 5.313a32.99 32.99 0 0 0 10.678-4.056 16.792 16.792 0 0 1-7.393 9.267c3.389-.36 6.674-1.31 9.703-2.618a35.437 35.437 0 0 1-8.445 8.727z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  </div>
+</header>
+
+<div class="mobile-header">
+  <p> Samina Website </p>
+  <div class="hamburger">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
   </div>
 </div>
-<div class="content container">
-            <article>
+
+<div class="overlay-menu">
   <header>
-    <h1>[Build container] Container with Linux Namespace</h1>
-     
-    
-<div class="post__meta">
-    
-    <i class="fas fa-calendar-alt"></i> Jan 14, 2018
-    in
-              
-              
-              <a class="post__category" href="/categories/container">A CONTAINER</a>
-              
-              
-    
-      
-      
-          <br/>
-           <i class="fas fa-tags"></i>
-          
-          <a class="post__tag" href="/tags/container">#container</a>
-           
-      
-          <a class="post__tag" href="/tags/docker">#docker</a>
-           
-      
-          <a class="post__tag" href="/tags/go">#go</a>
-           
-      
-          <a class="post__tag" href="/tags/linux">#linux</a>
-          
-      
-    
-    
-    <br/>
-    <i class="fas fa-clock"></i> 6 min read
+    <div class="intro">
+      <div class="logo-container">
+        <a href="/">
+          <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
+        </a>
+      </div>
+      <h2>Hi, I'm Samina 👋</h2>
+      <h3>This is my Life & Technological Journey</h3>
+      <div class="menu">
+        
+
+        <p>
+            <a href="/posts/">
+                Post
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+        <p>
+            <a href="/tags/">
+                Tags
+            </a>
+        </p>
+
+        <p>
+            <a href="/categories/">
+                Categories
+            </a>
+        </p>
+
+        <p>
+            <a href="/page/awesome-blogs/">
+                Awesome-blogs
+            </a>
+        </p>
+
+        
+      </div>
+    </div>
+
+    <div class="socials">
+        
+  
+    <a href="https://github.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM71.182 98.494c-2.156.385-2.952-.95-2.952-2.053 0-1.386.051-8.471.051-14.195 0-4.005-1.335-6.546-2.9-7.881C74.878 73.313 84.89 72.003 84.89 55.6c0-4.671-1.669-7.007-4.39-10.01.436-1.105 1.9-5.648-.436-11.552-3.568-1.104-11.731 4.595-11.731 4.595-3.389-.95-7.06-1.438-10.679-1.438-3.62 0-7.29.488-10.679 1.438 0 0-8.163-5.699-11.73-4.595-2.337 5.878-.899 10.422-.437 11.551-2.72 3.004-4.004 5.34-4.004 10.011 0 16.326 9.574 17.712 19.072 18.765-1.232 1.104-2.336 3.003-2.72 5.724-2.44 1.104-8.677 3.004-12.4-3.568-2.335-4.056-6.545-4.39-6.545-4.39-4.159-.05-.282 2.619-.282 2.619 2.772 1.283 4.723 6.212 4.723 6.212 2.49 7.624 14.4 5.057 14.4 5.057 0 3.568.052 9.37.052 10.422 0 1.104-.77 2.438-2.952 2.053C27.21 92.821 15.35 76.701 15.35 57.86c0-23.564 18.02-41.456 41.585-41.456s42.663 17.892 42.663 41.456c.026 18.842-11.474 34.988-28.416 40.635zM46 82.81c-.488.103-.95-.102-1.001-.436-.051-.385.282-.719.77-.822.488-.05.95.154 1.001.488.077.334-.257.668-.77.77zm-2.439-.23c0 .333-.385.615-.898.615-.565.052-.95-.23-.95-.616 0-.333.385-.616.899-.616.487-.051.95.231.95.616zm-3.516-.283c-.103.334-.616.488-1.053.334-.488-.103-.821-.488-.719-.822.103-.334.617-.488 1.053-.385.513.154.847.54.719.873zm-3.158-1.386c-.23.282-.718.23-1.104-.154-.385-.334-.487-.822-.23-1.053.23-.282.718-.23 1.103.154.334.334.462.847.231 1.053zm-2.336-2.336c-.23.154-.667 0-.95-.385-.282-.385-.282-.822 0-1.001.283-.231.72-.052.95.333.283.385.283.847 0 1.053zm-1.668-2.49c-.231.23-.616.103-.899-.154-.282-.334-.333-.719-.102-.899.23-.23.616-.102.898.154.282.334.334.72.103.899zm-1.72-1.9c-.103.231-.436.283-.719.103-.334-.154-.488-.436-.385-.667.103-.154.385-.231.719-.103.334.18.488.462.385.667z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://gitlab.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M23.76 5.544c-.693-1.991-3.512-1.991-4.228 0L6.892 44.653h29.532c-.022 0-12.663-39.11-12.663-39.11zM.426 64.34c-.582 1.79.067 3.782 1.589 4.923l55.464 41.167-50.61-65.778L.426 64.34zm35.977-19.688L57.5 110.43l21.098-65.778H36.402zm78.173 19.688l-6.444-19.688L57.5 110.43l55.464-41.167a4.475 4.475 0 0 0 1.61-4.923zM95.468 5.544c-.694-1.991-3.513-1.991-4.229 0L78.576 44.653h29.533L95.468 5.543z" />
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://medium.com/@sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M0 0v115h115V0H0zm95.542 27.235l-6.16 5.905a1.81 1.81 0 0 0-.693 1.72v43.458c-.103.667.154 1.335.693 1.72l6.032 5.904v1.31h-30.29v-1.259l6.238-6.058c.616-.616.616-.795.616-1.72V43.074L54.625 87.123h-2.336l-20.202-44.05v29.52c-.18 1.233.257 2.49 1.13 3.39l8.111 9.83v1.31H18.277v-1.31l8.111-9.83a3.93 3.93 0 0 0 1.053-3.39v-34.14a2.93 2.93 0 0 0-.976-2.516l-7.213-8.702v-1.309h22.41l17.301 37.991 15.222-37.965h21.357v1.283z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://twitter.com/sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM90.126 40.763c.051.72.051 1.464.051 2.182 0 22.256-16.942 47.9-47.9 47.9-9.548 0-18.404-2.772-25.848-7.547 1.36.154 2.67.205 4.055.205 7.881 0 15.12-2.67 20.895-7.187-7.392-.154-13.604-5.006-15.735-11.68 2.593.385 4.929.385 7.598-.308a16.837 16.837 0 0 1-13.476-16.531v-.205a16.824 16.824 0 0 0 7.598 2.13 16.8 16.8 0 0 1-7.496-14.016c0-3.131.822-6.006 2.285-8.496a47.803 47.803 0 0 0 34.705 17.61c-2.387-11.424 6.161-20.69 16.429-20.69 4.851 0 9.215 2.027 12.296 5.313a32.99 32.99 0 0 0 10.678-4.056 16.792 16.792 0 0 1-7.393 9.267c3.389-.36 6.674-1.31 9.703-2.618a35.437 35.437 0 0 1-8.445 8.727z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+    </div>
+  </header>
 </div>
 
-
-  </header>
-<aside>
-  <nav id="TableOfContents">
-<ul>
-<li><a href="#前言">前言</a>
-<ul>
-<li>
-<ul>
-<li><a href="#實作環境摘要">實作環境摘要</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#linux-namespace-類別">Linux Namespace 類別</a></li>
-<li><a href="#the-system-calls-of-namespaces-api">The system calls of namespaces API</a></li>
-<li><a href="#uts-namespaces-clone-newuts">UTS namespaces (CLONE_NEWUTS)</a>
-<ul>
-<li>
-<ul>
-<li><a href="#介紹">介紹</a></li>
-<li><a href="#實作流程">實作流程</a>
-<ul>
-<li><a href="#step-1-撰寫程式">Step 1. 撰寫程式</a></li>
-<li><a href="#step-2-執行程式">Step 2. 執行程式</a></li>
-<li><a href="#step-3-觀察">Step 3. 觀察</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#ipc-namespaces-clone-newipc">IPC namespaces (CLONE_NEWIPC)</a>
-<ul>
-<li>
-<ul>
-<li><a href="#介紹-1">介紹</a></li>
-<li><a href="#實作流程-1">實作流程</a>
-<ul>
-<li><a href="#step-1-撰寫程式-1">Step 1. 撰寫程式</a></li>
-<li><a href="#step-2-執行程式-1">Step 2. 執行程式</a></li>
-<li><a href="#step-3-觀察-1">Step 3. 觀察</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#pid-namespaces-clone-newpid">PID namespaces (CLONE_NEWPID)</a>
-<ul>
-<li>
-<ul>
-<li><a href="#介紹-2">介紹</a></li>
-<li><a href="#實作流程-2">實作流程</a>
-<ul>
-<li><a href="#step-1-撰寫程式-2">Step 1. 撰寫程式</a></li>
-<li><a href="#step-2-執行程式-2">Step 2. 執行程式</a></li>
-<li><a href="#step-3-觀察-2">Step 3. 觀察</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#mount-namespaces-clone-newns">Mount namespaces (CLONE_NEWNS)</a>
-<ul>
-<li>
-<ul>
-<li><a href="#介紹-3">介紹</a></li>
-<li><a href="#實作流程-3">實作流程</a>
-<ul>
-<li><a href="#step-1-撰寫程式-3">Step 1. 撰寫程式</a></li>
-<li><a href="#step-2-執行程式-3">Step 2. 執行程式</a></li>
-<li><a href="#step-3-觀察-3">Step 3. 觀察</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#user-namespaces-clone-newuser">User namespaces (CLONE_NEWUSER)</a>
-<ul>
-<li>
-<ul>
-<li><a href="#介紹-4">介紹</a></li>
-<li><a href="#實作流程-4">實作流程</a>
-<ul>
-<li><a href="#step-1-撰寫程式-4">Step 1. 撰寫程式</a></li>
-<li><a href="#step-2-執行程式-4">Step 2. 執行程式</a></li>
-<li><a href="#step-3-觀察-4">Step 3. 觀察</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#network-namespaces-clone-newnet">Network namespaces (CLONE_NEWNET)</a>
-<ul>
-<li>
-<ul>
-<li><a href="#介紹-5">介紹</a></li>
-<li><a href="#實作流程-5">實作流程</a>
-<ul>
-<li><a href="#step-1-撰寫程式-5">Step 1. 撰寫程式</a></li>
-<li><a href="#step-2-執行程式-5">Step 2. 執行程式</a></li>
-<li><a href="#step-3-觀察-5">Step 3. 觀察</a></li>
-</ul></li>
-<li><a href="#相關系列文">相關系列文：</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-</aside>
-  <div class="post">
+  <div class="content-wrapper">
     
+      <div class="breadcrumb">
+  
 
-<p>目錄：<br />
-* 前言<br />
-* Linux Namespace 類別<br />
-* The system calls of namespaces API<br />
-* UTS namespaces (CLONE_NEWUTS)<br />
-* IPC namespaces (CLONE_NEWIPC)<br />
-* PID namespaces (CLONE_NEWPID)<br />
-* Mount namespaces (CLONE_NEWNS)<br />
-* User namespaces (CLONE_NEWUSER)<br />
-* Network namespaces (CLONE_NEWNET)</p>
 
+
+
+
+<span >
+  <a href="https://bestsamina.github.io/">Home</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://bestsamina.github.io/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://bestsamina.github.io/posts/2018-01-14-container-linux-namespace/">[Build container] Container with Linux Namespace</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>[Build container] Container with Linux Namespace</h1>
+
+<p>目錄：</p>
+<ul>
+<li>前言</li>
+<li>Linux Namespace 類別</li>
+<li>The system calls of namespaces API</li>
+<li>UTS namespaces (CLONE_NEWUTS)</li>
+<li>IPC namespaces (CLONE_NEWIPC)</li>
+<li>PID namespaces (CLONE_NEWPID)</li>
+<li>Mount namespaces (CLONE_NEWNS)</li>
+<li>User namespaces (CLONE_NEWUSER)</li>
+<li>Network namespaces (CLONE_NEWNET)</li>
+</ul>
 <h1 id="前言">前言</h1>
-
 <p>Linux Namespace 是 Linux Kernel 的其中一個功能，可以隔離對應的系統資源。
 關於深入了解 Linux Namespace ，會再另闢一篇來探討。
 而這邊就先照著進行，不過為了想法上能夠知道在做什麼，我是套用 C++ 的 Namespace 概念來幫助我先進行實作，讓我透過實際的程式與操作後，而對應到原來這就是 Linux Namespace 以及要怎麼實現。
 PS. 建議有一點 OS 概念跟著做會比較好，要不然，最起碼知道 PID 是什麼。</p>
-
 <h3 id="實作環境摘要">實作環境摘要</h3>
-
 <ul>
 <li>Ubuntu 16.04</li>
 <li>Kernel version: 4.13.0-1002-gcp</li>
 <li>Go version: v1.9.2 linux/amd64</li>
 </ul>
-
 <h1 id="linux-namespace-類別">Linux Namespace 類別</h1>
-
-<p>依據 Linux Programmer&rsquo;s Manual 的 <a href="http://man7.org/linux/man-pages/man7/namespaces.7.html">Namespace</a> 文件中提到 &ldquo;One use of namespaces is to implement containers.&ldquo;。所以當然要來知道 Linux 提供哪些 namespaces 囉！<br />
+<p>依據 Linux Programmer&rsquo;s Manual 的 <a href="http://man7.org/linux/man-pages/man7/namespaces.7.html">Namespace</a> 文件中提到 &ldquo;One use of namespaces is to implement containers.&quot;。所以當然要來知道 Linux 提供哪些 namespaces 囉！<br>
 主要分為以下 7 類，這邊除了 Cgroup 會另外探討外，其他的六種會在這邊來練習實做。</p>
-
-<pre><code>       Namespace   Constant          Isolates
+<pre tabindex="0"><code>       Namespace   Constant          Isolates
        Cgroup      CLONE_NEWCGROUP   Cgroup root directory
        IPC         CLONE_NEWIPC      System V IPC, POSIX message queues
        Network     CLONE_NEWNET      Network devices, stacks, ports, etc.
@@ -353,121 +309,84 @@ PS. 建議有一點 OS 概念跟著做會比較好，要不然，最起碼知道
        PID         CLONE_NEWPID      Process IDs
        User        CLONE_NEWUSER     User and group IDs
        UTS         CLONE_NEWUTS      Hostname and NIS domain name
-</code></pre>
-
-<h1 id="the-system-calls-of-namespaces-api">The system calls of namespaces API</h1>
-
+</code></pre><h1 id="the-system-calls-of-namespaces-api">The system calls of namespaces API</h1>
 <ul>
 <li>clone(): 創建新的 process 。當 flag 的參數包含一個或多個 CLONE_NEW* 的 flags，child process 會被包含在新的 namespace 中。</li>
 <li>setns(): 允許 calling process 加入現有的 namespace。</li>
 <li>unshare(): 將 calling process 移到新的 namespace。</li>
 </ul>
-
-<h1 id="uts-namespaces-clone-newuts">UTS namespaces (CLONE_NEWUTS)</h1>
-
+<h1 id="uts-namespaces-clone_newuts">UTS namespaces (CLONE_NEWUTS)</h1>
 <h3 id="介紹">介紹</h3>
-
 <p>隔離 hostname 和 NIS domain name 兩個系統 identifiers。這些 identifiers 可使用 sethostname() 和 setdomainname() 來設定，並且使用 uname(), gethostname() 和 getdomainname() 來查詢。</p>
-
 <p>Memo: <code>UTS = UNIX Time-sharing System</code> (ref: <a href="https://lwn.net/Articles/531114/">https://lwn.net/Articles/531114/</a>)</p>
-
 <h3 id="實作流程">實作流程</h3>
-
 <h4 id="step-1-撰寫程式">Step 1. 撰寫程式</h4>
-
 <p>使用  namespace API 的 clone() 來創建一個新的 process 並透過 CLONE_NEWUTS flag 來創建一個 UTS namespace 。創建好 namespace 之後，進入 sh (Go lang 範例程式)或 bash (C 範例程式) 環境。</p>
-
 <ul>
 <li>Go lang: <a href="https://github.com/sufuf3/mygo-container/blob/master/namespace/uts.go">https://github.com/sufuf3/mygo-container/blob/master/namespace/uts.go</a></li>
 <li>C lang: <a href="https://github.com/sufuf3/myc-container/blob/master/namespace/uts.c">https://github.com/sufuf3/myc-container/blob/master/namespace/uts.c</a></li>
 </ul>
-
 <h4 id="step-2-執行程式">Step 2. 執行程式</h4>
-
 <ul>
 <li>Go lang: <code>sudo go run uts.go</code></li>
 <li>C lang: <code>gcc uts.c -o uts.o</code> -&gt; <code>sudo ./uts.o</code></li>
 </ul>
-
 <h4 id="step-3-觀察">Step 3. 觀察</h4>
-
 <p>1. 開另外一個 terminal (或是使用 tumx 等工具切到新的視窗也是可以)，先來看看在 host 本身的 process ，這邊使用 pstree 來將 process 的關係使用樹狀圖來呈現，指令我們下 <code>pstree -pl</code> (-p 為 顯示 pid, -l 是不要將長的那一行截斷)。會取得底下類似的內容</p>
-
-<pre><code>$ pstree -pl
+<pre tabindex="0"><code>$ pstree -pl
 ─bash(5940)───sudo(9098)───go(9099)─┬─uts(9117)─┬─sh(9121)
                                     │           ├─{uts}(9119)
                                     │           └─{uts}(9120)
-</code></pre>
-
-<p>2. 然後回到我們程式進到的 sh 環境下 <code>echo $$</code></p>
-
-<pre><code># echo $$
+</code></pre><p>2. 然後回到我們程式進到的 sh 環境下 <code>echo $$</code></p>
+<pre tabindex="0"><code># echo $$
 9121
-</code></pre>
-
-<p>會發現我們程式目前的 PID 是 9121。</p>
-
-<ol>
+</code></pre><p>會發現我們程式目前的 PID 是 9121。</p>
+<ol start="3">
 <li>來確認程式的 namespace type 和 inode number ，這邊我們使用下面的驗證方法 (詳細可以到 <a href="http://man7.org/linux/man-pages/man7/namespaces.7.html">http://man7.org/linux/man-pages/man7/namespaces.7.html</a> )</li>
 </ol>
-
-<pre><code># readlink /proc/$$/ns/uts
+<pre tabindex="0"><code># readlink /proc/$$/ns/uts
 uts:[4026532211]
 # readlink /proc/9121/ns/uts
 uts:[4026532211]
 # readlink /proc/9117/ns/uts
 uts:[4026531838]
-</code></pre>
-
-<p>這邊我們知道子 process 和父 process 的 inode number 是不同的，也確認是他們是不同的 UTS namespace。(因為在 Linux 3.8 後，這些檔案使用 symbolic links，所以如果兩個 processes 都在同一個 namespace，那麼他們的 inode numbers 都會是一樣的)</p>
-
+</code></pre><p>這邊我們知道子 process 和父 process 的 inode number 是不同的，也確認是他們是不同的 UTS namespace。(因為在 Linux 3.8 後，這些檔案使用 symbolic links，所以如果兩個 processes 都在同一個 namespace，那麼他們的 inode numbers 都會是一樣的)</p>
 <p>4. 來透過程式改 hostname 看看是否真的會改到 host 的 hostname。</p>
-
-<pre><code># hostname -b mylittlecontainer
+<pre tabindex="0"><code># hostname -b mylittlecontainer
 # hostname
 mylittlecontainer
-</code></pre>
-
-<p>答案當時是沒法改到囉！所以第一步 UTS namespace 隔離成功。因為 host 的 hostname 設定無法被程式內部影響到。</p>
-
-<h1 id="ipc-namespaces-clone-newipc">IPC namespaces (CLONE_NEWIPC)</h1>
-
+</code></pre><p>答案當時是沒法改到囉！所以第一步 UTS namespace 隔離成功。因為 host 的 hostname 設定無法被程式內部影響到。</p>
+<h1 id="ipc-namespaces-clone_newipc">IPC namespaces (CLONE_NEWIPC)</h1>
 <h3 id="介紹-1">介紹</h3>
-
 <p>隔離 IPC resources, namely, System V IPC objects 和 POSIX message queues。
-Memo: <code>IPC = interprocess communication</code> (ref: <a href="http://ggav8d.blogspot.tw/2012/10/linux-linux-ipc.html">http://ggav8d.blogspot.tw/2012/10/linux-linux-ipc.html</a>)
-&gt; 該找時間全面理解 IPC 了 QQ ，我對 IPC 的觀念並沒有融會貫通，這邊就是照著做的概念了。 幸好，還算知道什麼是 semaphore, message queue, pipe, share memory。QQ</p>
-
+Memo: <code>IPC = interprocess communication</code> (ref: <a href="http://ggav8d.blogspot.tw/2012/10/linux-linux-ipc.html">http://ggav8d.blogspot.tw/2012/10/linux-linux-ipc.html</a>)</p>
+<blockquote>
+<p>該找時間全面理解 IPC 了 QQ ，我對 IPC 的觀念並沒有融會貫通，這邊就是照著做的概念了。 幸好，還算知道什麼是 semaphore, message queue, pipe, share memory。QQ</p>
+</blockquote>
 <h3 id="實作流程-1">實作流程</h3>
-
 <h4 id="step-1-撰寫程式-1">Step 1. 撰寫程式</h4>
-
-<p>使用  namespace API 的 clone() 來創建一個新的 process 並透過 CLONE_NEWUTS 和 CLONE_NEWIPC flags 來創建 namespace 。創建好 namespace 之後，進入 sh (Go lang 範例程式)或 bash (C 範例程式) 環境。 (其實是 UTS 的程式碼再改動一點點而已)
-- Go lang: <a href="https://github.com/sufuf3/mygo-container/blob/master/namespace/ipc.go">https://github.com/sufuf3/mygo-container/blob/master/namespace/ipc.go</a>
-- C lang: <a href="https://github.com/sufuf3/myc-container/blob/master/namespace/ipc.c">https://github.com/sufuf3/myc-container/blob/master/namespace/ipc.c</a></p>
-
+<p>使用  namespace API 的 clone() 來創建一個新的 process 並透過 CLONE_NEWUTS 和 CLONE_NEWIPC flags 來創建 namespace 。創建好 namespace 之後，進入 sh (Go lang 範例程式)或 bash (C 範例程式) 環境。 (其實是 UTS 的程式碼再改動一點點而已)</p>
+<ul>
+<li>Go lang: <a href="https://github.com/sufuf3/mygo-container/blob/master/namespace/ipc.go">https://github.com/sufuf3/mygo-container/blob/master/namespace/ipc.go</a></li>
+<li>C lang: <a href="https://github.com/sufuf3/myc-container/blob/master/namespace/ipc.c">https://github.com/sufuf3/myc-container/blob/master/namespace/ipc.c</a></li>
+</ul>
 <h4 id="step-2-執行程式-1">Step 2. 執行程式</h4>
-
 <ul>
 <li>Go lang: <code>sudo go run ipc.go</code></li>
 <li>C lang: <code>gcc ipc.c -o ipc.o</code> -&gt; <code>sudo ./ipc.o</code></li>
 </ul>
-
 <h4 id="step-3-觀察-1">Step 3. 觀察</h4>
-
 <p>在第一次的 namespace 中在創建一個新的 namespace 可以看到在新的 namespace 中的 message queue 沒有原本 namespace 的 message queue ，可以知道 IPC 已完全被隔離。</p>
-
 <ul>
 <li>Memo:
-
 <ol>
 <li>ipcs 查询 process 通訊的狀態</li>
 <li>ipcmk - make various IPC resources
 (ref: <a href="http://man7.org/linux/man-pages/man1/ipcmk.1.html">http://man7.org/linux/man-pages/man1/ipcmk.1.html</a>)</li>
-</ol></li>
+</ol>
+</li>
 </ul>
-
-<pre><code>$ sudo go run ipc.go
+<pre tabindex="0"><code>$ sudo go run ipc.go
 # readlink /proc/$$/ns/uts /proc/$$/ns/ipc
 uts:[4026532211]
 ipc:[4026532212]
@@ -489,37 +408,24 @@ key        msqid      owner      perms      used-bytes   messages
 
 ------ Message Queues --------
 key        msqid      owner      perms      used-bytes   messages
-</code></pre>
-
-<h1 id="pid-namespaces-clone-newpid">PID namespaces (CLONE_NEWPID)</h1>
-
+</code></pre><h1 id="pid-namespaces-clone_newpid">PID namespaces (CLONE_NEWPID)</h1>
 <h3 id="介紹-2">介紹</h3>
-
 <p>隔離 process ID number 空間。就是同個 processes 在不同的 PID namespace 可以顯示不一樣的 PID。 PID namespace 可以讓 container 提供暫停/恢復 container 的 process 以及轉移 container 到另外的 host 上。PIDs 在 新的  PID namespace 開始都是使用 1。 (如果有在 docker 裡面使用 ps 會了解到這部分。)</p>
-
 <h3 id="實作流程-2">實作流程</h3>
-
 <h4 id="step-1-撰寫程式-2">Step 1. 撰寫程式</h4>
-
 <p>使用  namespace API 的 clone() 來創建一個新的 process 並透過 CLONE_NEWPID flag 來創建 namespace 。創建好 namespace 之後，進入 sh (Go lang 範例程式)或 bash (C 範例程式) 環境。 (一樣是上面再改一點點，後面這部分就僅附上程式碼，不會再做說明。)</p>
-
 <ul>
 <li>Go lang: <a href="https://github.com/sufuf3/mygo-container/blob/master/namespace/pid.go">https://github.com/sufuf3/mygo-container/blob/master/namespace/pid.go</a></li>
 <li>C lang: <a href="https://github.com/sufuf3/myc-container/blob/master/namespace/pid.c">https://github.com/sufuf3/myc-container/blob/master/namespace/pid.c</a></li>
 </ul>
-
 <h4 id="step-2-執行程式-2">Step 2. 執行程式</h4>
-
 <ul>
 <li>Go lang: <code>sudo go run pid.go</code></li>
 <li>C lang: <code>gcc pid.c -o pid.o</code> -&gt; <code>sudo ./pid.o</code></li>
 </ul>
-
 <h4 id="step-3-觀察-2">Step 3. 觀察</h4>
-
 <p>1. 先來看看在 host 上的 pstree</p>
-
-<pre><code>─bash(5940)───sudo(18717)───go(18718)─┬─pid(18736)─┬─sh(18740)
+<pre tabindex="0"><code>─bash(5940)───sudo(18717)───go(18718)─┬─pid(18736)─┬─sh(18740)
                                       │            ├─{pid}(18738)
                                       │            └─{pid}(18739)
                                       ├─{go}(18719)
@@ -528,48 +434,31 @@ key        msqid      owner      perms      used-bytes   messages
                                       ├─{go}(18726)
                                       ├─{go}(18737)
                                       └─{go}(18741)
-</code></pre>
-
-<p>2. 就我們上面的 UTS namespace 所知，實際上在 host 的 PID 是 18736，不過當我們在程式的 sh 環境裡使用 <code>echo $$</code> 我們得到的 PID 為 1</p>
-
-<pre><code>$ sudo go run pid.go
+</code></pre><p>2. 就我們上面的 UTS namespace 所知，實際上在 host 的 PID 是 18736，不過當我們在程式的 sh 環境裡使用 <code>echo $$</code> 我們得到的 PID 為 1</p>
+<pre tabindex="0"><code>$ sudo go run pid.go
 # echo $$
 1
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>想要在程式的 sh 環境中使用 ps 指令的話，就讓繼續往後進行囉！到這邊蠻興奮的，因為好像開始看到一點點 docker 的影子了呢！</p>
 </blockquote>
-
-<h1 id="mount-namespaces-clone-newns">Mount namespaces (CLONE_NEWNS)</h1>
-
+<h1 id="mount-namespaces-clone_newns">Mount namespaces (CLONE_NEWNS)</h1>
 <h3 id="介紹-3">介紹</h3>
-
 <p>在每個 namespace instance 隔離 processes 的 list of mount points。透過 <code>/proc/[pid]/mounts</code>, <code>/proc/[pid]/mountinfo</code>, <code>/proc/[pid]/mountstats</code> 來提供 views。</p>
-
 <h3 id="實作流程-3">實作流程</h3>
-
 <h4 id="step-1-撰寫程式-3">Step 1. 撰寫程式</h4>
-
 <p>一樣只改一點點部分。</p>
-
 <ul>
 <li>Go lang: <a href="https://github.com/sufuf3/mygo-container/blob/master/namespace/mount.go">https://github.com/sufuf3/mygo-container/blob/master/namespace/mount.go</a></li>
 <li>C lang: <a href="https://github.com/sufuf3/myc-container/blob/master/namespace/mount.c">https://github.com/sufuf3/myc-container/blob/master/namespace/mount.c</a></li>
 </ul>
-
 <h4 id="step-2-執行程式-3">Step 2. 執行程式</h4>
-
 <ul>
 <li>Go lang: <code>sudo go run mount.go</code></li>
 <li>C lang: <code>gcc mount.c -o mount.o</code> -&gt; <code>sudo ./mount.o</code></li>
 </ul>
-
 <h4 id="step-3-觀察-3">Step 3. 觀察</h4>
-
 <p>1. 第一次的 <code>ls /proc</code> 看到的是 host 的 /proc</p>
-
-<pre><code>$ sudo go run mount.go 
+<pre tabindex="0"><code>$ sudo go run mount.go 
 # ls /proc
 1     1244   14030  18395  2      27   409   6022  92         driver       key-users    mtrr          sys
 10    1245   1483   18396  20     276  410   6722  acpi       execdomains  kmsg         net           sysrq-trigger
@@ -583,11 +472,8 @@ key        msqid      owner      perms      used-bytes   messages
 1155  14     18     19830  24     403  5939  85    devices    kallsyms     misc         softirqs      vmallocinfo
 12    14025  18088  19833  25     406  5940  895   diskstats  kcore        modules      stat          vmstat
 1228  14026  18304  19841  26     408  6     9     dma        keys         mounts       swaps         zoneinfo
-</code></pre>
-
-<p>2. 為了看到 Mount namespace 的 /proc ，我們將 /proc mount 到 namespace 底下。然後再來觀察 <code>ls /proc</code>。這邊會發現只有顯示 namespace 底下的檔案。</p>
-
-<pre><code># mount -t proc proc /proc
+</code></pre><p>2. 為了看到 Mount namespace 的 /proc ，我們將 /proc mount 到 namespace 底下。然後再來觀察 <code>ls /proc</code>。這邊會發現只有顯示 namespace 底下的檔案。</p>
+<pre tabindex="0"><code># mount -t proc proc /proc
 # ls /proc
 1          consoles   execdomains  irq          kpagecount  modules       schedstat  sys            version
 4          cpuinfo    fb           kallsyms     kpageflags  mounts        scsi       sysrq-trigger  version_signature
@@ -596,188 +482,93 @@ buddyinfo  devices    fs           keys         locks       net           slabin
 bus        diskstats  interrupts   key-users    mdstat      pagetypeinfo  softirqs   timer_list     zoneinfo
 cgroups    dma        iomem        kmsg         meminfo     partitions    stat       tty
 cmdline    driver     ioports      kpagecgroup  misc        sched_debug   swaps      uptime
-</code></pre>
-
-<p>3. 再來我們使用 <code>ps -ef</code> 就可以看到我們 namespace 裡面的 process 拉！</p>
-
-<pre><code># ps -ef
+</code></pre><p>3. 再來我們使用 <code>ps -ef</code> 就可以看到我們 namespace 裡面的 process 拉！</p>
+<pre tabindex="0"><code># ps -ef
 UID        PID  PPID  C STIME TTY          TIME CMD
 root         1     0  0 10:20 pts/1    00:00:00 sh
 root         5     1  0 10:21 pts/1    00:00:00 ps -ef
-</code></pre>
-
-<h1 id="user-namespaces-clone-newuser">User namespaces (CLONE_NEWUSER)</h1>
-
+</code></pre><h1 id="user-namespaces-clone_newuser">User namespaces (CLONE_NEWUSER)</h1>
 <h3 id="介紹-4">介紹</h3>
-
 <p>隔離 security-related identifiers 和 attributes，尤其是一個 process 的 user IDs 和 group IDs 是可以內外不同的。也就是在 host 上面可以用非 root 的使用者，但到 namespace 裡面該使用者可以在 namespace 成為 root 。</p>
-
 <h3 id="實作流程-4">實作流程</h3>
-
 <h4 id="step-1-撰寫程式-4">Step 1. 撰寫程式</h4>
-
 <p>一樣改一點點的程式。</p>
-
 <ul>
 <li>Go lang: <a href="https://github.com/sufuf3/mygo-container/blob/master/namespace/user.go">https://github.com/sufuf3/mygo-container/blob/master/namespace/user.go</a></li>
 <li>C lang: <a href="https://github.com/sufuf3/myc-container/blob/master/namespace/user.c">https://github.com/sufuf3/myc-container/blob/master/namespace/user.c</a></li>
 </ul>
-
 <h4 id="step-2-執行程式-4">Step 2. 執行程式</h4>
-
 <ul>
 <li>Go lang: <code>sudo go run user.go</code></li>
 <li>C lang: <code>gcc user.c -o user.o</code> -&gt; <code>sudo ./user.o</code></li>
 </ul>
-
 <h4 id="step-3-觀察-4">Step 3. 觀察</h4>
-
 <p>1. 首先在本機查 user ID.</p>
-
-<pre><code>$ sudo id
+<pre tabindex="0"><code>$ sudo id
 uid=0(root) gid=0(root) groups=0(root)
-</code></pre>
-
-<p>2. 然後執行程式進到 sh 裡面查看 id</p>
-
-<pre><code>$ sudo go run user.go 
+</code></pre><p>2. 然後執行程式進到 sh 裡面查看 id</p>
+<pre tabindex="0"><code>$ sudo go run user.go 
 
 $ id
 uid=65534(nobody) gid=65534(nogroup) groups=65534(nogroup)
-</code></pre>
-
-<p>可以看到不同的 UID ，所以 User namespace 成功隔離了。</p>
-
-<h1 id="network-namespaces-clone-newnet">Network namespaces (CLONE_NEWNET)</h1>
-
+</code></pre><p>可以看到不同的 UID ，所以 User namespace 成功隔離了。</p>
+<h1 id="network-namespaces-clone_newnet">Network namespaces (CLONE_NEWNET)</h1>
 <h3 id="介紹-5">介紹</h3>
-
 <p>隔離 host 本身的 networking 資源，如：network devices, IPv4 and IPv6 protocol stacks, IP routing tables, firewalls, the /proc/net directory, the /sys/class/net directory, port numbers (sockets) &hellip;.</p>
-
 <h3 id="實作流程-5">實作流程</h3>
-
 <h4 id="step-1-撰寫程式-5">Step 1. 撰寫程式</h4>
-
 <p>一樣改一點點的程式。</p>
-
 <ul>
 <li>Go lang: <a href="https://github.com/sufuf3/mygo-container/blob/master/namespace/net.go">https://github.com/sufuf3/mygo-container/blob/master/namespace/net.go</a></li>
 <li>C lang: <a href="https://github.com/sufuf3/myc-container/blob/master/namespace/net.c">https://github.com/sufuf3/myc-container/blob/master/namespace/net.c</a></li>
 </ul>
-
 <h4 id="step-2-執行程式-5">Step 2. 執行程式</h4>
-
 <ul>
 <li>Go lang: <code>sudo go run net.go</code></li>
 <li>C lang: <code>gcc net.c -o net.o</code> -&gt; <code>sudo ./net.o</code></li>
 </ul>
-
 <h4 id="step-3-觀察-5">Step 3. 觀察</h4>
-
-<pre><code>$ sudo go run net.go
+<pre tabindex="0"><code>$ sudo go run net.go
 
 $ ifconfig
 Warning: cannot open /proc/net/dev (No such file or directory). Limited output.
-</code></pre>
-
-<p>由上可知，原本 host 上的 ifconfig 有很多 Network 的資訊，但進到 namespace 裡面，什麼都沒看到，所以就是隔離網路了。</p>
-
-<p>Ref:<br />
-1. <a href="https://yq.aliyun.com/articles/64928">https://yq.aliyun.com/articles/64928</a><br />
-2. <a href="https://lwn.net/Articles/531114/">https://lwn.net/Articles/531114/</a><br />
-3. <a href="http://blog.lucode.net/linux/intro-Linux-namespace-1.html">http://blog.lucode.net/linux/intro-Linux-namespace-1.html</a></p>
-
+</code></pre><p>由上可知，原本 host 上的 ifconfig 有很多 Network 的資訊，但進到 namespace 裡面，什麼都沒看到，所以就是隔離網路了。</p>
+<p>Ref:</p>
+<ol>
+<li><a href="https://yq.aliyun.com/articles/64928">https://yq.aliyun.com/articles/64928</a></li>
+<li><a href="https://lwn.net/Articles/531114/">https://lwn.net/Articles/531114/</a></li>
+<li><a href="http://blog.lucode.net/linux/intro-Linux-namespace-1.html">http://blog.lucode.net/linux/intro-Linux-namespace-1.html</a></li>
+</ol>
 <h3 id="相關系列文">相關系列文：</h3>
-
 <p><a href="/series/my-own-container">[Build container] 自己的 Container 自己寫</a></p>
 
+
+    </main>
   </div>
-  <div>
-    <ul class="post__nav">
-        <li class="post__nav--next">
-            <a href="/posts/2018-01-28-tgmeetups-birthday/">                
-                <span class="next__heading">NEXT</span>
-                <span>[TGmeetup] 從孵化到出生之全記錄</span>
-            </a>
-            <i class="fas fa-chevron-right"></i>
-        </li>
-        <li class="post__nav--previous">
-            <i class="fas fa-chevron-left"></i>
-            <a href="/posts/2018-01-03-my-container-setup-env/">                
-                <span class="previous__heading">PREVIOUS</span>
-                <span class="previous__title">[Build container] Docker 簡介與 Go 環境安裝</span>
-            </a>
-        </li>
-    </ul>
-</div>
-
-  <div class="post__related">
-    
-    
-    
-    <h2>Related Articles</h2>
-    <ul class="related-posts">
-        
-<li>
-  <span class="list__title--small">
-    <a href="/2018/01/03/build-container-%E8%87%AA%E5%B7%B1%E7%9A%84-container-%E8%87%AA%E5%B7%B1%E5%AF%AB/">[Build container] 自己的 Container 自己寫</a>
-      
-      <time class="pull-right hidden-tablet">Jan 03 &#39;18</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/posts/2018-01-03-my-container-setup-env/">[Build container] Docker 簡介與 Go 環境安裝</a>
-      
-      <time class="pull-right hidden-tablet">Jan 03 &#39;18</time>
-      
-  </span>
-</li>
-
-    </ul>
-    
-</div>
-</article>
-
-        </div>
-        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-<script type="text/javascript">
-    hljs.configure({languages: []});
-    hljs.initHighlightingOnLoad();
-</script>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-      (function () {
-            
-            
-            
-            if (location.hostname === "localhost" || 
-            	location.hostname === "127.0.0.1" || 
-            	location.hostname === "") {
-                return;
-			}
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            var disqus_shortname = 'bestsamina';
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
-                  dsq);
-      })();
-</script>
-
-<noscript>
-	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p>@Samina Fu</p>
     </div>
-    
-
-
-    </body>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+  <script type="text/javascript">
+    document.querySelector('.mobile-header').addEventListener('click', function () {
+      var om = document.querySelector(".overlay-menu");
+      if (document.querySelector('.hamburger').classList.contains("cross")) {
+        document.querySelector('.hamburger').classList.remove("cross");
+        om.style.display = "none";
+        om.style.width = "0%";
+        om.style.height = "0%";
+      }
+      else {
+        document.querySelector('.hamburger').classList.add("cross");
+        om.style.width = "100%";
+        om.style.height = "80vh";
+        om.style.display = "block";
+      }
+    });
+  </script>
+</body>
 </html>

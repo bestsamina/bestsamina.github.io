@@ -1,374 +1,382 @@
 <!DOCTYPE html>
-<html lang="en-us">
-    <head>
-    <link href="http://gmpg.org/xfn/11" rel="profile">
-    <script data-ad-client="ca-pub-6396786781922729" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77171360-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<html lang='en'><head>
+  <title>IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing - Samina Website</title>
+  <link rel='canonical' href='https://bestsamina.github.io/posts/2018-10-19-ipvs-based-kube-proxy-4-scaled-k8s-lb/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#D250F4' />
+  
 
-      gtag('config', 'UA-77171360-2');
-    </script>
-    
-    <script type="text/javascript">
-      var _paq = window._paq || [];
-       
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="https://github.matomo.cloud/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '1']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-      })();
-    </script>
-    
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
-<meta name="google-site-verification" content="86pjrD_mrnBLozy63MgmlPcYTh6-MHixr_RZhm2Wji0" />
-<!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.54.0" />
-    
-    
-    <title>IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing • Life &amp; Technological Journey of Samina</title>
-<meta name="description" content="Life &amp; Technological Journey of Samina - Hello and welcome to my blog. My name is Samina Fu. This blog is about technology and the record of my life. Hope the logs can help you and me someday.">
-<meta name="keywords" content="blog,python,golang,javascript,container,opencord,cord,sdn,network">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing"/>
-<meta name="twitter:description" content="這篇為 10月19日 talk 的文字版， slides 是 https://speakerdeck.com/sufuf3/ipvs-based-kube-proxy-for-scaled-kubernetes-load-balancing 。
- 內容脈絡
- Preface (前言) Introduction (介紹) Kube-Proxy  What is Kube-proxy (什麼是 Kube-proxy) Kube-Proxy mode  IPVS  LVS What is IPVS (什麼是 IPVS) IPVS with Netfilter (IPVS 和 Netfilter) IPVS vs iptables (IPVS 與 iptables 的比較)  IPVS-based Kube-proxy  Why using IPVS? (為什麼要用 IPVS) How IPVS-based Kube-proxy work? (IPVS-based Kube-proxy 是怎麼運作的) Run Kube-proxy in IPVS mode (來執行 IPVS mode 的 Kube-proxy) IPVS Service Network Topology Example  Implement IPVS-based K8s service load balancing (實現 IPVS-based K8s service load balancing) Conclusion (結論)  Preface (前言) 在一般使用 Kubernetes 的 kube-proxy 情況下，通常都使用 iptables 模式。"/>
+  <meta name="generator" content="Hugo 0.97.3" />
 
-<meta property="og:title" content="IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing" />
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://bestsamina.github.io/sass/style.min.eabe1aa4bd266a15f7b39b122bd6a5cc75cb067e5373631ac21d7815d6240d6f.css" integrity="sha256-6r4apL0mahX3s5sSK9alzHXLBn5Tc2Mawh14FdYkDW8=" media="screen">
+<link rel="stylesheet" href="https://bestsamina.github.io/syntax.min.css" integrity="" media="screen">
+
+  <meta property="og:title" content="IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing" />
 <meta property="og:description" content="這篇為 10月19日 talk 的文字版， slides 是 https://speakerdeck.com/sufuf3/ipvs-based-kube-proxy-for-scaled-kubernetes-load-balancing 。
  內容脈絡
- Preface (前言) Introduction (介紹) Kube-Proxy  What is Kube-proxy (什麼是 Kube-proxy) Kube-Proxy mode  IPVS  LVS What is IPVS (什麼是 IPVS) IPVS with Netfilter (IPVS 和 Netfilter) IPVS vs iptables (IPVS 與 iptables 的比較)  IPVS-based Kube-proxy  Why using IPVS? (為什麼要用 IPVS) How IPVS-based Kube-proxy work? (IPVS-based Kube-proxy 是怎麼運作的) Run Kube-proxy in IPVS mode (來執行 IPVS mode 的 Kube-proxy) IPVS Service Network Topology Example  Implement IPVS-based K8s service load balancing (實現 IPVS-based K8s service load balancing) Conclusion (結論)  Preface (前言) 在一般使用 Kubernetes 的 kube-proxy 情況下，通常都使用 iptables 模式。" />
+ Preface (前言) Introduction (介紹) Kube-Proxy  What is Kube-proxy (什麼是 Kube-proxy) Kube-Proxy mode   IPVS  LVS What is IPVS (什麼是 IPVS) IPVS with Netfilter (IPVS 和 Netfilter) IPVS vs iptables (IPVS 與 iptables 的比較)   IPVS-based Kube-proxy  Why using IPVS? (為什麼要用 IPVS) How IPVS-based Kube-proxy work? (IPVS-based Kube-proxy 是怎麼運作的) Run Kube-proxy in IPVS mode (來執行 IPVS mode 的 Kube-proxy) IPVS Service Network Topology Example   Implement IPVS-based K8s service load balancing (實現 IPVS-based K8s service load balancing) Conclusion (結論)  Preface (前言) 在一般使用 Kubernetes 的 kube-proxy 情況下，通常都使用 iptables 模式。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bestsamina.github.io/posts/2018-10-19-ipvs-based-kube-proxy-4-scaled-k8s-lb/" />
-<meta property="article:published_time" content="2018-10-15T12:05:37&#43;08:00"/>
-<meta property="article:modified_time" content="2018-10-15T12:05:37&#43;08:00"/>
+<meta property="og:url" content="https://bestsamina.github.io/posts/2018-10-19-ipvs-based-kube-proxy-4-scaled-k8s-lb/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-10-15T12:05:37+08:00" />
+<meta property="article:modified_time" content="2018-10-15T12:05:37+08:00" />
 
 
-    <!-- Font-Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
-    <!-- highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <link rel="stylesheet" href="https://bestsamina.github.io//css/print.min.css" media="print">
-    <link rel="stylesheet" href="https://bestsamina.github.io//css/hyde-hyde.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png"></head>
+  <meta itemprop="name" content="IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing">
+<meta itemprop="description" content="這篇為 10月19日 talk 的文字版， slides 是 https://speakerdeck.com/sufuf3/ipvs-based-kube-proxy-for-scaled-kubernetes-load-balancing 。
+ 內容脈絡
+ Preface (前言) Introduction (介紹) Kube-Proxy  What is Kube-proxy (什麼是 Kube-proxy) Kube-Proxy mode   IPVS  LVS What is IPVS (什麼是 IPVS) IPVS with Netfilter (IPVS 和 Netfilter) IPVS vs iptables (IPVS 與 iptables 的比較)   IPVS-based Kube-proxy  Why using IPVS? (為什麼要用 IPVS) How IPVS-based Kube-proxy work? (IPVS-based Kube-proxy 是怎麼運作的) Run Kube-proxy in IPVS mode (來執行 IPVS mode 的 Kube-proxy) IPVS Service Network Topology Example   Implement IPVS-based K8s service load balancing (實現 IPVS-based K8s service load balancing) Conclusion (結論)  Preface (前言) 在一般使用 Kubernetes 的 kube-proxy 情況下，通常都使用 iptables 模式。"><meta itemprop="datePublished" content="2018-10-15T12:05:37+08:00" />
+<meta itemprop="dateModified" content="2018-10-15T12:05:37+08:00" />
+<meta itemprop="wordCount" content="1227">
+<meta itemprop="keywords" content="Kubernetes,K8s,container,kube-proxy,IPVS,Cloud-Native," />
+</head>
+<body>
 
-    <body>
-        
-<div class="sidebar text-center">
-  <div class="container ">
-    <div class="sidebar-about">
-      <div class="site__title">
-        <a href="https://bestsamina.github.io/">Life &amp; Technological Journey of Samina</a>
-      </div>
-      
-      
-      
-      <p>
-        <img src="https://bestsamina.github.io/images/sufuf3_1519028337_878.jpg" alt="Author Image" class="img--circle img--headshot element--center"> 
-      </p>
-      
-      <p class="site__description">
-         This blog is about technology and the record of my life. Hope the logs can help you and me someday. 
-      </p>
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://bestsamina.github.io/images/default-sidebar.jpg&#39;)">
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
+      </a>
     </div>
-    <div>
-	<ul class="sidebar-nav">
-		
-				<li>
-					<a href="/posts/">
-						<span>Posts</span>
-					</a>
-				</li>
-				<li>
-					<a href="/series/">
-						<span>Series</span>
-					</a>
-				</li>
-				<li>
-					<a href="/tags/">
-						<span>Tags</span>
-					</a>
-				</li>
-				<li>
-					<a href="/categories/">
-						<span>Categories</span>
-					</a>
-				</li>
-				<li>
-					<a href="/page/awesome-blogs">
-						<span>Awesome-Blogs</span>
-					</a>
-				</li>
-				<li>
-					<a href="/about/">
-						<span>About</span>
-					</a>
-				</li>
-		</li>
-	</ul>
-</div>
-
-    <p>
-      <section class="social text-center">
-	<a href="https://twitter.com/sufuf3149"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
-	
-	&nbsp;<a href="https://github.com/sufuf3"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	&nbsp;<a href="https://gitlab.com/sufuf3"><i class="fab fa-gitlab fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="https://medium.com/@sufuf3149"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	&nbsp;<a href="https://ko-fi.com/sufuf3149"><i class="fas fa-coffee fa-lg" aria-hidden="true"></i></a>
-</section>
-
-    </p>
-    <p class="copyright">
-      &copy; 2021 Samina Fu.
-      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
-      <br/>Built with
-      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+    <h2>Hi, I'm Samina 👋</h2>
+    <h3>This is my Life & Technological Journey</h3>
+    <div class="menu">
       
-    </p>
+
+        <p>
+            <a href="/posts/">
+                Post
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+        <p>
+            <a href="/tags/">
+                Tags
+            </a>
+        </p>
+
+        <p>
+            <a href="/categories/">
+                Categories
+            </a>
+        </p>
+
+        <p>
+            <a href="/page/awesome-blogs/">
+                Awesome-blogs
+            </a>
+        </p>
+
+      
+    </div>
   </div>
-  <div>
+
+  <div class="socials">
+      
+  
+    <a href="https://github.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM71.182 98.494c-2.156.385-2.952-.95-2.952-2.053 0-1.386.051-8.471.051-14.195 0-4.005-1.335-6.546-2.9-7.881C74.878 73.313 84.89 72.003 84.89 55.6c0-4.671-1.669-7.007-4.39-10.01.436-1.105 1.9-5.648-.436-11.552-3.568-1.104-11.731 4.595-11.731 4.595-3.389-.95-7.06-1.438-10.679-1.438-3.62 0-7.29.488-10.679 1.438 0 0-8.163-5.699-11.73-4.595-2.337 5.878-.899 10.422-.437 11.551-2.72 3.004-4.004 5.34-4.004 10.011 0 16.326 9.574 17.712 19.072 18.765-1.232 1.104-2.336 3.003-2.72 5.724-2.44 1.104-8.677 3.004-12.4-3.568-2.335-4.056-6.545-4.39-6.545-4.39-4.159-.05-.282 2.619-.282 2.619 2.772 1.283 4.723 6.212 4.723 6.212 2.49 7.624 14.4 5.057 14.4 5.057 0 3.568.052 9.37.052 10.422 0 1.104-.77 2.438-2.952 2.053C27.21 92.821 15.35 76.701 15.35 57.86c0-23.564 18.02-41.456 41.585-41.456s42.663 17.892 42.663 41.456c.026 18.842-11.474 34.988-28.416 40.635zM46 82.81c-.488.103-.95-.102-1.001-.436-.051-.385.282-.719.77-.822.488-.05.95.154 1.001.488.077.334-.257.668-.77.77zm-2.439-.23c0 .333-.385.615-.898.615-.565.052-.95-.23-.95-.616 0-.333.385-.616.899-.616.487-.051.95.231.95.616zm-3.516-.283c-.103.334-.616.488-1.053.334-.488-.103-.821-.488-.719-.822.103-.334.617-.488 1.053-.385.513.154.847.54.719.873zm-3.158-1.386c-.23.282-.718.23-1.104-.154-.385-.334-.487-.822-.23-1.053.23-.282.718-.23 1.103.154.334.334.462.847.231 1.053zm-2.336-2.336c-.23.154-.667 0-.95-.385-.282-.385-.282-.822 0-1.001.283-.231.72-.052.95.333.283.385.283.847 0 1.053zm-1.668-2.49c-.231.23-.616.103-.899-.154-.282-.334-.333-.719-.102-.899.23-.23.616-.102.898.154.282.334.334.72.103.899zm-1.72-1.9c-.103.231-.436.283-.719.103-.334-.154-.488-.436-.385-.667.103-.154.385-.231.719-.103.334.18.488.462.385.667z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://gitlab.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M23.76 5.544c-.693-1.991-3.512-1.991-4.228 0L6.892 44.653h29.532c-.022 0-12.663-39.11-12.663-39.11zM.426 64.34c-.582 1.79.067 3.782 1.589 4.923l55.464 41.167-50.61-65.778L.426 64.34zm35.977-19.688L57.5 110.43l21.098-65.778H36.402zm78.173 19.688l-6.444-19.688L57.5 110.43l55.464-41.167a4.475 4.475 0 0 0 1.61-4.923zM95.468 5.544c-.694-1.991-3.513-1.991-4.229 0L78.576 44.653h29.533L95.468 5.543z" />
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://medium.com/@sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M0 0v115h115V0H0zm95.542 27.235l-6.16 5.905a1.81 1.81 0 0 0-.693 1.72v43.458c-.103.667.154 1.335.693 1.72l6.032 5.904v1.31h-30.29v-1.259l6.238-6.058c.616-.616.616-.795.616-1.72V43.074L54.625 87.123h-2.336l-20.202-44.05v29.52c-.18 1.233.257 2.49 1.13 3.39l8.111 9.83v1.31H18.277v-1.31l8.111-9.83a3.93 3.93 0 0 0 1.053-3.39v-34.14a2.93 2.93 0 0 0-.976-2.516l-7.213-8.702v-1.309h22.41l17.301 37.991 15.222-37.965h21.357v1.283z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://twitter.com/sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM90.126 40.763c.051.72.051 1.464.051 2.182 0 22.256-16.942 47.9-47.9 47.9-9.548 0-18.404-2.772-25.848-7.547 1.36.154 2.67.205 4.055.205 7.881 0 15.12-2.67 20.895-7.187-7.392-.154-13.604-5.006-15.735-11.68 2.593.385 4.929.385 7.598-.308a16.837 16.837 0 0 1-13.476-16.531v-.205a16.824 16.824 0 0 0 7.598 2.13 16.8 16.8 0 0 1-7.496-14.016c0-3.131.822-6.006 2.285-8.496a47.803 47.803 0 0 0 34.705 17.61c-2.387-11.424 6.161-20.69 16.429-20.69 4.851 0 9.215 2.027 12.296 5.313a32.99 32.99 0 0 0 10.678-4.056 16.792 16.792 0 0 1-7.393 9.267c3.389-.36 6.674-1.31 9.703-2.618a35.437 35.437 0 0 1-8.445 8.727z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  </div>
+</header>
+
+<div class="mobile-header">
+  <p> Samina Website </p>
+  <div class="hamburger">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
   </div>
 </div>
-<div class="content container">
-            <article>
+
+<div class="overlay-menu">
   <header>
-    <h1>IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing</h1>
-     
-    
-<div class="post__meta">
-    
-    <i class="fas fa-calendar-alt"></i> Oct 15, 2018
-    in
-              
-              
-              <a class="post__category" href="/categories/cloud-native">A CLOUD-NATIVE</a>
-              
-              
-    
-      
-      
-          <br/>
-           <i class="fas fa-tags"></i>
-          
-          <a class="post__tag" href="/tags/kubernetes">#kubernetes</a>
-           
-      
-          <a class="post__tag" href="/tags/k8s">#k8s</a>
-           
-      
-          <a class="post__tag" href="/tags/container">#container</a>
-           
-      
-          <a class="post__tag" href="/tags/kube-proxy">#kube-proxy</a>
-           
-      
-          <a class="post__tag" href="/tags/ipvs">#ipvs</a>
-           
-      
-          <a class="post__tag" href="/tags/cloud-native">#cloud-native</a>
-          
-      
-    
-    
-    <br/>
-    <i class="fas fa-clock"></i> 6 min read
+    <div class="intro">
+      <div class="logo-container">
+        <a href="/">
+          <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
+        </a>
+      </div>
+      <h2>Hi, I'm Samina 👋</h2>
+      <h3>This is my Life & Technological Journey</h3>
+      <div class="menu">
+        
+
+        <p>
+            <a href="/posts/">
+                Post
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+        <p>
+            <a href="/tags/">
+                Tags
+            </a>
+        </p>
+
+        <p>
+            <a href="/categories/">
+                Categories
+            </a>
+        </p>
+
+        <p>
+            <a href="/page/awesome-blogs/">
+                Awesome-blogs
+            </a>
+        </p>
+
+        
+      </div>
+    </div>
+
+    <div class="socials">
+        
+  
+    <a href="https://github.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM71.182 98.494c-2.156.385-2.952-.95-2.952-2.053 0-1.386.051-8.471.051-14.195 0-4.005-1.335-6.546-2.9-7.881C74.878 73.313 84.89 72.003 84.89 55.6c0-4.671-1.669-7.007-4.39-10.01.436-1.105 1.9-5.648-.436-11.552-3.568-1.104-11.731 4.595-11.731 4.595-3.389-.95-7.06-1.438-10.679-1.438-3.62 0-7.29.488-10.679 1.438 0 0-8.163-5.699-11.73-4.595-2.337 5.878-.899 10.422-.437 11.551-2.72 3.004-4.004 5.34-4.004 10.011 0 16.326 9.574 17.712 19.072 18.765-1.232 1.104-2.336 3.003-2.72 5.724-2.44 1.104-8.677 3.004-12.4-3.568-2.335-4.056-6.545-4.39-6.545-4.39-4.159-.05-.282 2.619-.282 2.619 2.772 1.283 4.723 6.212 4.723 6.212 2.49 7.624 14.4 5.057 14.4 5.057 0 3.568.052 9.37.052 10.422 0 1.104-.77 2.438-2.952 2.053C27.21 92.821 15.35 76.701 15.35 57.86c0-23.564 18.02-41.456 41.585-41.456s42.663 17.892 42.663 41.456c.026 18.842-11.474 34.988-28.416 40.635zM46 82.81c-.488.103-.95-.102-1.001-.436-.051-.385.282-.719.77-.822.488-.05.95.154 1.001.488.077.334-.257.668-.77.77zm-2.439-.23c0 .333-.385.615-.898.615-.565.052-.95-.23-.95-.616 0-.333.385-.616.899-.616.487-.051.95.231.95.616zm-3.516-.283c-.103.334-.616.488-1.053.334-.488-.103-.821-.488-.719-.822.103-.334.617-.488 1.053-.385.513.154.847.54.719.873zm-3.158-1.386c-.23.282-.718.23-1.104-.154-.385-.334-.487-.822-.23-1.053.23-.282.718-.23 1.103.154.334.334.462.847.231 1.053zm-2.336-2.336c-.23.154-.667 0-.95-.385-.282-.385-.282-.822 0-1.001.283-.231.72-.052.95.333.283.385.283.847 0 1.053zm-1.668-2.49c-.231.23-.616.103-.899-.154-.282-.334-.333-.719-.102-.899.23-.23.616-.102.898.154.282.334.334.72.103.899zm-1.72-1.9c-.103.231-.436.283-.719.103-.334-.154-.488-.436-.385-.667.103-.154.385-.231.719-.103.334.18.488.462.385.667z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://gitlab.com/sufuf3" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M23.76 5.544c-.693-1.991-3.512-1.991-4.228 0L6.892 44.653h29.532c-.022 0-12.663-39.11-12.663-39.11zM.426 64.34c-.582 1.79.067 3.782 1.589 4.923l55.464 41.167-50.61-65.778L.426 64.34zm35.977-19.688L57.5 110.43l21.098-65.778H36.402zm78.173 19.688l-6.444-19.688L57.5 110.43l55.464-41.167a4.475 4.475 0 0 0 1.61-4.923zM95.468 5.544c-.694-1.991-3.513-1.991-4.229 0L78.576 44.653h29.533L95.468 5.543z" />
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://medium.com/@sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M0 0v115h115V0H0zm95.542 27.235l-6.16 5.905a1.81 1.81 0 0 0-.693 1.72v43.458c-.103.667.154 1.335.693 1.72l6.032 5.904v1.31h-30.29v-1.259l6.238-6.058c.616-.616.616-.795.616-1.72V43.074L54.625 87.123h-2.336l-20.202-44.05v29.52c-.18 1.233.257 2.49 1.13 3.39l8.111 9.83v1.31H18.277v-1.31l8.111-9.83a3.93 3.93 0 0 0 1.053-3.39v-34.14a2.93 2.93 0 0 0-.976-2.516l-7.213-8.702v-1.309h22.41l17.301 37.991 15.222-37.965h21.357v1.283z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+  
+    <a href="https://twitter.com/sufuf3149" class="social-link" target="_blank" rel="noopener" ><div class="icon">
+  <svg width="35px" height="35px" viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+  
+  <path d="M102.679 0H12.32C5.52 0 0 5.519 0 12.321v90.358C0 109.48 5.519 115 12.321 115h90.358c6.802 0 12.321-5.519 12.321-12.321V12.32C115 5.52 109.481 0 102.679 0zM90.126 40.763c.051.72.051 1.464.051 2.182 0 22.256-16.942 47.9-47.9 47.9-9.548 0-18.404-2.772-25.848-7.547 1.36.154 2.67.205 4.055.205 7.881 0 15.12-2.67 20.895-7.187-7.392-.154-13.604-5.006-15.735-11.68 2.593.385 4.929.385 7.598-.308a16.837 16.837 0 0 1-13.476-16.531v-.205a16.824 16.824 0 0 0 7.598 2.13 16.8 16.8 0 0 1-7.496-14.016c0-3.131.822-6.006 2.285-8.496a47.803 47.803 0 0 0 34.705 17.61c-2.387-11.424 6.161-20.69 16.429-20.69 4.851 0 9.215 2.027 12.296 5.313a32.99 32.99 0 0 0 10.678-4.056 16.792 16.792 0 0 1-7.393 9.267c3.389-.36 6.674-1.31 9.703-2.618a35.437 35.437 0 0 1-8.445 8.727z"/>
+  
+  </svg>
+</div>
+</a>
+  
+
+    </div>
+  </header>
 </div>
 
-
-  </header>
-<aside>
-  <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#preface-前言">Preface (前言)</a></li>
-<li><a href="#introduction-介紹">Introduction (介紹)</a></li>
-<li><a href="#kube-proxy">Kube-Proxy</a>
-<ul>
-<li><a href="#what-is-kube-proxy-什麼是-kube-proxy">What is Kube-proxy (什麼是 Kube-proxy)</a></li>
-<li><a href="#kube-proxy-mode">Kube-Proxy mode</a></li>
-</ul></li>
-<li><a href="#ipvs">IPVS</a>
-<ul>
-<li><a href="#lvs">LVS</a></li>
-<li><a href="#what-is-ipvs-什麼是-ipvs">What is IPVS (什麼是 IPVS)</a></li>
-<li><a href="#ipvs-with-netfilter-ipvs-和-netfilter">IPVS with Netfilter (IPVS 和 Netfilter)</a></li>
-<li><a href="#ipvs-vs-iptables-ipvs-與-iptables-的比較">IPVS vs iptables (IPVS 與 iptables 的比較)</a></li>
-</ul></li>
-<li><a href="#ipvs-based-kube-proxy">IPVS-based Kube-proxy</a>
-<ul>
-<li><a href="#why-using-ipvs-為什麼要用-ipvs">Why using IPVS? (為什麼要用 IPVS)</a></li>
-<li><a href="#how-ipvs-based-kube-proxy-work-ipvs-based-kube-proxy-是怎麼運作的">How IPVS-based Kube-proxy work? (IPVS-based Kube-proxy 是怎麼運作的)</a></li>
-<li><a href="#run-kube-proxy-in-ipvs-mode-來執行-ipvs-mode-的-kube-proxy">Run Kube-proxy in IPVS mode (來執行 IPVS mode 的 Kube-proxy)</a></li>
-<li><a href="#ipvs-service-network-topology">IPVS Service Network Topology</a></li>
-<li><a href="#example">Example</a></li>
-</ul></li>
-<li><a href="#implement-ipvs-based-k8s-service-load-balancing-實現-ipvs-based-k8s-service-load-balancing">Implement IPVS-based K8s service load balancing (實現 IPVS-based K8s service load balancing)</a></li>
-<li><a href="#conclusion-結論">Conclusion (結論)</a></li>
-<li><a href="#其他">其他</a></li>
-<li><a href="#參考">參考</a></li>
-</ul></li>
-</ul>
-</nav>
-</aside>
-  <div class="post">
+  <div class="content-wrapper">
     
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://bestsamina.github.io/">Home</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://bestsamina.github.io/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://bestsamina.github.io/posts/2018-10-19-ipvs-based-kube-proxy-4-scaled-k8s-lb/">IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>IPVS-based Kube-proxy for Scaled Kubernetes Load Balancing</h1>
 
 <blockquote>
 <p>這篇為 <a href="https://www.accupass.com/event/1810120759471826477649">10月19日 talk</a> 的文字版， slides 是 <a href="https://speakerdeck.com/sufuf3/ipvs-based-kube-proxy-for-scaled-kubernetes-load-balancing">https://speakerdeck.com/sufuf3/ipvs-based-kube-proxy-for-scaled-kubernetes-load-balancing</a> 。</p>
 </blockquote>
-
 <p>內容脈絡</p>
-
 <ul>
 <li>Preface (前言)</li>
 <li>Introduction (介紹)</li>
 <li>Kube-Proxy
-
 <ul>
 <li>What is Kube-proxy (什麼是 Kube-proxy)</li>
 <li>Kube-Proxy mode</li>
-</ul></li>
+</ul>
+</li>
 <li>IPVS
-
 <ul>
 <li>LVS</li>
 <li>What is IPVS (什麼是 IPVS)</li>
 <li>IPVS with Netfilter (IPVS 和 Netfilter)</li>
 <li>IPVS vs iptables (IPVS 與 iptables 的比較)</li>
-</ul></li>
+</ul>
+</li>
 <li>IPVS-based Kube-proxy
-
 <ul>
 <li>Why using IPVS? (為什麼要用 IPVS)</li>
 <li>How IPVS-based Kube-proxy work? (IPVS-based Kube-proxy 是怎麼運作的)</li>
 <li>Run Kube-proxy in IPVS mode (來執行 IPVS mode 的 Kube-proxy)</li>
 <li>IPVS Service Network Topology</li>
 <li>Example</li>
-</ul></li>
+</ul>
+</li>
 <li>Implement IPVS-based K8s service load balancing (實現 IPVS-based K8s service load balancing)</li>
 <li>Conclusion (結論)</li>
 </ul>
-
 <h2 id="preface-前言">Preface (前言)</h2>
-
-<p>在一般使用 Kubernetes 的 kube-proxy 情況下，通常都使用 iptables 模式。<br />
-然而在 2015/11/19 ，K8s 團隊的成員 - <a href="https://github.com/thockin">Tim Hockin</a> 提出了一個 Issue - <a href="https://github.com/kubernetes/kubernetes/issues/17470">&ldquo;Try kube-proxy via ipvs instead of iptables or userspace&rdquo;</a> 而底下也出現了一些討論。<br />
-有趣的是，大家都說 IPVS 比 iptables 好。<br />
-在去年，華為提出了使用 IPVS 優化 service 性能的場景。(<a href="https://github.com/kubernetes/kubernetes/issues/44063">ref1</a>, <a href="https://zhuanlan.zhihu.com/p/37230013">ref2</a>)<br />
+<p>在一般使用 Kubernetes 的 kube-proxy 情況下，通常都使用 iptables 模式。<br>
+然而在 2015/11/19 ，K8s 團隊的成員 - <a href="https://github.com/thockin">Tim Hockin</a> 提出了一個 Issue - <a href="https://github.com/kubernetes/kubernetes/issues/17470">&ldquo;Try kube-proxy via ipvs instead of iptables or userspace&rdquo;</a> 而底下也出現了一些討論。<br>
+有趣的是，大家都說 IPVS 比 iptables 好。<br>
+在去年，華為提出了使用 IPVS 優化 service 性能的場景。(<a href="https://github.com/kubernetes/kubernetes/issues/44063">ref1</a>, <a href="https://zhuanlan.zhihu.com/p/37230013">ref2</a>)<br>
 今年 2018/06/28 <a href="https://github.com/kubernetes/kubernetes/releases/tag/v1.11.0">K8s v1.11</a> 也新增了 IPVS-based kube-proxy 的功能。(<a href="https://kubernetes.io/blog/2018/06/27/kubernetes-1.11-release-announcement/">ref1</a>, <a href="https://kubernetes.io/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/">ref2</a>)</p>
-
 <p>也因此，本篇就來探討</p>
-
 <ol>
 <li>到底 IPVS 是什麼</li>
 <li>為什麼 kube-proxy 使用 IPVS mode 會比 iptables mode 好</li>
 <li>kube-proxy 的 IPVS 是怎麼實現的</li>
 <li>要怎麼使用 kube-proxy 的 IPVS mode 來實現 Kubernetes service 的 load balance</li>
 </ol>
-
 <h2 id="introduction-介紹">Introduction (介紹)</h2>
-
 <p>在本篇，將介紹 IPVS 與 Kube-proxy 的 IPVS mode 。並且說明 IPVS 與 iptable 的差異。以及實作。</p>
-
 <h2 id="kube-proxy">Kube-Proxy</h2>
-
 <h3 id="what-is-kube-proxy-什麼是-kube-proxy">What is Kube-proxy (什麼是 Kube-proxy)</h3>
-
-<p><a href="https://kubernetes.io/docs/concepts/architecture/cloud-controller/"><img src="https://i.imgur.com/apjNBut.png" alt="" /></a><br />
-在官網中的這張圖，會看到每一台 Minion node 都有 kube-proxy 這個元件。<br />
-所以 kube-proxy 是什麼樣的功能要長在每一台 node 上呢？<br />
+<p><a href="https://kubernetes.io/docs/concepts/architecture/cloud-controller/"><img src="https://i.imgur.com/apjNBut.png" alt=""></a><br>
+在官網中的這張圖，會看到每一台 Minion node 都有 kube-proxy 這個元件。<br>
+所以 kube-proxy 是什麼樣的功能要長在每一台 node 上呢？<br>
 要談論 kube-proxy 就不得不和 service 一起談論了。</p>
-
-<p>我們知道當 backend 的 pod 需要提供 port 給外部 access 時候，就需要 service 。<br />
-Service 是抽象的一層，主要定義一組 pod 和網路的規則讓外部可以 access 。<br />
-那 service 定義好這些網路的訪問規則，那總要有人來實現這些規則，這就要提到 kube-proxy 了。<br />
+<p>我們知道當 backend 的 pod 需要提供 port 給外部 access 時候，就需要 service 。<br>
+Service 是抽象的一層，主要定義一組 pod 和網路的規則讓外部可以 access 。<br>
+那 service 定義好這些網路的訪問規則，那總要有人來實現這些規則，這就要提到 kube-proxy 了。<br>
 因為 kube-proxy 是實現 service 這功能的關鍵。</p>
-
-<p><img src="https://d33wubrfki0l68.cloudfront.net/cc38b0f3c0fd94e66495e3a4198f2096cdecd3d5/ace10/docs/tutorials/kubernetes-basics/public/images/module_04_services.svg" alt="" /></p>
-
+<p><img src="https://d33wubrfki0l68.cloudfront.net/cc38b0f3c0fd94e66495e3a4198f2096cdecd3d5/ace10/docs/tutorials/kubernetes-basics/public/images/module_04_services.svg" alt=""></p>
 <p>kube-proxy 介紹：</p>
-
 <ul>
 <li>管理 host 上的網路規則來確保 k8s 的 service 定義的規則</li>
 <li>執行連線的 forwarding</li>
 <li>在每一台 node 上都有 kube-proxy</li>
 <li>proxies UDP, TCP and SCTP</li>
 <li>提供 load balancing</li>
-<li>專門實現 service
-<br /></li>
+<li>專門實現 service</li>
 </ul>
-
 <p>那要怎麼達到管理 host 上的網路規則，這就要來看他有提供哪些 mode。</p>
-
 <h3 id="kube-proxy-mode">Kube-Proxy mode</h3>
-
 <p>有<a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/">三種</a>：</p>
-
 <ul>
-<li><p><a href="https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/userspace">userspace (older)</a>:
-從圖片中我們可以看到，當外部 Client 請求 service IP 後，會比對 iptales 的 rule 然後將封包轉送到 kube-Proxy 這個 app pod ，再由 kube-proxy 處理封包的轉送到後端的 pod。<br />
-<img src="https://d33wubrfki0l68.cloudfront.net/b8e1022c2dd815d8dd36b1bc4f0cc3ad870a924f/1dd12/images/docs/services-userspace-overview.svg" alt="" /></p></li>
-
-<li><p><a href="https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/iptables">iptables (faster)</a>:
-iptables 就比 userspace 好一些，因為 client 請求 service IP 後，就交給 iptables 處理封包的轉送。而下 iptables rule 就是當 api-server 拿到 service 的 yaml 檔後，api-server 會給 kube-proxy 來處理，而 kube-proxy 就來下 iptables 的 rule 囉！<br />
-<img src="https://d33wubrfki0l68.cloudfront.net/837afa5715eb31fb9ca6516ec6863e810f437264/42951/images/docs/services-iptables-overview.svg" alt="" /></p></li>
-
-<li><p><a href="https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/ipvs">ipvs (experimental)</a>:
-和 iptables mode 方式雷同，但是是使用 kernel space 的 IPVS 方法處理要轉送的封包，不受限於 iptables 的規則。<br />
-<img src="https://d33wubrfki0l68.cloudfront.net/3ece58e40119539d5e999fe137e79b5015c24275/77563/images/docs/services-ipvs-overview.svg" alt="" /></p></li>
+<li>
+<p><a href="https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/userspace">userspace (older)</a>:
+從圖片中我們可以看到，當外部 Client 請求 service IP 後，會比對 iptales 的 rule 然後將封包轉送到 kube-Proxy 這個 app pod ，再由 kube-proxy 處理封包的轉送到後端的 pod。<br>
+<img src="https://d33wubrfki0l68.cloudfront.net/b8e1022c2dd815d8dd36b1bc4f0cc3ad870a924f/1dd12/images/docs/services-userspace-overview.svg" alt=""></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/iptables">iptables (faster)</a>:
+iptables 就比 userspace 好一些，因為 client 請求 service IP 後，就交給 iptables 處理封包的轉送。而下 iptables rule 就是當 api-server 拿到 service 的 yaml 檔後，api-server 會給 kube-proxy 來處理，而 kube-proxy 就來下 iptables 的 rule 囉！<br>
+<img src="https://d33wubrfki0l68.cloudfront.net/837afa5715eb31fb9ca6516ec6863e810f437264/42951/images/docs/services-iptables-overview.svg" alt=""></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/ipvs">ipvs (experimental)</a>:
+和 iptables mode 方式雷同，但是是使用 kernel space 的 IPVS 方法處理要轉送的封包，不受限於 iptables 的規則。<br>
+<img src="https://d33wubrfki0l68.cloudfront.net/3ece58e40119539d5e999fe137e79b5015c24275/77563/images/docs/services-ipvs-overview.svg" alt=""></p>
+</li>
 </ul>
-
 <h2 id="ipvs">IPVS</h2>
-
 <p>在講 IPVS 之前，我們不得不提到 LVS。</p>
-
 <h3 id="lvs">LVS</h3>
-
-<p>LVS 全名是 <code>Linux Virtual Server</code>。它是在 cloud 上或是真實 server 上的高可擴展與高可用的 server。通常會伴隨 load balancer 一起在 Linux OS 上運行。<br />
-最有名的就是這張圖片拉！<br />
-<img src="https://i.imgur.com/9vLMHjv.png" alt="" /><br />
+<p>LVS 全名是 <code>Linux Virtual Server</code>。它是在 cloud 上或是真實 server 上的高可擴展與高可用的 server。通常會伴隨 load balancer 一起在 Linux OS 上運行。<br>
+最有名的就是這張圖片拉！<br>
+<img src="https://i.imgur.com/9vLMHjv.png" alt=""><br>
 對外面的 user 來說，他 access 的是個機器，但對集群來說 user access 到的其實是虛擬的 server，而虛擬的 server 是由一群在同個 LAN 或是 WAN 中的真實的 server 和 Load Balancer 所組成的。</p>
-
-<p>那 Virtual Server 總是要有個 IP 給外面的 user 知道吧！所以<a href="http://www.linuxvirtualserver.org/HighAvailability.html">官方網站</a>也提供下面這張圖，由圖所知，就是會有個 Virtual IP 拉！<br />
-<img src="https://i.imgur.com/EU0gAUv.png" alt="" /></p>
-
-<p>那 LVS 和 IPVS 的關係又是什麼呢？<br />
-這要來看看 <a href="http://www.linuxvirtualserver.org/about.html">LVS 的框架</a>了。<br />
-<img src="https://i.imgur.com/lE6iI9F.png" alt="" /><br />
+<p>那 Virtual Server 總是要有個 IP 給外面的 user 知道吧！所以<a href="http://www.linuxvirtualserver.org/HighAvailability.html">官方網站</a>也提供下面這張圖，由圖所知，就是會有個 Virtual IP 拉！<br>
+<img src="https://i.imgur.com/EU0gAUv.png" alt=""></p>
+<p>那 LVS 和 IPVS 的關係又是什麼呢？<br>
+這要來看看 <a href="http://www.linuxvirtualserver.org/about.html">LVS 的框架</a>了。<br>
+<img src="https://i.imgur.com/lE6iI9F.png" alt=""><br>
 由圖中所知，IPVS 是在 LVS 框架中最底層的位置。也就是說 LVS 是 base on IPVS 來實現的拉！那我們就要來看看 IPVS 了。</p>
-
 <h3 id="what-is-ipvs-什麼是-ipvs">What is IPVS (什麼是 IPVS)</h3>
-
 <ul>
 <li>IPVS 全名 IP Virtual Server</li>
 <li>實現 L4 的 load balancing</li>
@@ -381,14 +389,12 @@ iptables 就比 userspace 好一些，因為 client 請求 service IP 後，就�
 <li>Kernel source code: net/netfilter/ipvs</li>
 <li>ipvsadm 是管理 IPVS 的工具</li>
 </ul>
-
 <h3 id="ipvs-with-netfilter-ipvs-和-netfilter">IPVS with Netfilter (IPVS 和 Netfilter)</h3>
-
-<p>那我們知道 IPVS 是使用 Netfilter 的 module，那就來看看 IPVS 和 Netfilter 之間的關係吧！<br />
-&gt; Ref: <a href="http://www.austintek.com/LVS/LVS-HOWTO/HOWTO/LVS-HOWTO.filter_rules.html">http://www.austintek.com/LVS/LVS-HOWTO/HOWTO/LVS-HOWTO.filter_rules.html</a>, <a href="https://www.digitalocean.com/community/tutorials/a-deep-dive-into-iptables-and-netfilter-architecture">https://www.digitalocean.com/community/tutorials/a-deep-dive-into-iptables-and-netfilter-architecture</a>, <a href="http://www.178linux.com/13570">http://www.178linux.com/13570</a></p>
-
-<p><img src="https://i.imgur.com/i60QKw4.png" alt="" /></p>
-
+<p>那我們知道 IPVS 是使用 Netfilter 的 module，那就來看看 IPVS 和 Netfilter 之間的關係吧！</p>
+<blockquote>
+<p>Ref: <a href="http://www.austintek.com/LVS/LVS-HOWTO/HOWTO/LVS-HOWTO.filter_rules.html">http://www.austintek.com/LVS/LVS-HOWTO/HOWTO/LVS-HOWTO.filter_rules.html</a>, <a href="https://www.digitalocean.com/community/tutorials/a-deep-dive-into-iptables-and-netfilter-architecture">https://www.digitalocean.com/community/tutorials/a-deep-dive-into-iptables-and-netfilter-architecture</a>, <a href="http://www.178linux.com/13570">http://www.178linux.com/13570</a></p>
+</blockquote>
+<p><img src="https://i.imgur.com/i60QKw4.png" alt=""></p>
 <ol>
 <li>當 client 的請求從外部進到 Load balencer 的 kernel space 時，會先到 PREROUTING 的 chain。</li>
 <li>接著 Route 會依據進來的封包 destination address 判斷是不是本機的(通常是 VIP 存在於本機的 network interface 上)。如果是本機的封包，就將封包往 INPUT chain 送。</li>
@@ -397,33 +403,25 @@ iptables 就比 userspace 好一些，因為 client 請求 service IP 後，就�
 <li>在 LOCAL_IN Hook 如果 ip_vs_in 發現這個封包都有在 IPVS 規則中，就會 trigger INPUT chain 之後到 POSTROUTING chain 就結束。
 由上面可知，使用 IPVS 不會接觸到 iptables 的 rule。</li>
 </ol>
-
 <h3 id="ipvs-vs-iptables-ipvs-與-iptables-的比較">IPVS vs iptables (IPVS 與 iptables 的比較)</h3>
-
-<p>大致了解 IPVS ，那 IPVS 和 iptables 有什麼差別呢？<br />
-他們其實都是使用 Netfilter ，來讓封包達到轉送的機制。<br />
-但實作面卻是不一樣的。<br />
-在 INPUT chain 這邊，不論是 IPVS 或是 iptables 都會到 userspace 來進行封包解析，來看看封包要往哪邊走。<br />
-然而，就是在判斷封包要往哪邊走，這邊的方法兩者使用的方式是不一樣的。<br />
-iptables 規則設定是：n 張 table，每張 table 內有 m 個 chain ，每個 chain 中有 rule。如圖(source: <a href="https://www.thegeekstuff.com/2011/01/iptables-fundamentals/">https://www.thegeekstuff.com/2011/01/iptables-fundamentals/</a>)<br />
-<img src="https://static.thegeekstuff.com/wp-content/uploads/2011/01/iptables-table-chain-rule-structure.png" alt="" /><br />
-雖然封包不會跑過所有的 Table 和 chain。<br />
-但 rules 通常會是很多的。雖然封包只要被拆解一次，但封包在比對每個 rule 時，都要再看要用進來的這個封包用什麼欄位來和目前輪到的 rule 進行比對。<br />
-這也是為什麼我們在下 rule 的時候很重視 rule 的順序性。(所以 rule 也會因人的設定好不好，效能也會有差異)<br />
-IPVS 在判斷上面就簡單很多，他是用 hash table(雜湊表)，在時間複雜度上，通常是是 O(1)，即便遇到最差的情況(worst case)，也只是 O(n)。理論可以參考：<a href="https://zh.wikipedia.org/wiki/%E5%93%88%E5%B8%8C%E8%A1%A8">https://zh.wikipedia.org/wiki/%E5%93%88%E5%B8%8C%E8%A1%A8</a> (至於怎麼做，就要翻 source code 了)</p>
-
+<p>大致了解 IPVS ，那 IPVS 和 iptables 有什麼差別呢？<br>
+他們其實都是使用 Netfilter ，來讓封包達到轉送的機制。<br>
+但實作面卻是不一樣的。<br>
+在 INPUT chain 這邊，不論是 IPVS 或是 iptables 都會到 userspace 來進行封包解析，來看看封包要往哪邊走。<br>
+然而，就是在判斷封包要往哪邊走，這邊的方法兩者使用的方式是不一樣的。<br>
+iptables 規則設定是：n 張 table，每張 table 內有 m 個 chain ，每個 chain 中有 rule。如圖(source: <a href="https://www.thegeekstuff.com/2011/01/iptables-fundamentals/">https://www.thegeekstuff.com/2011/01/iptables-fundamentals/</a>)<br>
+<img src="https://static.thegeekstuff.com/wp-content/uploads/2011/01/iptables-table-chain-rule-structure.png" alt=""><br>
+雖然封包不會跑過所有的 Table 和 chain。<br>
+但 rules 通常會是很多的。雖然封包只要被拆解一次，但封包在比對每個 rule 時，都要再看要用進來的這個封包用什麼欄位來和目前輪到的 rule 進行比對。<br>
+這也是為什麼我們在下 rule 的時候很重視 rule 的順序性。(所以 rule 也會因人的設定好不好，效能也會有差異)<br>
+IPVS 在判斷上面就簡單很多，他是用 hash table(雜湊表)，在時間複雜度上，通常是是 O(1)，即便遇到最差的情況(worst case)，也只是 O(n)。理論可以參考：https://zh.wikipedia.org/wiki/%E5%93%88%E5%B8%8C%E8%A1%A8 (至於怎麼做，就要翻 source code 了)</p>
 <p>就上面的兩種分析封包判斷要往哪走的方法，我們也可以了解到他們在封包轉送上的效率是有差別的。</p>
-
-<p>而華為在去年的<a href="https://www.slideshare.net/LCChina/scale-kubernetes-to-support-50000-services">演講</a>中，也有提供 k8s kube-proxy 中使用 iptables 和 IPVS mode 的差異。(From 華為投影片)<br />
-<img src="https://i.imgur.com/HrW0m0z.png" alt="" />
-<img src="https://i.imgur.com/uUFNSMa.png" alt="" /></p>
-
+<p>而華為在去年的<a href="https://www.slideshare.net/LCChina/scale-kubernetes-to-support-50000-services">演講</a>中，也有提供 k8s kube-proxy 中使用 iptables 和 IPVS mode 的差異。(From 華為投影片)<br>
+<img src="https://i.imgur.com/HrW0m0z.png" alt="">
+<img src="https://i.imgur.com/uUFNSMa.png" alt=""></p>
 <h2 id="ipvs-based-kube-proxy">IPVS-based Kube-proxy</h2>
-
 <h3 id="why-using-ipvs-為什麼要用-ipvs">Why using IPVS? (為什麼要用 IPVS)</h3>
-
 <p>承接上面，我們可以得出為什麼要使用 IPVS 的結論(<a href="https://www.cncf.io/wp-content/uploads/2018/08/CNCF-Webinar_-Kubernetes-1.11-1.pdf">ref</a>)。</p>
-
 <ol>
 <li>有較佳的 performance (Hashing 和 Chain 的效率)</li>
 <li>有比較多的 load balancing 演算法(多達 8 種)</li>
@@ -431,57 +429,37 @@ IPVS 在判斷上面就簡單很多，他是用 hash table(雜湊表)，在時�
 <li>支援 sticky session</li>
 <li>iptables 操作在大規模集群中顯得比較慢</li>
 </ol>
-
 <h3 id="how-ipvs-based-kube-proxy-work-ipvs-based-kube-proxy-是怎麼運作的">How IPVS-based Kube-proxy work? (IPVS-based Kube-proxy 是怎麼運作的)</h3>
-
-<p>那是怎麼運作的呢？我們回頭再來看這張圖片<br />
-<img src="https://d33wubrfki0l68.cloudfront.net/3ece58e40119539d5e999fe137e79b5015c24275/77563/images/docs/services-ipvs-overview.svg" alt="" /><br />
-我們知道在 Virtual Server 這邊是使用 IPVS ，然後透過他管理的 virtual server table 來讓 Netfilter 把封包送到對的地方。<br />
+<p>那是怎麼運作的呢？我們回頭再來看這張圖片<br>
+<img src="https://d33wubrfki0l68.cloudfront.net/3ece58e40119539d5e999fe137e79b5015c24275/77563/images/docs/services-ipvs-overview.svg" alt=""><br>
+我們知道在 Virtual Server 這邊是使用 IPVS ，然後透過他管理的 virtual server table 來讓 Netfilter 把封包送到對的地方。<br>
 這就是他的運作原理囉！</p>
-
 <h3 id="run-kube-proxy-in-ipvs-mode-來執行-ipvs-mode-的-kube-proxy">Run Kube-proxy in IPVS mode (來執行 IPVS mode 的 Kube-proxy)</h3>
-
 <p>那在 kube-proxy 中我們要怎麼使用 IPVS mode 呢？(<a href="https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/ipvs">ref</a>)</p>
-
 <p><strong>1. 首先我們要把 IPVS 的 kernel module load 進來</strong></p>
-
-<pre><code>modprobe -- ip_vs
+<pre tabindex="0"><code>modprobe -- ip_vs
 modprobe -- ip_vs_rr
 modprobe -- ip_vs_wrr
 modprobe -- ip_vs_sh
 modprobe -- nf_conntrack_ipv4
-cut -f1 -d &quot; &quot;  /proc/modules | grep -e ip_vs -e nf_conntrack_ipv4
-</code></pre>
-
-<p><strong>2. 接著在啟動 kube-proxy 時，參數設為</strong></p>
-
-<pre><code>--proxy-mode=ipvs
-</code></pre>
-
-<p>(如果要使用其他演算法，那可以設定 <code>--ipvs-scheduler=rr</code> rr 改為其他的)</p>
-
+cut -f1 -d &#34; &#34;  /proc/modules | grep -e ip_vs -e nf_conntrack_ipv4
+</code></pre><p><strong>2. 接著在啟動 kube-proxy 時，參數設為</strong></p>
+<pre tabindex="0"><code>--proxy-mode=ipvs
+</code></pre><p>(如果要使用其他演算法，那可以設定 <code>--ipvs-scheduler=rr</code> rr 改為其他的)</p>
 <p><strong>3. 如果是在 v1.10 之前的版本， kube-proxy 要加下面的參數</strong></p>
-
-<pre><code>--feature-gates=SupportIPVSProxyMode=true
-</code></pre>
-
-<h3 id="ipvs-service-network-topology">IPVS Service Network Topology</h3>
-
+<pre tabindex="0"><code>--feature-gates=SupportIPVSProxyMode=true
+</code></pre><h3 id="ipvs-service-network-topology">IPVS Service Network Topology</h3>
 <p>當建立 ClusterIP type 的 service 時，IPVS proxier 將執行以下三項操作：</p>
-
 <ul>
 <li>確保節點中存在 dummy 接口，默認為 kube-ipvs0</li>
 <li>將 service IP 綁到 dummy 接口</li>
 <li>分別為每個 service IP 建立 IPVS virtual servers</li>
 </ul>
-
 <h3 id="example">Example</h3>
-
 <ul>
 <li>v1.10.x</li>
 </ul>
-
-<pre><code># kubectl describe svc nginx -n a-ns
+<pre tabindex="0"><code># kubectl describe svc nginx -n a-ns
 Name:              nginx
 Namespace:         a-ns
 Labels:            run=nginx
@@ -522,13 +500,10 @@ TCP  10.105.12.124:80 rr
 TCP  100.67.151.9:80 rr
   -&gt; 10.244.241.156:80            Masq    1      0          0
   -&gt; 10.244.241.158:80            Masq    1      0          0
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li>v1.11.x</li>
 </ul>
-
-<pre><code># kubectl describe svc nginx -n a-ns
+<pre tabindex="0"><code># kubectl describe svc nginx -n a-ns
 Name:              nginx
 Namespace:         a-ns
 Labels:            run=nginx
@@ -569,135 +544,64 @@ TCP  10.105.12.124:80 rr
 TCP  100.67.151.9:80 rr
   -&gt; 10.244.241.156:80            Masq    1      0          0
   -&gt; 10.244.241.158:80            Masq    1      0          0
-</code></pre>
-
-<h2 id="implement-ipvs-based-k8s-service-load-balancing-實現-ipvs-based-k8s-service-load-balancing">Implement IPVS-based K8s service load balancing (實現 IPVS-based K8s service load balancing)</h2>
-
+</code></pre><h2 id="implement-ipvs-based-k8s-service-load-balancing-實現-ipvs-based-k8s-service-load-balancing">Implement IPVS-based K8s service load balancing (實現 IPVS-based K8s service load balancing)</h2>
 <p>請參考這篇<a href="https://bestsamina.github.io/posts/2018-10-15-hands-on-k8s-kube-proxy-w-ipvs-lb/">筆記</a></p>
-
 <h2 id="conclusion-結論">Conclusion (結論)</h2>
-
-<p>回過頭來，再次複習一下，這次我們要探討的是 kube-proxy 中的 IPVS，我們知道 kube-proxy 是要處理封包針對不同的 service 做轉送，是處理網路規則的。講白話一點就是， pod 開出給外面 access 的 port 或是對應的 IP 等， repuest 進來， kube-proxy 要把這個封包送到對應的 pod，讓 pod 處理，在回應出去。<br />
-而可以做到封包轉送這件事的在 kube-proxy mode 中有三種方式可以做到。<br />
-目前普遍是 iptables。但 IPVS 也可以做到，而且效能更好。<br />
+<p>回過頭來，再次複習一下，這次我們要探討的是 kube-proxy 中的 IPVS，我們知道 kube-proxy 是要處理封包針對不同的 service 做轉送，是處理網路規則的。講白話一點就是， pod 開出給外面 access 的 port 或是對應的 IP 等， repuest 進來， kube-proxy 要把這個封包送到對應的 pod，讓 pod 處理，在回應出去。<br>
+而可以做到封包轉送這件事的在 kube-proxy mode 中有三種方式可以做到。<br>
+目前普遍是 iptables。但 IPVS 也可以做到，而且效能更好。<br>
 以下是 IPVS 與本次介紹的一些重點整理</p>
-
 <ul>
 <li>IPVS 是 LVS 中的 L4 負載均衡器</li>
 <li>IPVS提供
-
 <ul>
 <li>在 cluster 中更好的可擴展性和效能</li>
 <li>有比 iptables 更多的 load balancing 演算法</li>
 <li>server 的健康檢查和連接重試等</li>
-</ul></li>
+</ul>
+</li>
 <li>我們可以使用 kube-proxy 的 IPVS 模式</li>
 <li>了解 kube-proxy 的 IPVS mode 的運作原理</li>
 </ul>
-
 <h2 id="其他">其他</h2>
-
-<p>在搜尋 IPVS 的過程中，發現了 <a href="https://lwn.net/Articles/747551/">BPF(Berkeley Packet Filter)</a> 一個即將要取代 iptables 的工具。 cilium 這篇 blog 也指出為何要用 BPF。 而 Facebook 也發現 BPF 效能比 IPVS 好，所以換成 BPF。<br />
+<p>在搜尋 IPVS 的過程中，發現了 <a href="https://lwn.net/Articles/747551/">BPF(Berkeley Packet Filter)</a> 一個即將要取代 iptables 的工具。 cilium 這篇 blog 也指出為何要用 BPF。 而 Facebook 也發現 BPF 效能比 IPVS 好，所以換成 BPF。<br>
 有時間看來要研究一下。</p>
-
 <ul>
 <li>Blog <a href="https://cilium.io/blog/2018/04/17/why-is-the-kernel-community-replacing-iptables/">https://cilium.io/blog/2018/04/17/why-is-the-kernel-community-replacing-iptables/</a></li>
-<li>FB 簡報：<a href="https://www.netdevconf.org/2.1/slides/apr6/zhou-netdev-xdp-2017.pdf">https://www.netdevconf.org/2.1/slides/apr6/zhou-netdev-xdp-2017.pdf</a></li>
+<li>FB 簡報：https://www.netdevconf.org/2.1/slides/apr6/zhou-netdev-xdp-2017.pdf</li>
 </ul>
-
 <h2 id="參考">參考</h2>
-
 <ul>
 <li><a href="https://gigenchang.wordpress.com/2014/04/19/10%E5%88%86%E9%90%98%E5%AD%B8%E6%9C%83iptables/">https://gigenchang.wordpress.com/2014/04/19/10%E5%88%86%E9%90%98%E5%AD%B8%E6%9C%83iptables/</a></li>
 </ul>
 
+
+    </main>
   </div>
-  <div>
-    <ul class="post__nav">
-        <li class="post__nav--next">
-            <a href="/posts/2018-10-26-worklog/">                
-                <span class="next__heading">NEXT</span>
-                <span>[TIL] 製作 Ubuntu 開機隨身碟相關參考連結</span>
-            </a>
-            <i class="fas fa-chevron-right"></i>
-        </li>
-        <li class="post__nav--previous">
-            <i class="fas fa-chevron-left"></i>
-            <a href="/posts/2018-10-15-hands-on-k8s-kube-proxy-w-ipvs-lb/">                
-                <span class="previous__heading">PREVIOUS</span>
-                <span class="previous__title">實現 IPVS-based K8s service load balancing - 不同 namespace 擁有自己的 external IP</span>
-            </a>
-        </li>
-    </ul>
-</div>
-
-  <div class="post__related">
-    
-    
-    
-    <h2>Related Articles</h2>
-    <ul class="related-posts">
-        
-<li>
-  <span class="list__title--small">
-    <a href="/posts/2018-10-15-hands-on-k8s-kube-proxy-w-ipvs-lb/">實現 IPVS-based K8s service load balancing - 不同 namespace 擁有自己的 external IP</a>
-      
-      <time class="pull-right hidden-tablet">Oct 15 &#39;18</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/2018/03/09/kubernetes-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">[Kubernetes] 學習筆記</a>
-      
-      <time class="pull-right hidden-tablet">Mar 09 &#39;18</time>
-      
-  </span>
-</li>
-
-    </ul>
-    
-</div>
-</article>
-
-        </div>
-        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-<script type="text/javascript">
-    hljs.configure({languages: []});
-    hljs.initHighlightingOnLoad();
-</script>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-      (function () {
-            
-            
-            
-            if (location.hostname === "localhost" || 
-            	location.hostname === "127.0.0.1" || 
-            	location.hostname === "") {
-                return;
-			}
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            var disqus_shortname = 'bestsamina';
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
-                  dsq);
-      })();
-</script>
-
-<noscript>
-	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p>@Samina Fu</p>
     </div>
-    
-
-
-    </body>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+  <script type="text/javascript">
+    document.querySelector('.mobile-header').addEventListener('click', function () {
+      var om = document.querySelector(".overlay-menu");
+      if (document.querySelector('.hamburger').classList.contains("cross")) {
+        document.querySelector('.hamburger').classList.remove("cross");
+        om.style.display = "none";
+        om.style.width = "0%";
+        om.style.height = "0%";
+      }
+      else {
+        document.querySelector('.hamburger').classList.add("cross");
+        om.style.width = "100%";
+        om.style.height = "80vh";
+        om.style.display = "block";
+      }
+    });
+  </script>
+</body>
 </html>
