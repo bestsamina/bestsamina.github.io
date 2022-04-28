@@ -285,10 +285,28 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
     <main id="content" class="posts">
 
 <h1>邊緣運算之容器管理工具 - K3s 之介紹與玩耍</h1>
+
+
 <span>
     Thursday, October 10, 2019
 </span>
 <br><br>
+
+<ul id="tags">
+  
+    <li> <a href="https://bestsamina.github.io/tagskubernetes">Kubernetes</a> </li>
+  
+    <li> <a href="https://bestsamina.github.io/tagsk8s">K8s</a> </li>
+  
+    <li> <a href="https://bestsamina.github.io/tagsk3s">K3s</a> </li>
+  
+    <li> <a href="https://bestsamina.github.io/tagscloud-native">cloud-native</a> </li>
+  
+    <li> <a href="https://bestsamina.github.io/tagscontainer">container</a> </li>
+  
+</ul>
+
+
 <span>
   <nav id="TableOfContents">
   <ul>
@@ -314,6 +332,7 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
   </ul>
 </nav>
 </span>
+
 <h2 id="前言">前言</h2>
 <p>Kubernetes 是雲原生技術 (cloud-native technologies)，也是雲原生計算 (Cloud Native Computing) 重要的技術之一，而且在使用 Kubernetes 時，應用的硬體資源通常也比較好。然而， 容器 (Container) 技術的崛起，也帶動了邊緣運算 (Edge computing) 導入 Container 技術的風潮。</p>
 <p>邊緣運算顧名思義就是將應用程式等服務運算，由網路中心節點，移往網路邏輯上的邊緣節點來處理。也就是從網路中心節點處理大型服務來分解，切割成更小、更容易管理的部份，分散到邊緣節點去處理。可以想像，如果網路中心節點的角色如同總經理，邊緣節點的角色如同部門經理，而終端裝置的角色如同基層員工。在這架構下，想當然耳就是個分散式架構，而邊緣節點因為更接近於終端裝置，因此可以加快資料的處理與傳送速度，減少延遲。如同基層員工直經回報部門經理，而重要的資訊，部門經理再回報給總經理一樣。也因此在邊緣運算的應用中一直都有重要的應用場景在，例如大家常聽到的 IoT。</p>
