@@ -1,24 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Operator Sdk on Life &amp; Technological Journey of Samina</title>
+    <title>operator-sdk on Samina Website</title>
     <link>https://bestsamina.github.io/tags/operator-sdk/</link>
-    <description>Recent content in Operator Sdk on Life &amp; Technological Journey of Samina</description>
+    <description>Recent content in operator-sdk on Samina Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Samina Fu</copyright>
-    <lastBuildDate>Mon, 04 Feb 2019 14:33:14 +0800</lastBuildDate>
-    
-	<atom:link href="https://bestsamina.github.io/tags/operator-sdk/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>@Samina Fu</copyright>
+    <lastBuildDate>Mon, 04 Feb 2019 14:33:14 +0800</lastBuildDate><atom:link href="https://bestsamina.github.io/tags/operator-sdk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一次玩 operator-sdk 就上手</title>
       <link>https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/</link>
       <pubDate>Mon, 04 Feb 2019 14:33:14 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/posts/2019-02-04-first-operator-sdk-helm/</guid>
-      <description>文章脈絡  前言 Operator Framework 是什麼 認識 operator-sdk CLI 實作開始  建立 K8s 環境 安裝 operator-sdk CLI 用 operator-sdk CLI 建立一個 operator 了解一下新產生的 helm operator 中的檔案 編輯檔案 先在 K8s 中 deploy CRD Build operator container 在 K8s 中部署 operator 在 K8s 中部署自己定義的 custom resource  結語  前言 在接觸 Kubernetes 一陣子後，會發現一堆 operators 。
+      <description>文章脈絡  前言 Operator Framework 是什麼 認識 operator-sdk CLI 實作開始  建立 K8s 環境 安裝 operator-sdk CLI 用 operator-sdk CLI 建立一個 operator 了解一下新產生的 helm operator 中的檔案 編輯檔案 先在 K8s 中 deploy CRD Build operator container 在 K8s 中部署 operator 在 K8s 中部署自己定義的 custom resource   結語  前言 在接觸 Kubernetes 一陣子後，會發現一堆 operators 。
 而很殘念der，自己到目前都還沒有真正好好的玩過。
 雖然在 operator-sdk 出現以前，有很多人都自己手刻 operator，不過既然 operator 目前都有個 Framework 了，當然就來玩它囉！
 Operator Framework 是什麼  是一個 open source toolkit 管理 Kubernetes native applications, called operators, in an effective, automated, and scalable way 這個 Framework 有兩個主要的專案：  Operator SDK: 就可以用它 build operator。 Operator Lifecycle Manager (OLM): 可以管理 operators 和 CRUD Kubernetes resource 用&amp;hellip;。(可以到這邊玩玩：https://www.</description>

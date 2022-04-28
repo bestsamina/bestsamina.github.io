@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Til on Life &amp; Technological Journey of Samina</title>
+    <title>TIL on Samina Website</title>
     <link>https://bestsamina.github.io/tags/til/</link>
-    <description>Recent content in Til on Life &amp; Technological Journey of Samina</description>
+    <description>Recent content in TIL on Samina Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Samina Fu</copyright>
-    <lastBuildDate>Sat, 23 Mar 2019 14:33:14 +0800</lastBuildDate>
-    
-	<atom:link href="https://bestsamina.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>@Samina Fu</copyright>
+    <lastBuildDate>Sat, 23 Mar 2019 14:33:14 +0800</lastBuildDate><atom:link href="https://bestsamina.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[TIL] 在 Ubuntu 16.04 改變網卡速度</title>
       <link>https://bestsamina.github.io/posts/2019-03-23-til-change-speed/</link>
@@ -21,8 +17,7 @@
       <description>網卡限速設定參考：https://www.shellhacks.com/change-speed-duplex-ethernet-card-linux/
 不過不曉得為何在 Ubuntu 16.04 中 ethtool 的指令不能 work。
 以下是記錄可以 work 的方法。
- 原本的 Network Interface 狀態
-  ens11f0 沒有接上網路線，ens11f3 有接網路線 所以 Speed 和 Duplex 有接上網路線的就有顯示。 不過 ens11f3 這樣還是不能和 100Mb/s 的互相 ping 成功，Link detected 也顯示 no，interface 也是 DOWN 的。
+ 原本的 Network Interface 狀態  ens11f0 沒有接上網路線，ens11f3 有接網路線 所以 Speed 和 Duplex 有接上網路線的就有顯示。 不過 ens11f3 這樣還是不能和 100Mb/s 的互相 ping 成功，Link detected 也顯示 no，interface 也是 DOWN 的。
 $ sudo ethtool ens11f0 Settings for ens11f0: Supported ports: [ ] Supported link modes: 10000baseT/Full Supported pause frame use: Symmetric Supports auto-negotiation: Yes Advertised link modes: 10000baseT/Full Advertised pause frame use: No Advertised auto-negotiation: Yes Speed: Unknown!</description>
     </item>
     
@@ -48,7 +43,7 @@ $ sudo lshw -class network -businfo [sudo] password for winlab: Bus info Device 
       <guid>https://bestsamina.github.io/posts/2019-01-25-til-5g-k8s-info/</guid>
       <description>因為要開始面對準備論文的參考文件，加上對 5G 不熟，所以從 Video 開始來看。
 找到一些蠻不錯的影片，下面分別對這些影片做個間單的描述。
-  ⭐ Migrating the Next Generation Mobile Core Towards 5G with Kubernetes - Karla Saur, Intel - Published on 12 Jul 2018 ⭐ Kaloom  Kaloom SDF Features - Published on 27 Nov 2018 Kubernetes Integration with Kaloom SDF - Published on 11 Dec 2018  The Telco Networking Journey to Cloud Native: The Good, Bad, and Ugly - Heather Kirksey - Published on 15 Dec 2018 Keynote: Opening Remarks and Networking Journey to CNFs - Arpit Joshipura &amp;amp; Dan Kohn - Published on 26 Sep 2018  1.</description>
+  ⭐ Migrating the Next Generation Mobile Core Towards 5G with Kubernetes - Karla Saur, Intel - Published on 12 Jul 2018 ⭐ Kaloom  Kaloom SDF Features - Published on 27 Nov 2018 Kubernetes Integration with Kaloom SDF - Published on 11 Dec 2018   The Telco Networking Journey to Cloud Native: The Good, Bad, and Ugly - Heather Kirksey - Published on 15 Dec 2018 Keynote: Opening Remarks and Networking Journey to CNFs - Arpit Joshipura &amp;amp; Dan Kohn - Published on 26 Sep 2018  1.</description>
     </item>
     
     <item>
@@ -58,7 +53,7 @@ $ sudo lshw -class network -businfo [sudo] password for winlab: Bus info Device 
       
       <guid>https://bestsamina.github.io/posts/2018-10-26-worklog/</guid>
       <description>因為每次重做開機隨身碟總是要查一下要怎麼做。所以這邊就做一下記錄。方便之後查找
- 參考連結：  https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos https://www.youtube.com/watch?v=fkBfom4FQIQ&amp;amp;feature=youtu.be  Ubuntu 16.04.5 LTS:  http://releases.ubuntu.com/16.04/   </description>
+ 參考連結：  https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos https://www.youtube.com/watch?v=fkBfom4FQIQ&amp;amp;feature=youtu.be   Ubuntu 16.04.5 LTS:  http://releases.ubuntu.com/16.04/    </description>
     </item>
     
   </channel>

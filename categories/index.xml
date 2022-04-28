@@ -1,41 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Life &amp; Technological Journey of Samina</title>
+    <title>Categories on Samina Website</title>
     <link>https://bestsamina.github.io/categories/</link>
-    <description>Recent content in Categories on Life &amp; Technological Journey of Samina</description>
+    <description>Recent content in Categories on Samina Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Samina Fu</copyright>
-    <lastBuildDate>Mon, 11 Feb 2019 14:33:14 +0800</lastBuildDate>
-    
-	<atom:link href="https://bestsamina.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>@Samina Fu</copyright>
+    <lastBuildDate>Wed, 27 Apr 2022 17:00:35 +0800</lastBuildDate><atom:link href="https://bestsamina.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>5g</title>
-      <link>https://bestsamina.github.io/categories/5g/</link>
-      <pubDate>Mon, 11 Feb 2019 14:33:14 +0800</pubDate>
+      <title>Life</title>
+      <link>https://bestsamina.github.io/categories/life/</link>
+      <pubDate>Wed, 27 Apr 2022 17:00:35 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/categories/5g/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Agile</title>
-      <link>https://bestsamina.github.io/categories/agile/</link>
-      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/categories/agile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Authorization</title>
-      <link>https://bestsamina.github.io/categories/authorization/</link>
-      <pubDate>Thu, 11 Oct 2018 01:10:15 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/categories/authorization/</guid>
+      <guid>https://bestsamina.github.io/categories/life/</guid>
       <description></description>
     </item>
     
@@ -49,7 +27,7 @@
     </item>
     
     <item>
-      <title>Cloud Native</title>
+      <title>Cloud-Native</title>
       <link>https://bestsamina.github.io/categories/cloud-native/</link>
       <pubDate>Thu, 10 Oct 2019 16:48:35 +0800</pubDate>
       
@@ -58,47 +36,20 @@
     </item>
     
     <item>
-      <title>Container</title>
-      <link>https://bestsamina.github.io/categories/container/</link>
-      <pubDate>Sun, 14 Jan 2018 14:51:05 +0800</pubDate>
+      <title>TodayILearned</title>
+      <link>https://bestsamina.github.io/categories/todayilearned/</link>
+      <pubDate>Sat, 23 Mar 2019 14:33:14 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/categories/container/</guid>
+      <guid>https://bestsamina.github.io/categories/todayilearned/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Cord</title>
-      <link>https://bestsamina.github.io/categories/cord/</link>
-      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
+      <title>5G</title>
+      <link>https://bestsamina.github.io/categories/5g/</link>
+      <pubDate>Mon, 11 Feb 2019 14:33:14 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/categories/cord/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>https://bestsamina.github.io/categories/javascript/</link>
-      <pubDate>Mon, 27 Nov 2017 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/categories/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kubernetes</title>
-      <link>https://bestsamina.github.io/categories/kubernetes/</link>
-      <pubDate>Fri, 09 Mar 2018 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/categories/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Life</title>
-      <link>https://bestsamina.github.io/categories/life/</link>
-      <pubDate>Thu, 31 Dec 2020 16:30:02 +0900</pubDate>
-      
-      <guid>https://bestsamina.github.io/categories/life/</guid>
+      <guid>https://bestsamina.github.io/categories/5g/</guid>
       <description></description>
     </item>
     
@@ -112,20 +63,11 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>https://bestsamina.github.io/categories/linux/</link>
-      <pubDate>Wed, 15 Mar 2017 14:51:05 +0800</pubDate>
+      <title>Authorization</title>
+      <link>https://bestsamina.github.io/categories/authorization/</link>
+      <pubDate>Thu, 11 Oct 2018 01:10:15 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>https://bestsamina.github.io/categories/machine-learning/</link>
-      <pubDate>Thu, 22 Jun 2017 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/categories/machine-learning/</guid>
+      <guid>https://bestsamina.github.io/categories/authorization/</guid>
       <description></description>
     </item>
     
@@ -139,7 +81,25 @@
     </item>
     
     <item>
-      <title>Tgmeetup</title>
+      <title>CORD</title>
+      <link>https://bestsamina.github.io/categories/cord/</link>
+      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/cord/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://bestsamina.github.io/categories/kubernetes/</link>
+      <pubDate>Fri, 09 Mar 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TGmeetup</title>
       <link>https://bestsamina.github.io/categories/tgmeetup/</link>
       <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
       
@@ -148,11 +108,47 @@
     </item>
     
     <item>
-      <title>Todayilearned</title>
-      <link>https://bestsamina.github.io/categories/todayilearned/</link>
-      <pubDate>Sat, 23 Mar 2019 14:33:14 +0800</pubDate>
+      <title>container</title>
+      <link>https://bestsamina.github.io/categories/container/</link>
+      <pubDate>Sun, 14 Jan 2018 14:51:05 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/categories/todayilearned/</guid>
+      <guid>https://bestsamina.github.io/categories/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://bestsamina.github.io/categories/javascript/</link>
+      <pubDate>Mon, 27 Nov 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Agile</title>
+      <link>https://bestsamina.github.io/categories/agile/</link>
+      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/agile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://bestsamina.github.io/categories/machine-learning/</link>
+      <pubDate>Thu, 22 Jun 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://bestsamina.github.io/categories/linux/</link>
+      <pubDate>Wed, 15 Mar 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/categories/linux/</guid>
       <description></description>
     </item>
     

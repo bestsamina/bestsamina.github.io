@@ -2,12 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bestsamina.github.io/categories/</loc>
+    <lastmod>2022-04-27T17:00:35+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/</loc>
     <lastmod>2022-04-27T17:00:35+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/japan/</loc>
+    <lastmod>2022-04-27T17:00:35+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/life/</loc>
+    <lastmod>2022-04-27T17:00:35+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/</loc>
+    <lastmod>2022-04-27T17:00:35+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/</loc>
     <lastmod>2022-04-27T17:00:35+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -22,6 +42,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/books/</loc>
+    <lastmod>2021-10-30T12:00:35+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/books/</loc>
+    <lastmod>2021-10-30T12:00:35+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2021-05-01-grayscale-thinking/</loc>
     <lastmod>2021-05-01T23:32:35+09:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -32,8 +62,23 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/2020/</loc>
+    <lastmod>2020-12-31T16:30:02+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2020-12-31-2020retrospect/</loc>
     <lastmod>2020-12-31T16:30:02+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/retrospect/</loc>
+    <lastmod>2020-12-31T16:30:02+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/sim-card/</loc>
+    <lastmod>2020-04-05T16:48:35+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -47,8 +92,43 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/2019/</loc>
+    <lastmod>2019-12-31T07:00:02+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2019-12-31-2019retrospect/</loc>
     <lastmod>2019-12-31T07:00:02+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/cloud-native/</loc>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/cloud-native/</loc>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/container/</loc>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/k3s/</loc>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/k8s/</loc>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/kubernetes/</loc>
+    <lastmod>2019-10-10T16:48:35+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -62,6 +142,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/psychology/</loc>
+    <lastmod>2019-09-29T16:48:35+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/visa/</loc>
+    <lastmod>2019-09-11T16:48:35+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2019-09-11-japan-working-visa/</loc>
     <lastmod>2019-09-11T16:48:35+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -72,8 +162,38 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/network/</loc>
+    <lastmod>2019-03-23T14:33:14+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/til/</loc>
+    <lastmod>2019-03-23T14:33:14+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/todayilearned/</loc>
+    <lastmod>2019-03-23T14:33:14+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/todayilearned/</loc>
+    <lastmod>2019-03-23T14:33:14+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2019-03-08-til-vpp-troubleshooting/</loc>
     <lastmod>2019-03-08T14:33:14+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/vpp/</loc>
+    <lastmod>2019-03-08T14:33:14+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/teaching-skill/</loc>
+    <lastmod>2019-03-06T23:59:35+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -82,8 +202,33 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/5g/</loc>
+    <lastmod>2019-02-11T14:33:14+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/5g/</loc>
+    <lastmod>2019-02-11T14:33:14+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2019-02-11-5g-sg-wp-study/</loc>
     <lastmod>2019-02-11T14:33:14+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/helm/</loc>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/operator/</loc>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/operator-sdk/</loc>
+    <lastmod>2019-02-04T14:33:14+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -102,6 +247,26 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/cafe/</loc>
+    <lastmod>2019-01-20T23:40:26+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/coffee/</loc>
+    <lastmod>2019-01-20T23:40:26+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/life-coffee/</loc>
+    <lastmod>2019-01-20T23:40:26+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/2018/</loc>
+    <lastmod>2018-12-31T12:00:02+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2018-12-31-2018retrospect/</loc>
     <lastmod>2018-12-31T12:00:02+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -112,7 +277,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/ubuntu/</loc>
+    <lastmod>2018-10-26T20:44:02+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/ipvs/</loc>
+    <lastmod>2018-10-15T12:05:37+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2018-10-19-ipvs-based-kube-proxy-4-scaled-k8s-lb/</loc>
+    <lastmod>2018-10-15T12:05:37+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/kube-proxy/</loc>
     <lastmod>2018-10-15T12:05:37+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -122,8 +302,58 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/authorization/</loc>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/authorization/</loc>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/github/</loc>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/network/</loc>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/oauth/</loc>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/rfc/</loc>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/tgmeetup/</loc>
+    <lastmod>2018-10-11T01:10:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2018-10-11-github-oauth/</loc>
     <lastmod>2018-10-11T01:10:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/dpdk/</loc>
+    <lastmod>2018-08-20T00:20:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/ovs/</loc>
+    <lastmod>2018-08-20T00:20:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/sr-iov/</loc>
+    <lastmod>2018-08-20T00:20:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -137,6 +367,36 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/cord/</loc>
+    <lastmod>2018-07-26T15:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/cord/</loc>
+    <lastmod>2018-07-26T15:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/opencord/</loc>
+    <lastmod>2018-07-26T15:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/trellis/</loc>
+    <lastmod>2018-07-26T15:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/xos/</loc>
+    <lastmod>2018-07-26T15:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/vagrant/</loc>
+    <lastmod>2018-06-27T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2018-06-27-dpdk-ovs-vagrant/</loc>
     <lastmod>2018-06-27T14:51:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -147,12 +407,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/net/</loc>
+    <lastmod>2018-04-03T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/series/</loc>
     <lastmod>2018-04-03T14:51:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://bestsamina.github.io/series/kubernetes-hard-way-deploy/</loc>
+    <lastmod>2018-03-09T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/kubernetes/</loc>
     <lastmod>2018-03-09T14:51:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -182,7 +452,42 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/meetup/</loc>
+    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/open-source/</loc>
+    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/tgmeetup/</loc>
+    <lastmod>2018-01-28T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2018-01-14-container-linux-namespace/</loc>
+    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/container/</loc>
+    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/docker/</loc>
+    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/go/</loc>
+    <lastmod>2018-01-14T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/linux/</loc>
     <lastmod>2018-01-14T14:51:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -197,8 +502,43 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/javascript/</loc>
+    <lastmod>2017-11-27T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/javascript/</loc>
+    <lastmod>2017-11-27T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/nodejs/</loc>
+    <lastmod>2017-11-27T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/npm/</loc>
+    <lastmod>2017-11-27T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2017-11-27-npm/</loc>
     <lastmod>2017-11-27T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/agile/</loc>
+    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/agile/</loc>
+    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/scrum/</loc>
+    <lastmod>2017-07-02T14:51:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -237,13 +577,58 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/tags/coursera/</loc>
+    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/machine-learning/</loc>
+    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/categories/machine-learning/</loc>
+    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/supervised/</loc>
+    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/unsupervised/</loc>
+    <lastmod>2017-06-22T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/apt/</loc>
+    <lastmod>2017-03-15T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2017-03-15-apt/</loc>
     <lastmod>2017-03-15T14:51:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://bestsamina.github.io/categories/linux/</loc>
+    <lastmod>2017-03-15T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/sracer/</loc>
+    <lastmod>2017-02-17T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bestsamina.github.io/posts/2017-02-17-stacer/</loc>
     <lastmod>2017-02-17T14:51:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bestsamina.github.io/tags/tmux/</loc>
+    <lastmod>2017-02-01T14:51:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

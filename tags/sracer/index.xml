@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sracer on Life &amp; Technological Journey of Samina</title>
+    <title>sracer on Samina Website</title>
     <link>https://bestsamina.github.io/tags/sracer/</link>
-    <description>Recent content in Sracer on Life &amp; Technological Journey of Samina</description>
+    <description>Recent content in sracer on Samina Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Samina Fu</copyright>
-    <lastBuildDate>Fri, 17 Feb 2017 14:51:05 +0800</lastBuildDate>
-    
-	<atom:link href="https://bestsamina.github.io/tags/sracer/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>@Samina Fu</copyright>
+    <lastBuildDate>Fri, 17 Feb 2017 14:51:05 +0800</lastBuildDate><atom:link href="https://bestsamina.github.io/tags/sracer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stacer - 系統優化器</title>
       <link>https://bestsamina.github.io/posts/2017-02-17-stacer/</link>
@@ -19,9 +15,9 @@
       
       <guid>https://bestsamina.github.io/posts/2017-02-17-stacer/</guid>
       <description>Stacer - 系統優化器 這套工具類似 Windows 上面安裝 CCleaner 加上系統資源監控！
-來源 https://github.com/oguzhaninan/Stacer
+ 來源 https://github.com/oguzhaninan/Stacer
 安裝環境 Ubuntu base 桌面版本
-介紹 在GitHub上面的介紹就是&amp;rdquo;Ubuntu System Optimizer&amp;rdquo;！
+介紹 在GitHub上面的介紹就是&amp;quot;Ubuntu System Optimizer&amp;quot;！
 安裝  到GitHub頁面上點選releases
  依據作業系統的位元數，選擇要下載的deb包
  安裝

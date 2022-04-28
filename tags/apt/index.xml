@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Apt on Life &amp; Technological Journey of Samina</title>
+    <title>apt on Samina Website</title>
     <link>https://bestsamina.github.io/tags/apt/</link>
-    <description>Recent content in Apt on Life &amp; Technological Journey of Samina</description>
+    <description>Recent content in apt on Samina Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Samina Fu</copyright>
-    <lastBuildDate>Wed, 15 Mar 2017 14:51:05 +0800</lastBuildDate>
-    
-	<atom:link href="https://bestsamina.github.io/tags/apt/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>@Samina Fu</copyright>
+    <lastBuildDate>Wed, 15 Mar 2017 14:51:05 +0800</lastBuildDate><atom:link href="https://bestsamina.github.io/tags/apt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>apt指令之套件管理整理</title>
       <link>https://bestsamina.github.io/posts/2017-03-15-apt/</link>
@@ -23,17 +19,16 @@
 檢查系統上的套件相依性情形 apt-get upgrade
 更新所有有新版本的套件(基本上就是 Ｗindows 常出現要更新的那個東西，系統更新是基本，所以沒事就 apt-get upgrade 一下吧！)
 PS1. 將現有的套件升級, 若遇到相依的問題(需要安裝其它新的相依套件或影響到其它套件的相依性)，該套件不會進行升級而保留原套件。
-PS2. 系統內心話：蛤～升級這套件還要安裝或移除相依套件唷！好麻煩唷！我還是留著這原套件好了！ㄎㄎ  -u 顯示完整的可更新套裝軟體列表  apt-get -s upgrade
+PS2. 系統內心話：蛤～升級這套件還要安裝或移除相依套件唷！好麻煩唷！我還是留著這原套件好了！ㄎㄎ  -u 顯示完整的可更新套裝軟體列表   apt-get -s upgrade
 可以看那些套件會被更新 apt-get dist-upgrade
 強制更新所有有新版本的套件
 PS1. 如果遇到相依性問題, 需要安裝或移除相關套件, 就會試著去安裝或移除相依套件，而進行該套件升級。
 PS2. 系統內心話：哈哈～就讓我來大刀闊斧幫你升級所有套件吧！如果其他服務因為套件升級而掛掉，你家的事！ㄎㄎ apt-get install 套件名稱
 安裝套件(相依套件也會幫忙裝)
 eg. apt-get install vim  -y 若有問問題都回答Yes apt-get &amp;ndash;reinstall install 套件名稱
-裝壞掉重裝法  apt-get remove 套件名稱
+裝壞掉重裝法   apt-get remove 套件名稱
 移除套件 apt-get &amp;ndash;purge remove 套件名稱
-連設定檔一起全部移除 apt-get clean
-清除/var/cache/apt/archives/下的所有 DEB 套件檔 (白話文：清除已經下載的套件) apt-get autoclean</description>
+連設定檔一起全部移除 apt-get clean</description>
     </item>
     
   </channel>

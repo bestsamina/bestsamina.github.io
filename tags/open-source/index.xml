@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Open Source on Life &amp; Technological Journey of Samina</title>
+    <title>Open Source on Samina Website</title>
     <link>https://bestsamina.github.io/tags/open-source/</link>
-    <description>Recent content in Open Source on Life &amp; Technological Journey of Samina</description>
+    <description>Recent content in Open Source on Samina Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Samina Fu</copyright>
-    <lastBuildDate>Sun, 28 Jan 2018 14:51:05 +0800</lastBuildDate>
-    
-	<atom:link href="https://bestsamina.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>@Samina Fu</copyright>
+    <lastBuildDate>Sun, 28 Jan 2018 14:51:05 +0800</lastBuildDate><atom:link href="https://bestsamina.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[TGmeetup] 之詳細安裝操作步驟</title>
       <link>https://bestsamina.github.io/posts/2018-01-28-install-w-meetup-api/</link>
@@ -19,18 +15,18 @@
       
       <guid>https://bestsamina.github.io/posts/2018-01-28-install-w-meetup-api/</guid>
       <description>此篇文章內容同步於 https://hackmd.io/s/ByrxYmi4G 。
-安裝流程  Step 1. 申請 meetup_api 的 auth Key  申請 OAuth2 認證 取得 Key 和 secret 在本機端啟動 SimpleHTTPServer 取得 access token 同意該 OAuth 使用者可以使用你的帳號。 轉導向到自己本機的 8000 port 並取得一次性的 access token 準備取得 refresh token 取得 refresh token 與 access token  Step 2. 下載專案並編輯 API.cfg 檔 Step 3. 進行安裝  安裝說明 請依據以下安裝說明進行，謝謝。
+安裝流程  Step 1. 申請 meetup_api 的 auth Key  申請 OAuth2 認證 取得 Key 和 secret 在本機端啟動 SimpleHTTPServer 取得 access token 同意該 OAuth 使用者可以使用你的帳號。 轉導向到自己本機的 8000 port 並取得一次性的 access token 準備取得 refresh token 取得 refresh token 與 access token   Step 2. 下載專案並編輯 API.cfg 檔 Step 3. 進行安裝  安裝說明 請依據以下安裝說明進行，謝謝。
 Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的說明文件來進行，並提供簡單的取得方法。
 1. 申請 OAuth2 認證  到 https://secure.</description>
     </item>
     
     <item>
       <title>[TGmeetup] 就讓這專案蒐集世界各地的技術社群資訊吧！</title>
-      <link>https://bestsamina.github.io/2018/01/28/tgmeetup-%E5%B0%B1%E8%AE%93%E9%80%99%E5%B0%88%E6%A1%88%E8%92%90%E9%9B%86%E4%B8%96%E7%95%8C%E5%90%84%E5%9C%B0%E7%9A%84%E6%8A%80%E8%A1%93%E7%A4%BE%E7%BE%A4%E8%B3%87%E8%A8%8A%E5%90%A7/</link>
+      <link>https://bestsamina.github.io/series/tgmeetup/</link>
       <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/2018/01/28/tgmeetup-%E5%B0%B1%E8%AE%93%E9%80%99%E5%B0%88%E6%A1%88%E8%92%90%E9%9B%86%E4%B8%96%E7%95%8C%E5%90%84%E5%9C%B0%E7%9A%84%E6%8A%80%E8%A1%93%E7%A4%BE%E7%BE%A4%E8%B3%87%E8%A8%8A%E5%90%A7/</guid>
-      <description> [TGmeetup] 就讓這專案蒐集世界各地的技術社群資訊吧！ TGmeetup 簡介 TGmeetup 是一個專門透過 API 蒐集各社群活動資訊的專案。藉此蒐集諸多社群資訊以及活動資訊。
+      <guid>https://bestsamina.github.io/series/tgmeetup/</guid>
+      <description>[TGmeetup] 就讓這專案蒐集世界各地的技術社群資訊吧！ TGmeetup 簡介 TGmeetup 是一個專門透過 API 蒐集各社群活動資訊的專案。藉此蒐集諸多社群資訊以及活動資訊。
  恩。標題有點聳動，野心很大XD 不過孵化專案的時候，有想到這一點，想說一個 repo 蒐集就好，沒必要分散，就出現了 country code 的資料夾了。
  Repository: https://github.com/TGmeetup/TGmeetup
 目錄 - [TGmeetup] 之詳細安裝操作步驟 - [TGmeetup] 從孵化到出生之全記錄 </description>
@@ -58,9 +54,9 @@ Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的�
       
       <guid>https://bestsamina.github.io/posts/2017-02-17-stacer/</guid>
       <description>Stacer - 系統優化器 這套工具類似 Windows 上面安裝 CCleaner 加上系統資源監控！
-來源 https://github.com/oguzhaninan/Stacer
+ 來源 https://github.com/oguzhaninan/Stacer
 安裝環境 Ubuntu base 桌面版本
-介紹 在GitHub上面的介紹就是&amp;rdquo;Ubuntu System Optimizer&amp;rdquo;！
+介紹 在GitHub上面的介紹就是&amp;quot;Ubuntu System Optimizer&amp;quot;！
 安裝  到GitHub頁面上點選releases
  依據作業系統的位元數，選擇要下載的deb包
  安裝
@@ -77,10 +73,10 @@ reference: https://itsfoss.com/optimize-ubuntu-stacer/</description>
       <pubDate>Wed, 01 Feb 2017 14:51:05 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/posts/2017-02-01-tmux/</guid>
-      <description> Tmux是個終端機工具(Terminal multiplexer)，可以管理多個session，window和panel。
+      <description>Tmux是個終端機工具(Terminal multiplexer)，可以管理多個session，window和panel。
 如何安裝 Debian / Ubuntu：apt-get install tmux
 關於session的指令  tmux：開啟一個新的client(包含一個session，window，panel) tmux ls：列出有那些sessions tmux a：重回上次最新的client tmux a -t [number]：重回該number的session  關於window的指令 預設的操作要加上 Ctrl-b 功能鍵
- Ctrl-b + c：建立新的window (create) Ctrl-b + number：改變window Ctrl-b + d：關閉目前的 client (detach) Ctrl-b + l：與先前選擇的window間切換 Ctrl-b + n：移到下個window (next) Ctrl-b + p：移到上個window (previous) Ctrl-b + &amp;amp;：刪除目前的window Ctrl-b + ,：重新命名目前的window，修改後按&amp;rdquo;enter“ Ctrl-b + ?：列出所有快捷鍵說明 Ctrl-b + w：列出目前 clinet 的window，用數字鍵切換 (window)  關於當前panel的指令  Ctrl-b + %：垂直分割window (分左圈圈和右圈圈) Ctrl-b + &amp;ldquo;：水平分割window Ctrl-b + ↑↓←→：使用上下左右鍵改變panel所在的當前panel Ctrl-b + o：移往下一個區塊； Ctrl-b + q：顯示區塊的數字代號 Ctrl-b + q + number：當數字顯示時使用數字鍵移往該panel Ctrl-b + [：讀歷史訊息，按 q 離開 Ctrl-b + {：將目前的區塊移往左邊 Ctrl-b + }：將目前的區塊移往右邊  </description>
+ Ctrl-b + c：建立新的window (create) Ctrl-b + number：改變window Ctrl-b + d：關閉目前的 client (detach) Ctrl-b + l：與先前選擇的window間切換 Ctrl-b + n：移到下個window (next) Ctrl-b + p：移到上個window (previous) Ctrl-b + &amp;amp;：刪除目前的window Ctrl-b + ,：重新命名目前的window，修改後按&amp;quot;enter“ Ctrl-b + ?：列出所有快捷鍵說明 Ctrl-b + w：列出目前 clinet 的window，用數字鍵切換 (window)  關於當前panel的指令  Ctrl-b + %：垂直分割window (分左圈圈和右圈圈) Ctrl-b + &amp;ldquo;：水平分割window Ctrl-b + ↑↓←→：使用上下左右鍵改變panel所在的當前panel Ctrl-b + o：移往下一個區塊； Ctrl-b + q：顯示區塊的數字代號 Ctrl-b + q + number：當數字顯示時使用數字鍵移往該panel Ctrl-b + [：讀歷史訊息，按 q 離開 Ctrl-b + {：將目前的區塊移往左邊 Ctrl-b + }：將目前的區塊移往右邊  </description>
     </item>
     
   </channel>

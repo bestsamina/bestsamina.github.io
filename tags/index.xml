@@ -1,32 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Life &amp; Technological Journey of Samina</title>
+    <title>Tags on Samina Website</title>
     <link>https://bestsamina.github.io/tags/</link>
-    <description>Recent content in Tags on Life &amp; Technological Journey of Samina</description>
+    <description>Recent content in Tags on Samina Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Samina Fu</copyright>
-    <lastBuildDate>Mon, 31 Dec 2018 12:00:02 +0800</lastBuildDate>
-    
-	<atom:link href="https://bestsamina.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>@Samina Fu</copyright>
+    <lastBuildDate>Wed, 27 Apr 2022 17:00:35 +0800</lastBuildDate><atom:link href="https://bestsamina.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2018</title>
-      <link>https://bestsamina.github.io/tags/2018/</link>
-      <pubDate>Mon, 31 Dec 2018 12:00:02 +0800</pubDate>
+      <title>Japan</title>
+      <link>https://bestsamina.github.io/tags/japan/</link>
+      <pubDate>Wed, 27 Apr 2022 17:00:35 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/tags/2018/</guid>
+      <guid>https://bestsamina.github.io/tags/japan/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>2019</title>
-      <link>https://bestsamina.github.io/tags/2019/</link>
-      <pubDate>Tue, 31 Dec 2019 07:00:02 +0800</pubDate>
+      <title>books</title>
+      <link>https://bestsamina.github.io/tags/books/</link>
+      <pubDate>Sat, 30 Oct 2021 12:00:35 +0900</pubDate>
       
-      <guid>https://bestsamina.github.io/tags/2019/</guid>
+      <guid>https://bestsamina.github.io/tags/books/</guid>
       <description></description>
     </item>
     
@@ -40,61 +36,34 @@
     </item>
     
     <item>
-      <title>5g</title>
-      <link>https://bestsamina.github.io/tags/5g/</link>
-      <pubDate>Mon, 11 Feb 2019 14:33:14 +0800</pubDate>
+      <title>retrospect</title>
+      <link>https://bestsamina.github.io/tags/retrospect/</link>
+      <pubDate>Thu, 31 Dec 2020 16:30:02 +0900</pubDate>
       
-      <guid>https://bestsamina.github.io/tags/5g/</guid>
+      <guid>https://bestsamina.github.io/tags/retrospect/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Agile</title>
-      <link>https://bestsamina.github.io/tags/agile/</link>
-      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      <title>sim card</title>
+      <link>https://bestsamina.github.io/tags/sim-card/</link>
+      <pubDate>Sun, 05 Apr 2020 16:48:35 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/tags/agile/</guid>
+      <guid>https://bestsamina.github.io/tags/sim-card/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Apt</title>
-      <link>https://bestsamina.github.io/tags/apt/</link>
-      <pubDate>Wed, 15 Mar 2017 14:51:05 +0800</pubDate>
+      <title>2019</title>
+      <link>https://bestsamina.github.io/tags/2019/</link>
+      <pubDate>Tue, 31 Dec 2019 07:00:02 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/tags/apt/</guid>
+      <guid>https://bestsamina.github.io/tags/2019/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Authorization</title>
-      <link>https://bestsamina.github.io/tags/authorization/</link>
-      <pubDate>Thu, 11 Oct 2018 01:10:15 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/authorization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Books</title>
-      <link>https://bestsamina.github.io/tags/books/</link>
-      <pubDate>Sat, 30 Oct 2021 12:00:35 +0900</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/books/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cafe</title>
-      <link>https://bestsamina.github.io/tags/cafe/</link>
-      <pubDate>Sun, 20 Jan 2019 23:40:26 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/cafe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cloud Native</title>
+      <title>Cloud-Native</title>
       <link>https://bestsamina.github.io/tags/cloud-native/</link>
       <pubDate>Thu, 10 Oct 2019 16:48:35 +0800</pubDate>
       
@@ -103,110 +72,11 @@
     </item>
     
     <item>
-      <title>Coffee</title>
-      <link>https://bestsamina.github.io/tags/coffee/</link>
-      <pubDate>Sun, 20 Jan 2019 23:40:26 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/coffee/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Container</title>
+      <title>container</title>
       <link>https://bestsamina.github.io/tags/container/</link>
       <pubDate>Thu, 10 Oct 2019 16:48:35 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/container/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cord</title>
-      <link>https://bestsamina.github.io/tags/cord/</link>
-      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/cord/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Coursera</title>
-      <link>https://bestsamina.github.io/tags/coursera/</link>
-      <pubDate>Thu, 22 Jun 2017 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/coursera/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
-      <link>https://bestsamina.github.io/tags/docker/</link>
-      <pubDate>Sun, 14 Jan 2018 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dpdk</title>
-      <link>https://bestsamina.github.io/tags/dpdk/</link>
-      <pubDate>Mon, 20 Aug 2018 00:20:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/dpdk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Github</title>
-      <link>https://bestsamina.github.io/tags/github/</link>
-      <pubDate>Thu, 11 Oct 2018 01:10:15 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://bestsamina.github.io/tags/go/</link>
-      <pubDate>Sun, 14 Jan 2018 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Helm</title>
-      <link>https://bestsamina.github.io/tags/helm/</link>
-      <pubDate>Mon, 04 Feb 2019 14:33:14 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/helm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ipvs</title>
-      <link>https://bestsamina.github.io/tags/ipvs/</link>
-      <pubDate>Mon, 15 Oct 2018 12:05:37 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/ipvs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Japan</title>
-      <link>https://bestsamina.github.io/tags/japan/</link>
-      <pubDate>Wed, 11 Sep 2019 16:48:35 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/japan/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>https://bestsamina.github.io/tags/javascript/</link>
-      <pubDate>Mon, 27 Nov 2017 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/javascript/</guid>
       <description></description>
     </item>
     
@@ -229,137 +99,11 @@
     </item>
     
     <item>
-      <title>Kube Proxy</title>
-      <link>https://bestsamina.github.io/tags/kube-proxy/</link>
-      <pubDate>Mon, 15 Oct 2018 12:05:37 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/kube-proxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Kubernetes</title>
       <link>https://bestsamina.github.io/tags/kubernetes/</link>
       <pubDate>Thu, 10 Oct 2019 16:48:35 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://bestsamina.github.io/tags/linux/</link>
-      <pubDate>Sun, 14 Jan 2018 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>https://bestsamina.github.io/tags/machine-learning/</link>
-      <pubDate>Thu, 22 Jun 2017 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Meetup</title>
-      <link>https://bestsamina.github.io/tags/meetup/</link>
-      <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/meetup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Net</title>
-      <link>https://bestsamina.github.io/tags/net/</link>
-      <pubDate>Tue, 03 Apr 2018 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/net/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Network</title>
-      <link>https://bestsamina.github.io/tags/network/</link>
-      <pubDate>Sat, 23 Mar 2019 14:33:14 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nodejs</title>
-      <link>https://bestsamina.github.io/tags/nodejs/</link>
-      <pubDate>Mon, 27 Nov 2017 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/nodejs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Npm</title>
-      <link>https://bestsamina.github.io/tags/npm/</link>
-      <pubDate>Mon, 27 Nov 2017 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/npm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Oauth</title>
-      <link>https://bestsamina.github.io/tags/oauth/</link>
-      <pubDate>Thu, 11 Oct 2018 01:10:15 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/oauth/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Open Source</title>
-      <link>https://bestsamina.github.io/tags/open-source/</link>
-      <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/open-source/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Opencord</title>
-      <link>https://bestsamina.github.io/tags/opencord/</link>
-      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/opencord/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Operator</title>
-      <link>https://bestsamina.github.io/tags/operator/</link>
-      <pubDate>Mon, 04 Feb 2019 14:33:14 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/operator/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Operator Sdk</title>
-      <link>https://bestsamina.github.io/tags/operator-sdk/</link>
-      <pubDate>Mon, 04 Feb 2019 14:33:14 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/operator-sdk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ovs</title>
-      <link>https://bestsamina.github.io/tags/ovs/</link>
-      <pubDate>Mon, 20 Aug 2018 00:20:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/ovs/</guid>
       <description></description>
     </item>
     
@@ -373,20 +117,353 @@
     </item>
     
     <item>
-      <title>Retrospect</title>
-      <link>https://bestsamina.github.io/tags/retrospect/</link>
-      <pubDate>Thu, 31 Dec 2020 16:30:02 +0900</pubDate>
+      <title>visa</title>
+      <link>https://bestsamina.github.io/tags/visa/</link>
+      <pubDate>Wed, 11 Sep 2019 16:48:35 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/tags/retrospect/</guid>
+      <guid>https://bestsamina.github.io/tags/visa/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Rfc</title>
+      <title>network</title>
+      <link>https://bestsamina.github.io/tags/network/</link>
+      <pubDate>Sat, 23 Mar 2019 14:33:14 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TIL</title>
+      <link>https://bestsamina.github.io/tags/til/</link>
+      <pubDate>Sat, 23 Mar 2019 14:33:14 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/til/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TodayILearned</title>
+      <link>https://bestsamina.github.io/tags/todayilearned/</link>
+      <pubDate>Sat, 23 Mar 2019 14:33:14 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/todayilearned/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VPP</title>
+      <link>https://bestsamina.github.io/tags/vpp/</link>
+      <pubDate>Fri, 08 Mar 2019 14:33:14 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/vpp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>teaching-skill</title>
+      <link>https://bestsamina.github.io/tags/teaching-skill/</link>
+      <pubDate>Wed, 06 Mar 2019 23:59:35 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/teaching-skill/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>5G</title>
+      <link>https://bestsamina.github.io/tags/5g/</link>
+      <pubDate>Mon, 11 Feb 2019 14:33:14 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/5g/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>helm</title>
+      <link>https://bestsamina.github.io/tags/helm/</link>
+      <pubDate>Mon, 04 Feb 2019 14:33:14 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/helm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>operator</title>
+      <link>https://bestsamina.github.io/tags/operator/</link>
+      <pubDate>Mon, 04 Feb 2019 14:33:14 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/operator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>operator-sdk</title>
+      <link>https://bestsamina.github.io/tags/operator-sdk/</link>
+      <pubDate>Mon, 04 Feb 2019 14:33:14 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/operator-sdk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cafe</title>
+      <link>https://bestsamina.github.io/tags/cafe/</link>
+      <pubDate>Sun, 20 Jan 2019 23:40:26 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/cafe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coffee</title>
+      <link>https://bestsamina.github.io/tags/coffee/</link>
+      <pubDate>Sun, 20 Jan 2019 23:40:26 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/coffee/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2018</title>
+      <link>https://bestsamina.github.io/tags/2018/</link>
+      <pubDate>Mon, 31 Dec 2018 12:00:02 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://bestsamina.github.io/tags/ubuntu/</link>
+      <pubDate>Fri, 26 Oct 2018 20:44:02 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IPVS</title>
+      <link>https://bestsamina.github.io/tags/ipvs/</link>
+      <pubDate>Mon, 15 Oct 2018 12:05:37 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/ipvs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kube-proxy</title>
+      <link>https://bestsamina.github.io/tags/kube-proxy/</link>
+      <pubDate>Mon, 15 Oct 2018 12:05:37 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/kube-proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Authorization</title>
+      <link>https://bestsamina.github.io/tags/authorization/</link>
+      <pubDate>Thu, 11 Oct 2018 01:10:15 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/authorization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>https://bestsamina.github.io/tags/github/</link>
+      <pubDate>Thu, 11 Oct 2018 01:10:15 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OAuth</title>
+      <link>https://bestsamina.github.io/tags/oauth/</link>
+      <pubDate>Thu, 11 Oct 2018 01:10:15 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/oauth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RFC</title>
       <link>https://bestsamina.github.io/tags/rfc/</link>
       <pubDate>Thu, 11 Oct 2018 01:10:15 +0800</pubDate>
       
       <guid>https://bestsamina.github.io/tags/rfc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TGmeetup</title>
+      <link>https://bestsamina.github.io/tags/tgmeetup/</link>
+      <pubDate>Thu, 11 Oct 2018 01:10:15 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/tgmeetup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dpdk</title>
+      <link>https://bestsamina.github.io/tags/dpdk/</link>
+      <pubDate>Mon, 20 Aug 2018 00:20:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/dpdk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ovs</title>
+      <link>https://bestsamina.github.io/tags/ovs/</link>
+      <pubDate>Mon, 20 Aug 2018 00:20:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/ovs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sr-iov</title>
+      <link>https://bestsamina.github.io/tags/sr-iov/</link>
+      <pubDate>Mon, 20 Aug 2018 00:20:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/sr-iov/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CORD</title>
+      <link>https://bestsamina.github.io/tags/cord/</link>
+      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/cord/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openCORD</title>
+      <link>https://bestsamina.github.io/tags/opencord/</link>
+      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/opencord/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>trellis</title>
+      <link>https://bestsamina.github.io/tags/trellis/</link>
+      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/trellis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XOS</title>
+      <link>https://bestsamina.github.io/tags/xos/</link>
+      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/xos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vagrant</title>
+      <link>https://bestsamina.github.io/tags/vagrant/</link>
+      <pubDate>Wed, 27 Jun 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/vagrant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>net</title>
+      <link>https://bestsamina.github.io/tags/net/</link>
+      <pubDate>Tue, 03 Apr 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>meetup</title>
+      <link>https://bestsamina.github.io/tags/meetup/</link>
+      <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/meetup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Open Source</title>
+      <link>https://bestsamina.github.io/tags/open-source/</link>
+      <pubDate>Sun, 28 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/open-source/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://bestsamina.github.io/tags/docker/</link>
+      <pubDate>Sun, 14 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://bestsamina.github.io/tags/go/</link>
+      <pubDate>Sun, 14 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://bestsamina.github.io/tags/linux/</link>
+      <pubDate>Sun, 14 Jan 2018 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://bestsamina.github.io/tags/javascript/</link>
+      <pubDate>Mon, 27 Nov 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nodejs</title>
+      <link>https://bestsamina.github.io/tags/nodejs/</link>
+      <pubDate>Mon, 27 Nov 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>npm</title>
+      <link>https://bestsamina.github.io/tags/npm/</link>
+      <pubDate>Mon, 27 Nov 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/npm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Agile</title>
+      <link>https://bestsamina.github.io/tags/agile/</link>
+      <pubDate>Sun, 02 Jul 2017 14:51:05 +0800</pubDate>
+      
+      <guid>https://bestsamina.github.io/tags/agile/</guid>
       <description></description>
     </item>
     
@@ -400,29 +477,20 @@
     </item>
     
     <item>
-      <title>Sim Card</title>
-      <link>https://bestsamina.github.io/tags/sim-card/</link>
-      <pubDate>Sun, 05 Apr 2020 16:48:35 +0800</pubDate>
+      <title>Coursera</title>
+      <link>https://bestsamina.github.io/tags/coursera/</link>
+      <pubDate>Thu, 22 Jun 2017 14:51:05 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/tags/sim-card/</guid>
+      <guid>https://bestsamina.github.io/tags/coursera/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Sr Iov</title>
-      <link>https://bestsamina.github.io/tags/sr-iov/</link>
-      <pubDate>Mon, 20 Aug 2018 00:20:05 +0800</pubDate>
+      <title>Machine Learning</title>
+      <link>https://bestsamina.github.io/tags/machine-learning/</link>
+      <pubDate>Thu, 22 Jun 2017 14:51:05 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/tags/sr-iov/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sracer</title>
-      <link>https://bestsamina.github.io/tags/sracer/</link>
-      <pubDate>Fri, 17 Feb 2017 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/sracer/</guid>
+      <guid>https://bestsamina.github.io/tags/machine-learning/</guid>
       <description></description>
     </item>
     
@@ -436,69 +504,6 @@
     </item>
     
     <item>
-      <title>Teaching Skill</title>
-      <link>https://bestsamina.github.io/tags/teaching-skill/</link>
-      <pubDate>Wed, 06 Mar 2019 23:59:35 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/teaching-skill/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tgmeetup</title>
-      <link>https://bestsamina.github.io/tags/tgmeetup/</link>
-      <pubDate>Thu, 11 Oct 2018 01:10:15 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/tgmeetup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Til</title>
-      <link>https://bestsamina.github.io/tags/til/</link>
-      <pubDate>Sat, 23 Mar 2019 14:33:14 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/til/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tmux</title>
-      <link>https://bestsamina.github.io/tags/tmux/</link>
-      <pubDate>Wed, 01 Feb 2017 14:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/tmux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Todayilearned</title>
-      <link>https://bestsamina.github.io/tags/todayilearned/</link>
-      <pubDate>Sat, 23 Mar 2019 14:33:14 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/todayilearned/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Trellis</title>
-      <link>https://bestsamina.github.io/tags/trellis/</link>
-      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/trellis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ubuntu</title>
-      <link>https://bestsamina.github.io/tags/ubuntu/</link>
-      <pubDate>Fri, 26 Oct 2018 20:44:02 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Unsupervised</title>
       <link>https://bestsamina.github.io/tags/unsupervised/</link>
       <pubDate>Thu, 22 Jun 2017 14:51:05 +0800</pubDate>
@@ -508,38 +513,29 @@
     </item>
     
     <item>
-      <title>Vagrant</title>
-      <link>https://bestsamina.github.io/tags/vagrant/</link>
-      <pubDate>Wed, 27 Jun 2018 14:51:05 +0800</pubDate>
+      <title>apt</title>
+      <link>https://bestsamina.github.io/tags/apt/</link>
+      <pubDate>Wed, 15 Mar 2017 14:51:05 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/tags/vagrant/</guid>
+      <guid>https://bestsamina.github.io/tags/apt/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Visa</title>
-      <link>https://bestsamina.github.io/tags/visa/</link>
-      <pubDate>Wed, 11 Sep 2019 16:48:35 +0800</pubDate>
+      <title>sracer</title>
+      <link>https://bestsamina.github.io/tags/sracer/</link>
+      <pubDate>Fri, 17 Feb 2017 14:51:05 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/tags/visa/</guid>
+      <guid>https://bestsamina.github.io/tags/sracer/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Vpp</title>
-      <link>https://bestsamina.github.io/tags/vpp/</link>
-      <pubDate>Fri, 08 Mar 2019 14:33:14 +0800</pubDate>
+      <title>Tmux</title>
+      <link>https://bestsamina.github.io/tags/tmux/</link>
+      <pubDate>Wed, 01 Feb 2017 14:51:05 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/tags/vpp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Xos</title>
-      <link>https://bestsamina.github.io/tags/xos/</link>
-      <pubDate>Thu, 26 Jul 2018 15:51:05 +0800</pubDate>
-      
-      <guid>https://bestsamina.github.io/tags/xos/</guid>
+      <guid>https://bestsamina.github.io/tags/tmux/</guid>
       <description></description>
     </item>
     

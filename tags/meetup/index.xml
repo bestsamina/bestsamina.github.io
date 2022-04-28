@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Meetup on Life &amp; Technological Journey of Samina</title>
+    <title>meetup on Samina Website</title>
     <link>https://bestsamina.github.io/tags/meetup/</link>
-    <description>Recent content in Meetup on Life &amp; Technological Journey of Samina</description>
+    <description>Recent content in meetup on Samina Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Samina Fu</copyright>
-    <lastBuildDate>Sun, 28 Jan 2018 14:51:05 +0800</lastBuildDate>
-    
-	<atom:link href="https://bestsamina.github.io/tags/meetup/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>@Samina Fu</copyright>
+    <lastBuildDate>Sun, 28 Jan 2018 14:51:05 +0800</lastBuildDate><atom:link href="https://bestsamina.github.io/tags/meetup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[TGmeetup] 之詳細安裝操作步驟</title>
       <link>https://bestsamina.github.io/posts/2018-01-28-install-w-meetup-api/</link>
@@ -19,7 +15,7 @@
       
       <guid>https://bestsamina.github.io/posts/2018-01-28-install-w-meetup-api/</guid>
       <description>此篇文章內容同步於 https://hackmd.io/s/ByrxYmi4G 。
-安裝流程  Step 1. 申請 meetup_api 的 auth Key  申請 OAuth2 認證 取得 Key 和 secret 在本機端啟動 SimpleHTTPServer 取得 access token 同意該 OAuth 使用者可以使用你的帳號。 轉導向到自己本機的 8000 port 並取得一次性的 access token 準備取得 refresh token 取得 refresh token 與 access token  Step 2. 下載專案並編輯 API.cfg 檔 Step 3. 進行安裝  安裝說明 請依據以下安裝說明進行，謝謝。
+安裝流程  Step 1. 申請 meetup_api 的 auth Key  申請 OAuth2 認證 取得 Key 和 secret 在本機端啟動 SimpleHTTPServer 取得 access token 同意該 OAuth 使用者可以使用你的帳號。 轉導向到自己本機的 8000 port 並取得一次性的 access token 準備取得 refresh token 取得 refresh token 與 access token   Step 2. 下載專案並編輯 API.cfg 檔 Step 3. 進行安裝  安裝說明 請依據以下安裝說明進行，謝謝。
 Step 1. 申請 meetup_api 的 auth Key 以下操作步驟皆是參考官方的說明文件來進行，並提供簡單的取得方法。
 1. 申請 OAuth2 認證  到 https://secure.</description>
     </item>

@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Retrospect on Life &amp; Technological Journey of Samina</title>
+    <title>retrospect on Samina Website</title>
     <link>https://bestsamina.github.io/tags/retrospect/</link>
-    <description>Recent content in Retrospect on Life &amp; Technological Journey of Samina</description>
+    <description>Recent content in retrospect on Samina Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Samina Fu</copyright>
-    <lastBuildDate>Thu, 31 Dec 2020 16:30:02 +0900</lastBuildDate>
-    
-	<atom:link href="https://bestsamina.github.io/tags/retrospect/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>@Samina Fu</copyright>
+    <lastBuildDate>Thu, 31 Dec 2020 16:30:02 +0900</lastBuildDate><atom:link href="https://bestsamina.github.io/tags/retrospect/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2020 in retrospect and prospect</title>
       <link>https://bestsamina.github.io/posts/2020-12-31-2020retrospect/</link>
@@ -20,8 +16,8 @@
       <guid>https://bestsamina.github.io/posts/2020-12-31-2020retrospect/</guid>
       <description>2020 回顧 回顧 2020，對比去年的目標
  1 個未達到 3 個還要更努力 2 個有還算達到標準  看起來是挺廢的一年，但還是記錄一下。
- 在日遠端工作至今已達 10 個月，其中有7個多月在台灣遠端工作 辦公室探險：新宿總部、NEX 新宿、台北內湖、京都(今年2月達成) 在日本用全英文申辦 My Number Card 順利完成 今年完成書單：『82年生的金智英』、『向生命說Yes！』、『鯨吞億萬』、『唐鳳：我所看待的自由與未來』 認識日本：COVID-19 疫情爆發前-河口湖賞富士山、箱根、河津櫻；疫情爆發後-仙台、武藏丘陵森林公園 人生第一次被當封面照 https://engineering.linecorp.com/zh-hant/blog/line-tech-fresh-2021/ 開啟每個月的 NGO (無國界醫生) 之旅 花許多時間，和家人一起到多個地方出遊 和高中好朋友一起到屏東海生館過夜 整年都沒進電影院的一年 (雖然原本覺得在日本也不會進電影院，但在台灣也沒有 XD 說好的”天能”，只好看哪天 Netflix 看有沒有出來) 擁有自己的 Nintendo Switch 和 健身環 (感謝好朋友幫忙買到) 在台灣期間，完成 3 劑貴桑桑的 9 價 HPV 疫苗。(怕泡溫泉感染而打的) 人生第一次做『新冠病毒核酸檢測』，在台灣採『咽拭子採樣』，在日本看著酸梅努力的產生唾液之『唾液採樣』 在日本小窩，無師自通收納術，增加可以在地板上打滾的空間  2021 展望  不論如何，都要活得好好的 日本工作順利 多寫點技術文章 好好學日文，通過日檢 (如果能夠讓我考到試的話 Orz):
-讓我看得懂如何在日本買股票，知道如何好好在日本一個人玩不要總是靠別人 保持閱讀習慣 疫情結束，希望能好好地探索日本 持續加強英文能力 學會 3 道拿手甜點  總結 今年外顯上的技能點是沒有很明顯的，畢竟大多數時間都貢獻給公司了。</description>
+ 在日遠端工作至今已達 10 個月，其中有7個多月在台灣遠端工作 辦公室探險：新宿總部、NEX 新宿、台北內湖、京都(今年2月達成) 在日本用全英文申辦 My Number Card 順利完成 今年完成書單：『82年生的金智英』、『向生命說Yes！』、『鯨吞億萬』、『唐鳳：我所看待的自由與未來』 認識日本：COVID-19 疫情爆發前-河口湖賞富士山、箱根、河津櫻；疫情爆發後-仙台、武藏丘陵森林公園 人生第一次被當封面照 https://engineering.linecorp.com/zh-hant/blog/line-tech-fresh-2021/ 開啟每個月的 NGO (無國界醫生) 之旅 花許多時間，和家人一起到多個地方出遊 和高中好朋友一起到屏東海生館過夜 整年都沒進電影院的一年 (雖然原本覺得在日本也不會進電影院，但在台灣也沒有 XD 說好的”天能”，只好看哪天 Netflix 看有沒有出來) 擁有自己的 Nintendo Switch 和 健身環 (感謝好朋友幫忙買到) 在台灣期間，完成 3 劑貴桑桑的 9 價 HPV 疫苗。(怕泡溫泉感染而打的) 人生第一次做『新冠病毒核酸檢測』，在台灣採『咽拭子採樣』，在日本看著酸梅努力的產生唾液之『唾液採樣』 在日本小窩，無師自通收納術，增加可以在地板上打滾的空間   2021 展望  不論如何，都要活得好好的 日本工作順利 多寫點技術文章 好好學日文，通過日檢 (如果能夠讓我考到試的話 Orz):
+讓我看得懂如何在日本買股票，知道如何好好在日本一個人玩不要總是靠別人 保持閱讀習慣 疫情結束，希望能好好地探索日本 持續加強英文能力 學會 3 道拿手甜點   總結 今年外顯上的技能點是沒有很明顯的，畢竟大多數時間都貢獻給公司了。</description>
     </item>
     
     <item>
@@ -34,7 +30,7 @@
 1. 碩士畢業 上半年的時間，幾乎都貢獻給碩士論文、計畫，程式寫得並不多，投影片和紙本寫的數量到很多的時期。然後就這樣畢業了。畢業之後，在協助交接自己論文的東西，基本上就這樣度過了。不過也是達成去年的目標。
 2. 從找在台灣外商分公司的工作，變成目前在日本總公司工作 這邊真的感謝 Evan Lin 的鼓勵，其實一直覺得自己英文不怎麼好，找外商是因為想要自己創造學習英文的環境，但沒想到的是也因此誤打誤撞的就跑到了日本。
 就此開啟了自己的視野。目前也都還在學習與上手中，也希望未來有天，可以和大家分享這樣的歷程。
-今年也就這樣到了最後一天。經過樸實無華的 2019 年， 2020 年覺得需要多一點努力的目標。
+ 今年也就這樣到了最後一天。經過樸實無華的 2019 年， 2020 年覺得需要多一點努力的目標。
 1. 加強英文能力 英文口說是有比去年進步一點點(畢竟為了外商面試，也是投資了自己線上的英文會話課程)，但還是不夠，仍然要更加強。希望在明年，可以很流利的說出想表達的語句。
 2. 繼續努力深入研究要專精的領域 持續在雲端和網路領域深入囉！
 3. 學會日文 畢竟在日本生活，還是需要學會日文，雖然工作場合不會太需要用到，但畢竟公司有免費學習的課程，還是要去學習囉！

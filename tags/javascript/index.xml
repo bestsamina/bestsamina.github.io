@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Javascript on Life &amp; Technological Journey of Samina</title>
+    <title>JavaScript on Samina Website</title>
     <link>https://bestsamina.github.io/tags/javascript/</link>
-    <description>Recent content in Javascript on Life &amp; Technological Journey of Samina</description>
+    <description>Recent content in JavaScript on Samina Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Samina Fu</copyright>
-    <lastBuildDate>Mon, 27 Nov 2017 14:51:05 +0800</lastBuildDate>
-    
-	<atom:link href="https://bestsamina.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>@Samina Fu</copyright>
+    <lastBuildDate>Mon, 27 Nov 2017 14:51:05 +0800</lastBuildDate><atom:link href="https://bestsamina.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>了解 npm 的二三事</title>
       <link>https://bestsamina.github.io/posts/2017-11-27-npm/</link>
@@ -19,7 +15,8 @@
       
       <guid>https://bestsamina.github.io/posts/2017-11-27-npm/</guid>
       <description>了解 npm 的二三事 什麼是 NPM 如果你有寫過 python ，你應該會很熟悉 pip ，pip 是一個 python 的套件管理系統。(pip is package management system used to install and manage software packages written in Python. &amp;ndash;from Wikipedia) 那什麼是 npm 呢？ 就是 Node.js 的 套件管理系統啦！ (A default package manager for the JavaScript runtime environment Node.js &amp;ndash; from Wikipedia) NPM 全名 Node Package Manager。
- 什麼是&amp;rdquo;套件管理系統&amp;rdquo;？  A package manager is a set of tools that automates and manages computer software.</description>
+  什麼是&amp;quot;套件管理系統&amp;quot;？
+ A package manager is a set of tools that automates and manages computer software.</description>
     </item>
     
   </channel>

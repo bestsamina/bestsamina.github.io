@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker on Life &amp; Technological Journey of Samina</title>
+    <title>docker on Samina Website</title>
     <link>https://bestsamina.github.io/tags/docker/</link>
-    <description>Recent content in Docker on Life &amp; Technological Journey of Samina</description>
+    <description>Recent content in docker on Samina Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Samina Fu</copyright>
-    <lastBuildDate>Sun, 14 Jan 2018 14:51:05 +0800</lastBuildDate>
-    
-	<atom:link href="https://bestsamina.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>@Samina Fu</copyright>
+    <lastBuildDate>Sun, 14 Jan 2018 14:51:05 +0800</lastBuildDate><atom:link href="https://bestsamina.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Build container] Container with Linux Namespace</title>
       <link>https://bestsamina.github.io/posts/2018-01-14-container-linux-namespace/</link>
@@ -19,17 +15,8 @@
       
       <guid>https://bestsamina.github.io/posts/2018-01-14-container-linux-namespace/</guid>
       <description>目錄：
-* 前言
-* Linux Namespace 類別
-* The system calls of namespaces API
-* UTS namespaces (CLONE_NEWUTS)
-* IPC namespaces (CLONE_NEWIPC)
-* PID namespaces (CLONE_NEWPID)
-* Mount namespaces (CLONE_NEWNS)
-* User namespaces (CLONE_NEWUSER)
-* Network namespaces (CLONE_NEWNET)
-前言 Linux Namespace 是 Linux Kernel 的其中一個功能，可以隔離對應的系統資源。 關於深入了解 Linux Namespace ，會再另闢一篇來探討。 而這邊就先照著進行，不過為了想法上能夠知道在做什麼，我是套用 C++ 的 Namespace 概念來幫助我先進行實作，讓我透過實際的程式與操作後，而對應到原來這就是 Linux Namespace 以及要怎麼實現。 PS. 建議有一點 OS 概念跟著做會比較好，要不然，最起碼知道 PID 是什麼。
-實作環境摘要  Ubuntu 16.04 Kernel version: 4.</description>
+ 前言 Linux Namespace 類別 The system calls of namespaces API UTS namespaces (CLONE_NEWUTS) IPC namespaces (CLONE_NEWIPC) PID namespaces (CLONE_NEWPID) Mount namespaces (CLONE_NEWNS) User namespaces (CLONE_NEWUSER) Network namespaces (CLONE_NEWNET)  前言 Linux Namespace 是 Linux Kernel 的其中一個功能，可以隔離對應的系統資源。 關於深入了解 Linux Namespace ，會再另闢一篇來探討。 而這邊就先照著進行，不過為了想法上能夠知道在做什麼，我是套用 C++ 的 Namespace 概念來幫助我先進行實作，讓我透過實際的程式與操作後，而對應到原來這就是 Linux Namespace 以及要怎麼實現。 PS. 建議有一點 OS 概念跟著做會比較好，要不然，最起碼知道 PID 是什麼。
+實作環境摘要  Ubuntu 16.04 Kernel version: 4.13.0-1002-gcp Go version: v1.9.2 linux/amd64  Linux Namespace 類別 依據 Linux Programmer&amp;rsquo;s Manual 的 Namespace 文件中提到 &amp;ldquo;One use of namespaces is to implement containers.</description>
     </item>
     
     <item>
@@ -45,12 +32,12 @@
     
     <item>
       <title>[Build container] 自己的 Container 自己寫</title>
-      <link>https://bestsamina.github.io/2018/01/03/build-container-%E8%87%AA%E5%B7%B1%E7%9A%84-container-%E8%87%AA%E5%B7%B1%E5%AF%AB/</link>
+      <link>https://bestsamina.github.io/series/my-own-container/</link>
       <pubDate>Wed, 03 Jan 2018 14:51:05 +0800</pubDate>
       
-      <guid>https://bestsamina.github.io/2018/01/03/build-container-%E8%87%AA%E5%B7%B1%E7%9A%84-container-%E8%87%AA%E5%B7%B1%E5%AF%AB/</guid>
+      <guid>https://bestsamina.github.io/series/my-own-container/</guid>
       <description>手工打造自己的 - mini-container 前言 有在使用 Docker 的人一定對這 Container 的工具不陌生，但身為一個資工人的自己，我開始問自己，那這工具怎麼實作出來的？結果，我完全沒有任何頭緒。看著 docker 或 moby 的程式碼，我完全不知的怎麼下手。 有的只有承認自己是多麼的弱。再想想，我光是期末專題的純手工打造 Mini-filesystem 就已經花了好幾天在看 linux 的 ext2 原始碼。還研究了很久。雖然最後終於從如何切 block 到 inode 到 VFS 到 CLI 一連串的有點貫通後，和隊友一同開發出一個 ext2 的變形 FS 。為了能夠好好的掌握這技術背後是怎麼打造的，這系列，將是我研讀 自己動手寫 Docker 這本書，再加上自己實作與理解的部分，用自己的想法所寫下的紀錄。也希望透過這系列的紀錄，能夠讓自己將這技術儲存在自己的腦袋記憶中。
-目錄 1. Docker 簡介與 Go 環境安裝 2. Container with Linux Namespace 3. [(待) 關於 Linux Namespace]() 4. [(待) 關於 Linux Cgroups]() (待續)</description>
+目錄 1. Docker 簡介與 Go 環境安裝 2. Container with Linux Namespace 3. (待) 關於 Linux Namespace 4. (待) 關於 Linux Cgroups (待續)</description>
     </item>
     
   </channel>

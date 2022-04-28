@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2018 on Life &amp; Technological Journey of Samina</title>
+    <title>2018 on Samina Website</title>
     <link>https://bestsamina.github.io/tags/2018/</link>
-    <description>Recent content in 2018 on Life &amp; Technological Journey of Samina</description>
+    <description>Recent content in 2018 on Samina Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Samina Fu</copyright>
-    <lastBuildDate>Mon, 31 Dec 2018 12:00:02 +0800</lastBuildDate>
-    
-	<atom:link href="https://bestsamina.github.io/tags/2018/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>@Samina Fu</copyright>
+    <lastBuildDate>Mon, 31 Dec 2018 12:00:02 +0800</lastBuildDate><atom:link href="https://bestsamina.github.io/tags/2018/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2018 in retrospect and prospect</title>
       <link>https://bestsamina.github.io/posts/2018-12-31-2018retrospect/</link>
