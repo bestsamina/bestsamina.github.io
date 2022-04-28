@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#D250F4' />
   
+    <link rel="shortcut icon" href="/images/favicon.jpg" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.jpg" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.97.3" />
 
@@ -280,7 +283,57 @@
     <main id="content" class="posts">
 
 <h1>在 vagrant(Ubuntu 16.04) 中安裝 DPDK 與 OVS 紀錄筆記</h1>
-
+<span>
+    Wednesday, June 27, 2018
+</span>
+<br><br>
+<span>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#環境需求">環境需求</a></li>
+    <li><a href="#前置作業">前置作業</a>
+      <ul>
+        <li><a href="#1-在-x86-上-bios-設定的先決條件">1. 在 x86 上 BIOS 設定的先決條件</a></li>
+        <li><a href="#2-需要的工具以及-libraries">2. 需要的工具以及 Libraries</a></li>
+        <li><a href="#3-系統軟體">3. 系統軟體</a></li>
+        <li><a href="#前置作業設定與套件安裝操作在-ubuntu-1604-進行">前置作業設定與套件安裝操作(在 Ubuntu 16.04 進行)</a></li>
+        <li><a href="#3-設定-kernel-變數在執行的時候">3. 設定 kernel 變數在執行的時候</a></li>
+      </ul>
+    </li>
+    <li><a href="#安裝-dpdk">安裝 DPDK</a>
+      <ul>
+        <li><a href="#1-下載-dpdk-安裝包">1. 下載 DPDK 安裝包</a></li>
+        <li><a href="#2-設定-dpdk-相關的環境變數">2. 設定 DPDK 相關的環境變數</a></li>
+        <li><a href="#3-build-與安裝-dpdk-library">3. Build 與安裝 DPDK library</a></li>
+        <li><a href="#4-設定-dpdk-為-shared-library">4. 設定 DPDK 為 shared library</a></li>
+      </ul>
+    </li>
+    <li><a href="#設定-linux-drivers">設定 Linux Drivers</a>
+      <ul>
+        <li><a href="#1-load-uio-kernel-module">1. load uio kernel module</a></li>
+        <li><a href="#2-insert-kmodigb_uio--module-到-linux-kernel">2. insert kmod/igb_uio  module 到 Linux Kernel</a></li>
+        <li><a href="#3-開機後還是可以-load-uio-的設定">3. 開機後還是可以 load UIO 的設定</a></li>
+        <li><a href="#4-綁定-network-ports-到-kernel-modules">4. 綁定 Network Ports 到 Kernel Modules</a></li>
+      </ul>
+    </li>
+    <li><a href="#安裝-ovs">安裝 OVS</a>
+      <ul>
+        <li><a href="#1-下載-ovs-安裝包">1. 下載 OVS 安裝包</a></li>
+        <li><a href="#安裝-ovs-1">安裝 OVS</a></li>
+        <li><a href="#關機後可以用-ovs">關機後可以用 OVS</a></li>
+        <li><a href="#移除">移除</a></li>
+      </ul>
+    </li>
+    <li><a href="#setup-open-vswitch">Setup Open vSwitch</a>
+      <ul>
+        <li><a href="#1-設定-open-vswitch-的遠端-database-server">1. 設定 Open vSwitch 的遠端 database server</a></li>
+        <li><a href="#2-設定-ovs-vswitchd">2. 設定 ovs-vswitchd</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</span>
 <blockquote>
 <p>本篇使用的 Vagrantfile 可參閱 <a href="https://github.com/sufuf3/network-study-notes/blob/master/DPDK_OVS/Vagrantfile">https://github.com/sufuf3/network-study-notes/blob/master/DPDK_OVS/Vagrantfile</a></p>
 </blockquote>

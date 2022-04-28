@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#D250F4' />
   
+    <link rel="shortcut icon" href="/images/favicon.jpg" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.jpg" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.97.3" />
 
@@ -286,7 +289,28 @@
     <main id="content" class="posts">
 
 <h1>申請 GitHub OAuth 權限紀錄</h1>
-
+<span>
+    Thursday, October 11, 2018
+</span>
+<br><br>
+<span>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#1-申請-oauth2-認證">1. 申請 OAuth2 認證</a></li>
+    <li><a href="#2-取得-client-id-和-client-secret">2. 取得 Client ID 和 Client Secret</a></li>
+    <li><a href="#3-在本機端啟動-simplehttpserver">3. 在本機端啟動 SimpleHTTPServer</a></li>
+    <li><a href="#4-取得-access-token">4. 取得 access token</a></li>
+    <li><a href="#5-同意該-oauth-使用者可以使用你的帳號">5. 同意該 OAuth 使用者可以使用你的帳號</a></li>
+    <li><a href="#6-轉導向到自己本機的-8000-port-並取得-access-token">6. 轉導向到自己本機的 8000 port 並取得 access token</a></li>
+    <li><a href="#7-來拿-access-token">7. 來拿 access token</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</span>
 <h2 id="前言">前言</h2>
 <p>會來使用 GitHub 的 <a href="https://zh.wikipedia.org/wiki/%E5%BC%80%E6%94%BE%E6%8E%88%E6%9D%83">OAuth</a> 是因為發現 <a href="https://github.com/TGmeetupBot">TGmeetupBot</a> 在開 issue 的時候，總是會開到重複的 Event Issue。<br>
 在經過一番的拆解後，發現雖然都是使用 Basic authentication ，用 Postman 是可以看到所有的 Issue ，但是用程式卻是只能看到最新的 30 筆 issue。<br>

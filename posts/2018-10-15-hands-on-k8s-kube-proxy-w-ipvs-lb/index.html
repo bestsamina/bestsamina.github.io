@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#D250F4' />
   
+    <link rel="shortcut icon" href="/images/favicon.jpg" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.jpg" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.97.3" />
 
@@ -274,7 +277,32 @@
     <main id="content" class="posts">
 
 <h1>實現 IPVS-based K8s service load balancing - 不同 namespace 擁有自己的 external IP</h1>
-
+<span>
+    Monday, October 15, 2018
+</span>
+<br><br>
+<span>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前置作業">前置作業</a>
+      <ul>
+        <li><a href="#1-把-ipvs-的-kernel-module-load-進來">1. 把 IPVS 的 kernel module load 進來</a></li>
+        <li><a href="#2-在啟動-kube-proxy-時參數設為">2. 在啟動 kube-proxy 時，參數設為</a></li>
+        <li><a href="#3-如果是在-v10-之前的版本-kube-proxy-要加下面的參數">3. 如果是在 v.10 之前的版本， kube-proxy 要加下面的參數</a></li>
+        <li><a href="#4-建立-k8s-環境">4. 建立 k8s 環境</a></li>
+      </ul>
+    </li>
+    <li><a href="#環境說明">環境說明</a></li>
+    <li><a href="#k8s-於不同-namespace-擁有自己的-external-ip-之環境">K8s 於不同 namespace 擁有自己的 external IP 之環境</a>
+      <ul>
+        <li><a href="#部署">部署</a></li>
+        <li><a href="#測試">測試</a></li>
+      </ul>
+    </li>
+    <li><a href="#ref">Ref</a></li>
+  </ul>
+</nav>
+</span>
 <p>文章脈絡</p>
 <ul>
 <li>前置作業</li>

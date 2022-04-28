@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#D250F4' />
   
+    <link rel="shortcut icon" href="/images/favicon.jpg" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.jpg" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.97.3" />
 
@@ -276,7 +279,35 @@ Operator Framework 是什麼  是一個 open source toolkit 管理 Kubernetes na
     <main id="content" class="posts">
 
 <h1>第一次玩 operator-sdk 就上手</h1>
-
+<span>
+    Monday, February 4, 2019
+</span>
+<br><br>
+<span>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章脈絡">文章脈絡</a></li>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#operator-framework-是什麼">Operator Framework 是什麼</a></li>
+    <li><a href="#認識-operator-sdk-cli">認識 operator-sdk CLI</a></li>
+    <li><a href="#實作開始">實作開始</a>
+      <ul>
+        <li><a href="#1-建立-k8s-環境">1. 建立 K8s 環境</a></li>
+        <li><a href="#2-安裝-operator-sdk-cli">2. 安裝 operator-sdk CLI</a></li>
+        <li><a href="#3-用-operator-sdk-cli-建立一個-operator">3. 用 operator-sdk CLI 建立一個 operator</a></li>
+        <li><a href="#4-了解一下新產生的-helm-operator-中的檔案">4. 了解一下新產生的 helm operator 中的檔案</a></li>
+        <li><a href="#5-編輯檔案">5. 編輯檔案</a></li>
+        <li><a href="#6-先在-k8s-中-deploy-crd">6. 先在 K8s 中 deploy CRD</a></li>
+        <li><a href="#7-build-operator-container">7. Build operator container</a></li>
+        <li><a href="#8-在-k8s-中部署-operator">8. 在 K8s 中部署 operator</a></li>
+        <li><a href="#9-在-k8s-中部署自己定義的-custom-resource">9. 在 K8s 中部署自己定義的 custom resource</a></li>
+      </ul>
+    </li>
+    <li><a href="#結語">結語</a></li>
+    <li><a href="#參考連結">參考連結</a></li>
+  </ul>
+</nav>
+</span>
 <h2 id="文章脈絡">文章脈絡</h2>
 <ul>
 <li>前言</li>
