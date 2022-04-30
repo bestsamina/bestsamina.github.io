@@ -45,7 +45,7 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
 它所需的系統資源並不多：
  在 Server 端： 只需要 512 MB 的 RAM 在 Node 端：只需要 75MB 的 RAM Disk 大小只需 200MB  而且可以用在 x86_64, ARMv7, ARM64 等平台架構。"><meta itemprop="datePublished" content="2019-10-10T16:48:35+08:00" />
 <meta itemprop="dateModified" content="2019-10-10T16:48:35+08:00" />
-<meta itemprop="wordCount" content="876">
+<meta itemprop="wordCount" content="873">
 <meta itemprop="keywords" content="Kubernetes,K8s,K3s,cloud-native,container," />
 </head>
 <body>
@@ -56,7 +56,7 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile 終端機的超狂工具-TMUX 與指令整理" class="rounded-logo">
+        <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
       </a>
     </div>
     <h3>Hi, I'm Samina 👋</h3>
@@ -161,7 +161,7 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
     <div class="intro">
       <div class="logo-container">
         <a href="/">
-          <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile 終端機的超狂工具-TMUX 與指令整理" class="rounded-logo">
+          <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
         </a>
       </div>
       <h3>Hi, I'm Samina 👋</h3>
@@ -425,9 +425,9 @@ K3s 介紹 K3s 簡介 K3s 是由 Rancher Labs 推出的 輕量化 Kubernetes 開
 兩台 Host (VM 或主機) ， Server VM 的 RAM 至少需要 512 MB，Work Node VM 的 RAM 至少需要 75MB，並且兩台主機都已經安裝好 Docker 了。</p>
 <h3 id="1-首先在-master-上安裝-k3s-server">1. 首先在 Master 上安裝 K3s Server</h3>
 <p>切換到 root 使用者，並執行以下的 Command</p>
-<pre tabindex="0"><code>IPADDR=$(ip a show enp0s8 | grep &#34;inet &#34; | awk &#39;{print $2}&#39; | cut -d / -f1)
-curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v0.9.1 INSTALL_K3S_EXEC=&#34;--docker --node-ip=${IPADDR} --flannel-iface=enp0s8 --write-kubeconfig-mode 644 --no-deploy=servicelb --no-deploy=traefik&#34; sh -
-</code></pre><p>我們會執行 <a href="https://get.k3s.io">https://get.k3s.io</a> 這程式裡面的腳本，而帶入的 option 有：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">IPADDR</span><span class="o">=</span><span class="k">$(</span>ip a show enp0s8 <span class="p">|</span> grep <span class="s2">&#34;inet &#34;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span> <span class="p">|</span> cut -d / -f1<span class="k">)</span>
+</span></span><span class="line"><span class="cl">curl -sfL https://get.k3s.io <span class="p">|</span> <span class="nv">INSTALL_K3S_VERSION</span><span class="o">=</span>v0.9.1 <span class="nv">INSTALL_K3S_EXEC</span><span class="o">=</span><span class="s2">&#34;--docker --node-ip=</span><span class="si">${</span><span class="nv">IPADDR</span><span class="si">}</span><span class="s2"> --flannel-iface=enp0s8 --write-kubeconfig-mode 644 --no-deploy=servicelb --no-deploy=traefik&#34;</span> sh -
+</span></span></code></pre></div><p>我們會執行 <a href="https://get.k3s.io">https://get.k3s.io</a> 這程式裡面的腳本，而帶入的 option 有：</p>
 <ul>
 <li><code>INSTALL_K3S_VERSION</code>: 指定安裝 K3s 的版本</li>
 <li><code>INSTALL_K3S_EXEC</code>: 指定 <code>k3s server</code> 執行的 option
@@ -445,14 +445,14 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v0.9.1 INSTALL_K3S_EXEC=&#34;
 <p>並在進行下一步驟前，執行 <code>echo &quot;export NODE_TOKEN=$(sudo cat /var/lib/rancher/k3s/server/node-token)&quot;</code> 紀錄 Cluster Node 之間認證用的 Token。</p>
 <h3 id="2-安裝-k3s-node">2. 安裝 K3s Node</h3>
 <p>先在 <code>/etc/hosts</code> 加入 master node 與 IP 的對應。</p>
-<pre tabindex="0"><code>echo &#34;$K3SMASTER_IPADDRESS       $K3SMASTER_HOSTNAME&#34; | sudo tee -a /etc/hosts
-</code></pre><p>接著切換到 root 使用者後，貼上剛剛 Master Node 上取得的認證 token，如下</p>
-<pre tabindex="0"><code>export NODE_TOKEN=K10571d20534c867fe6ce8d... 
-</code></pre><p>並執行以下的 Command 來安裝 K3s agent</p>
-<pre tabindex="0"><code>export K3SMASTER_IPADDRESS=...
-IPADDR=$(ip a show enp0s8 | grep &#34;inet &#34; | awk &#39;{print $2}&#39; | cut -d / -f1)
-curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v0.9.1 INSTALL_K3S_EXEC=&#34;--docker --node-ip=${IPADDR} --flannel-iface=enp0s8&#34; K3S_URL=https://${K3SMASTER_IPADDRESS}:6443 K3S_TOKEN=${NODE_TOKEN} sh -
-</code></pre><p>在執行 <a href="https://get.k3s.io">https://get.k3s.io</a> 這程式裡面的腳本中，<code>INSTALL_K3S_EXEC</code> 而外帶入的 option 有：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$K3SMASTER_IPADDRESS</span><span class="s2">       </span><span class="nv">$K3SMASTER_HOSTNAME</span><span class="s2">&#34;</span> <span class="p">|</span> sudo tee -a /etc/hosts
+</span></span></code></pre></div><p>接著切換到 root 使用者後，貼上剛剛 Master Node 上取得的認證 token，如下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">NODE_TOKEN</span><span class="o">=</span>K10571d20534c867fe6ce8d... 
+</span></span></code></pre></div><p>並執行以下的 Command 來安裝 K3s agent</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">K3SMASTER_IPADDRESS</span><span class="o">=</span>...
+</span></span><span class="line"><span class="cl"><span class="nv">IPADDR</span><span class="o">=</span><span class="k">$(</span>ip a show enp0s8 <span class="p">|</span> grep <span class="s2">&#34;inet &#34;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span> <span class="p">|</span> cut -d / -f1<span class="k">)</span>
+</span></span><span class="line"><span class="cl">curl -sfL https://get.k3s.io <span class="p">|</span> <span class="nv">INSTALL_K3S_VERSION</span><span class="o">=</span>v0.9.1 <span class="nv">INSTALL_K3S_EXEC</span><span class="o">=</span><span class="s2">&#34;--docker --node-ip=</span><span class="si">${</span><span class="nv">IPADDR</span><span class="si">}</span><span class="s2"> --flannel-iface=enp0s8&#34;</span> <span class="nv">K3S_URL</span><span class="o">=</span>https://<span class="si">${</span><span class="nv">K3SMASTER_IPADDRESS</span><span class="si">}</span>:6443 <span class="nv">K3S_TOKEN</span><span class="o">=</span><span class="si">${</span><span class="nv">NODE_TOKEN</span><span class="si">}</span> sh -
+</span></span></code></pre></div><p>在執行 <a href="https://get.k3s.io">https://get.k3s.io</a> 這程式裡面的腳本中，<code>INSTALL_K3S_EXEC</code> 而外帶入的 option 有：</p>
 <ul>
 <li><code>K3S_URL</code>: 是讓 agent 知道他要和哪個 server 連線</li>
 <li><code>K3S_TOKEN</code>: 是用來認證用的</li>
@@ -466,99 +466,99 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v0.9.1 INSTALL_K3S_EXEC=&#34;
 <ol>
 <li>在 Host 上啟動兩台 VM 並且在 Master 的 VM 中安裝 K3s server。</li>
 </ol>
-<pre tabindex="0"><code>$ sh deploy-vagrant.sh
-</code></pre><ol start="2">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ sh deploy-vagrant.sh
+</span></span></code></pre></div><ol start="2">
 <li>在第一步驟完成後，會得到類似 <code>export NODE_TOKEN=K10571d20534c867fe6ce8d...</code> 的字串，將這字串複製後，透過 <code>vageant ssh node1</code> 進入 node 的 VM 並且執行以下的指令</li>
 </ol>
-<pre tabindex="0"><code>sudo su -
-cd /home/vagrant/
-export NODE_TOKEN=K10571d20534c867fe6ce8d... // 是複製的字串
-sh install-k3s-node.sh ${NODE_TOKEN}
-</code></pre><p>這樣就完成以上部署 K3s Cluster 了。接下來我們來驗證 K3s Cluster 是否正常吧！</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo su -
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /home/vagrant/
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">NODE_TOKEN</span><span class="o">=</span>K10571d20534c867fe6ce8d... // 是複製的字串
+</span></span><span class="line"><span class="cl">sh install-k3s-node.sh <span class="si">${</span><span class="nv">NODE_TOKEN</span><span class="si">}</span>
+</span></span></code></pre></div><p>這樣就完成以上部署 K3s Cluster 了。接下來我們來驗證 K3s Cluster 是否正常吧！</p>
 <h2 id="功能驗證">功能驗證</h2>
 <p>首先先進入 Master Node，你可以透過 k3s 指令看到它有支援的 commands，如下，因此我們可以直接使用 kubectl, crictl, ctr：<br>
 而因為我們使用 Docker 為我們的 container 引擎，所以本篇只用 kubectl 來和大家一起驗證。</p>
-<pre tabindex="0"><code>$ k3s -h
-NAME:
-   k3s - Kubernetes, but small and simple
-
-USAGE:
-   k3s [global options] command [command options] [arguments...]
-
-VERSION:
-   v0.9.1 (755bd1c6)
-
-COMMANDS:
-   server   Run management server
-   agent    Run node agent
-   kubectl  Run kubectl
-   crictl   Run crictl
-   ctr      Run ctr
-   help, h  Shows a list of commands or help for one command
-
-GLOBAL OPTIONS:
-   --debug        Turn on debug logs
-   --help, -h     show help
-   --version, -v  print the version
-</code></pre><p>我們可以透過 kubectl 來查看 Cluster node 資訊與 component 的狀態。</p>
-<pre tabindex="0"><code>$ kubectl get no -o wide
-NAME     STATUS   ROLES    AGE   VERSION         INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
-master   Ready    master   97m   v1.15.4-k3s.1   192.168.0.200   &lt;none&gt;        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
-node1    Ready    worker   93m   v1.15.4-k3s.1   192.168.0.201   &lt;none&gt;        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
-
-$ kubectl get componentstatus
-NAME                 STATUS    MESSAGE   ERROR
-scheduler            Healthy   ok
-controller-manager   Healthy   ok
-</code></pre><p>也可以用 kubectl 來跑一個 deployment 來啟動一個 nginx ，如以下 Lab。</p>
-<pre tabindex="0"><code>$ kubectl run mynginx --image=nginx --replicas=1 --port=80
-deployment.apps/mynginx created
-$ kubectl expose deployment mynginx --port 80
-service/mynginx exposed
-
-$ kubectl get deploy,po,svc -o wide -l run=mynginx
-NAME                            READY   UP-TO-DATE   AVAILABLE   AGE    CONTAINERS   IMAGES   SELECTOR
-deployment.extensions/mynginx   1/1     1            1           115s   mynginx      nginx    run=mynginx
-
-NAME                           READY   STATUS    RESTARTS   AGE    IP          NODE    NOMINATED NODE   READINESS GATES
-pod/mynginx-568f57494d-nsc8r   1/1     Running   0          115s   10.42.1.2   node1   &lt;none&gt;           &lt;none&gt;
-
-NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE   SELECTOR
-service/mynginx   ClusterIP   10.43.220.117   &lt;none&gt;        80/TCP    27s   run=mynginx
-
-$ curl 10.43.220.117
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Welcome to nginx!&lt;/title&gt;
-&lt;style&gt;
-    body {
-        width: 35em;
-        margin: 0 auto;
-        font-family: Tahoma, Verdana, Arial, sans-serif;
-    }
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
-&lt;p&gt;If you see this page, the nginx web server is successfully installed and
-working. Further configuration is required.&lt;/p&gt;
-
-&lt;p&gt;For online documentation and support please refer to
-&lt;a href=&#34;http://nginx.org/&#34;&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
-Commercial support is available at
-&lt;a href=&#34;http://nginx.com/&#34;&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>如上，其實使用方式和 Kubernetes 使用原本資源方法是一樣的，所以要更換 install 的工具，其實並不是太困難。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ k3s -h
+</span></span><span class="line"><span class="cl">NAME:
+</span></span><span class="line"><span class="cl">   k3s - Kubernetes, but small and simple
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">USAGE:
+</span></span><span class="line"><span class="cl">   k3s <span class="o">[</span>global options<span class="o">]</span> <span class="nb">command</span> <span class="o">[</span><span class="nb">command</span> options<span class="o">]</span> <span class="o">[</span>arguments...<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">VERSION:
+</span></span><span class="line"><span class="cl">   v0.9.1 <span class="o">(</span>755bd1c6<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">COMMANDS:
+</span></span><span class="line"><span class="cl">   server   Run management server
+</span></span><span class="line"><span class="cl">   agent    Run node agent
+</span></span><span class="line"><span class="cl">   kubectl  Run kubectl
+</span></span><span class="line"><span class="cl">   crictl   Run crictl
+</span></span><span class="line"><span class="cl">   ctr      Run ctr
+</span></span><span class="line"><span class="cl">   help, h  Shows a list of commands or <span class="nb">help</span> <span class="k">for</span> one <span class="nb">command</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">GLOBAL OPTIONS:
+</span></span><span class="line"><span class="cl">   --debug        Turn on debug logs
+</span></span><span class="line"><span class="cl">   --help, -h     show <span class="nb">help</span>
+</span></span><span class="line"><span class="cl">   --version, -v  print the version
+</span></span></code></pre></div><p>我們可以透過 kubectl 來查看 Cluster node 資訊與 component 的狀態。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ kubectl get no -o wide
+</span></span><span class="line"><span class="cl">NAME     STATUS   ROLES    AGE   VERSION         INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
+</span></span><span class="line"><span class="cl">master   Ready    master   97m   v1.15.4-k3s.1   192.168.0.200   &lt;none&gt;        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
+</span></span><span class="line"><span class="cl">node1    Ready    worker   93m   v1.15.4-k3s.1   192.168.0.201   &lt;none&gt;        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ kubectl get componentstatus
+</span></span><span class="line"><span class="cl">NAME                 STATUS    MESSAGE   ERROR
+</span></span><span class="line"><span class="cl">scheduler            Healthy   ok
+</span></span><span class="line"><span class="cl">controller-manager   Healthy   ok
+</span></span></code></pre></div><p>也可以用 kubectl 來跑一個 deployment 來啟動一個 nginx ，如以下 Lab。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ kubectl run mynginx --image<span class="o">=</span>nginx --replicas<span class="o">=</span><span class="m">1</span> --port<span class="o">=</span><span class="m">80</span>
+</span></span><span class="line"><span class="cl">deployment.apps/mynginx created
+</span></span><span class="line"><span class="cl">$ kubectl expose deployment mynginx --port <span class="m">80</span>
+</span></span><span class="line"><span class="cl">service/mynginx exposed
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ kubectl get deploy,po,svc -o wide -l <span class="nv">run</span><span class="o">=</span>mynginx
+</span></span><span class="line"><span class="cl">NAME                            READY   UP-TO-DATE   AVAILABLE   AGE    CONTAINERS   IMAGES   SELECTOR
+</span></span><span class="line"><span class="cl">deployment.extensions/mynginx   1/1     <span class="m">1</span>            <span class="m">1</span>           115s   mynginx      nginx    <span class="nv">run</span><span class="o">=</span>mynginx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">NAME                           READY   STATUS    RESTARTS   AGE    IP          NODE    NOMINATED NODE   READINESS GATES
+</span></span><span class="line"><span class="cl">pod/mynginx-568f57494d-nsc8r   1/1     Running   <span class="m">0</span>          115s   10.42.1.2   node1   &lt;none&gt;           &lt;none&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT<span class="o">(</span>S<span class="o">)</span>   AGE   SELECTOR
+</span></span><span class="line"><span class="cl">service/mynginx   ClusterIP   10.43.220.117   &lt;none&gt;        80/TCP    27s   <span class="nv">run</span><span class="o">=</span>mynginx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ curl 10.43.220.117
+</span></span><span class="line"><span class="cl">&lt;!DOCTYPE html&gt;
+</span></span><span class="line"><span class="cl">&lt;html&gt;
+</span></span><span class="line"><span class="cl">&lt;head&gt;
+</span></span><span class="line"><span class="cl">&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+</span></span><span class="line"><span class="cl">&lt;style&gt;
+</span></span><span class="line"><span class="cl">    body <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        width: 35em<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        margin: <span class="m">0</span> auto<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        font-family: Tahoma, Verdana, Arial, sans-serif<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">&lt;/style&gt;
+</span></span><span class="line"><span class="cl">&lt;/head&gt;
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+</span></span><span class="line"><span class="cl">&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+</span></span><span class="line"><span class="cl">working. Further configuration is required.&lt;/p&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;p&gt;For online documentation and support please refer to
+</span></span><span class="line"><span class="cl">&lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&#34;http://nginx.org/&#34;</span>&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+</span></span><span class="line"><span class="cl">Commercial support is available at
+</span></span><span class="line"><span class="cl">&lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&#34;http://nginx.com/&#34;</span>&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;p&gt;&lt;em&gt;Thank you <span class="k">for</span> using nginx.&lt;/em&gt;&lt;/p&gt;
+</span></span><span class="line"><span class="cl">&lt;/body&gt;
+</span></span><span class="line"><span class="cl">&lt;/html&gt;
+</span></span></code></pre></div><p>如上，其實使用方式和 Kubernetes 使用原本資源方法是一樣的，所以要更換 install 的工具，其實並不是太困難。</p>
 <h2 id="移除安裝">移除安裝</h2>
 <p>在 K3s Server 端執行</p>
-<pre tabindex="0"><code>systemctl stop k3s &amp;&amp; /usr/local/bin/k3s-uninstall.sh
-</code></pre><p>；在 k3s agent 端執行</p>
-<pre tabindex="0"><code>systemctl stop k3s-agent &amp;&amp; /usr/local/bin/k3s-agent-uninstall.sh
-</code></pre><h2 id="在-arm-上面部署-k3s-cluster">在 ARM 上面部署 K3s Cluster</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">systemctl stop k3s <span class="o">&amp;&amp;</span> /usr/local/bin/k3s-uninstall.sh
+</span></span></code></pre></div><p>；在 k3s agent 端執行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">systemctl stop k3s-agent <span class="o">&amp;&amp;</span> /usr/local/bin/k3s-agent-uninstall.sh
+</span></span></code></pre></div><h2 id="在-arm-上面部署-k3s-cluster">在 ARM 上面部署 K3s Cluster</h2>
 <p>而在 ARM 上面部署，也是雷同的，不過有以下幾點是需要注意的</p>
 <ul>
 <li>若是要編譯 Kernel 請確定 vxlan, iptables, netfilter, ip_vs 等必要的 module 都有開啟。</li>
