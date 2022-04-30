@@ -52,7 +52,7 @@ $ sudo ethtool ens11f0 Settings for ens11f0: Supported ports: [ ] Supported link
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
+        <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Scrum framework" class="rounded-logo">
       </a>
     </div>
     <h3>Hi, I'm Samina 👋</h3>
@@ -157,7 +157,7 @@ $ sudo ethtool ens11f0 Settings for ens11f0: Supported ports: [ ] Supported link
     <div class="intro">
       <div class="logo-container">
         <a href="/">
-          <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Awesome Blogs" class="rounded-logo">
+          <img src='https://bestsamina.github.io/images/person.jpg' alt="Profile Scrum framework" class="rounded-logo">
         </a>
       </div>
       <h3>Hi, I'm Samina 👋</h3>
@@ -406,14 +406,14 @@ $ sudo ethtool ens11f0 Settings for ens11f0: Supported ports: [ ] Supported link
 <li>更改 ens11f3 的網卡速度</li>
 </ol>
 <p>更改 <code>/etc/network/interfaces</code> 檔案，加上下面這幾行</p>
-<pre tabindex="0"><code>auto ens11f3
-iface ens11f3 inet static
-address 192.188.2.100
-netmask 255.255.255.0
-link-speed 100
-link-duplex full
-ethernet-autoneg off
-</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ sudo /etc/init.d/networking restart
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">auto ens11f3
+</span></span><span class="line"><span class="cl">iface ens11f3 inet static
+</span></span><span class="line"><span class="cl">address 192.188.2.100
+</span></span><span class="line"><span class="cl">netmask 255.255.255.0
+</span></span><span class="line"><span class="cl">link-speed <span class="m">100</span>
+</span></span><span class="line"><span class="cl">link-duplex full
+</span></span><span class="line"><span class="cl">ethernet-autoneg off
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ sudo /etc/init.d/networking restart
 </span></span></code></pre></div><ol start="3">
 <li>檢查</li>
 </ol>
